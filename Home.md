@@ -4,7 +4,7 @@
 * Multiple Node.js Instances
 * Reserved Words
 * Submodule Configuration
-* Configuring from a Database
+* Configuring from a DB or External Source
 * External Configuration Management Tools
 * Examining Configuration Sources
 * Using Node-Config Utilities
