@@ -7,5 +7,5 @@
 * Configuring from a DB / External Source
 * External Configuration Management Tools
 * Examining Configuration Sources
-* Using Node-Config Utilities
+* Using Config Utilities
 * Upgrading from Node-Config 0.x
