@@ -1,11 +1,12 @@
-* File Formats & Comments
-* Environment Variables
-* Command Line Overrides
-* Multiple Node.js Instances
-* Reserved Words
-* Submodule Configuration
-* Configuring from a DB / External Source
-* External Configuration Management Tools
-* Examining Configuration Sources
-* Using Config Utilities
-* Upgrading from Node-Config 0.x
+* [File Formats](https://github.com/lorenwest/node-config/wiki/File-Formats)
+* [Common Usage](https://github.com/lorenwest/node-config/wiki/Common-Usage)
+* [Environment Variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables)
+* [Reserved Words](https://github.com/lorenwest/node-config/wiki/Reserved-Words)
+* [Command Line Overrides](https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides)
+* [Multiple Node Instances](https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances)
+* [Sub-Module Configuration](https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration)
+* [Configuring from a DB / External Source](https://github.com/lorenwest/node-config/wiki/Configuring-from-a-DB-/-External-Source)
+* [External Configuration Management Tools](https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools)
+* [Examining Configuration Sources](https://github.com/lorenwest/node-config/wiki/Examining-Configuration-Sources)
+* [Using Config Utilities](https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities)
+* [Upgrading from Config 0.x](https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x)
