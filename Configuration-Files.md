@@ -18,16 +18,22 @@ Files in the config directory are loaded in the following order:
 Where 
 
 * ```EXT``` can be .yml, .yaml, .coffee, .json, or .js depending on the format you prefer (see below)
-* ```{hostname}``` is your server name, from the ```$HOSTNAME``` environment variable or ```os.hostname()```
+* ```{hostname}``` is your server name, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order)
 * ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
 
+The ```default.EXT``` file is designed to contain all configuration parameters from which other files may overwrite.  Overwriting is done on a parameter by parameter basis, so subsequent files contain only the parameters unique for that override.
 
+```{hostname}``` and ```{deployment}``` files allow you to tune configurations for a particular server or deployment.  These files are designed to live along with other files in your version control system.
 
-runtime.json
-
+The ```local``` files are intended to *not* be tracked in your version control system.  External configuration management tools can write these files upon application deployment, before application loading. 
 
 ## File Formats
 
+The following configuration file formats are supported.  All ```//``` or ```/* ... */``` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don't support comments.
+
+### JSON
+
+This is 
 NOTE: If you use .yml, .yaml, or .coffee file extensions, the 'yaml' or 'coffee-script' modules must be available. These external dependencies are not included from this package.
 Configuration files can be in JavaScript format, JSON format, COFFEE format, or YAML format - whichever you prefer.
 
