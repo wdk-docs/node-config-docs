@@ -35,7 +35,7 @@ All ```//``` or ```/* ... */``` style comments are removed before file loading, 
 
 ### JSON
 
-Files ending in ```.json``` are parsed in JSON format.  As a native format, no additional libraries are needed to use JSON.  Example:
+Files ending in ```.json``` are parsed in JSON format.  Example:
 
 ```
 {
