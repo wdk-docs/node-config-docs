@@ -74,11 +74,11 @@ Customer
 
 ### JavaScript
 
-Files ending in ```.js``` are loaded and run as JavaScript modules.  The modules must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  Isn't it nice to live in a world with choice?  Example:
+Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  Isn't it nice to live in a world with choice?  Example:
 
 ```
 var fs = require('fs');
-module.export = {
+module.exports = {
   // Customter module configs
   Customer: {
     dbConfig: {
@@ -92,31 +92,20 @@ module.export = {
 } 
 ```
 
+### CoffeeScript
 
-### Coffee
+You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module. Example:
 
 ```
-// Customter module configs
-Customer
-  dbConfig:
-    host: localhost
-    port: 5984
-    dbName: customers
+module.exports = 
+  // Customter module configs
+  Customer:
+    dbConfig:
+      host: "localhost"
+      port: 5984
+      dbName: "customers"
   credit:
     initialLimit: 100
     // Set low for development
     initialDays: 1 
 ```
-
-Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
-
-
-NOTE: If you use .yml, .yaml, or .coffee file extensions, the 'yaml' or 'coffee-script' modules must be available. These external dependencies are not included from this package.
-Configuration files can be in JavaScript format, JSON format, COFFEE format, or YAML format - whichever you prefer.
-
-
-### Heading 2
-
-hostname is the $HOST environment variable if set, otherwise the $HOSTNAME environment variable if set, otherwise the hostname found from require('os').hostname(). Once a hostname is found, everything from the first period ('.') onwards is removed. For example, abc.example.com becomes abc
-deployment is the deployment type, found in the $NODE_ENV environment variable. Defaults to 'development'.
-The runtime.json file contains configuration changes made at runtime either manually, or by the application setting a configuration value. The location is specified by NODE_CONFIG_RUNTIME_JSON environment variable. By default, it is a file called runtime.json in NODE_CONFIG_DIR directory. Node-config monitors this file and loads any new configurations it detects. This file is loaded after all other configurations, including the $NODE_CONFIG environment variable and --NODE_CONFIG command line parameter (see below).
