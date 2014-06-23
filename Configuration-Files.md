@@ -87,8 +87,9 @@ module.exports = {
       dbName: "customers"
     },
   
-  // Load credit configs externally
-  credit: JSON.parse(fs.loadFileSync('./currentCreditPolicy.json'))
+    // Load credit configs externally
+    credit: JSON.parse(fs.loadFileSync('./currentCreditPolicy.json'))
+  }
 } 
 ```
 
@@ -104,8 +105,8 @@ module.exports =
       host: "localhost"
       port: 5984
       dbName: "customers"
-  credit:
-    initialLimit: 100
-    // Set low for development
-    initialDays: 1 
+    credit:
+      initialLimit: 100
+      // Set low for development
+      initialDays: 1 
 ```
