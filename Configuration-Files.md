@@ -94,7 +94,7 @@ module.exports = {
 
 ### CoffeeScript
 
-You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module. Example:
+You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module. CoffeeScript must either be loaded with the global ```Coffee``` variable, or ```require('coffee-script')``` will be run to load it.  Example CoffeeScript configuration file:
 
 ```
 module.exports = 
