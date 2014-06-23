@@ -1,4 +1,4 @@
-* [File Formats](https://github.com/lorenwest/node-config/wiki/File-Formats)
+* [Configuration Files](https://github.com/lorenwest/node-config/wiki/Configuration-Files)
 * [Common Usage](https://github.com/lorenwest/node-config/wiki/Common-Usage)
 * [Environment Variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables)
 * [Reserved Words](https://github.com/lorenwest/node-config/wiki/Reserved-Words)
