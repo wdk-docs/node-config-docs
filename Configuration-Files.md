@@ -74,7 +74,7 @@ Customer
 
 ### JavaScript
 
-Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  Isn't it nice to live in a world with choice?  Example:
+Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  It's nice to live in a world with choice.  Example:
 
 ```
 var fs = require('fs');
