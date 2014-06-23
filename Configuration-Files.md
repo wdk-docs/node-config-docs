@@ -29,11 +29,88 @@ The ```local``` files are intended to *not* be tracked in your version control s
 
 ## File Formats
 
-The following configuration file formats are supported.  All ```//``` or ```/* ... */``` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don't support comments.
+### Comments
+
+All ```//``` or ```/* ... */``` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don't natively support comments.
 
 ### JSON
 
-This is 
+Files ending in ```.json``` are parsed in JSON format.  As a native format, no additional libraries are needed to use JSON.  Example:
+
+```
+{
+  // Customter module configs
+  "Customer": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 5984,
+      "dbName": "customers"
+    },
+    "credit": {
+      "initialLimit": 100,
+      // Set low for development
+      "initialDays": 1 
+    }
+  }
+}
+```
+
+### YAML
+
+Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
+
+```
+// Customter module configs
+Customer
+  dbConfig:
+    host: localhost
+    port: 5984
+    dbName: customers
+  credit:
+    initialLimit: 100
+    // Set low for development
+    initialDays: 1 
+```
+
+### JavaScript
+
+Files ending in ```.js``` are loaded and run as JavaScript modules.  The modules must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  Isn't it nice to live in a world with choice?  Example:
+
+```
+var fs = require('fs');
+module.export = {
+  // Customter module configs
+  Customer: {
+    dbConfig: {
+      host: "localhost",
+      port: 5984,
+      dbName: "customers"
+    },
+  
+  // Load credit configs externally
+  credit: JSON.parse(fs.loadFileSync('./currentCreditPolicy.json'))
+} 
+```
+
+
+### Coffee
+
+```
+// Customter module configs
+Customer
+  dbConfig:
+    host: localhost
+    port: 5984
+    dbName: customers
+  credit:
+    initialLimit: 100
+    // Set low for development
+    initialDays: 1 
+```
+
+Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
+
+
 NOTE: If you use .yml, .yaml, or .coffee file extensions, the 'yaml' or 'coffee-script' modules must be available. These external dependencies are not included from this package.
 Configuration files can be in JavaScript format, JSON format, COFFEE format, or YAML format - whichever you prefer.
 
