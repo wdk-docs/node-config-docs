@@ -43,8 +43,7 @@ Using ```get()``` is the preferred method because it fails fast if you misspell 
 
 If you want to test if a configuration without wrapping in a try/catch, ```has()``` is available at all config levels:
 ```
-var customerConfig = require('config').Customer;
-if (customerConfig.has('dbConfig.host')) { 
+if (config.has('Customer.dbConfig')) { 
    ...
 }
 ```
