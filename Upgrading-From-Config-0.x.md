@@ -29,12 +29,10 @@ var customerDbHost = config.Customer.dbConfig.host;
 ```
 which is like prior versions that perform no validation, or this:
 ```
-var config = require('config');
 var customerDbHost = config.get('Customer').get('dbConfig').get('host');
 ```
 which throws an exception on typos but is kind of wordy, or this:
 ```
-var config = require('config');
 var customerDbHost = config.get('Customer.dbConfig.host');
 ```
 win.
