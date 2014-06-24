@@ -1,10 +1,10 @@
 ## Incompatible Changes
 
-Version 1.0 is a major revision release - a nice way of saying it may break something relying on a prior version.  There is one fairly large difference, and a few you probably won't notice.
+Version 1.0 is a major revision release - a nice way of saying it may break something relying on a prior version.  There are two incompatible changes - one fairly large and one you probably won't notice.
 
 ### Immutable Configurations
 
-Changing configurations after the first ```require('config');``` is not supported as of 1.0.  It was the feature causing the most confusion, support, code complexity, and frankly - what were we thinking?
+Changing configurations after the first ```require('config');``` is no longer supported.  It was the feature causing the most confusion, support, code complexity, and frankly - what were we thinking?
 
 If you relied on the ability to alter configurations at runtime, you will have to replace that with a different implementation, or continue using the 0.4.x release branch.
 
@@ -27,16 +27,24 @@ The top level config object and all sub-objects have a ```get()``` function expo
 var config = require('config');
 var customerDbHost = config.Customer.dbConfig.host;
 ```
-which does no validation, or this:
+which is like prior versions that perform no validation, or this:
 ```
 var config = require('config');
 var customerDbHost = config.get('Customer').get('dbConfig').get('host');
 ```
-which throws an exception on typos but is hard to use, or this:
+which throws an exception on typos but is kind of wordy, or this:
 ```
 var config = require('config');
 var customerDbHost = config.get('Customer.dbConfig.host');
 ```
-win.  
+win.
 
-Using ```get()``` is the preferred method because it fails fast if you mis-spell a configuration or if a configuration wasn't loaded for some reason.
+Using ```get()``` is the preferred method because it fails fast if you misspell a parameter or if the configs weren't loaded for some reason.
+
+If you want to test if a configuration without wrapping in a try/catch, ```has()``` is available at all config levels:
+```
+var customerConfig = require('config').Customer;
+if (customerConfig.has('dbConfig.host')) { 
+   ...
+}
+```
