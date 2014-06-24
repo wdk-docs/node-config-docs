@@ -1,4 +1,4 @@
-## Major Revision
+## Incompatible Changes
 
 Version 1.0 is a major revision release - a nice way of saying it may break something relying on a prior version.  There is one fairly large difference, and a few you probably won't notice.
 
