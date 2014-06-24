@@ -30,7 +30,7 @@ var customerDbHost = config.Customer.dbConfig.host;
 which does no validation, or this:
 ```
 var config = require('config');
-var customerDbHost = config.get('Customer').get('dbConfig').get('host);
+var customerDbHost = config.get('Customer').get('dbConfig').get('host');
 ```
 which throws an exception on typos but is hard to use, or this:
 ```
