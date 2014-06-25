@@ -9,5 +9,5 @@
 * [External Configuration Management Tools](https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools)
 * [Examining Configuration Sources](https://github.com/lorenwest/node-config/wiki/Examining-Configuration-Sources)
 * [Using Config Utilities](https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities)
-* [Compatibility Design](https://github.com/lorenwest/node-config/wiki/Compatibility-Design)
+* [Future Compatibility](https://github.com/lorenwest/node-config/wiki/Future-Compatibility)
 * [Upgrading from Config 0.x](https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x)
