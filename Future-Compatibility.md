@@ -1,6 +1,6 @@
 ## Compatibility Statement
 
-In acknowledgement of the effort to change dependent software, node-config will:
+In acknowledgement of the effort required to change dependent software, node-config will:
 
 * Use [semver versioning](https://github.com/lorenwest/node-config/wiki/Future-Compatibility#semver-versioning) to promote stable deployments
 * Limit backward incompatibilities in favor of alternate solutions
