@@ -9,7 +9,7 @@ In acknowledgement of the effort required to change dependent software, node-con
 
 ### Semver Versioning
 
-In order to promote stable deployments, node-config uses [semver versioning](http://semver.org/) when expressing deployment versions.
+To promote stable deployments, node-config uses [semver versioning](http://semver.org/) when expressing deployment versions.
 
 This makes it appropriate to run tests for a particular ```MAJOR.MINOR``` version, and be confident about specifying a wildcard ```PATCH``` version.  For example, if the current version you've tested with is ```1.3.4```, your node-config dependency in package.json could be:
 ```
