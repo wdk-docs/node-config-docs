@@ -23,7 +23,7 @@ without introducing significant risk.  You can also specify ```1.3.4``` if you p
 
 A minimum of one year will be given between the time of an incompatibility announcement (below) and the release of the version containing the incompatibility.
 
-If it's possible to detect usage known to be incompatible in an upcoming release, a one-time warning per application run will be placed onto ```console.error``` for each type of upcoming incompatibility being used by the application.
+If it's possible to detect your application using a future incompatibility, a one-time warning per application run will be placed onto ```console.error``` for each type of incompatibility.
 
 ### Upcoming Incompatibilities
 
