@@ -16,7 +16,7 @@ The preferred method of accessing configurations is through ```get()```:
 ```
 var dbHost = config.get('dbConfig.host');
 ```
-This gives you a fail-fast system if (when?) someone screws up your configuration files.  It's is more common than you'd think.
+This gives you a fail-fast system if (when?) someone screws up your configuration files - it's more common than you'd think.
 
 The alternative is to attain the value directly:
 ```
