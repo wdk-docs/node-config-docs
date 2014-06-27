@@ -25,8 +25,8 @@ This variable contains the name of your application's deployment environment, re
 
 This contains the path to the directory containing your [configuration files](https://github.com/lorenwest/node-config/wiki/Configuration-Files).  It can be a direct path from the root, or a relative path if it begins with ```./``` or ```../```.  The default ```CONFIG_DIR``` is the ```/config``` directory under the *current working directory*, usually your application root - the value returned by ```process.cwd() + '/config'```.
 
-The current value of ```CONFIG_DIR``` is available in code:
+The current value of ```CONFIG_DIR``` is available in ```config.util.getEnv()```:
 ```
 var config = require('config');
-console.log('CONFIG_DIR: ' + config.util.CONFIG_DIR);
+console.log('CONFIG_DIR: ' + config.util.getEnv('CONFIG_DIR'));
 ```
