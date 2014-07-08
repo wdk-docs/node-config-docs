@@ -30,3 +30,6 @@ If it's possible to detect your application using a future incompatibility, a on
 #### Version 2.x - (not before July, 2015)
 
 * Less Cluttered Top Level Namespace (announced June, 2014)<br>[Utility functions](https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities) available under the ```config.util``` namespace since version 1.0 will no longer be available at the top level ```config``` namespace.  Starting at Version 2 they will only be available under ```config.util```, and the only words in the [Reserved Words](https://github.com/lorenwest/node-config/wiki/Reserved-Words) list will be ```get```, ```has```, and ```util```.
+
+* Watch utility deprecated (announced July, 2014)<br>
+The watch method was built as a notification of changed configuration values.  Since node-config 1.0, configuration changes are no longer allowed, and the watch function was kept in but deprecated with a warning.  The watch function will not be available in Version 2.0.
