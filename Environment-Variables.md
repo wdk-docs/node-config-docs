@@ -38,3 +38,15 @@ The current value of ```CONFIG_DIR``` is available in ```config.util.getEnv()```
 var config = require('config');
 console.log('CONFIG_DIR: ' + config.util.getEnv('CONFIG_DIR'));
 ```
+
+### NODE_CONFIG
+
+This allows you to override any configuration via the command line or environment.  The ```NODE_CONFIG``` environment variable must be a JSON string.  Any configuration contained in this will override the configuration found and merged from config files.
+
+If ```NODE_CONFIG``` is supplied both from the O/S environment and the command line they will both be used, with the command line value favored over the O/S environment value.
+
+The current value of ```CONFIG_DIR``` is available in ```config.util.getEnv()```:
+```
+var config = require('config');
+console.log('CONFIG_DIR: ' + config.util.getEnv('CONFIG_DIR'));
+```
