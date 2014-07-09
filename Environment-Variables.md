@@ -1,25 +1,33 @@
-## O/S Environment
+Node-config uses a handful of environment variables for it's own configuration.  These are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap.
 
-Environment variables are usually exported in your shell before loading your app.  
-
-The following example sets the ```NODE_ENV``` variable to ```stage```:
+Example exporting to the O/S before loading your app:
 ```
 cd /my/application
 export NODE_ENV=stage
 node myapp.js
 ```
 
-You can also set environment variables in your application bootstrap, as long as they're set before the first load of node-config.  This example sets a custom configuration directory:
+Example passing on the command line:
 ```
-process.env.CONFIG_DIR = process.cwd() + '../allAppConfigs/myAppName';
-var config = require('config');
+cd /my/application
+node myapp.js --NODE_ENV=stage
 ```
 
-The following environment variables are understood by node-config:
+Example setting in JavaScript before the first load of node-config:
+```
+process.env.NODE_ENV = "stage";
+var config = require('config');
+```
 
 ### NODE_ENV
 
 This variable contains the name of your application's deployment environment, representing the ```{deployment}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order).  Common values include ```dev```, ```stage```, ```production-east```, etc. to fit your deployment strategy.
+
+The current value of ```NODE_ENV``` is available in ```config.util.getEnv()```:
+```
+var config = require('config');
+console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
+```
 
 ### CONFIG_DIR
 
