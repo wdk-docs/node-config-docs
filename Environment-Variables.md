@@ -52,8 +52,23 @@ $ export NODE_CONFIG='{"Customer":{"dbConfig":{"host":"customerdb.prod"}}}'
 $ node myapp.js
 ```
 
-The current value of ```NODE_CONFIG``` is available in ```config.util.getEnv()```:
+The current value of ```NODE_CONFIG```, mixed from the O/S environment and command line is available in ```config.util.getEnv()```:
 ```
 var config = require('config');
 console.log('NODE_CONFIG: ' + config.util.getEnv('NODE_CONFIG'));
+```
+
+### HOSTNAME (or HOST)
+
+This variable contains the name of your host server, representing the ```{hostname}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order). 
+
+Sometimes the default hostname returned by ```os.hostname()``` isn't what you expect, and setting this before running your app makes sure you've got the right name.
+
+For backward compatibility, if the **HOST** variable is set, that value is used instead.
+
+Regardless of the variable or default used, the current value of ```HOSTNAME``` is available in ```config.util.getEnv()```:
+
+```
+var config = require('config');
+console.log('HOSTNAME: ' + config.util.getEnv('HOSTNAME'));
 ```
