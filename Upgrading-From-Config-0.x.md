@@ -45,3 +45,19 @@ if (config.has('Customer.dbConfig')) {
    ...
 }
 ```
+
+### config.util
+
+The config package comes with a bunch of [handy utilities](https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities), resulting in a large list of [reserved words](https://github.com/lorenwest/node-config/wiki/Reserved-Words) that couldn't be used in configurations.
+
+Starting with node-config 1.0, these utilities have been moved to a single ```util``` object attached to configuration objects. Using these utilities from ```config``` vs. ```config.util``` will cause a deprecation warning in node-config 1.0, and will not be supported in [version 2.0](https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities).
+
+This ```util``` object is available at all levels, so if you do something like this:
+```
+var dbConfig = require('config').get('Customer.dbConfig');
+```
+you'll still be able to access config utilities using ```dbConfig.util```.  For example, if you wanted a deep clone of a JavaScript object, you could do this:
+
+```
+var clonedObject = dbConfig.util.cloneDeep(myObject);
+```
