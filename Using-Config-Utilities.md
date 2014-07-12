@@ -62,7 +62,7 @@ Example:
 ```
 var customerCopy = config.util.cloneDeep(myCustomer);
 var same = config.util.equalsDeep(myCustomer, customerCopy); // <-- true
-customerCopy.creditLimit = 29238;
+customerCopy.creditLimit = 7000;
 var same = config.util.equalsDeep(myCustomer, customerCopy); // <-- false
 ```
 
