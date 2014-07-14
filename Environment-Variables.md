@@ -75,7 +75,7 @@ console.log('HOSTNAME: ' + config.util.getEnv('HOSTNAME'));
 
 ### NODE_APP_INSTANCE
 
-As described in the [multi instance deployment](https://github.com/lorenwest/node-config/wiki/Configuration-Files#multi-instance-deployments) section, if you're running multiple instances of your app and need different configurations for each instance, this enables loading of instance specific config files.
+As described in the [multi instance deployment](https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances) section, if you're running multiple instances of your app and need different configurations for each instance, this enables loading of instance specific config files.
 
 The current value of ```NODE_APP_INSTANCE``` is available in ```config.util.getEnv()```
 
