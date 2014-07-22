@@ -2,26 +2,25 @@ Node-config comes with a handy set of utilities necessary for implementing node-
 
 Below is a list of these utilities, in order of general usefulness - your mileage may vary.
 
-### getEnv(varName)
+### extendDeep(mergeInto, mergeFrom..., depth)
 
-Get the current value of a config environment variable
+Extend an object (and any object it contains) with one or more objects (and objects contained in them).
 
-This method returns the value of the specified config environment variable,
-including any defaults or overrides.
-
-Environment variables that you can inspect include ```NODE_ENV```, ```CONFIG_DIR```, ```NODE_CONFIG```,
-```HOSTNAME```, and ```NODE_APP_INSTANCE```.  More information about these are in the [environment variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables) wiki page.
+This does not replace deep objects as other extend functions do, 
+but dives into them extending individual elements instead.
 
 <table>
 <tr><th>param</th><th>type</th><th>description</th></tr>
-<tr><td>varName</td><td>string</td><td>The environment variable name</td></tr>
-<tr><td>(return)</td><td>string</td><td>The value of the environment variable</td></tr>
+<tr><td>mergeInto</td><td>object</td><td>The object to merge into</td></tr>
+<tr><td>mergeFrom...</td><td>object</td><td>Any number of objects to merge from</td></tr>
+<tr><td>depth</td><td>integer</td><td>An optional depth to prevent recursion.  Default: 20.</td></tr>
+<tr><td>(return)</td><td>object</td><td>The altered mergeInto object is returned</td></tr>
 </table>
 
-Example:
+The following example merges the contents of two objects into a new object.
 
 ```
-console.log('Configuration directory: ' + config.getEnv('CONFIG_DIR'));
+var newObject = config.util.extendDeep({}, baseObject, anotherObject);
 ```
 
 ### cloneDeep(copyFrom, depth)
@@ -82,4 +81,24 @@ the changes made to object1 which resulted in object2.
 <tr><td>(return)</td><td>object</td><td>A differential object, which if extended onto object1 would result in object2.</td></tr>
 </table>
 
- 
+### getEnv(varName)
+
+Get the current value of a config environment variable
+
+This method returns the value of the specified config environment variable,
+including any defaults or overrides.
+
+Environment variables that you can inspect include ```NODE_ENV```, ```CONFIG_DIR```, ```NODE_CONFIG```,
+```HOSTNAME```, and ```NODE_APP_INSTANCE```.  More information about these are in the [environment variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables) wiki page.
+
+<table>
+<tr><th>param</th><th>type</th><th>description</th></tr>
+<tr><td>varName</td><td>string</td><td>The environment variable name</td></tr>
+<tr><td>(return)</td><td>string</td><td>The value of the environment variable</td></tr>
+</table>
+
+Example:
+
+```
+console.log('Configuration directory: ' + config.getEnv('CONFIG_DIR'));
+```
