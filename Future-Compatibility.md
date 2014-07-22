@@ -30,7 +30,7 @@ Once the incompatibility is introduced, an error will be placed into ```console.
 
 ### Upcoming Incompatibilities
 
-#### Version 2.x - (not before July, 2015)
+#### Version 2.0 - (not before July, 2015)
 
 * Less Cluttered Top Level Namespace (announced June, 2014)<br>[Utility functions](https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities) available under the ```config.util``` namespace since version 1.0 will no longer be available at the top level ```config``` namespace.  Starting at Version 2 they will only be available under ```config.util```, and the only words in the [Reserved Words](https://github.com/lorenwest/node-config/wiki/Reserved-Words) list will be ```get```, ```has```, and ```util```.
 
