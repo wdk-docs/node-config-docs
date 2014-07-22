@@ -1,2 +1,1 @@
-***
-Copyright (c) 2010-2014 Loren West [and other contributors](https://github.com/lorenwest/node-config#contributors)
+> Copyright (c) 2010-2014 Loren West [and other contributors](https://github.com/lorenwest/node-config#contributors)
