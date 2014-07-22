@@ -37,7 +37,7 @@ var customerDbHost = config.get('Customer.dbConfig.host');
 ```
 win.
 
-Using ```get()``` is the preferred method because it fails fast if you misspell a parameter or if the configs weren't loaded for some reason.
+Using ```get()``` is the preferred method because it fails fast if you misspell(sp?) a parameter or if the configs weren't loaded for some reason.
 
 If you want to test if a configuration without wrapping in a try/catch, ```has()``` is available at all config levels:
 ```
