@@ -15,7 +15,7 @@
 
 * [Configuring from a DB / External Source](https://github.com/lorenwest/node-config/wiki/Configuring-from-a-DB-/-External-Source) - Merging external configurations at runtime
 
-* [External Configuration Management Tools](https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools) - Using node-config with other CM deployment tools
+* [External Configuration Management Tools](https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools) - Using node-config with other CM tools
 
 * [Examining Configuration Sources](https://github.com/lorenwest/node-config/wiki/Examining-Configuration-Sources) - Determining the origin of configuration values
 
