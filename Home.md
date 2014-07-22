@@ -1,4 +1,4 @@
-## Wiki Contents
+## Articles
 * [Configuration Files](https://github.com/lorenwest/node-config/wiki/Configuration-Files) - Managing configuration files for your application
 
 * [Common Usage](https://github.com/lorenwest/node-config/wiki/Common-Usage) - Using node-config in your application code
