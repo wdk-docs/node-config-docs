@@ -59,7 +59,7 @@ console.log('My module config param1: ' + config.get('MyModule.param1'));
 
 This pattern gives apps using your module the choice of using node-config mechanisms for configuration, or using your existing methods (as shown at the top of this page).
 
-For example if they choose to configure using node-config file based configurations:
+For example, they can put your module configurations next to their other configurations and extend configs based on deployment type:
 
 ```
 default.json:
