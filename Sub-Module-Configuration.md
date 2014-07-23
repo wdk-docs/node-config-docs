@@ -28,14 +28,14 @@ Without breaking existing usage of your module, and without requiring node-confi
 
 Here's how it works: 
 
-At the top of your module, load node-config telling it to suppress the warnings that it can't find any configuration files.  This is for applications that aren't using node-config.
+Load node-config at the top of your module like normal, only specify `SUPPRESS_NO_CONFIG_WARNING` so applications don't get "No config files found" warnings if they aren't using node-config.
 
 ```
 process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
 var config = require('config');
 ```
 
-In the place within your module that sets configurations, do something like this:
+Then do something like this where your configurations are passed in by the app:
 
 ```
 function myModuleConstructor(configs) {
@@ -73,6 +73,6 @@ default.json:
 }
 ```
 
+This is an easy way to add new configuration functionality to your NPM module, while staying compatible with existing usage.
 
-
- 
+It unifies your module configuration with apps choosing to use node-config, and stays out of the way for apps using other configuration systems.
