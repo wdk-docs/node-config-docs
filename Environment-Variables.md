@@ -1,4 +1,4 @@
-Node-config uses a handful of environment variables for it's own configuration.  These are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap.
+Node-config uses a handful of environment variables for its own configuration.  These are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap.
 
 Example exporting to the O/S before loading your app:
 ```
