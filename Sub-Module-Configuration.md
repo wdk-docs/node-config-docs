@@ -28,7 +28,7 @@ Without breaking existing usage of your module, and without requiring node-confi
 
 Here's how it works: 
 
-Load node-config at the top of your module like normal, only specify `SUPPRESS_NO_CONFIG_WARNING` so applications don't get "No config files found" warnings if they aren't using node-config.
+Load node-config at the top of your module like normal, and specify the `SUPPRESS_NO_CONFIG_WARNING` [environment variable](https://github.com/lorenwest/node-config/wiki/Environment-Variables) so applications don't get *No config files* warnings if they aren't using node-config.
 
 ```
 process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
