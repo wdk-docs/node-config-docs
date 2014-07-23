@@ -19,7 +19,7 @@ process.env.NODE_ENV = "stage";
 var config = require('config');
 ```
 
-### NODE_ENV
+## NODE_ENV
 
 This variable contains the name of your application's deployment environment, representing the ```{deployment}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order).  Common values include ```dev```, ```stage```, ```production-east```, etc. to fit your deployment strategy.
 
@@ -29,7 +29,7 @@ var config = require('config');
 console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
 ```
 
-### CONFIG_DIR
+## CONFIG_DIR
 
 This contains the path to the directory containing your [configuration files](https://github.com/lorenwest/node-config/wiki/Configuration-Files).  It can be a direct path from the root, or a relative path if it begins with ```./``` or ```../```.  The default ```CONFIG_DIR``` is the ```/config``` directory under the *current working directory*, usually your application root - the value returned by ```process.cwd() + '/config'```.
 
@@ -39,7 +39,7 @@ var config = require('config');
 console.log('CONFIG_DIR: ' + config.util.getEnv('CONFIG_DIR'));
 ```
 
-### NODE_CONFIG
+## NODE_CONFIG
 
 This allows you to override any configuration from the command line or shell environment.  The ```NODE_CONFIG``` environment variable must be a JSON formatted string.  Any configurations contained in this will override the configurations found and merged from the config files.
 
@@ -58,7 +58,7 @@ var config = require('config');
 console.log('NODE_CONFIG: ' + config.util.getEnv('NODE_CONFIG'));
 ```
 
-### HOSTNAME (or HOST)
+## HOSTNAME (or HOST)
 
 This variable contains the name of your host server, representing the ```{hostname}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order). 
 
@@ -73,7 +73,7 @@ var config = require('config');
 console.log('HOSTNAME: ' + config.util.getEnv('HOSTNAME'));
 ```
 
-### NODE_APP_INSTANCE
+## NODE_APP_INSTANCE
 
 As described in the [multi instance deployment](https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances) section, if you're running multiple instances of your app and need different configurations for each instance, this enables loading of instance specific config files.
 
@@ -83,4 +83,20 @@ The current value of ```NODE_APP_INSTANCE``` is available in ```config.util.getE
 var config = require('config');
 console.log('NODE_APP_INSTANCE: ' + config.util.getEnv('NODE_APP_INSTANCE'));
 ```
- 
+
+## SUPPRESS_NO_CONFIG_WARNING
+
+If this environment variable contains anything, then the following message
+```
+WARNING: No configurations found in configuration directory
+```
+will be suppressed if no configurations were found when loading node-config.  This is important for NPM modules using node-config to allow apps using these sub-modules the option of using node-config if they choose, or a different configuration system without getting annoying warning messages.
+
+See the article on [sub module configuration](https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration) for more information about using node-config in an NPM module.
+
+The current value of ```SUPPRESS_NO_CONFIG_WARNING``` is available in ```config.util.getEnv()```
+
+```
+var config = require('config');
+console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CONFIG_WARNING'));
+```
