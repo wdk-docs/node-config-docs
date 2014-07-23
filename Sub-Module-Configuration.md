@@ -47,7 +47,7 @@ function myModuleConstructor(configs) {
 
   // Mixin configs that have been passed in, and make those my defaults
   config.util.extendDeep(myDefaultConfigs, configs);
-  config.util.setModuleDefaults('MyModule', myConfigDefaults);
+  config.util.setModuleDefaults('MyModule', myDefaultConfigs);
 }
 ```
 
