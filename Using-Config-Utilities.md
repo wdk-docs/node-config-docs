@@ -142,8 +142,8 @@ Get the current value of a config environment variable
 This method returns the value of the specified config environment variable,
 including any defaults or overrides.
 
-Environment variables that you can inspect include ```NODE_ENV```, ```CONFIG_DIR```, ```NODE_CONFIG```,
-```HOSTNAME```, and ```NODE_APP_INSTANCE```.  More information about these are in the [environment variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables) wiki page.
+Environment variables that you can inspect include `NODE_ENV`, `CONFIG_DIR`, `NODE_CONFIG`,
+`HOSTNAME`, `NODE_APP_INSTANCE`, and `SUPPRESS_NO_CONFIG_WARNING`.  More information about these are in the [environment variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables) wiki page.
 
 <table>
 <tr><th>param</th><th>type</th><th>description</th></tr>
