@@ -13,7 +13,7 @@
 
 * [Sub-Module Configuration](https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration) - Using node-config in your NPM module
 
-* [Configuring from a DB or External Source](https://github.com/lorenwest/node-config/wiki/Configuring-from-a-DB) - Merging external configurations at runtime
+* [Configuring from a DB or External Source](https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source) - Merging external configurations at runtime
 
 * [External Configuration Management Tools](https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools) - Using node-config with other CM tools
 
