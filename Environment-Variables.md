@@ -1,4 +1,4 @@
-Node-config uses a handful of environment variables for its own configuration.  These are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap.
+Node-config uses a handful of environment variables for its own configuration. It can also use [custom environment variables](#custom_environment_variables) to override your app's configuration. In both cases, these are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap.
 
 Example exporting to the O/S before loading your app:
 ```
@@ -100,3 +100,27 @@ The current value of ```SUPPRESS_NO_CONFIG_WARNING``` is available in ```config.
 var config = require('config');
 console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CONFIG_WARNING'));
 ```
+
+# Custom Environment Variables
+
+(Still in development, see issue #129.) Some deployment situation rely heavily on environment variables to configure secrets and settings best left out of a codebase. [NODE_CONFIG](#node_config) lets you use a JSON string to deal with this, but sometimes simpler, flatter environment variables are better suited.
+
+To enable custom environment variables, create a configuration file, `custom_environment_variables.json` (or `.yaml` or `.js`) mapping the environment variable names into your configuration structure. For example:
+
+```
+{
+  "Customer": {
+    "dbConfig": {
+      "host": "PROD_SERVER"
+    },
+    "credit": {
+      "initialDays": "CR_ID"
+    }
+  }
+}
+```
+
+...would cause `node-config` to check for the environment variables `PROD_SERVER` and `CR_ID`. If they exist, they would override the values for `Customer.dbConfig.host`, and `Customer.credit.initialDays` in your configuration. Empty environment variables are ignored, and their mappings have no effect on your config.
+
+**Precedence**: Custom environment variables override all configuration files, including `local.json`. Only command line options take precedence over them.
+
