@@ -80,6 +80,8 @@ Customer
     initialDays: 1 
 ```
 
+The `dependencies` section of your application's `package.json` file must contain the yaml parser, and `js-yaml` is the suggested parser.
+
 ### JavaScript
 
 Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  It's nice to live in a world with choice.  Example:
@@ -103,7 +105,7 @@ module.exports = {
 
 ### CoffeeScript
 
-You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module. CoffeeScript must either be loaded with the global ```Coffee``` variable, or ```require('coffee-script')``` will be run to load it.  Example CoffeeScript configuration file:
+You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module.  Example CoffeeScript configuration file:
 
 ```
 module.exports = 
@@ -118,3 +120,6 @@ module.exports =
       // Set low for development
       initialDays: 1 
 ```
+
+CoffeeScript is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain coffee-script in order to read CoffeeScript configuration files.
+
