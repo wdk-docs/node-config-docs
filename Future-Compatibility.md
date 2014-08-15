@@ -18,7 +18,7 @@ This makes it appropriate to run tests for a particular `MAJOR.MINOR` version, a
   "config": ">=1.3.4 <1.4.0",
   ...
 ```
-without introducing significant risk.  You can also specify ```1.3.4``` if you prefer version stability to bug fixes.
+without introducing significant risk.  You can also specify `"config": "1.3.4",` if you prefer version stability to bug fixes.
 
 ### Ample Warning
 
