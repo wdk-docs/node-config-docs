@@ -84,6 +84,19 @@ var config = require('config');
 console.log('NODE_APP_INSTANCE: ' + config.util.getEnv('NODE_APP_INSTANCE'));
 ```
 
+## ALLOW_CONFIG_MUTATIONS
+
+If this environment variable contains anything, then mutations of the configuration object are allowed.  This is for edge cases such as testing, where it is important to mutate configurations for different scenarios within the same execution.
+
+The safety afforded by making the configuration object immutable is lost when this environment variable is used.
+
+The current value of ```ALLOW_CONFIG_MUTATIONS``` is available in ```config.util.getEnv()```
+
+```
+var config = require('config');
+console.log('ALLOW_CONFIG_MUTATIONS: ' + config.util.getEnv('ALLOW_CONFIG_MUTATIONS'));
+```
+
 ## SUPPRESS_NO_CONFIG_WARNING
 
 If this environment variable contains anything, then the following message
