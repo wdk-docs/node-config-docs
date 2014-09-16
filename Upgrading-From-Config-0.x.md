@@ -4,13 +4,15 @@ Version 1.0 is a major revision release - a nice way of saying it may break some
 
 ### Immutable Configurations
 
-Changing configurations after the first ```require('config');``` is no longer supported.  It was the feature causing the most confusion, support, code complexity, and frankly - what were we thinking?
+Updating configurations at runtime is no longer supported.  It was the feature causing the most confusion, support, code complexity, and frankly - what were we thinking?
 
-If you relied on the ability to alter configurations at runtime, you will have to replace that with a different implementation, or continue using the 0.4.x release branch.
+If you relied on the ability to alter configurations at runtime, you will have to replace that with a different implementation, or continue using the 0.4.x release branch. This is the most significant compatibility change, and it came only after serious consideration and community input.
 
-This is the most significant compatibility change, and it came only after serious consideration and community input.  
+Startup code may still set and extend configurations as long as it's done before the first use of the ```config.get()``` method.  This allows your app startup to load and merge configurations from external sources.  If this startup code needs access to config values without calling ```config.get()``` you can access values directly from the config object.
 
-And to take it one step further, configs are made immutable so attempts to change config values will fail. Elements can be added to existing objects, but loaded configurations cannot change.
+In addition, some use cases such as tests require config mutations.  An ```ALLOW_CONFIG_MUTATIONS``` [environment variable](https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations) has been added to address these edge cases.
+
+Guaranteeing the stability of configuration values is now a core part of node-config.
 
 ### Load Ordering
 
