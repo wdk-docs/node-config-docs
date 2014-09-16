@@ -1,1 +1,3 @@
-(still to be written).  In a nutshell: define only DB connection settings in files, using those settings to connect to the DB. Once connected, read additional configurations and add them to the config object returned from `require('config');`.  Just make sure configs read from the DB aren't also defined in files because file based configs are immutable.  Then call `config.util.makeImmutable(config);` to make your newly added configs immutable.
+(still to be written).  In a nutshell: define only DB connection settings in files, using those settings to connect to the DB. Once connected, read additional configurations and add them to the config object returned from `require('config');`.
+
+Make sure any external overrides are done in the application bootstrap - before anyone calls the first ```config.get();```, because the config object is made immutable as soon as any client uses the values via get().
