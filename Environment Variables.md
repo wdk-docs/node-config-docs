@@ -10,7 +10,7 @@ node myapp.js
 Example passing on the command line:
 ```
 cd /my/application
-node myapp.js --NODE_ENV=stage
+NODE_ENV=stage node myapp.js 
 ```
 
 Example setting in JavaScript before the first load of node-config:
