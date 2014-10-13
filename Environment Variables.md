@@ -29,14 +29,14 @@ var config = require('config');
 console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
 ```
 
-## CONFIG_DIR
+## NODE_CONFIG_DIR
 
-This contains the path to the directory containing your [configuration files](https://github.com/lorenwest/node-config/wiki/Configuration-Files).  It can be a direct path from the root, or a relative path if it begins with ```./``` or ```../```.  The default ```CONFIG_DIR``` is the ```/config``` directory under the *current working directory*, usually your application root - the value returned by ```process.cwd() + '/config'```.
+This contains the path to the directory containing your [configuration files](https://github.com/lorenwest/node-config/wiki/Configuration-Files).  It can be a direct path from the root, or a relative path if it begins with ```./``` or ```../```.  The default ```NODE_CONFIG_DIR``` is the ```/config``` directory under the *current working directory*, usually your application root - the value returned by ```process.cwd() + '/config'```.
 
-The current value of ```CONFIG_DIR``` is available in ```config.util.getEnv()```:
+The current value of ```NODE_CONFIG_DIR``` is available in ```config.util.getEnv()```:
 ```
 var config = require('config');
-console.log('CONFIG_DIR: ' + config.util.getEnv('CONFIG_DIR'));
+console.log('NODE_CONFIG_DIR: ' + config.util.getEnv('NODE_CONFIG_DIR'));
 ```
 
 ## NODE_CONFIG
