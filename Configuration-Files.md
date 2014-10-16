@@ -17,7 +17,7 @@ Files in the config directory are loaded in the following order:
   
 Where 
 
-* ```EXT``` can be .yml, .yaml, .coffee, .json, or .js depending on the format you prefer (see below)
+* ```EXT``` can be .yml, .yaml, .coffee, .cson, .json, or .js depending on the format you prefer (see below)
 * ```{hostname}``` is your server name, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order)
 * ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
 
@@ -122,4 +122,32 @@ module.exports =
 ```
 
 CoffeeScript is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain coffee-script in order to read CoffeeScript configuration files.
+
+### CSON - CoffeeScript Object Notation
+
+Files ending in ```.cson``` are loaded and parsed in CoffeeScript object notation, because you can never have enough file formats.  Example CSON configuration file:
+
+```
+{
+  #comment
+  Customers: {
+    dbName: 'customers'
+    dbPassword: 'pw1'
+    lang: [
+      'en'
+      'es'
+    ]
+  },
+  AnotherModule: {
+    parm4: "value4"
+  },
+  staticArray: [
+    2
+    1
+    3
+  ]
+}
+```
+
+CSON is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain ```cson``` in order to read CoffeeScript object notation configuration files.
 
