@@ -149,5 +149,5 @@ Files ending in ```.cson``` are loaded and parsed in CoffeeScript object notatio
 }
 ```
 
-CSON is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain ```cson``` in order to read CoffeeScript object notation configuration files.
+CSON is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```cson``` module in order to read CoffeeScript object notation configuration files.
 
