@@ -37,11 +37,11 @@ This works for all configuration files, so if your ```NODE_APP_INSTANCE=3``` and
 
 ## File Formats
 
-### Comments
+The following file formats are supported, recognized by their file extension.
 
 All ```//``` or ```/* ... */``` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don't natively support comments.
 
-### JSON
+### Javascript Object Notation - .json
 
 Files ending in ```.json``` are parsed in JSON format.  Example:
 
@@ -63,7 +63,7 @@ Files ending in ```.json``` are parsed in JSON format.  Example:
 }
 ```
 
-### YAML
+### Yet another markup language - .yaml
 
 Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
 
@@ -82,7 +82,7 @@ Customer
 
 The `dependencies` section of your application's `package.json` file must contain the yaml parser, and `js-yaml` is the suggested parser.
 
-### JavaScript
+### JavaScript module - .js
 
 Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  It's nice to live in a world with choice.  Example:
 
@@ -103,7 +103,7 @@ module.exports = {
 } 
 ```
 
-### CoffeeScript
+### CoffeeScript module - .coffee
 
 You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module.  Example CoffeeScript configuration file:
 
@@ -123,7 +123,7 @@ module.exports =
 
 CoffeeScript is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain coffee-script in order to read CoffeeScript configuration files.
 
-### CSON - CoffeeScript Object Notation
+### CoffeeScript Object Notation - .cson
 
 Files ending in ```.cson``` are loaded and parsed in CoffeeScript object notation, because you can never have enough file formats.  Example CSON configuration file:
 
@@ -151,3 +151,16 @@ Files ending in ```.cson``` are loaded and parsed in CoffeeScript object notatio
 
 CSON is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```cson``` module in order to read CoffeeScript object notation configuration files.
 
+
+### Properties file format - .properties
+
+Files ending in ```.properties``` are loaded and parsed in properties file notation, a dot-style name spacing style popular in many non-javascript utilities.  Example .properties configuration file:
+
+```
+# Comment
+Customer.dbConfig.host = localhost
+Customer.dbConfig.port = 5984
+```
+Every configuration would end up being a string, but that's not particularly troublesome in javascript.
+
+The .properties parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```properties``` module in order to read and parse .properties files.
