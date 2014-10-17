@@ -39,7 +39,7 @@ This works for all configuration files, so if your ```NODE_APP_INSTANCE=3``` and
 
 The following file formats are supported, recognized by their file extension.
 
-All ```//``` or ```/* ... */``` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don't natively support comments.
+All ```//``` and ```/* ... */``` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don't natively support comments.
 
 ### Javascript Object Notation - .json
 
