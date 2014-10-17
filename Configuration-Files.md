@@ -17,7 +17,7 @@ Files in the config directory are loaded in the following order:
   
 Where 
 
-* ```EXT``` can be .yml, .yaml, .coffee, .cson, .json, or .js depending on the format you prefer (see below)
+* ```EXT``` can be .yml, .yaml, .coffee, .cson, .properties, .json, or .js depending on the format you prefer (see below)
 * ```{hostname}``` is your server name, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order)
 * ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
 
