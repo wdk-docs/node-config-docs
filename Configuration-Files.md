@@ -63,6 +63,28 @@ Files ending in ```.json``` are parsed in JSON format.  Example:
 }
 ```
 
+### Javascript 5 Object Notation - .json5
+
+Files ending in ```.json5``` are parsed in [JSON5](http://json5.org/) format.  Example:
+
+```
+{
+  // Customter module configs
+  Customer: {
+    dbConfig: {
+      host: "localhost",
+      port: 5984,
+      dbName: "customers",
+    },
+    credit: {
+      initialLimit: 100,
+      // Set low for development
+      initialDays: 1 
+    }
+  }
+}
+```
+
 ### Yet another markup language - .yaml
 
 Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
@@ -102,6 +124,7 @@ module.exports = {
   }
 } 
 ```
+The .json5 parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```json5``` module in order to read and parse .json5 files.
 
 ### CoffeeScript module - .coffee
 
