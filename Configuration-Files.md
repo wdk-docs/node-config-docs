@@ -47,7 +47,7 @@ Files ending in ```.json``` are parsed in JSON format.  Example:
 
 ```
 {
-  // Customter module configs
+  // Customer module configs
   "Customer": {
     "dbConfig": {
       "host": "localhost",
