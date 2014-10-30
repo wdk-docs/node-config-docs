@@ -9,6 +9,7 @@ Node-config reads configuration files in the ```./config``` directory for the ru
 Files in the config directory are loaded in the following order:
 
     default.EXT
+    default-{instance}.EXT
     {hostname}.EXT
     {deployment}.EXT
     {hostname}-{deployment}.EXT
@@ -18,6 +19,7 @@ Files in the config directory are loaded in the following order:
 Where 
 
 * ```EXT``` can be .yml, .yaml, .coffee, .cson, .properties, .json, or .js depending on the format you prefer (see below)
+* ```{instance}``` is an optional instance name string for [Multi-Instance Deployments](#multi-instance-deployments)
 * ```{hostname}``` is your server name, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order)
 * ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
 
