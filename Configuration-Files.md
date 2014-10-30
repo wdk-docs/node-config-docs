@@ -11,11 +11,16 @@ Files in the config directory are loaded in the following order:
     default.EXT
     default-{instance}.EXT
     {hostname}.EXT
+    {hostname}-{instance}.EXT
     {deployment}.EXT
+    {deployment}-{instance}.EXT
     {hostname}-{deployment}.EXT
+    {hostname}-{deployment}-{instance}.EXT
     local.EXT
+    local-{instance}.EXT
     local-{deployment}.EXT
-  
+    local-{deployment}-{instance}.EXT  
+
 Where 
 
 * ```EXT``` can be .yml, .yaml, .coffee, .cson, .properties, .json, or .js depending on the format you prefer (see below)
