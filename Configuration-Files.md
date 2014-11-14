@@ -34,6 +34,10 @@ The ```default.EXT``` file is designed to contain all configuration parameters f
 
 The ```local``` files are intended to *not* be tracked in your version control system.  External configuration management tools can write these files upon application deployment, before application loading.
 
+## Arrays are merged by replacement
+
+Note that arrays are always merged by replacement. That is, the complete contents of an array in an override file will replace the complete array from a parent file.
+
 ## Multi Instance Deployments
 
 In order to support different configurations for each application instance running on a machine, the  ```NODE_APP_INSTANCE``` [environment variable](https://github.com/lorenwest/node-config/wiki/Environment-Variables) is inspected, and used for loading instance specific files.
