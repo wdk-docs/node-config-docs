@@ -52,9 +52,8 @@ All ```//``` and ```/* ... */``` style comments are removed before file loading,
 
 Files ending in ```.json``` are parsed in JSON format.  Example:
 
-```
+```json
 {
-  // Customer module configs
   "Customer": {
     "dbConfig": {
       "host": "localhost",
@@ -63,8 +62,7 @@ Files ending in ```.json``` are parsed in JSON format.  Example:
     },
     "credit": {
       "initialLimit": 100,
-      // Set low for development
-      "initialDays": 1 
+      "initialDays": 1
     }
   }
 }
@@ -74,9 +72,8 @@ Files ending in ```.json``` are parsed in JSON format.  Example:
 
 Files ending in ```.json5``` are parsed in [JSON5](http://json5.org/) format.  Example:
 
-```
+```json5
 {
-  // Customter module configs
   Customer: {
     dbConfig: {
       host: "localhost",
@@ -85,8 +82,7 @@ Files ending in ```.json5``` are parsed in [JSON5](http://json5.org/) format.  E
     },
     credit: {
       initialLimit: 100,
-      // Set low for development
-      initialDays: 1 
+      initialDays: 1
     }
   }
 }
@@ -98,7 +94,7 @@ The .json5 parser is not a dependency of node-config.  The `dependencies` sectio
 
 Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
 
-```
+```yaml
 // Customter module configs
 Customer
   dbConfig:
@@ -160,7 +156,7 @@ The use of [ECMAScript 5 getters](http://javascriptplayground.com/blog/2013/12/e
 
 You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module.  Example CoffeeScript configuration file:
 
-```
+```coffee
 module.exports = 
   // Customter module configs
   Customer:
@@ -180,7 +176,7 @@ CoffeeScript is not a dependency of node-config.  The `dependencies` section of 
 
 Files ending in ```.cson``` are loaded and parsed in CoffeeScript object notation, because you can never have enough file formats.  Example CSON configuration file:
 
-```
+```cson
 {
   #comment
   Customers: {
@@ -209,7 +205,7 @@ CSON is not a dependency of node-config.  The `dependencies` section of your app
 
 Files ending in ```.properties``` are loaded and parsed in properties file notation, a dot-style name spacing style popular in many non-javascript utilities.  Example .properties configuration file:
 
-```
+```properties
 # Comment
 Customer.dbConfig.host = localhost
 Customer.dbConfig.port = 5984
