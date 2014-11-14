@@ -1,3 +1,7 @@
+## Create Configuration files
+
+Create your [configuration files](../Configuration-Files).
+
 ## Loading Node-Config
 
 Place this at the top of your javascript file:
