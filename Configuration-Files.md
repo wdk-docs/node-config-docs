@@ -117,9 +117,21 @@ The `dependencies` section of your application's `package.json` file must contai
 
 Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  It's nice to live in a world with choice.  Example:
 
-```
+```javascript
 var fs = require('fs');
+
+// using defer functions is optional. See example and docs below.
+var defer = require('config/defer').deferConfig;
+
 module.exports = {
+  siteTitle : 'the Website',
+
+  email : {
+    subject :  defer(function (cfg) {
+      return "Welcome to "+cfg.siteTitle;
+    }),
+  },
+
   // Customter module configs
   Customer: {
     dbConfig: {
@@ -136,9 +148,13 @@ module.exports = {
 } 
 ```
 
-The use of [ECMAScript 5
-getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) is
-not supported.
+In the JavaScript modules you have the option to define a configuration value as function whose resolution
+will be defered until the final merged configuration structure is built. In the example above, a default subject
+is provided that references another configuration value-- the site title.  Another configuration file may override 
+the site title. Because the resolution of `email.subject` is defered, it would resolve to refer to the overriden site
+title.
+
+The use of [ECMAScript 5 getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) in JavaScript configurations is not supported.  Using deferred configuration values is the recommended alternative.
 
 ### CoffeeScript module - .coffee
 
