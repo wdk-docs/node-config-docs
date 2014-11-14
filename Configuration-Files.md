@@ -127,45 +127,18 @@ module.exports = {
       port: 5984,
       dbName: "customers"
     },
-    get dbString() {
-      return '' + this.dbName + ':' + this.dbPort;
-    },
  
     // Load credit configs externally
     credit: JSON.parse(fs.loadFileSync('./currentCreditPolicy.json'))
   },
 
-  get customerDbName() {
-    return '' + this.Customer.dbName;
-  }
 
 } 
 ```
 
 The use of [ECMAScript 5
-getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/ is
-shown in the example.  They have a couple benefits for configuration. First,
-they allow the value of one configuration element to refer to the value of
-another. Second, the values are computed dynamically when `get()` is called
-rather than statically when they are declared. In the example above,
-`customerDbName` references the `dbName` element. But the config file for a
-specific instance is likely to override this value. Calling `getDbNAME` on the
-customer's configuration will refer to the customers `dbName` value, not the
-default one.
-
-In the example above, also note now `this` refers to different contexts. In `dbString()` it refers to `config.Customer` and in `customerDbName` it refers to the outer `config` object. The reality is that it refers to whatever object you call the method on. In the above example, this would work as expected:
-
-    // Call get() on the Customer object
-    config.Customer.get('dbString')
-
-But this would would not:
-
-    // Call get() on the main config object.
-    config.get('Customer.dbString')
-
-To avoid confusion you can always call `get()` on the top level `config` object in your code, and always expect `this` to refer 
-the main config object in the getters in your config files.
-
+getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) is
+not supported.
 
 ### CoffeeScript module - .coffee
 
