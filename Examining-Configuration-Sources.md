@@ -22,6 +22,6 @@ strikethroughs for values overwritten by more specific cascading values.
     parsed: { EnvOverride: [Object] } } ]
 ```
 
-Notice that in additon to full paths, some other special names are included: `$NODE_CONFIG` from the environment and `--NODE_CONFIG` from the command line.
+Notice that in additon to full paths, some other special names are included: `$NODE_CONFIG` from the environment and `--NODE_CONFIG argument` from the command line.
 
 While `[Object]` is shown here, the full objects are available in the actual output.
