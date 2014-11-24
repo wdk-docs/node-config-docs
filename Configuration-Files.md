@@ -23,7 +23,7 @@ Files in the config directory are loaded in the following order:
 
 Where 
 
-* ```EXT``` can be .yml, .yaml, .coffee, .cson, .properties, .json, or .js depending on the format you prefer (see below)
+* ```EXT``` can be .yml, .yaml, .coffee, .cson, [.properties](https://github.com/gagle/node-properties), [.json](http://json.org/), [.json5](http://json5.org/) or .js depending on the format you prefer (see below)
 * ```{instance}``` is an optional instance name string for [Multi-Instance Deployments](#multi-instance-deployments)
 * ```{hostname}``` is your server name, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order)
 * ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
