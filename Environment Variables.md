@@ -96,6 +96,16 @@ The current value of ```ALLOW_CONFIG_MUTATIONS``` is available in ```config.util
 var config = require('config');
 console.log('ALLOW_CONFIG_MUTATIONS: ' + config.util.getEnv('ALLOW_CONFIG_MUTATIONS'));
 ```
+## NODE_CONFIG_STRICT_MODE
+
+When strict mode is enabled, the following conditions must be true or an exception will
+thrown at require-time:
+
+ * There must be an explicit config file matching `NODE_ENV` if `NODE_ENV` is set.
+ * There must be an explicit config file matching `NODE_APP_INSTANCE` if `NODE_APP_INSTANCE` is set
+ * `NODE_ENV` must not match 'default' or 'local' to avoid ambiguity.
+
+Strict mode is off by default.
 
 ## SUPPRESS_NO_CONFIG_WARNING
 
