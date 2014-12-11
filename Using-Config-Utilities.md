@@ -154,5 +154,5 @@ Environment variables that you can inspect include `NODE_ENV`, `CONFIG_DIR`, `NO
 Example:
 
 ```
-console.log('Configuration directory: ' + config.getEnv('CONFIG_DIR'));
+console.log('Configuration directory: ' + config.util.getEnv('CONFIG_DIR'));
 ```
