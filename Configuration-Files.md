@@ -162,7 +162,7 @@ You know what you like.  Files ending in ```.coffee``` are loaded and run as a C
 
 ```coffee
 module.exports = 
-  // Customter module configs
+  # Customer module configs
   Customer:
     dbConfig:
       host: "localhost"
