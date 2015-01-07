@@ -217,3 +217,16 @@ Customer.dbConfig.port = 5984
 Every configuration would end up being a string, but that's not particularly troublesome in javascript.
 
 The .properties parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```properties``` module in order to read and parse .properties files.
+
+### TOML file format - .toml
+
+Files ending in ```.toml``` are loaded and parsed in TOML (Tom's Obvious, Minimal Language), a new and very simple configuration file format. Example .toml configuration file:
+
+```toml
+[database]
+host = "localhost"
+port = 5984
+```
+The .toml parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```toml``` module in order to read and parse .toml files. Because [this module](https://github.com/BinaryMuse/toml-node) follows an outdated version of the TOML spec, some features (such as literal strings) are not supported.
+
+
