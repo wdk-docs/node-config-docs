@@ -23,7 +23,7 @@ Files in the config directory are loaded in the following order:
 
 Where 
 
-* ```EXT``` can be .yml, .yaml, .coffee, .cson, [.properties](https://github.com/gagle/node-properties), [.json](http://json.org/), [.json5](http://json5.org/) or .js depending on the format you prefer (see below)
+* ```EXT``` can be .yml, .yaml, .coffee, .cson, [.properties](https://github.com/gagle/node-properties), [.json](http://json.org/), [.json5](http://json5.org/), [.hjson](http://laktak.github.io/hjson/) or .js depending on the format you prefer (see below)
 * ```{instance}``` is an optional instance name string for [Multi-Instance Deployments](#multi-instance-deployments)
 * ```{hostname}``` is your server name, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order)
 * ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
@@ -93,6 +93,31 @@ Files ending in ```.json5``` are parsed in [JSON5](http://json5.org/) format.  E
 ```
 
 The .json5 parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```json5``` module in order to read and parse .json5 files.
+
+### Human JSON - .hjson
+
+Files ending in ```.hjson``` are parsed in [Hjson](http://laktak.github.io/hjson/) format.  Example:
+
+```hjson
+{
+  Customer:
+  {
+    dbConfig:
+    {
+      host: localhost
+      port: 5984
+      dbName: customers
+    }
+    credit:
+    {
+      initialLimit: 100
+      initialDays: 1
+    }
+  }
+}
+```
+
+The .hjson parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```hjson``` module in order to read and parse .hjson files.
 
 ### Yet another markup language - .yaml
 
