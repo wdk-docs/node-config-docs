@@ -1,6 +1,6 @@
 ## Create Configuration files
 
-Create your [configuration files](../Configuration-Files).
+Create your [[configuration files|Configuration-Files]].
 
 ## Loading Node-Config
 
