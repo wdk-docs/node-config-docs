@@ -128,7 +128,7 @@ console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CON
 
 (New as of 1.1.0) Some deployment situations rely heavily on environment variables to configure secrets and settings best left out of a codebase. [NODE_CONFIG](#node_config) lets you use a JSON string to deal with this, but sometimes simpler, flatter environment variables are better suited.
 
-To enable custom environment variables, create a configuration file, `custom-environment-variables.json` (or `.yaml` or `.js`) mapping the environment variable names into your configuration structure. For example:
+To enable custom environment variables, create a configuration file, `custom-environment-variables.json` (or `.yaml` or `.js` or `coffee`) mapping the environment variable names into your configuration structure. For example:
 
 ```
 {
