@@ -1,6 +1,4 @@
-_Strict Mode is under development and is not yet released._
-
-_More content will appear here as the feature is completed._
+_Strict Mode was added in Node 1.9.0._
 
 Several checks are made to make sure that `NODE_ENV` and `NODE_APP_INSTANCE` values are sensible. If something appears to be unsafe or ambiguous, a warning will always be issued.  If `NODE_CONFIG_STRICT_MODE` is set to a true value in the environment, an exception will be thrown to insure that the application doesn't start up with a configuration that might be broken.  
 
