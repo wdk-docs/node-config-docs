@@ -125,7 +125,7 @@ Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-confi
 
 ```yaml
 // Customter module configs
-Customer
+Customer:
   dbConfig:
     host: localhost
     port: 5984
