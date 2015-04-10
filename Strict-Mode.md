@@ -4,7 +4,7 @@ Several checks are made to make sure that `NODE_ENV` and `NODE_APP_INSTANCE` val
 
 ## Diagnostic messages 
 
-###  NODE_ENV value of '{NODE_ENV}' did match any deployment config file names.
+###  NODE_ENV value of '{NODE_ENV}' did not match any deployment config file names.
 
 If `NODE_ENV` is set in the environment, we check if there any file matching that name in the `config/` directory. If there's actually no problem, create a file name matching the desired `NODE_ENV` value: `{NODE_ENV}.json` and include the contents '{}', which is an empty valid JSON object.
 
