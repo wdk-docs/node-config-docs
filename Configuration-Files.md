@@ -124,7 +124,7 @@ The .hjson parser is not a dependency of node-config.  The `dependencies` sectio
 Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
 
 ```yaml
-// Customter module configs
+// Customer module configs
 Customer:
   dbConfig:
     host: localhost
