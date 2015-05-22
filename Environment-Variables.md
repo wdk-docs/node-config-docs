@@ -130,7 +130,7 @@ console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CON
 
 To enable custom environment variables, create a configuration file, `custom-environment-variables.json` (or `.yaml` or `.js` or `coffee`) mapping the environment variable names into your configuration structure. For example:
 
-```
+```javascript
 {
   "Customer": {
     "dbConfig": {
@@ -138,12 +138,19 @@ To enable custom environment variables, create a configuration file, `custom-env
     },
     "credit": {
       "initialDays": "CR_ID"
+    },
+    // new as of coming release
+    "settings": {
+      "adminAccounts": {
+        "__name": "ADMIN_ACCS",
+        "__format": "json"
+      }
     }
   }
 }
 ```
 
-...would cause `node-config` to check for the environment variables `PROD_SERVER` and `CR_ID`. If they exist, they would override the values for `Customer.dbConfig.host`, and `Customer.credit.initialDays` in your configuration. Empty environment variables are ignored, and their mappings have no effect on your config.
+...would cause `node-config` to check for the environment variables `PROD_SERVER` and `CR_ID`. If they exist, they would _override_ the values for `Customer.dbConfig.host`, and `Customer.credit.initialDays` in your configuration. For `ADMIN_ACCS` it will try to parse the found environment variable according to the specified format in `__format` and _extend_ the values for `Customer.settings.adminAccounts`. 
+Empty environment variables are ignored, and their mappings have no effect on your config.
 
 **Precedence**: Custom environment variables override all configuration files, including `local.json`. Only command line options take precedence over them.
-
