@@ -139,7 +139,8 @@ To enable custom environment variables, create a configuration file, `custom-env
     "credit": {
       "initialDays": "CR_ID"
     },
-    // new as of coming release
+    // Environment variables containing multiple configs
+    // New as of config@1.14.0
     "settings": {
       "adminAccounts": {
         "__name": "ADMIN_ACCS",
@@ -150,7 +151,9 @@ To enable custom environment variables, create a configuration file, `custom-env
 }
 ```
 
-...would cause `node-config` to check for the environment variables `PROD_SERVER` and `CR_ID`. If they exist, they would _override_ the values for `Customer.dbConfig.host`, and `Customer.credit.initialDays` in your configuration. For `ADMIN_ACCS` it will try to parse the found environment variable according to the specified format in `__format` and _extend_ the values for `Customer.settings.adminAccounts`. 
+...would cause `node-config` to check for the environment variables `PROD_SERVER` and `CR_ID`. If they exist, they would _override_ the values for `Customer.dbConfig.host`, and `Customer.credit.initialDays` in your configuration.
+ 
+For `ADMIN_ACCS` it will try to parse the found environment variable according to the specified format in `__format` and _extend_ the values for `Customer.settings.adminAccounts`. 
 Empty environment variables are ignored, and their mappings have no effect on your config.
 
 **Precedence**: Custom environment variables override all configuration files, including `local.json`. Only command line options take precedence over them.
