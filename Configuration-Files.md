@@ -166,7 +166,7 @@ module.exports = {
     },
  
     // Load credit configs externally
-    credit: JSON.parse(fs.loadFileSync('./currentCreditPolicy.json'))
+    credit: JSON.parse(fs.readFileSync('./currentCreditPolicy.json'))
   },
 
 
