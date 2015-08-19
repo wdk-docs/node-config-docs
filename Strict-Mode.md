@@ -6,7 +6,7 @@ Several checks are made to make sure that `NODE_ENV` and `NODE_APP_INSTANCE` val
 
 ###  NODE_ENV value of '{NODE_ENV}' did not match any deployment config file names.
 
-If `NODE_ENV` is set in the environment, we check if there any file matching that name in the `config/` directory. If there's actually no problem, create a file name matching the desired `NODE_ENV` value: `{NODE_ENV}.json` and include the contents '{}', which is an empty valid JSON object.
+If `NODE_ENV` is set in the environment, we check if there is any file matching that name in the `config/` directory containing valid syntax. You can create a file with the name matching the desired `NODE_ENV` value: `{NODE_ENV}.json` and include the contents '{}', which is an empty valid JSON object.
 
 This could also indicate a problem with specifying your [configuration directory or the file load order](https://github.com/lorenwest/node-config/wiki/Configuration-Files).
 
