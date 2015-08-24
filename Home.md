@@ -21,6 +21,8 @@
 
 * [Using Config Utilities](https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities) - Useful utilities that come with node-config
 
+* [Community Utilities](https://github.com/lorenwest/node-config/wiki/Community-Utilities) - Useful utilities written by the node-config community
+
 * [Future Compatibility](https://github.com/lorenwest/node-config/wiki/Future-Compatibility) - Compatibility statement and future incompatibilities
 
 * [Upgrading from Config 0.x](https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x) - How to upgrade to node-config version 1.x
