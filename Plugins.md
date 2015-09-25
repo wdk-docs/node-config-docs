@@ -1,0 +1,1 @@
+- [`node-config-uncached`](https://github.com/MrBoolean/node-config-uncached) - purges the internal `require.cache` for all files used by `config`
