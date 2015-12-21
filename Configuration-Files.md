@@ -39,6 +39,10 @@ The ```default.EXT``` file is designed to contain all configuration parameters f
 
 The ```local``` files are intended to *not* be tracked in your version control system.  External configuration management tools can write these files upon application deployment, before application loading.
 
+## Default NODE_ENV
+
+If `NODE_ENV` is not set in the environment, a default value of `development` is used. 
+
 ## Arrays are merged by replacement
 
 Note that arrays are always merged by replacement. That is, the complete contents of an array in an override file will replace the complete array from a parent file.
