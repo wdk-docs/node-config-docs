@@ -24,6 +24,7 @@ Files in the config directory are loaded in the following order:
     local-{instance}.EXT
     local-{deployment}.EXT
     local-{deployment}-{instance}.EXT
+    (Finally, custom environment variables can override all files)
 
 Where 
 
@@ -54,6 +55,10 @@ In order to support different configurations for each application instance runni
 For example, if the ```NODE_APP_INSTANCE=3``` environment variable is set, immediately following the load of ```default.json```, a file by the name of ```default-3.json``` will be loaded if present.
 
 This works for all configuration files, so if your ```NODE_APP_INSTANCE=3``` and ```NODE_ENV=stage```, then immediately after loading ```stage.yaml```, a file by the name of ```stage-3.yaml``` will be loaded if present.
+
+## Environment variables
+
+[Custom environment variables](https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables) override all configuration files, including local.json. Only command line options take precedence over them.
 
 ## File Formats
 
