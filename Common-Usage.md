@@ -36,6 +36,6 @@ if (config.has('dbConfig')) {
   ...
 }
 ```
-This can be done as an alternative to wrapping your ```get()``` around a try/catch block.
+This can be done as an alternative to wrapping your ```get()``` around a try/catch block. ```has()``` will not throw exceptions, and will return true if and only if the configuration file has a defined value for the provided key. Note that ```null``` is a defined value.
 
 
