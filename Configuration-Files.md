@@ -171,7 +171,7 @@ module.exports = {
     }),
   },
 
-  // Customter module configs
+  // Customer module configs
   Customer: {
     dbConfig: {
       host: "localhost",
@@ -188,9 +188,9 @@ module.exports = {
 ```
 
 In the JavaScript modules you have the option to define a configuration value as function whose resolution
-will be defered until the final merged configuration structure is built. In the example above, a default subject
+will be deferred until the final merged configuration structure is built. In the example above, a default subject
 is provided that references another configuration value-- the site title.  Another configuration file may override 
-the site title. Because the resolution of `email.subject` is defered, it would resolve to refer to the overriden site
+the site title. Because the resolution of `email.subject` is deferred, it would resolve to refer to the overridden site
 title.
 
 The use of [ECMAScript 5 getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) in JavaScript configurations is not supported.  Using deferred configuration values is the recommended alternative.
@@ -231,7 +231,7 @@ Files ending in ```.cson``` are loaded and parsed in CoffeeScript object notatio
     ]
   },
   AnotherModule: {
-    parm4: "value4"
+    param4: "value4"
   },
   staticArray: [
     2
