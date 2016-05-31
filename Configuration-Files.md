@@ -287,7 +287,6 @@ Files ending in ```.xml``` are parsed in XML format. Example:
     </credit>
   </Customer>
 </config>
-Customer:
 ```
 
 The `dependencies` section of your application's `package.json` file must contain x2js in order to read XML configuration files.
