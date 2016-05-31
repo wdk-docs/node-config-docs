@@ -268,3 +268,26 @@ port = 5984
 ```
 The .toml parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```toml``` module in order to read and parse .toml files. Because [this module](https://github.com/BinaryMuse/toml-node) follows an outdated version of the TOML spec, some features (such as literal strings) are not supported.
 
+### Extensible Markup Language - .xml
+
+Files ending in ```.xml``` are parsed in XML format. Example:
+
+```xml
+// Customer module configs
+<config>
+  <Customer>
+    <dbConfig>
+      <host>localhost</host>
+      <port>5984</port>
+      <dbName>customers</dbName>
+    </dbConfig>
+    <credit>
+      <initialLimit>100</initialLimit>
+      <initialDays>1</initialDays>
+    </credit>
+  </Customer>
+</config>
+Customer:
+```
+
+The `dependencies` section of your application's `package.json` file must contain x2js in order to read XML configuration files.
