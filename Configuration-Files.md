@@ -38,7 +38,12 @@ The ```default.EXT``` file is designed to contain all configuration parameters f
 
 ```{hostname}``` and ```{deployment}``` files allow you to tune configurations for a particular server or deployment.  These files are designed to live along with other files in your version control system.
 
+## `local` files
+
 The ```local``` files are intended to *not* be tracked in your version control system.  External configuration management tools can write these files upon application deployment, before application loading.
+
+The best practice for using `local` files is avoid a global `local.EXT` file that would affect all '{deployment}' and '{instance}' cases. Instead, choose the most specific variant of  `local-{instance}.EXT`,
+`local-{deployment}.EXT` or `local-{deployment}-{instance}.EXT` that applies. With this design you can avoid a case where tests pass locally to due to local overrides but don't pass after you push. Choose a `local` file variant that is not used for your testing context!
 
 ## Default NODE_ENV
 
