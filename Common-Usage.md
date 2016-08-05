@@ -20,7 +20,7 @@ The preferred method of accessing configurations is through ```get()```:
 ```
 var dbHost = config.get('dbConfig.host');
 ```
-This gives you a fail-fast system if (when?) someone screws up your configuration files - it's more common than you'd think. 
+This gives you a fail-fast system if (when?) someone screws up your configuration files - it's more common than you'd think. It will also make the configuration object immutable after the first call to `get()`.
 
 If a configuration file does not contain a value for a given property, ```get()``` will throw an exception. Note that ```null``` is an _acceptable_ value, and will not throw an exception when it would be returned by ```get()```. Get will also throw an exception if the parameter passed in to get is ```null``` or ```undefined```.
 
@@ -30,7 +30,7 @@ The alternative is to attain the value directly:
 ```
 var dbHost = config.dbConfig.host;
 ```
-This doesn't give you protection from typos and configuration file problems, but is supported for backward compatibility.
+This doesn't give you protection from typos and configuration file problems, or immutability. But it is supported for backward compatibility.
 
 ## Testing for config values
 
