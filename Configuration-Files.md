@@ -200,6 +200,15 @@ title.
 
 The use of [ECMAScript 5 getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) in JavaScript configurations is not supported.  Using deferred configuration values is the recommended alternative.
 
+There may be instances where you would like to place a complex object like `process.stdout` into your configuration file, e.g. logging configuration. But node-config achieves its useful functionality by modifying the config object prototypes, and making them immutable - not ideal for `process.stdout`! But you can still achieve the goal by using the `raw` functionality like so:
+```javascript
+const raw = require('config/raw').raw;
+
+module.exports = {
+  logOutputStream: raw(process.stdout)
+};
+```
+
 ### CoffeeScript module - .coffee
 
 You know what you like.  Files ending in ```.coffee``` are loaded and run as a CoffeeScript module.  Example CoffeeScript configuration file:
