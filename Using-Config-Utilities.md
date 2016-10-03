@@ -156,3 +156,17 @@ Example:
 ```
 console.log('Configuration directory: ' + config.util.getEnv('CONFIG_DIR'));
 ```
+
+## loadFileConfigs(directory)
+
+Reads the given directory using the same conventions as the main config directory (including environment variable reading, except for `NODE_CONFIG`) and returns an object with the result.
+
+If no directory is given, reads the standard config directory and parses `NODE_CONFIG`.
+
+This is useful for using with submodules, e.g.
+```js
+import config from 'config'
+const ourConfigDir = path.join(__dirname, 'config')
+const baseConfig = config.util.loadFileConfigs(ourConfigDir)
+config.util.setModuleDefaults('MyModule', baseConfig)
+```
