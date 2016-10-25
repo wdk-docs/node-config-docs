@@ -174,6 +174,9 @@ module.exports = {
     subject :  defer(function (cfg) {
       return "Welcome to "+cfg.siteTitle;
     }),
+    text :  defer(function (cfg, original) {
+      return "You can use " + original + " values from the previous file.";
+    }),
   },
 
   // Customer module configs
@@ -197,6 +200,8 @@ will be deferred until the final merged configuration structure is built. In the
 is provided that references another configuration value-- the site title.  Another configuration file may override 
 the site title. Because the resolution of `email.subject` is deferred, it would resolve to refer to the overridden site
 title.
+
+The second deferred value `email.text` uses the original value before any defer(…) was used. Note that the original value can be undefined if no other value for `email.text` was set by a previous configuration file.
 
 The use of [ECMAScript 5 getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) in JavaScript configurations is not supported.  Using deferred configuration values is the recommended alternative.
 
