@@ -8,15 +8,16 @@ This will publish your entire config file into your front end application. If yo
 const config = require('config')
 const fs = require('fs')
 
-// This will take the current NODE_ENV, and save the config to 'build/config.json'
+// This will take the config based on the current NODE_ENV and save it to 'build/client.json'
+// Note: If '/build' does not exist, this command will error; alternatively, write to '/config'.
 // The webpack alias below will then build that file into the client build.
-fs.writeFileSync(path.resolve(__dirname, 'build/config.json'), JSON.stringify(config))
+fs.writeFileSync(path.resolve(__dirname, 'build/client.json'), JSON.stringify(config))
 
 module.exports = {
   // ... other webpack config
   resolve: {
     alias: {
-      config: path.resolve(__dirname, 'build/config.json')
+      config: path.resolve(__dirname, 'build/client.json')
     }
   }
 }
@@ -24,7 +25,7 @@ module.exports = {
 
 Both server and client now can happily use `import config from 'config'`.
 
-If you have things in the config that you do not want to publish to the front end, you may consider making a specific `frontend` section of the config, and only publishing that key to the static json file.
+If you have things in the config that you do not want to publish to the front end, you may consider making a specific `client` section of the config, and only publishing that key to the static json file, e.g. `import { client } from 'config';`
 
 Alternatively you could use [lodash](https://github.com/lodash/lodash) `pick` or `omit` to control what data is written top the file.
 
