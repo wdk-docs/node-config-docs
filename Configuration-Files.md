@@ -285,7 +285,7 @@ Files ending in ```.toml``` are loaded and parsed in TOML (Tom's Obvious, Minima
 host = "localhost"
 port = 5984
 ```
-The .toml parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```toml``` module in order to read and parse .toml files. Because [this module](https://github.com/BinaryMuse/toml-node) follows an outdated version of the TOML spec, some features (such as literal strings) are not supported.
+The .toml parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```toml``` module in order to read and parse .toml files.
 
 ### Extensible Markup Language - .xml
 
