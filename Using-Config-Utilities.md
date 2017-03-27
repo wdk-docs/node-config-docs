@@ -7,7 +7,11 @@ Below is a list of these utilities, in order of general usefulness - your mileag
 Extend an object (and any object it contains) with one or more objects (and objects contained in them).
 
 This does not replace deep objects as other extend functions do, 
-but dives into them extending individual elements instead.
+but dives into them extending individual elements instead. If more than one
+of the extending objects define the same key, then:
+* if all the respective values are objects, they are merged recursively by calling the same function.
+* if none of the respective values are objects, then the latest one is respected.
+* avoid mixing objects and non-objects for the same key as it can lead to unexpected behaviour.
 
 <table>
 <tr><th>param</th><th>type</th><th>description</th></tr>
