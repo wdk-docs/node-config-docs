@@ -9,7 +9,7 @@ Node-config reads configuration files in the ```./config``` directory for the ru
 Files in the config directory are loaded in the following order:
 
     default.EXT
-    default-{instance}.EXT
+    default-{instance}.E
     {deployment}.EXT
     {deployment}-{instance}.EXT
     {short_hostname}.EXT
