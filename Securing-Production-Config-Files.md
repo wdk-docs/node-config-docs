@@ -18,7 +18,7 @@ Here is the scenario we'll be configuring:
 * Ringo is a contributor, and doesn't need or want to see production passwords, API secret keys etc. 
 * You and Paul both maintain the servers and need access to the sensitive info.
 
-###Prerequisites:
+### Prerequisites:
 
 * [git-crypt](https://github.com/AGWA/git-crypt.git) is installed.
 	* On OS X : ```brew install git-crypt```
