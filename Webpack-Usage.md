@@ -27,5 +27,5 @@ Both server and client now can happily use `import config from 'config'`.
 
 If you have things in the config that you do not want to publish to the front end, you may consider making a specific `client` section of the config, and only publishing that key to the static json file, e.g. `import { client } from 'config';`
 
-Alternatively you could use [lodash](https://github.com/lodash/lodash) `pick` or `omit` to control what data is written top the file.
+Alternatively you could use [lodash](https://github.com/lodash/lodash) `pick` or `omit` to control what data is written to the file.
 
