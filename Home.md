@@ -28,3 +28,5 @@
 * [Upgrading from Config 0.x](https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x) - How to upgrade to node-config version 1.x
 
 * [Plugins](https://github.com/lorenwest/node-config/wiki/Plugins)
+
+* [Runtime config for testing](https://github.com/lorenwest/node-config/wiki/Plugins)
