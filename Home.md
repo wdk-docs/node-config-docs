@@ -29,4 +29,4 @@
 
 * [Plugins](https://github.com/lorenwest/node-config/wiki/Plugins)
 
-* [Runtime config for testing](https://github.com/lorenwest/node-config/wiki/Plugins)
+* [Runtime config for testing](https://github.com/lorenwest/node-config/wiki/Altering-configuration-values-for-testing-at-runtime)
