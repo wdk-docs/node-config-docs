@@ -179,7 +179,7 @@ config.util.setModuleDefaults('MyModule', baseConfig)
 
 Returns a new deep copy of the current config object, or any part of the config if provided.
 
-If config is null, the current config object is dumped in its entirety.
+If config is not provided (`undefined`), the current config object is dumped in its entirety.
 
 <table>
 <tr><th>param</th><th>type</th><th>description</th></tr>
