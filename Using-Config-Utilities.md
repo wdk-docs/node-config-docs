@@ -174,3 +174,19 @@ const ourConfigDir = path.join(__dirname, 'config')
 const baseConfig = config.util.loadFileConfigs(ourConfigDir)
 config.util.setModuleDefaults('MyModule', baseConfig)
 ```
+
+## toObject(config)
+
+Returns a new deep copy of the current config object, or any part of the config if provided.
+
+If config is null, the current config object is dumped in its entirety.
+
+<table>
+<tr><th>param</th><th>type</th><th>description</th></tr>
+<tr><td>config</td><td>object</td><td>The part of the config to copy and serialize. Omit this argument to return the entire config.</td></tr>
+<tr><td>(return)</td><td>object</td><td>The cloned config or part of the config</td></tr>
+</table>
+
+```
+var result = config.util.toObject(config.get('db'));
+```
