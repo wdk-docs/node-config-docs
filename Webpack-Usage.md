@@ -7,7 +7,7 @@ This will publish your entire config file into your front end application. If yo
 // webpack-config.js
 const config = require('config')
 const fs = require('fs')
-const path = require("path");
+const path = require('path');
 
 // This will take the config based on the current NODE_ENV and save it to 'build/client.json'
 // Note: If '/build' does not exist, this command will error; alternatively, write to '/config'.
