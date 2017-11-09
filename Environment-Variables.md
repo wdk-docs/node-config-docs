@@ -21,7 +21,7 @@ var config = require('config');
 
 ## NODE_ENV
 
-This variable contains the name of your application's deployment environment, representing the ```{deployment}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order). Common values include ```dev```, ```stage```, ```production-east```, etc. to fit your deployment strategy. The value for ```NODE_ENV``` can be overridden with the [NODE_CONFIG_ENV](https://github.com/lorenwest/node-config/wiki/Environment-Variables#NODE_CONFIG_ENV) environment variable.
+This variable contains the name of your application's deployment environment, representing the ```{deployment}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order). Common values include ```dev```, ```stage```, ```production-east```, etc. to fit your deployment strategy. The value for ```NODE_ENV``` can be overridden with the [NODE_CONFIG_ENV](https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env) environment variable.
 
 The current value of ```NODE_ENV``` is available in ```config.util.getEnv()```:
 ```
