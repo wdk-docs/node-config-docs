@@ -32,7 +32,7 @@ Where
 * ```{instance}``` is an optional instance name string for [Multi-Instance Deployments](#multi-instance-deployments)
 * ```{short_hostname}``` is your server name up to the first dot, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order). For example if your hostname is ```www.example.com``` then it would load ```www.EXT```.
 * ```{full_hostname}``` is your whole server name, you may use this when ```{short_hostname}``` collides with other machines.
-* ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` environment variable
+* ```{deployment}``` is the deployment name, from the ```$NODE_ENV``` (or if specified, ```$NODE_CONFIG_ENV```) environment variable
 
 The ```default.EXT``` file is designed to contain all configuration parameters from which other files may overwrite.  Overwriting is done on a parameter by parameter basis, so subsequent files contain only the parameters unique for that override.
 
