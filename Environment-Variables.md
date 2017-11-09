@@ -21,13 +21,25 @@ var config = require('config');
 
 ## NODE_ENV
 
-This variable contains the name of your application's deployment environment, representing the ```{deployment}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order). Common values include ```dev```, ```stage```, ```production-east```, etc. to fit your deployment strategy. The value for ```NODE_ENV``` can be transparently overridden by specifying a value for the ```NODE_CONFIG_ENV``` environment variable.
+This variable contains the name of your application's deployment environment, representing the ```{deployment}``` when determining config [file loading order](https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order). Common values include ```dev```, ```stage```, ```production-east```, etc. to fit your deployment strategy. The value for ```NODE_ENV``` can be overridden with the [NODE_CONFIG_ENV](https://github.com/lorenwest/node-config/wiki/Environment-Variables#NODE_CONFIG_ENV) environment variable.
 
 The current value of ```NODE_ENV``` is available in ```config.util.getEnv()```:
 ```
 var config = require('config');
 console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
 ```
+## NODE_CONFIG_ENV
+
+In certain circumstances ```NODE_ENV``` may not be the preferred value for configuration identification. The ```NODE_CONFIG_ENV``` environment variable was introduced with (v1.28.0) which transparently, overrides the value of ```NODE_ENV```.
+
+The current value of ```NODE_CONFIG_ENV``` is available in ```config.util.getEnv()```:
+```
+process.env.NODE_CONFIG_ENV = "qa";
+process.env.NODE_ENV = "production";
+var config = require('config');
+console.log('NODE_CONFIG_ENV: ' + config.util.getEnv('NODE_CONFIG_ENV'));
+```
+The ```qa``` configuration will be used in place of ```production```.
 
 ## NODE_CONFIG_DIR
 
