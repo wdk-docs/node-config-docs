@@ -159,60 +159,9 @@ The `dependencies` section of your application's `package.json` file must contai
 
 ### JavaScript module - .js
 
-Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  Some folks appreciate the ability to compute configurations, others feel it's not the right thing to do.  It's nice to live in a world with choice.  Example:
+Files ending in ```.js``` are loaded and run as a JavaScript module.  The module must export the configuration object.  JavaScript modules support the ability to have "deferred" and "raw" values.
 
-```javascript
-var fs = require('fs');
-
-// using defer functions is optional. See example and docs below.
-var defer = require('config/defer').deferConfig;
-
-module.exports = {
-  siteTitle : 'the Website',
-
-  email : {
-    subject :  defer(function (cfg) {
-      return "Welcome to "+cfg.siteTitle;
-    }),
-    text :  defer(function (cfg, original) {
-      return "You can use " + original + " values from the previous file.";
-    }),
-  },
-
-  // Customer module configs
-  Customer: {
-    dbConfig: {
-      host: "localhost",
-      port: 5984,
-      dbName: "customers"
-    },
- 
-    // Load credit configs externally
-    credit: JSON.parse(fs.readFileSync('./currentCreditPolicy.json'))
-  },
-
-
-} 
-```
-
-In the JavaScript modules you have the option to define a configuration value as function whose resolution
-will be deferred until the final merged configuration structure is built. In the example above, a default subject
-is provided that references another configuration value-- the site title.  Another configuration file may override 
-the site title. Because the resolution of `email.subject` is deferred, it would resolve to refer to the overridden site
-title.
-
-The second deferred value `email.text` uses the original value before any defer(…) was used. Note that the original value can be undefined if no other value for `email.text` was set by a previous configuration file.
-
-The use of [ECMAScript 5 getters](http://javascriptplayground.com/blog/2013/12/es5-getters-setters/) in JavaScript configurations is not supported.  Using deferred configuration values is the recommended alternative.
-
-There may be instances where you would like to place a complex object like `process.stdout` into your configuration file, e.g. logging configuration. But node-config achieves its useful functionality by modifying the config object prototypes, and making them immutable - not ideal for `process.stdout`! But you can still achieve the goal by using the `raw` functionality like so:
-```javascript
-const raw = require('config/raw').raw;
-
-module.exports = {
-  logOutputStream: raw(process.stdout)
-};
-```
+See [Special features for JavaScript configuration files](https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files) for details. 
 
 ### CoffeeScript module - .coffee
 
