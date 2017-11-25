@@ -1,4 +1,4 @@
-Right now `node-config` doesn't work with [webpack](https://github.com/webpack/webpack) out of the box because it operates at runtime. Below is an example of how you can use `NODE_ENV` at build time to have have a static config built into your webpack bundle.
+Right now `node-config` doesn't work with [webpack](https://github.com/webpack/webpack) out of the box because it operates at runtime. Below is an example of how you can use `NODE_ENV` at build time to have a static config built into your webpack bundle.
 
 **IMPORTANT NOTE**  
 This will publish your entire config file into your front end application. If you have sensitive information you do not want downloaded, see the notes after the example.
