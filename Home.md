@@ -1,5 +1,6 @@
 ## Wiki Pages
 * [Configuration Files](https://github.com/lorenwest/node-config/wiki/Configuration-Files) - Managing configuration files for your application
+  * [Special Features for JavaScript Config Files](https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files)
 
 * [Common Usage](https://github.com/lorenwest/node-config/wiki/Common-Usage) - Using node-config in your application code
 
