@@ -37,12 +37,12 @@ Alternatively you could use [lodash](https://github.com/lodash/lodash) `pick` or
 Another solution that avoids the `fs` side effect is as follows. Create a file with the following:
 ```
 import config from 'config';
-
+const configJson = JSON.stringify(config);
 module.exports = {
-    ...config.client,
+    ...configJson,
 }
 ```
-> note the `.client` - this is because my config has a client property with just the client-side config that I want. you can just as easily get the entire config at run-time with `...config`
+> note because we stringify the config at runtime we loose `node-config` methods such as `get()`.
 
 I have put this in my `/config` directory.
 In webpack I then do this:
