@@ -61,7 +61,7 @@ We're going to set up git-crypt so that the ```production.json``` file is encryp
 4. Mark both your own key and Paul's key with 'ultimate' trust in GPG.
 
 	```
-	gpg --edit john@example.com
+	gpg --edit john@example.com  (or) gpg --edit-key john@example.com
 	gpg> trust
 	
 		Please decide how far you trust this user to correctly verify other users' keys
