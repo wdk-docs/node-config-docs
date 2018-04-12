@@ -142,7 +142,7 @@ Files ending in ```.hjson``` are parsed in [Hjson](http://laktak.github.io/hjson
 
 The .hjson parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```hjson``` module in order to read and parse .hjson files.
 
-### Yet another markup language - .yaml
+### Yaml ain't Markup Language - .yaml
 
 Files ending in ```.yaml``` or ```.yml``` are parsed in YAML format.  Node-config doesn't include a YAML library, and beware there are some good ones and some not-so-good ones out there.  If no global ```Yaml``` variable is available, node-config will attempt to load a good one ([js-yaml](https://github.com/nodeca/js-yaml)).  Example:
 
