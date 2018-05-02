@@ -62,7 +62,7 @@ Alternatively you could use [lodash](https://github.com/lodash/lodash) `pick` or
 Another solution is to take advantage of the [`NODE_CONFIG` environment variable](https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config) with `webpack.DefinePlugin`.  With this method you **CAN** still use `get()`.
 
 ```js
-import config from 'config';
+const config = require('config');
 
 const webpackConfig = {
   //webpack plugins config
