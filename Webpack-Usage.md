@@ -58,3 +58,20 @@ If you have things in the config that you do not want to publish to the front en
 
 Alternatively you could use [lodash](https://github.com/lodash/lodash) `pick` or `omit` to control what data is written to the file.
 
+# Option 3
+Another solution is to take advantage of the [`NODE_CONFIG` environment variable](https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config) with `webpack.DefinePlugin`.  With this method you **CAN** still use `get()`.
+
+```
+import config from 'config';
+
+const webpackConfig = {
+  //webpack plugins config
+  plugins: [
+    new webpack.DefinePlugin({
+      //double stringify because node-config expects this to be a string
+      'process.env.NODE_CONFIG': JSON.stringify(JSON.stringify(config)),
+    }),
+  ],
+};
+```
+
