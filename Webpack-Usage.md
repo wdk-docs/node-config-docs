@@ -1,7 +1,7 @@
 Right now `node-config` doesn't work with [webpack](https://github.com/webpack/webpack) out of the box because it reads the config files at runtime, which can't be done when the code is running on a browser.
 
 # Option 1
-If you're using Webpack 4, it includes excellent handling for complex config objects with `DefinePlugin` (as of 2017-05-07). Add the following to your `webpack.config.js`:
+If you're using Webpack 4, it includes excellent handling for complex config objects with `DefinePlugin` (as of 2018-05-07). Add the following to your `webpack.config.js`:
 ```javascript
 ...
 plugins: [
