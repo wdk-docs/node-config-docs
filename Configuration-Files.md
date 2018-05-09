@@ -32,7 +32,7 @@ Files in the config directory are loaded in the following order:
 
 Where 
 
-* ```EXT``` can be .yml, .yaml, .xml, .coffee, .cson, [.properties](https://github.com/gagle/node-properties), [.json](http://json.org/), [.json5](http://json5.org/), [.hjson](http://laktak.github.io/hjson/) or .js depending on the format you prefer (see below)
+* ```EXT``` can be .yml, .yaml, .xml, .coffee, .cson, [.properties](https://github.com/gagle/node-properties), [.json](http://json.org/), [.json5](http://json5.org/), [.hjson](http://laktak.github.io/hjson/), .ts or .js depending on the format you prefer (see below)
 * ```{instance}``` is an optional instance name string for [Multi-Instance Deployments](#multi-instance-deployments)
 * ```{short_hostname}``` is your server name up to the first dot, from the ```$HOST``` or ```$HOSTNAME``` environment variable or ```os.hostname()``` (in that order). For example if your hostname is ```www.example.com``` then it would load ```www.EXT```.
 * ```{full_hostname}``` is your whole server name, you may use this when ```{short_hostname}``` collides with other machines.
@@ -239,6 +239,31 @@ host = "localhost"
 port = 5984
 ```
 The .toml parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```toml``` module in order to read and parse .toml files.
+
+### Typescript - .ts
+
+Files ending in ```.ts``` are loaded and run as Typescript modules.
+Example .ts configuration file:
+
+```
+export default {
+  Customer: {
+    dbConfig: {
+      host: "localhost",
+      port: 5984,
+      dbName: "customers"
+    },
+    credit: {
+      initialLimit: 100,
+      initialDays: 1
+    }
+  }
+};
+```
+
+See [Typescript testing files](../tree/master/test/x-config-ts) for more examples.
+
+Typescript is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain typescript in order to read Typescript configuration files.
 
 ### Extensible Markup Language - .xml
 
