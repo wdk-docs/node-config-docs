@@ -245,7 +245,7 @@ The .toml parser is not a dependency of node-config.  The `dependencies` section
 Files ending in ```.ts``` are loaded and run as Typescript modules.
 Example .ts configuration file:
 
-```
+```typescript
 export default {
   Customer: {
     dbConfig: {
