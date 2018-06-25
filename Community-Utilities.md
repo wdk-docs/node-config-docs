@@ -4,4 +4,4 @@ If you use [custom environment variables](https://github.com/lorenwest/node-conf
 
 ### config-uncached
 
-Sometimes for testing or DevOps, you need one script to load more than configuration. This is normally a challenge with `node-config` As a singleton, it returns the same configuration each time. To force node-config to reload the configuration, use the [`config-uncached`](https://gist.github.com/markstos/d1c003f88d4fdbb2906694abaf670954/revisions) module.
+Sometimes for testing or DevOps, you need one script to load more than configuration. This is normally a challenge with `node-config` As a singleton, it returns the same configuration each time. To force node-config to reload the configuration, use the [`config-uncached`](https://www.npmjs.com/package/config-uncached) module.
