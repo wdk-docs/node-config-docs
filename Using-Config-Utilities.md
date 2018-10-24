@@ -132,7 +132,7 @@ The property still exists and can be read from and written to, but it won't show
 Example:
 
 ```
-var a = {hello'"world'};
+var a = {hello:"world'};
 console.log ('Before hiding: ' + JSON.stringify(a));
 config.util.makeHidden(a, 'hello');
 console.log ('After hiding: ' + JSON.stringify(a));
