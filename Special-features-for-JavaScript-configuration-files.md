@@ -7,7 +7,7 @@ JavaScript modules support the ability to have "deferred" and "raw" values.
 In the JavaScript modules you have the option to define a configuration value as a function whose resolution
 will be deferred until the final merged configuration structure is built.
 
-For example, you get up a default value for a "full name" that is calculated from "first name" and "last name" values which will be provided a config file which overrides the defaults. 
+For example, you set up a default value for a "full name" that is calculated from "first name" and "last name" values which will be provided a config file which overrides the defaults. 
 
 
 Example:
