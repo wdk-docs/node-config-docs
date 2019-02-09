@@ -115,7 +115,7 @@ Files ending in ```.json5``` are parsed in [JSON5](http://json5.org/) format.  E
 }
 ```
 
-The .json5 parser is not a dependency of node-config.  The `dependencies` section of your application's `package.json` file must contain the ```json5``` module in order to read and parse .json5 files.
+The .json5 parser is dependency of node-config. This is the only custom file format which doesn't requires you to add it as a dependency to application.
 
 ### Human JSON - .hjson
 
