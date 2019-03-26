@@ -143,6 +143,7 @@ console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CON
 To enable custom environment variables, create a configuration file, `config/custom-environment-variables.json` (or `.yaml` or `.js` or `coffee`) mapping the environment variable names into your configuration structure. For example:
 
 ```javascript
+// config/custom-environment-variables.json
 {
   "Customer": {
     "dbConfig": {
