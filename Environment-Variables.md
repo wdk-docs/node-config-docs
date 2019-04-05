@@ -60,7 +60,7 @@ If ```NODE_CONFIG``` is supplied both from the O/S environment _and_ the command
 Example:
 
 ```
-$ export NODE_CONFIG={"Customer":{"dbConfig":{"host":"customerdb.prod"}}}
+$ export NODE_CONFIG='{"Customer":{"dbConfig":{"host":"customerdb.prod"}}}'
 $ node myapp.js
 ```
 
