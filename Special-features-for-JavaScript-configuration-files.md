@@ -19,7 +19,7 @@ var defer = require('config/defer').deferConfig;
 
 module.exports = {
   firstName : undefined,
-  lastname: undefined,
+  lastName: undefined,
   fullName : defer(function ()  {
     return this.firstName+' '+this.lastName;
   })
