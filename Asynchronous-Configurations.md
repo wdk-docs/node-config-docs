@@ -9,14 +9,16 @@ Using the `asyncConfig` utility method you can wrap both promises and async func
 
 ```
 const asyncConfig = require('config/async').asyncConfig;
-const fetchRequest = fetch('/config/services').then(res => res.json());  // Promise example
-module.exports = {
-  mode: 'dev',
-  fromUrl: asyncConfig(fetchRequest),
-  fromDatabase: asyncConfig(async function(config, original) {  // async function example
+const fetchRequest = fetch('/config/services')
+  .then(res => res.json());  // Promise example
+async function dbSecrets(config, original) {  // async function example
     const doc = await db.collection('config').findOne({service: 'node'});
     return doc.secretKeys;
-  })
+  }
+module.exports = {
+  mode: 'dev',  // unrelated value
+  fromUrl: asyncConfig(fetchRequest),
+  fromDatabase: asyncConfig(dbSecrets),
 };
 ```
 
