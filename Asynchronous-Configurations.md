@@ -12,9 +12,9 @@ const asyncConfig = require('config/async').asyncConfig;
 const fetchRequest = fetch('/config/services')
   .then(res => res.json());  // Promise example
 async function dbSecrets(config, original) {  // async function example
-    const doc = await db.collection('config').findOne({service: 'node'});
-    return doc.secretKeys;
-  }
+  const doc = await db.collection('config').findOne({service: 'node'});
+  return doc.secretKeys;
+}
 module.exports = {
   mode: 'dev',  // unrelated value
   fromUrl: asyncConfig(fetchRequest),
