@@ -86,14 +86,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JavaScript配置文件的特殊功能</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#deferred-values-in-javascript-configuration-files">Deferred values in JavaScript configuration files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-promises-process-stdout-and-other-objects-in-javascript-config-files">Using promises, process.stdout and other objects in JavaScript config files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#including-other-files">Including other files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deferred-values-in-javascript-configuration-files">JavaScript配置文件中的延迟值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-promises-process-stdout-and-other-objects-in-javascript-config-files">在JavaScript配置文件中使用promises,process.stdout和其他对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#including-other-files">包括其他文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -179,21 +178,13 @@
             
   <div class="section" id="special-features-for-javascript-configuration-files">
 <h1>JavaScript配置文件的特殊功能<a class="headerlink" href="#special-features-for-javascript-configuration-files" title="永久链接至标题">¶</a></h1>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.js</span></code> are loaded and run as a JavaScript module. The
-module must export the configuration object. Some folks appreciate the
-ability to compute configurations, others feel it’s not the right thing
-to do. It’s nice to live in a world with choice.</p>
-<p>JavaScript modules support the ability to have “deferred” and “raw”
-values.</p>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 结尾的文件将作为JavaScript模块加载并运行.模块必须导出配置对象.有些人欣赏计算配置的能力,有些人则认为这不是正确的做法.住在一个有选择的世界里真好.</p>
+<p>JavaScript模块支持具有“延迟”和“原始”值的功能.</p>
 <div class="section" id="deferred-values-in-javascript-configuration-files">
-<h2>Deferred values in JavaScript configuration files<a class="headerlink" href="#deferred-values-in-javascript-configuration-files" title="永久链接至标题">¶</a></h2>
-<p>In the JavaScript modules you have the option to define a configuration
-value as a function whose resolution will be deferred until the final
-merged configuration structure is built.</p>
-<p>For example, you set up a default value for a “full name” that is
-calculated from “first name” and “last name” values which will be
-provided a config file which overrides the defaults.</p>
-<p>Example:</p>
+<h2>JavaScript配置文件中的延迟值<a class="headerlink" href="#deferred-values-in-javascript-configuration-files" title="永久链接至标题">¶</a></h2>
+<p>在JavaScript模块中,您可以选择将配置值定义为一种函数,其分辨率将延迟到构建最终的合并配置结构.</p>
+<p>例如,您为 “full name” 设置默认值,该值根据 “first name” 和 “last name” 值计算,将提供一个覆盖默认值的配置文件.</p>
+<p>例:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// In default.js</span>
 <span class="c1">// using defer functions is optional. See example and docs below.</span>
 <span class="kd">var</span> <span class="nx">defer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config/defer&#39;</span><span class="p">).</span><span class="nx">deferConfig</span><span class="p">;</span>
@@ -207,28 +198,19 @@ provided a config file which overrides the defaults.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Then in <code class="docutils literal notranslate"><span class="pre">config/production.js</span></code>:</p>
+<p>然后进去 <code class="docutils literal notranslate"><span class="pre">config/production.js</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span><span class="o">.</span><span class="n">exports</span> <span class="o">=</span> <span class="p">{</span>
    <span class="n">firstName</span> <span class="p">:</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
    <span class="n">lastName</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Because the resolution of <code class="docutils literal notranslate"><span class="pre">fullName</span></code> is deferred, it would resolve to
-refer to the overridden first and last name.</p>
-<p>The use of <a class="reference external" href="http://javascriptplayground.com/blog/2013/12/es5-getters-setters/">ECMAScript 5
-getters</a>
-in JavaScript configurations is not supported. Using deferred
-configuration values is the recommended alternative.</p>
+<p>因为 <code class="docutils literal notranslate"><span class="pre">fullName</span></code> 的分辨率被推迟,所以它将决定引用被覆盖的名字和姓氏.</p>
+<p>不支持在JavaScript配置中使用 <a class="reference external" href="http://javascriptplayground.com/blog/2013/12/es5-getters-setters/">ECMAScript 5 getters</a>. 建议使用延迟配置值.</p>
 </div>
 <div class="section" id="using-promises-process-stdout-and-other-objects-in-javascript-config-files">
-<h2>Using promises, process.stdout and other objects in JavaScript config files<a class="headerlink" href="#using-promises-process-stdout-and-other-objects-in-javascript-config-files" title="永久链接至标题">¶</a></h2>
-<p>There may be instances where you would like to place a complex object
-like <code class="docutils literal notranslate"><span class="pre">process.stdout</span></code> into your configuration file, e.g. logging
-configuration. But node-config achieves its useful functionality by
-modifying the config object prototypes then making them immutable - not
-ideal for <code class="docutils literal notranslate"><span class="pre">process.stdout</span></code>! But you can still achieve the goal by
-using the <code class="docutils literal notranslate"><span class="pre">raw</span></code> functionality like so:</p>
+<h2>在JavaScript配置文件中使用promises,process.stdout和其他对象<a class="headerlink" href="#using-promises-process-stdout-and-other-objects-in-javascript-config-files" title="永久链接至标题">¶</a></h2>
+<p>在某些情况下,您可能希望将一个复杂的对象(如 <code class="docutils literal notranslate"><span class="pre">process.stdout</span></code>)放入配置文件中,例如:记录配置.但是node-config通过修改配置对象原型然后使它们成为不可变来实现其有用的功能 - 不适合 <code class="docutils literal notranslate"><span class="pre">process.stdout</span></code>! 但你仍然可以通过使用 <code class="docutils literal notranslate"><span class="pre">raw</span></code> 功能实现目标:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config/raw&#39;</span><span class="p">).</span><span class="nx">raw</span><span class="p">;</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
@@ -236,16 +218,17 @@ using the <code class="docutils literal notranslate"><span class="pre">raw</span
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>Promises or other objects can be included in JavaScript files using the
-same method.</p>
+<p>可以使用相同的方法将Promises或其他对象包含在JavaScript文件中.</p>
 </div>
 <div class="section" id="including-other-files">
-<h2>Including other files<a class="headerlink" href="#including-other-files" title="永久链接至标题">¶</a></h2>
-<p>If you’d like to include values from another file in JavaScript, no
-special syntax is required–the full features of Node.js are already
-available!</p>
-<p>``` config = { // Load credit configs externally credit:
-JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’)) }</p>
+<h2>包括其他文件<a class="headerlink" href="#including-other-files" title="永久链接至标题">¶</a></h2>
+<p>如果您想在JavaScript中包含来自其他文件的值,则不需要特殊语法 -  Node.js的完整功能已经可用!</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>config = {
+   // Load credit configs externally credit:
+   JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’))
+}
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -85,25 +85,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">配置文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#config-directory">Config Directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#file-load-order">File Load Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#local-files"><code class="docutils literal notranslate"><span class="pre">local</span></code> files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#default-node-env">Default NODE_ENV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arrays-are-merged-by-replacement">Arrays are merged by replacement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Multi Instance Deployments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#file-formats">File Formats</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#javascript-object-notation-json">Javascript Object Notation - .json</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#javascript-5-object-notation-json5">Javascript 5 Object Notation - .json5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#human-json-hjson">Human JSON - .hjson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-directory">配置目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-load-order">文件加载顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-files"><code class="docutils literal notranslate"><span class="pre">local</span></code> 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#default-node-env">默认 NODE_ENV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arrays-are-merged-by-replacement">数组通过替换合并</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">多实例部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-formats">文件格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-object-notation-json">Javascript对象表示法 - .json</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-5-object-notation-json5">Javascript 5对象表示法 -  .json5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#human-json-hjson">人类JSON  -  .hjson</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#yaml-aint-markup-language-yaml">Yaml ain’t Markup Language - .yaml</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#javascript-module-js">JavaScript module - .js</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#coffeescript-module-coffee">CoffeeScript module - .coffee</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#coffeescript-object-notation-cson">CoffeeScript Object Notation - .cson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#properties-file-format-properties">Properties file format - .properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#toml-file-format-toml">TOML file format - .toml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-module-js">JavaScript 模块 - .js</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coffeescript-module-coffee">CoffeeScript模块 - .coffee</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coffeescript-object-notation-cson">CoffeeScript对象表示法 - .cson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties-file-format-properties">属性文件格式 -  .properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml-file-format-toml">TOML文件格式 - .toml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#typescript-ts">Typescript - .ts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#extensible-markup-language-xml">Extensible Markup Language - .xml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extensible-markup-language-xml">可扩展标记语言 - .xml</a></li>
 </ul>
 </li>
 </ul>
@@ -111,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">自定义环境变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -198,23 +198,17 @@
   <div class="section" id="configuration-files">
 <h1>配置文件<a class="headerlink" href="#configuration-files" title="永久链接至标题">¶</a></h1>
 <div class="section" id="config-directory">
-<h2>Config Directory<a class="headerlink" href="#config-directory" title="永久链接至标题">¶</a></h2>
-<p>Node-config reads configuration files in the <code class="docutils literal notranslate"><span class="pre">./config</span></code> directory for
-the running process, typically the application root. This can be
-overridden by setting the <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> environment variable to
-the directory containing your configuration files. It can also be set
-from node, before loading Node-config:</p>
+<h2>配置目录<a class="headerlink" href="#config-directory" title="永久链接至标题">¶</a></h2>
+<p>Node-config为正在运行的进程(通常是应用程序根目录)读取 <code class="docutils literal notranslate"><span class="pre">./config</span></code> 目录中的配置文件.这可以通过将 <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> 环境变量设置为包含配置文件的目录来覆盖.在加载 Node-config 之前, 它也可以从 node 设置:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;NODE_CONFIG_DIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__dirname</span> <span class="o">+</span> <span class="s2">&quot;/configDir/&quot;</span><span class="p">;</span>
 <span class="n">const</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> can be a full path from your root directory, or a
-relative path from the process if the value begins with <code class="docutils literal notranslate"><span class="pre">./</span></code> or
-<code class="docutils literal notranslate"><span class="pre">../</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> 可以是来自根目录的完整路径, 或者值以 <code class="docutils literal notranslate"><span class="pre">./</span></code> 或 <code class="docutils literal notranslate"><span class="pre">../</span></code> 开头则是来自进程的相对路径.</p>
 </div>
 <div class="section" id="file-load-order">
-<h2>File Load Order<a class="headerlink" href="#file-load-order" title="永久链接至标题">¶</a></h2>
-<p>Files in the config directory are loaded in the following order:</p>
+<h2>文件加载顺序<a class="headerlink" href="#file-load-order" title="永久链接至标题">¶</a></h2>
+<p>config目录中的文件按以下顺序加载:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="o">.</span><span class="n">EXT</span>
 <span class="n">default</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
 <span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
@@ -234,88 +228,47 @@ relative path from the process if the value begins with <code class="docutils li
 <span class="p">(</span><span class="n">Finally</span><span class="p">,</span> <span class="n">custom</span> <span class="n">environment</span> <span class="n">variables</span> <span class="n">can</span> <span class="n">override</span> <span class="nb">all</span> <span class="n">files</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Where</p>
+<p>哪里</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">EXT</span></code> can be .yml, .yaml, .xml, .coffee, .cson,
-<a class="reference external" href="https://github.com/gagle/node-properties">.properties</a>,
-<a class="reference external" href="http://json.org/">.json</a>, <a class="reference external" href="http://json5.org/">.json5</a>,
-<a class="reference external" href="http://laktak.github.io/hjson/">.hjson</a>, .ts or .js depending on
-the format you prefer (see below)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{instance}</span></code> is an optional instance name string for
-<a class="reference external" href="#multi-instance-deployments">Multi-Instance Deployments</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> is your server name up to the first dot, from
-the <code class="docutils literal notranslate"><span class="pre">$HOST</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOSTNAME</span></code> environment variable or
-<code class="docutils literal notranslate"><span class="pre">os.hostname()</span></code> (in that order). For example if your hostname is
-<code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> then it would load <code class="docutils literal notranslate"><span class="pre">www.EXT</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{full_hostname}</span></code> is your whole server name, you may use this when
-<code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> collides with other machines.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> is the deployment name, from the <code class="docutils literal notranslate"><span class="pre">$NODE_ENV</span></code> (or
-if specified, <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_ENV</span></code>) environment variable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXT</span></code> 可以是.yml, .yaml, .xml, .coffee, .cson, <a class="reference external" href="https://github.com/gagle/node-properties">.properties</a>, <a class="reference external" href="http://json.org/">.json</a>, <a class="reference external" href="http://json5.org/">.json5</a>, <a class="reference external" href="http://laktak.github.io/hjson/">.hjson</a>, .ts或.js取决于您喜欢的格式(见下文)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{instance}</span></code> 是 <a class="reference external" href="#multi-instance-deployments">多实例部署</a> 的可选实例名称字符串</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> 是你的服务器名, 直到第一个点, 来自 <code class="docutils literal notranslate"><span class="pre">$HOST</span></code> 或 <code class="docutils literal notranslate"><span class="pre">$HOSTNAME</span></code> 环境变量或 <code class="docutils literal notranslate"><span class="pre">os.hostname()</span></code> (按此顺序).例如, 如果你的主机名是 <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> 那么它将加载 <code class="docutils literal notranslate"><span class="pre">www.EXT</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{full_hostname}</span></code> 是你的整个服务器名, 当 <code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> 与其他机器发生冲突时你可以使用它.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> 是部署名称, 来自 <code class="docutils literal notranslate"><span class="pre">$NODE_ENV</span></code> (或者如果指定的话, <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_ENV</span></code>)环境变量</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">default.EXT</span></code> file is designed to contain all configuration
-parameters from which other files may overwrite. Overwriting is done on
-a parameter by parameter basis, so subsequent files contain only the
-parameters unique for that override.</p>
-<p><code class="docutils literal notranslate"><span class="pre">{hostname}</span></code> and <code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> files allow you to tune
-configurations for a particular server or deployment. These files are
-designed to live along with other files in your version control system.</p>
+<p><code class="docutils literal notranslate"><span class="pre">default.EXT</span></code> 文件旨在包含其他文件可能覆盖的所有配置参数.覆盖是在逐个参数的基础上完成的, 因此后续文件仅包含该覆盖的唯一参数.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{hostname}</span></code> 和 <code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> 文件允许您调整特定服务器或部署的配置.这些文件旨在与版本控制系统中的其他文件一起使用.</p>
 </div>
 <div class="section" id="local-files">
-<h2><code class="docutils literal notranslate"><span class="pre">local</span></code> files<a class="headerlink" href="#local-files" title="永久链接至标题">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">local</span></code> files are intended to <em>not</em> be tracked in your version
-control system. External configuration management tools can write these
-files upon application deployment, before application loading.</p>
-<p>The best practice for using <code class="docutils literal notranslate"><span class="pre">local</span></code> files is avoid a global
-<code class="docutils literal notranslate"><span class="pre">local.EXT</span></code> file that would affect all ‘{deployment}’ and ‘{instance}’
-cases. Instead, choose the most specific variant of
-<code class="docutils literal notranslate"><span class="pre">local-{instance}.EXT</span></code>, <code class="docutils literal notranslate"><span class="pre">local-{deployment}.EXT</span></code> or
-<code class="docutils literal notranslate"><span class="pre">local-{deployment}-{instance}.EXT</span></code> that applies. With this design you
-can avoid a case where tests pass locally due to local overrides but
-don’t pass after you push. Choose a <code class="docutils literal notranslate"><span class="pre">local</span></code> file variant that is not
-used for your testing context!</p>
+<h2><code class="docutils literal notranslate"><span class="pre">local</span></code> 文件<a class="headerlink" href="#local-files" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">local</span></code> 文件旨在 <em>不</em> 在您的版本控制系统中跟踪.外部配置管理工具可以在应用程序部署之前, 在加载应用程</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">local</span></code> 文件的最佳实践是避免使用会影响所有 ‘{deployment}’ 和 ‘{instance}’ 情况的全局 <code class="docutils literal notranslate"><span class="pre">local.EXT</span></code> 文件.相反, 选择适用的 <code class="docutils literal notranslate"><span class="pre">local-{instance}.EXT</span></code>, <code class="docutils literal notranslate"><span class="pre">local-{deployment}.EXT</span></code> 或 <code class="docutils literal notranslate"><span class="pre">local-{deployment}-{instance}.EXT</span></code> 的最具体变体.使用此设计, 您可以避免由于本地覆盖而导致测试在本地传递但在推送后未通过的情况.选择一个不用于测试环境的 <code class="docutils literal notranslate"><span class="pre">local</span></code> 文件变体！</p>
 </div>
 <div class="section" id="default-node-env">
-<h2>Default NODE_ENV<a class="headerlink" href="#default-node-env" title="永久链接至标题">¶</a></h2>
-<p>If <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> is not set in the environment, a default value of
-<code class="docutils literal notranslate"><span class="pre">development</span></code> is used.</p>
+<h2>默认 NODE_ENV<a class="headerlink" href="#default-node-env" title="永久链接至标题">¶</a></h2>
+<p>如果在环境中没有设置 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>, 则使用默认值 <code class="docutils literal notranslate"><span class="pre">development</span></code>.</p>
 </div>
 <div class="section" id="arrays-are-merged-by-replacement">
-<h2>Arrays are merged by replacement<a class="headerlink" href="#arrays-are-merged-by-replacement" title="永久链接至标题">¶</a></h2>
-<p>Note that arrays are always merged by replacement. That is, the complete
-contents of an array in an override file will replace the complete array
-from a parent file.</p>
+<h2>数组通过替换合并<a class="headerlink" href="#arrays-are-merged-by-replacement" title="永久链接至标题">¶</a></h2>
+<p>请注意, 数组始终通过替换合并.也就是说, 覆盖文件中数组的完整内容将替换父文件中的完整数组.</p>
 </div>
 <div class="section" id="id1">
-<h2>Multi Instance Deployments<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>In order to support different configurations for each application
-instance running on a machine, the <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">environment
-variable</a>
-is inspected, and used for loading instance specific files.</p>
-<p>For example, if the <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> environment variable is set,
-immediately following the load of <code class="docutils literal notranslate"><span class="pre">default.json</span></code>, a file by the name
-of <code class="docutils literal notranslate"><span class="pre">default-3.json</span></code> will be loaded if present.</p>
-<p>This works for all configuration files, so if your
-<code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> and <code class="docutils literal notranslate"><span class="pre">NODE_ENV=stage</span></code>, then immediately after
-loading <code class="docutils literal notranslate"><span class="pre">stage.yaml</span></code>, a file by the name of <code class="docutils literal notranslate"><span class="pre">stage-3.yaml</span></code> will be
-loaded if present.</p>
+<h2>多实例部署<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>为了支持在机器上运行的每个应用程序实例的不同配置, 检查 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">环境变量</a>, 并用于加载实例特定文件.</p>
+<p>例如, 如果设置了 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> 环境变量, 则在加载 <code class="docutils literal notranslate"><span class="pre">default.json</span></code> 之后立即加载一个名为 <code class="docutils literal notranslate"><span class="pre">default-3.json</span></code> 的文件. .</p>
+<p>这适用于所有配置文件, 因此如果您的 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> 和 <code class="docutils literal notranslate"><span class="pre">NODE_ENV=stage</span></code>, 则在加载 <code class="docutils literal notranslate"><span class="pre">stage.yaml</span></code> 之后立即使用名为 <code class="docutils literal notranslate"><span class="pre">stage-3.yaml</span></code> 的文件如果存在, 将加载.</p>
 </div>
 <div class="section" id="environment-variables">
-<h2>Environment variables<a class="headerlink" href="#environment-variables" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables">Custom environment
-variables</a>
-override all configuration files, including local.json. Only command
-line options take precedence over them.</p>
+<h2>环境变量<a class="headerlink" href="#environment-variables" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables">自定义环境变量</a> 覆盖所有配置文件, 包括local.json.只有命令行选项优先于它们.</p>
 </div>
 <div class="section" id="file-formats">
-<h2>File Formats<a class="headerlink" href="#file-formats" title="永久链接至标题">¶</a></h2>
-<p>The following file formats are supported, recognized by their file
-extension.</p>
-<p>All <code class="docutils literal notranslate"><span class="pre">//</span></code> and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code> style comments are removed before file
-loading, allowing you to add comments to file formats such as .json that
-don’t natively support comments.</p>
+<h2>文件格式<a class="headerlink" href="#file-formats" title="永久链接至标题">¶</a></h2>
+<p>支持以下文件格式, 可通过文件扩展名识别.</p>
+<p>在文件加载之前删除所有 <code class="docutils literal notranslate"><span class="pre">//</span></code> 和 <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code> 样式注释, 允许您添加注释到文件格式, 例如.json本身不支持注释.</p>
 <div class="section" id="javascript-object-notation-json">
-<h3>Javascript Object Notation - .json<a class="headerlink" href="#javascript-object-notation-json" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.json</span></code> are parsed in JSON format. Example:</p>
+<h3>Javascript对象表示法 - .json<a class="headerlink" href="#javascript-object-notation-json" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.json</span></code> 结尾的文件以JSON格式解析.例:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;Customer&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;dbConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -333,9 +286,8 @@ don’t natively support comments.</p>
 </div>
 </div>
 <div class="section" id="javascript-5-object-notation-json5">
-<h3>Javascript 5 Object Notation - .json5<a class="headerlink" href="#javascript-5-object-notation-json5" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.json5</span></code> are parsed in <a class="reference external" href="http://json5.org/">JSON5</a>
-format. Example:</p>
+<h3>Javascript 5对象表示法 -  .json5<a class="headerlink" href="#javascript-5-object-notation-json5" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.json5</span></code> 结尾的文件以 <a class="reference external" href="http://json5.org/">JSON5</a> format进行解析.例:</p>
 <div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
   Customer: {
     dbConfig: {
@@ -351,14 +303,11 @@ format. Example:</p>
 }
 </pre></div>
 </div>
-<p>The .json5 parser is dependency of node-config. This is the only custom
-file format which doesn’t require you to add it as a dependency to
-application.</p>
+<p>.json5解析器是node-config的依赖项.这是唯一的自定义文件格式, 不需要将其作为依赖项添加到应用程序.</p>
 </div>
 <div class="section" id="human-json-hjson">
-<h3>Human JSON - .hjson<a class="headerlink" href="#human-json-hjson" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.hjson</span></code> are parsed in
-<a class="reference external" href="http://laktak.github.io/hjson/">Hjson</a> format. Example:</p>
+<h3>人类JSON  -  .hjson<a class="headerlink" href="#human-json-hjson" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.hjson</span></code> 结尾的文件在 <a class="reference external" href="http://laktak.github.io/hjson/">Hjson</a> format中解析.例:</p>
 <div class="highlight-hjson notranslate"><div class="highlight"><pre><span></span>{
   Customer:
   {
@@ -377,18 +326,11 @@ application.</p>
 }
 </pre></div>
 </div>
-<p>The .hjson parser is not a dependency of node-config. The
-<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
-must contain the <code class="docutils literal notranslate"><span class="pre">hjson</span></code> module in order to read and parse .hjson
-files.</p>
+<p>.hjson解析器不是node-config的依赖项.应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含 <code class="docutils literal notranslate"><span class="pre">hjson</span></code> 模块才能读取和解析.hjson文件.</p>
 </div>
 <div class="section" id="yaml-aint-markup-language-yaml">
 <h3>Yaml ain’t Markup Language - .yaml<a class="headerlink" href="#yaml-aint-markup-language-yaml" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> or <code class="docutils literal notranslate"><span class="pre">.yml</span></code> are parsed in YAML format.
-Node-config doesn’t include a YAML library, and beware there are some
-good ones and some not-so-good ones out there. If no global <code class="docutils literal notranslate"><span class="pre">Yaml</span></code>
-variable is available, node-config will attempt to load a good one
-(<a class="reference external" href="https://github.com/nodeca/js-yaml">js-yaml</a>). Example:</p>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.yml</span></code> 结尾的文件以YAML格式解析. Node-config不包含YAML库, 请注意有一些好的库和一些不那么好的库.如果没有可用的全局 <code class="docutils literal notranslate"><span class="pre">Yaml</span></code> 变量, node-config将尝试加载一个好的变量(<a class="reference external" href="https://github.com/nodeca/js-yaml">js-yaml</a>).例:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">// Customer module configs</span>
 <span class="l l-Scalar l-Scalar-Plain">Customer</span><span class="p p-Indicator">:</span>
   <span class="nt">dbConfig</span><span class="p">:</span>
@@ -401,22 +343,16 @@ variable is available, node-config will attempt to load a good one
     <span class="nt">initialDays</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
-must contain the yaml parser, and <code class="docutils literal notranslate"><span class="pre">js-yaml</span></code> is the suggested parser.</p>
+<p>应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含yaml解析器, 而 <code class="docutils literal notranslate"><span class="pre">js-yaml</span></code> 是建议的解析器.</p>
 </div>
 <div class="section" id="javascript-module-js">
-<h3>JavaScript module - .js<a class="headerlink" href="#javascript-module-js" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.js</span></code> are loaded and run as a JavaScript module. The
-module must export the configuration object. JavaScript modules support
-the ability to have “deferred” and “raw” values.</p>
-<p>See <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files">Special features for JavaScript configuration
-files</a>
-for details.</p>
+<h3>JavaScript 模块 - .js<a class="headerlink" href="#javascript-module-js" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 结尾的文件将作为JavaScript模块加载并运行.模块必须导出配置对象. JavaScript模块支持具有“延迟”和“原始”值的功能.</p>
+<p>有关详细信息, 请参阅 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files">JavaScript配置文件的特殊功能</a>.</p>
 </div>
 <div class="section" id="coffeescript-module-coffee">
-<h3>CoffeeScript module - .coffee<a class="headerlink" href="#coffeescript-module-coffee" title="永久链接至标题">¶</a></h3>
-<p>You know what you like. Files ending in <code class="docutils literal notranslate"><span class="pre">.coffee</span></code> are loaded and run
-as a CoffeeScript module. Example CoffeeScript configuration file:</p>
+<h3>CoffeeScript模块 - .coffee<a class="headerlink" href="#coffeescript-module-coffee" title="永久链接至标题">¶</a></h3>
+<p>你知道你喜欢什么.以 <code class="docutils literal notranslate"><span class="pre">.coffee</span></code> 结尾的文件将作为CoffeeScript模块加载并运行.示例CoffeeScript配置文件:</p>
 <div class="highlight-coffee notranslate"><div class="highlight"><pre><span></span><span class="nv">module.exports =</span>
   <span class="c1"># Customer module configs</span>
   <span class="nv">Customer:</span>
@@ -430,15 +366,11 @@ as a CoffeeScript module. Example CoffeeScript configuration file:</p>
       <span class="nv">initialDays: </span><span class="mi">1</span>
 </pre></div>
 </div>
-<p>CoffeeScript is not a dependency of node-config. The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code>
-section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file must contain
-coffee-script in order to read CoffeeScript configuration files.</p>
+<p>CoffeeScript不是node-config的依赖项.应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含coffee-script才能读取CoffeeScript配置文件.</p>
 </div>
 <div class="section" id="coffeescript-object-notation-cson">
-<h3>CoffeeScript Object Notation - .cson<a class="headerlink" href="#coffeescript-object-notation-cson" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.cson</span></code> are loaded and parsed in CoffeeScript object
-notation, because you can never have enough file formats. Example CSON
-configuration file:</p>
+<h3>CoffeeScript对象表示法 - .cson<a class="headerlink" href="#coffeescript-object-notation-cson" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.cson</span></code> 结尾的文件以CoffeeScript对象表示法加载和解析, 因为你永远不会有足够的文件格式.示例CSON配置文件:</p>
 <div class="highlight-cson notranslate"><div class="highlight"><pre><span></span>{
   #comment
   Customers: {
@@ -460,46 +392,32 @@ configuration file:</p>
 }
 </pre></div>
 </div>
-<p>CSON is not a dependency of node-config. The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of
-your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file must contain the <code class="docutils literal notranslate"><span class="pre">cson</span></code>
-module in order to read CoffeeScript object notation configuration
-files.</p>
+<p>CSON不是node-config的依赖项.应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含 <code class="docutils literal notranslate"><span class="pre">cson</span></code> 模块才能读取CoffeeScript对象表示法配置文件.</p>
 </div>
 <div class="section" id="properties-file-format-properties">
-<h3>Properties file format - .properties<a class="headerlink" href="#properties-file-format-properties" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.properties</span></code> are loaded and parsed in properties file
-notation, a dot-style name spacing style popular in many non-javascript
-utilities. Example .properties configuration file:</p>
+<h3>属性文件格式 -  .properties<a class="headerlink" href="#properties-file-format-properties" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.properties</span></code> 结尾的文件在属性文件表示法中加载和解析, 这是一种在许多非JavaScript实用程序中很流行的点式名称间距样式.示例.properties配置文件:</p>
 <div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># Comment</span>
 <span class="na">Customer.dbConfig.host</span> <span class="o">=</span> <span class="s">localhost</span>
 <span class="na">Customer.dbConfig.port</span> <span class="o">=</span> <span class="s">5984</span>
 </pre></div>
 </div>
-<p>Every configuration would end up being a string, but that’s not
-particularly troublesome in javascript.</p>
-<p>The .properties parser is not a dependency of node-config. The
-<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
-must contain the <code class="docutils literal notranslate"><span class="pre">properties</span></code> module in order to read and parse
-.properties files.</p>
+<p>每个配置最终都会成为一个字符串, 但这在javascript中并不是特别麻烦.</p>
+<p>.properties解析器不是node-config的依赖项.应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含 <code class="docutils literal notranslate"><span class="pre">properties</span></code> 模块才能读取和解析.properties文件.</p>
 </div>
 <div class="section" id="toml-file-format-toml">
-<h3>TOML file format - .toml<a class="headerlink" href="#toml-file-format-toml" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.toml</span></code> are loaded and parsed in TOML (Tom’s Obvious,
-Minimal Language), a new and very simple configuration file format.
-Example .toml configuration file:</p>
+<h3>TOML文件格式 - .toml<a class="headerlink" href="#toml-file-format-toml" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.toml</span></code> 结尾的文件在TOML(Tom’s Obvious, Minimal Language)中加载和解析, 这是一种新的非常简单的配置文件格式.示例.toml配置文件:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span>[database]
 host = &quot;localhost&quot;
 port = 5984
 </pre></div>
 </div>
-<p>The .toml parser is not a dependency of node-config. The
-<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
-must contain the <code class="docutils literal notranslate"><span class="pre">toml</span></code> module in order to read and parse .toml files.</p>
+<p>.toml解析器不是node-config的依赖项.应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含 <code class="docutils literal notranslate"><span class="pre">toml</span></code> 模块才能读取和解析.toml文件.</p>
 </div>
 <div class="section" id="typescript-ts">
 <h3>Typescript - .ts<a class="headerlink" href="#typescript-ts" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.ts</span></code> are loaded and run as Typescript modules.
-Example .ts configuration file:</p>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.ts</span></code> 结尾的文件将作为Typescript模块加载并运行.示例.ts配置文件:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">Customer</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">dbConfig</span><span class="o">:</span> <span class="p">{</span>
@@ -515,15 +433,12 @@ Example .ts configuration file:</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>See <a class="reference external" href="../tree/master/test/x-config-ts">Typescript testing files</a> for
-more examples.</p>
-<p>Typescript is not a dependency of node-config. The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code>
-section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file must contain
-typescript in order to read Typescript configuration files.</p>
+<p>有关更多示例, 请参阅 <a class="reference external" href="../tree/master/test/x-config-ts">Typescript测试文件</a>.</p>
+<p>Typescript不是node-config的依赖项.应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含typescript才能读取Typescript配置文件.</p>
 </div>
 <div class="section" id="extensible-markup-language-xml">
-<h3>Extensible Markup Language - .xml<a class="headerlink" href="#extensible-markup-language-xml" title="永久链接至标题">¶</a></h3>
-<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.xml</span></code> are parsed in XML format. Example:</p>
+<h3>可扩展标记语言 - .xml<a class="headerlink" href="#extensible-markup-language-xml" title="永久链接至标题">¶</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">.xml</span></code> 结尾的文件以XML格式解析.例:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>// Customer module configs
 <span class="nt">&lt;config&gt;</span>
   <span class="nt">&lt;Customer&gt;</span>
@@ -540,8 +455,7 @@ typescript in order to read Typescript configuration files.</p>
 <span class="nt">&lt;/config&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
-must contain x2js in order to read XML configuration files.</p>
+<p>应用程序的 <code class="docutils literal notranslate"><span class="pre">package.json</span></code> 文件的 <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> 部分必须包含x2js才能读取XML配置文件.</p>
 </div>
 </div>
 </div>

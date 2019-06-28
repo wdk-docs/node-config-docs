@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 19:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,44 +29,46 @@ msgid ""
 "ability to compute configurations, others feel it’s not the right thing "
 "to do. It’s nice to live in a world with choice."
 msgstr ""
+"以 ``.js`` "
+"结尾的文件将作为JavaScript模块加载并运行.模块必须导出配置对象.有些人欣赏计算配置的能力,有些人则认为这不是正确的做法.住在一个有选择的世界里真好."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:9
 msgid ""
 "JavaScript modules support the ability to have “deferred” and “raw” "
 "values."
-msgstr ""
+msgstr "JavaScript模块支持具有“延迟”和“原始”值的功能."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:13
 msgid "Deferred values in JavaScript configuration files"
-msgstr "Deferred values in JavaScript configuration files"
+msgstr "JavaScript配置文件中的延迟值"
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:15
 msgid ""
 "In the JavaScript modules you have the option to define a configuration "
 "value as a function whose resolution will be deferred until the final "
 "merged configuration structure is built."
-msgstr ""
+msgstr "在JavaScript模块中,您可以选择将配置值定义为一种函数,其分辨率将延迟到构建最终的合并配置结构."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:19
 msgid ""
 "For example, you set up a default value for a “full name” that is "
 "calculated from “first name” and “last name” values which will be "
 "provided a config file which overrides the defaults."
-msgstr ""
+msgstr "例如,您为 “full name” 设置默认值,该值根据 “first name” 和 “last name” 值计算,将提供一个覆盖默认值的配置文件."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:23
 msgid "Example:"
-msgstr "Example:"
+msgstr "例:"
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:39
 msgid "Then in ``config/production.js``:"
-msgstr "Then in ``config/production.js``:"
+msgstr "然后进去 ``config/production.js``:"
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:48
 msgid ""
 "Because the resolution of ``fullName`` is deferred, it would resolve to "
 "refer to the overridden first and last name."
-msgstr ""
+msgstr "因为 ``fullName`` 的分辨率被推迟,所以它将决定引用被覆盖的名字和姓氏."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:51
 msgid ""
@@ -75,12 +77,15 @@ msgid ""
 "JavaScript configurations is not supported. Using deferred configuration "
 "values is the recommended alternative."
 msgstr ""
+"不支持在JavaScript配置中使用 `ECMAScript 5 getters "
+"<http://javascriptplayground.com/blog/2013/12/es5-getters-"
+"setters/>`_. 建议使用延迟配置值."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:57
 msgid ""
 "Using promises, process.stdout and other objects in JavaScript config "
 "files"
-msgstr ""
+msgstr "在JavaScript配置文件中使用promises,process.stdout和其他对象"
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:59
 msgid ""
@@ -91,30 +96,36 @@ msgid ""
 "ideal for ``process.stdout``! But you can still achieve the goal by using"
 " the ``raw`` functionality like so:"
 msgstr ""
+"在某些情况下,您可能希望将一个复杂的对象(如 ``process.stdout``)放入配置文件中,例如:记录配置.但是node-"
+"config通过修改配置对象原型然后使它们成为不可变来实现其有用的功能 - "
+"不适合 ``process.stdout``! 但你仍然可以通过使用 ``raw`` 功能实现目标:"
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:74
 msgid ""
 "Promises or other objects can be included in JavaScript files using the "
 "same method."
-msgstr ""
+msgstr "可以使用相同的方法将Promises或其他对象包含在JavaScript文件中."
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:78
 msgid "Including other files"
-msgstr "Including other files"
+msgstr "包括其他文件"
 
 #: ../../source/Special-features-for-JavaScript-configuration-files.rst:80
 msgid ""
 "If you’d like to include values from another file in JavaScript, no "
 "special syntax is required–the full features of Node.js are already "
 "available!"
-msgstr ""
-
-#: ../../source/Special-features-for-JavaScript-configuration-files.rst:84
-msgid ""
-"\\``\\` config = { // Load credit configs externally credit: "
-"JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’)) }"
-msgstr ""
+msgstr "如果您想在JavaScript中包含来自其他文件的值,则不需要特殊语法 -  Node.js的完整功能已经可用!"
 
 #~ msgid "Special-features-for-JavaScript-configuration-files"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "\\``\\` config={//Load credit configs"
+#~ " externally credit: "
+#~ "JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’)) }"
+#~ msgstr ""
+#~ "\\``\\`config="
+#~ "{//从外部加载信用额度信用:JSON.parse(fs.readFileSync('./ "
+#~ "currentCreditPolicy.json'))}"
 

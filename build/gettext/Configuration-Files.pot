@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,257 +18,257 @@ msgstr ""
 
 #: ../../source/Configuration-Files.rst:2
 msgid "Configuration Files"
-msgstr "Configuration Files"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:5
 msgid "Config Directory"
-msgstr "Config Directory"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:7
 msgid "Node-config reads configuration files in the ``./config`` directory for the running process, typically the application root. This can be overridden by setting the ``$NODE_CONFIG_DIR`` environment variable to the directory containing your configuration files. It can also be set from node, before loading Node-config:"
-msgstr "Node-config reads configuration files in the ``./config`` directory for the running process, typically the application root. This can be overridden by setting the ``$NODE_CONFIG_DIR`` environment variable to the directory containing your configuration files. It can also be set from node, before loading Node-config:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:18
 msgid "``$NODE_CONFIG_DIR`` can be a full path from your root directory, or a relative path from the process if the value begins with ``./`` or ``../``."
-msgstr "``$NODE_CONFIG_DIR`` can be a full path from your root directory, or a relative path from the process if the value begins with ``./`` or ``../``."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:23
 msgid "File Load Order"
-msgstr "File Load Order"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:25
 msgid "Files in the config directory are loaded in the following order:"
-msgstr "Files in the config directory are loaded in the following order:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:47
 msgid "Where"
-msgstr "Where"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:49
 msgid "``EXT`` can be .yml, .yaml, .xml, .coffee, .cson, `.properties <https://github.com/gagle/node-properties>`_, `.json <http://json.org/>`_, `.json5 <http://json5.org/>`_, `.hjson <http://laktak.github.io/hjson/>`_, .ts or .js depending on the format you prefer (see below)"
-msgstr "``EXT`` can be .yml, .yaml, .xml, .coffee, .cson, `.properties <https://github.com/gagle/node-properties>`_, `.json <http://json.org/>`_, `.json5 <http://json5.org/>`_, `.hjson <http://laktak.github.io/hjson/>`_, .ts or .js depending on the format you prefer (see below)"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:54
 msgid "``{instance}`` is an optional instance name string for `Multi-Instance Deployments <#multi-instance-deployments>`_"
-msgstr "``{instance}`` is an optional instance name string for `Multi-Instance Deployments <#multi-instance-deployments>`_"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:56
 msgid "``{short_hostname}`` is your server name up to the first dot, from the ``$HOST`` or ``$HOSTNAME`` environment variable or ``os.hostname()`` (in that order). For example if your hostname is ``www.example.com`` then it would load ``www.EXT``."
-msgstr "``{short_hostname}`` is your server name up to the first dot, from the ``$HOST`` or ``$HOSTNAME`` environment variable or ``os.hostname()`` (in that order). For example if your hostname is ``www.example.com`` then it would load ``www.EXT``."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:60
 msgid "``{full_hostname}`` is your whole server name, you may use this when ``{short_hostname}`` collides with other machines."
-msgstr "``{full_hostname}`` is your whole server name, you may use this when ``{short_hostname}`` collides with other machines."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:62
 msgid "``{deployment}`` is the deployment name, from the ``$NODE_ENV`` (or if specified, ``$NODE_CONFIG_ENV``) environment variable"
-msgstr "``{deployment}`` is the deployment name, from the ``$NODE_ENV`` (or if specified, ``$NODE_CONFIG_ENV``) environment variable"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:65
 msgid "The ``default.EXT`` file is designed to contain all configuration parameters from which other files may overwrite. Overwriting is done on a parameter by parameter basis, so subsequent files contain only the parameters unique for that override."
-msgstr "The ``default.EXT`` file is designed to contain all configuration parameters from which other files may overwrite. Overwriting is done on a parameter by parameter basis, so subsequent files contain only the parameters unique for that override."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:70
 msgid "``{hostname}`` and ``{deployment}`` files allow you to tune configurations for a particular server or deployment. These files are designed to live along with other files in your version control system."
-msgstr "``{hostname}`` and ``{deployment}`` files allow you to tune configurations for a particular server or deployment. These files are designed to live along with other files in your version control system."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:75
 msgid "``local`` files"
-msgstr "``local`` files"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:77
 msgid "The ``local`` files are intended to *not* be tracked in your version control system. External configuration management tools can write these files upon application deployment, before application loading."
-msgstr "The ``local`` files are intended to *not* be tracked in your version control system. External configuration management tools can write these files upon application deployment, before application loading."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:81
 msgid "The best practice for using ``local`` files is avoid a global ``local.EXT`` file that would affect all ‘{deployment}’ and ‘{instance}’ cases. Instead, choose the most specific variant of ``local-{instance}.EXT``, ``local-{deployment}.EXT`` or ``local-{deployment}-{instance}.EXT`` that applies. With this design you can avoid a case where tests pass locally due to local overrides but don’t pass after you push. Choose a ``local`` file variant that is not used for your testing context!"
-msgstr "The best practice for using ``local`` files is avoid a global ``local.EXT`` file that would affect all ‘{deployment}’ and ‘{instance}’ cases. Instead, choose the most specific variant of ``local-{instance}.EXT``, ``local-{deployment}.EXT`` or ``local-{deployment}-{instance}.EXT`` that applies. With this design you can avoid a case where tests pass locally due to local overrides but don’t pass after you push. Choose a ``local`` file variant that is not used for your testing context!"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:91
 msgid "Default NODE_ENV"
-msgstr "Default NODE_ENV"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:93
 msgid "If ``NODE_ENV`` is not set in the environment, a default value of ``development`` is used."
-msgstr "If ``NODE_ENV`` is not set in the environment, a default value of ``development`` is used."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:97
 msgid "Arrays are merged by replacement"
-msgstr "Arrays are merged by replacement"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:99
 msgid "Note that arrays are always merged by replacement. That is, the complete contents of an array in an override file will replace the complete array from a parent file."
-msgstr "Note that arrays are always merged by replacement. That is, the complete contents of an array in an override file will replace the complete array from a parent file."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:104
 msgid "Multi Instance Deployments"
-msgstr "Multi Instance Deployments"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:106
 msgid "In order to support different configurations for each application instance running on a machine, the ``NODE_APP_INSTANCE`` `environment variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ is inspected, and used for loading instance specific files."
-msgstr "In order to support different configurations for each application instance running on a machine, the ``NODE_APP_INSTANCE`` `environment variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ is inspected, and used for loading instance specific files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:111
 msgid "For example, if the ``NODE_APP_INSTANCE=3`` environment variable is set, immediately following the load of ``default.json``, a file by the name of ``default-3.json`` will be loaded if present."
-msgstr "For example, if the ``NODE_APP_INSTANCE=3`` environment variable is set, immediately following the load of ``default.json``, a file by the name of ``default-3.json`` will be loaded if present."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:115
 msgid "This works for all configuration files, so if your ``NODE_APP_INSTANCE=3`` and ``NODE_ENV=stage``, then immediately after loading ``stage.yaml``, a file by the name of ``stage-3.yaml`` will be loaded if present."
-msgstr "This works for all configuration files, so if your ``NODE_APP_INSTANCE=3`` and ``NODE_ENV=stage``, then immediately after loading ``stage.yaml``, a file by the name of ``stage-3.yaml`` will be loaded if present."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:121
 msgid "Environment variables"
-msgstr "Environment variables"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:123
 msgid "`Custom environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_ override all configuration files, including local.json. Only command line options take precedence over them."
-msgstr "`Custom environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_ override all configuration files, including local.json. Only command line options take precedence over them."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:129
 msgid "File Formats"
-msgstr "File Formats"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:131
 msgid "The following file formats are supported, recognized by their file extension."
-msgstr "The following file formats are supported, recognized by their file extension."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:134
 msgid "All ``//`` and ``/* ... */`` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don’t natively support comments."
-msgstr "All ``//`` and ``/* ... */`` style comments are removed before file loading, allowing you to add comments to file formats such as .json that don’t natively support comments."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:139
 msgid "Javascript Object Notation - .json"
-msgstr "Javascript Object Notation - .json"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:141
 msgid "Files ending in ``.json`` are parsed in JSON format. Example:"
-msgstr "Files ending in ``.json`` are parsed in JSON format. Example:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:160
 msgid "Javascript 5 Object Notation - .json5"
-msgstr "Javascript 5 Object Notation - .json5"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:162
 msgid "Files ending in ``.json5`` are parsed in `JSON5 <http://json5.org/>`_ format. Example:"
-msgstr "Files ending in ``.json5`` are parsed in `JSON5 <http://json5.org/>`_ format. Example:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:181
 msgid "The .json5 parser is dependency of node-config. This is the only custom file format which doesn’t require you to add it as a dependency to application."
-msgstr "The .json5 parser is dependency of node-config. This is the only custom file format which doesn’t require you to add it as a dependency to application."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:186
 msgid "Human JSON - .hjson"
-msgstr "Human JSON - .hjson"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:188
 msgid "Files ending in ``.hjson`` are parsed in `Hjson <http://laktak.github.io/hjson/>`_ format. Example:"
-msgstr "Files ending in ``.hjson`` are parsed in `Hjson <http://laktak.github.io/hjson/>`_ format. Example:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:210
 msgid "The .hjson parser is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``hjson`` module in order to read and parse .hjson files."
-msgstr "The .hjson parser is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``hjson`` module in order to read and parse .hjson files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:216
 msgid "Yaml ain’t Markup Language - .yaml"
-msgstr "Yaml ain’t Markup Language - .yaml"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:218
 msgid "Files ending in ``.yaml`` or ``.yml`` are parsed in YAML format. Node-config doesn’t include a YAML library, and beware there are some good ones and some not-so-good ones out there. If no global ``Yaml`` variable is available, node-config will attempt to load a good one (`js-yaml <https://github.com/nodeca/js-yaml>`_). Example:"
-msgstr "Files ending in ``.yaml`` or ``.yml`` are parsed in YAML format. Node-config doesn’t include a YAML library, and beware there are some good ones and some not-so-good ones out there. If no global ``Yaml`` variable is available, node-config will attempt to load a good one (`js-yaml <https://github.com/nodeca/js-yaml>`_). Example:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:237
 msgid "The ``dependencies`` section of your application’s ``package.json`` file must contain the yaml parser, and ``js-yaml`` is the suggested parser."
-msgstr "The ``dependencies`` section of your application’s ``package.json`` file must contain the yaml parser, and ``js-yaml`` is the suggested parser."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:241
 msgid "JavaScript module - .js"
-msgstr "JavaScript module - .js"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:243
 msgid "Files ending in ``.js`` are loaded and run as a JavaScript module. The module must export the configuration object. JavaScript modules support the ability to have “deferred” and “raw” values."
-msgstr "Files ending in ``.js`` are loaded and run as a JavaScript module. The module must export the configuration object. JavaScript modules support the ability to have “deferred” and “raw” values."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:247
 msgid "See `Special features for JavaScript configuration files <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_ for details."
-msgstr "See `Special features for JavaScript configuration files <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_ for details."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:252
 msgid "CoffeeScript module - .coffee"
-msgstr "CoffeeScript module - .coffee"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:254
 msgid "You know what you like. Files ending in ``.coffee`` are loaded and run as a CoffeeScript module. Example CoffeeScript configuration file:"
-msgstr "You know what you like. Files ending in ``.coffee`` are loaded and run as a CoffeeScript module. Example CoffeeScript configuration file:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:271
 msgid "CoffeeScript is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain coffee-script in order to read CoffeeScript configuration files."
-msgstr "CoffeeScript is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain coffee-script in order to read CoffeeScript configuration files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:276
 msgid "CoffeeScript Object Notation - .cson"
-msgstr "CoffeeScript Object Notation - .cson"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:278
 msgid "Files ending in ``.cson`` are loaded and parsed in CoffeeScript object notation, because you can never have enough file formats. Example CSON configuration file:"
-msgstr "Files ending in ``.cson`` are loaded and parsed in CoffeeScript object notation, because you can never have enough file formats. Example CSON configuration file:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:304
 msgid "CSON is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``cson`` module in order to read CoffeeScript object notation configuration files."
-msgstr "CSON is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``cson`` module in order to read CoffeeScript object notation configuration files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:310
 msgid "Properties file format - .properties"
-msgstr "Properties file format - .properties"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:312
 msgid "Files ending in ``.properties`` are loaded and parsed in properties file notation, a dot-style name spacing style popular in many non-javascript utilities. Example .properties configuration file:"
-msgstr "Files ending in ``.properties`` are loaded and parsed in properties file notation, a dot-style name spacing style popular in many non-javascript utilities. Example .properties configuration file:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:322
 msgid "Every configuration would end up being a string, but that’s not particularly troublesome in javascript."
-msgstr "Every configuration would end up being a string, but that’s not particularly troublesome in javascript."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:325
 msgid "The .properties parser is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``properties`` module in order to read and parse .properties files."
-msgstr "The .properties parser is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``properties`` module in order to read and parse .properties files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:331
 msgid "TOML file format - .toml"
-msgstr "TOML file format - .toml"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:333
 msgid "Files ending in ``.toml`` are loaded and parsed in TOML (Tom’s Obvious, Minimal Language), a new and very simple configuration file format. Example .toml configuration file:"
-msgstr "Files ending in ``.toml`` are loaded and parsed in TOML (Tom’s Obvious, Minimal Language), a new and very simple configuration file format. Example .toml configuration file:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:343
 msgid "The .toml parser is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``toml`` module in order to read and parse .toml files."
-msgstr "The .toml parser is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain the ``toml`` module in order to read and parse .toml files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:348
 msgid "Typescript - .ts"
-msgstr "Typescript - .ts"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:350
 msgid "Files ending in ``.ts`` are loaded and run as Typescript modules. Example .ts configuration file:"
-msgstr "Files ending in ``.ts`` are loaded and run as Typescript modules. Example .ts configuration file:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:369
 msgid "See `Typescript testing files <../tree/master/test/x-config-ts>`_ for more examples."
-msgstr "See `Typescript testing files <../tree/master/test/x-config-ts>`_ for more examples."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:372
 msgid "Typescript is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain typescript in order to read Typescript configuration files."
-msgstr "Typescript is not a dependency of node-config. The ``dependencies`` section of your application’s ``package.json`` file must contain typescript in order to read Typescript configuration files."
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:377
 msgid "Extensible Markup Language - .xml"
-msgstr "Extensible Markup Language - .xml"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:379
 msgid "Files ending in ``.xml`` are parsed in XML format. Example:"
-msgstr "Files ending in ``.xml`` are parsed in XML format. Example:"
+msgstr ""
 
 #: ../../source/Configuration-Files.rst:398
 msgid "The ``dependencies`` section of your application’s ``package.json`` file must contain x2js in order to read XML configuration files."
-msgstr "The ``dependencies`` section of your application’s ``package.json`` file must contain x2js in order to read XML configuration files."
+msgstr ""
 

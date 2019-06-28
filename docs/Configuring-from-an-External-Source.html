@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -174,14 +173,8 @@
             
   <div class="section" id="configuring-from-an-external-source">
 <h1>从外部源配置<a class="headerlink" href="#configuring-from-an-external-source" title="永久链接至标题">¶</a></h1>
-<p>In a nutshell: define only external source connection settings in files,
-using those settings to connect to the source. Once connected, read
-additional configurations and add them to the config object returned
-from <code class="docutils literal notranslate"><span class="pre">require('config');</span></code>.</p>
-<p>Make sure any external overrides are done in the application bootstrap -
-before anyone calls the first <code class="docutils literal notranslate"><span class="pre">config.get();</span></code>, because the config
-object is made immutable as soon as any client uses the values via
-<code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
+<p>简而言之: 仅在文件中定义外部源连接设置, 使用这些设置连接到源.连接后, 读取其他配置并将它们添加到从 <code class="docutils literal notranslate"><span class="pre">require('config');</span></code> 返回的配置对象中.</p>
+<p>确保在应用程序引导程序中完成任何外部覆盖 - 在任何人调用第一个 <code class="docutils literal notranslate"><span class="pre">config.get();</span></code> 之前, 因为只要任何客户端通过 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 使用这些值, 配置对象就会变为不可变的.</p>
 </div>
 
 

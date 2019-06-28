@@ -23,8 +23,8 @@ msgid "Footer"
 msgstr "页脚"
 
 #: ../../source/_Footer.rst:4
-msgid ""
+msgid  ""
 "Copyright (c) 2010-2019 Loren West `and other contributors "
 "<https://github.com/lorenwest/node-config#contributors>`_"
-msgstr ""
+msgstr "版权 (c) 2010-2019 Loren West `和其他贡献者 <https://github.com/lorenwest/node-config#contributors>`_"
 

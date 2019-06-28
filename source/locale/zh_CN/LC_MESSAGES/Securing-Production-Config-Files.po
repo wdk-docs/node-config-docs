@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:33+0800\n"
+"POT-Creation-Date: 2019-06-28 23:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "保护生产配置文件"
 
 #: ../../source/Securing-Production-Config-Files.rst:5
 msgid "Introduction"
-msgstr "Introduction"
+msgstr "介绍"
 
 #: ../../source/Securing-Production-Config-Files.rst:7
 msgid ""
@@ -35,56 +35,59 @@ msgid ""
 "can keep your production config files under version control with git, "
 "while also keeping them secure via encryption."
 msgstr ""
+"分离出生产配置后, 您可能希望加密包含敏感信息的任何文件(API密钥, 密码等).这个页面将开始使用 `git-crypt "
+"<https://github.com/AGWA/git-crypt>`_, 它适用于node-config.使用git-crypt, "
+"您可以使用git将生产配置文件保留在版本控制下, 同时通过加密使其保持安全."
 
 #: ../../source/Securing-Production-Config-Files.rst:14
 msgid "Here is the scenario we’ll be configuring:"
-msgstr "Here is the scenario we’ll be configuring:"
+msgstr "这是我们将要配置的场景:"
 
 #: ../../source/Securing-Production-Config-Files.rst:16
 msgid ""
 "You, Paul and Ringo are all working on a project, using git. There are "
 "server deployments involved."
-msgstr ""
+msgstr "你, Paul和Ringo都在使用git从事一个项目.涉及服务器部署."
 
 #: ../../source/Securing-Production-Config-Files.rst:18
 msgid ""
 "Ringo is a contributor, and doesn’t need or want to see production "
 "passwords, API secret keys etc."
-msgstr ""
+msgstr "Ringo是贡献者, 不需要或不想看到生产密码, API密钥等."
 
 #: ../../source/Securing-Production-Config-Files.rst:20
 msgid ""
 "You and Paul both maintain the servers and need access to the sensitive "
 "info."
-msgstr ""
+msgstr "您和Paul都维护服务器并需要访问敏感信息."
 
 #: ../../source/Securing-Production-Config-Files.rst:24
-msgid "Prerequisites:"
-msgstr "Prerequisites:"
+msgid "先决条件:"
+msgstr ""
 
 #: ../../source/Securing-Production-Config-Files.rst:26
 msgid "`git-crypt <https://github.com/AGWA/git-crypt.git>`_ is installed."
-msgstr "`git-crypt <https://github.com/AGWA/git-crypt.git>`_ is installed."
+msgstr "`git-crypt <https://github.com/AGWA/git-crypt.git>`_ 已安装."
 
 #: ../../source/Securing-Production-Config-Files.rst:28
 msgid "On OS X : ``brew install git-crypt``"
-msgstr "On OS X : ``brew install git-crypt``"
+msgstr "在OS X上: ``brew install git-crypt``"
 
 #: ../../source/Securing-Production-Config-Files.rst:29
-msgid "On Ubuntu / Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``"
-msgstr "On Ubuntu / Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``"
+msgid "On Ubuntu/Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``"
+msgstr "在Ubuntu/Debian上(自16.04 LTS起) ``sudo apt-get install git-crypt``"
 
 #: ../../source/Securing-Production-Config-Files.rst:30
 msgid ""
 "On other systems: `INSTALL <https://github.com/AGWA/git-"
 "crypt/blob/master/INSTALL.md>`_"
-msgstr ""
+msgstr "在其他系统上: `安装 <https://github.com/AGWA/git-crypt/blob/master/INSTALL.md>`_"
 
 #: ../../source/Securing-Production-Config-Files.rst:32
 msgid ""
 "Your project is using git, your working copy is clean, and you haven’t "
 "committed any sensitive information to it yet."
-msgstr ""
+msgstr "您的项目正在使用git, 您的工作副本是干净的, 并且您尚未向其提交任何敏感信息."
 
 #: ../../source/Securing-Production-Config-Files.rst:35
 msgid ""
@@ -92,20 +95,24 @@ msgid ""
 "repository, you’ll need to clean it using `bfg repo cleaner "
 "<https://rtyley.github.io/bfg-repo-cleaner/>`_."
 msgstr ""
+"如果您*意外地将敏感信息提交到您的存储库, 您将需要使用 `bfg repo cleaner  <https://rtyley.github.io"
+"/bfg-repo-cleaner/>`_ 进行清理."
 
 #: ../../source/Securing-Production-Config-Files.rst:39
 msgid "You have `GnuPG <https://www.gnupg.org/>`_ installed."
-msgstr "You have `GnuPG <https://www.gnupg.org/>`_ installed."
+msgstr "你安装了 `GnuPG <https://www.gnupg.org/>`_."
 
 #: ../../source/Securing-Production-Config-Files.rst:41
 msgid ""
 "On OS X, the GPG Keychain that is part of `GPG Suite "
 "<https://gpgtools.org/gpgsuite.html>`_ is very easy to use."
 msgstr ""
+"在OS X上, 作为 `GPG Suite <https://gpgtools.org/gpgsuite.html>`_ 一部分的GPG "
+"Keychain非常易于使用."
 
 #: ../../source/Securing-Production-Config-Files.rst:43
 msgid "On Windows, `GPG4Win <https://www.gpg4win.org/>`_ looks pretty good."
-msgstr "On Windows, `GPG4Win <https://www.gpg4win.org/>`_ looks pretty good."
+msgstr "在Windows上, `GPG4Win <https://www.gpg4win.org/>`_ 看起来很不错."
 
 #: ../../source/Securing-Production-Config-Files.rst:45
 msgid ""
@@ -113,18 +120,20 @@ msgid ""
 "<https://www.gnupg.org/related_software/gpa/index.html>`_ provides a "
 "front-end."
 msgstr ""
+"在Unix/Linux上, `GPA "
+"<https://www.gnupg.org/related_software/gpa/index.html>`_ 提供了一个前端."
 
 #: ../../source/Securing-Production-Config-Files.rst:49
 msgid "You have a ``config`` folder where your configuration files will be kept."
-msgstr "You have a ``config`` folder where your configuration files will be kept."
+msgstr "你有一个 ``config`` 文件夹, 你的配置文件将被保存."
 
 #: ../../source/Securing-Production-Config-Files.rst:53
 msgid "Steps"
-msgstr "Steps"
+msgstr "脚步"
 
 #: ../../source/Securing-Production-Config-Files.rst:58
 msgid "Initial Setup"
-msgstr "Initial Setup"
+msgstr "初始设置"
 
 #: ../../source/Securing-Production-Config-Files.rst:60
 msgid ""
@@ -132,158 +141,166 @@ msgid ""
 "encrypted for Ringo, but the same file is plain JSON for yourself and "
 "Paul."
 msgstr ""
+"我们将设置git-crypt, 以便为Ringo加密 ``production.json`` 文件, "
+"但同样的文件对于你自己和Paul来说都是简单的JSON."
 
 #: ../../source/Securing-Production-Config-Files.rst:64
 msgid "Initialise the repository to use git-crypt"
-msgstr "Initialise the repository to use git-crypt"
+msgstr "初始化存储库以使用git-crypt"
 
 #: ../../source/Securing-Production-Config-Files.rst:70
 msgid ""
 "Add your own public GPG key (already on your GPG keychain) as a trusted "
 "user"
-msgstr ""
+msgstr "添加您自己的公共GPG密钥(已在您的GPG钥匙串上)作为受信任的用户"
 
 #: ../../source/Securing-Production-Config-Files.rst:77
 msgid ""
 "Import Paul’s public GPG key to your own GPG keychain (Paul probably "
 "emailed this to You)"
-msgstr ""
+msgstr "将Paul的公共GPG密钥导入您自己的GPG钥匙串(Paul可能会通过电子邮件发送给您)"
 
 #: ../../source/Securing-Production-Config-Files.rst:84
 msgid "Mark both your own key and Paul’s key with ‘ultimate’ trust in GPG."
-msgstr "Mark both your own key and Paul’s key with ‘ultimate’ trust in GPG."
+msgstr "用GPG中的“终极”信任标记自己的密钥和Paul的密钥."
 
 #: ../../source/Securing-Production-Config-Files.rst:104
 msgid "Do the same for ``paul@example.com``"
-msgstr "Do the same for ``paul@example.com``"
+msgstr "为 ``paul@example.com`` 做同样的事情"
 
 #: ../../source/Securing-Production-Config-Files.rst:106
 msgid "Add Paul’s public GPG key as a trusted git-crypt user"
-msgstr "Add Paul’s public GPG key as a trusted git-crypt user"
+msgstr "将Paul的公共GPG密钥添加为可信的git-crypt用户"
 
 #: ../../source/Securing-Production-Config-Files.rst:112
 msgid ""
 "Add the ``config/production.json`` file (or equivalent YAML etc) to the "
-"``.gitattributes file``, so git-crypt will manage the encryption / "
-"decryption where necessary. Add the following line to the "
+"``.gitattributes file``, so git-crypt will manage the "
+"encryption/decryption where necessary. Add the following line to the "
 "``.gitattributes`` file (substituting the appropriate extension):"
 msgstr ""
+"将 ``config/production.json`` 文件(或等效的YAML等)添加到 ``.gitattributes文件`` 中, "
+"因此git-crypt将在必要时管理加密/解密.将以下行添加到``.gitattributes`` 文件中(替换相应的扩展名):"
 
-#: ../../source/Securing-Production-Config-Files.rst:121
+#: ../../source/Securing-Production-Config-Files.rst:120
 msgid ""
 "Now create the file and add it to your repo (substituting the appropriate"
 " syntax and extension):"
-msgstr ""
+msgstr "现在创建文件并将其添加到您的仓库(替换相应的语法和扩展名):"
 
-#: ../../source/Securing-Production-Config-Files.rst:131
+#: ../../source/Securing-Production-Config-Files.rst:130
 msgid "On the git remote (server), ``config/production.json`` is now encrypted."
-msgstr "On the git remote (server), ``config/production.json`` is now encrypted."
+msgstr "在git remote(服务器)上, ``config/production.json`` 现在已加密."
 
-#: ../../source/Securing-Production-Config-Files.rst:136
+#: ../../source/Securing-Production-Config-Files.rst:135
 msgid "Git-crypt Workflow"
-msgstr "Git-crypt Workflow"
+msgstr "Git-crypt 工作流程"
 
-#: ../../source/Securing-Production-Config-Files.rst:138
+#: ../../source/Securing-Production-Config-Files.rst:137
 msgid ""
 "Initially, when Paul clones or pulls the repo, ``config/production.json``"
 " is encrypted for him too."
-msgstr ""
+msgstr "最初, 当Paul克隆或拉回购时, ``config/production.json`` 也为他加密."
 
-#: ../../source/Securing-Production-Config-Files.rst:141
+#: ../../source/Securing-Production-Config-Files.rst:140
 msgid ""
 "But his public key is listed as trusted, and he has the corresponding "
 "private key on his keyring. So he can unlock all encrypted files with a "
 "single command:"
-msgstr ""
+msgstr "但是他的公钥被列为可信任, 并且他的密钥环上有相应的私钥.因此, 他可以使用一个命令解锁所有加密文件:"
 
-#: ../../source/Securing-Production-Config-Files.rst:149
+#: ../../source/Securing-Production-Config-Files.rst:148
 msgid "Paul is prompted for his private key password."
-msgstr "Paul is prompted for his private key password."
+msgstr "保罗被提示输入他的私钥密码."
 
-#: ../../source/Securing-Production-Config-Files.rst:151
+#: ../../source/Securing-Production-Config-Files.rst:150
 msgid "From now on, Paul’s and your own workflow is unchanged from normal."
-msgstr "From now on, Paul’s and your own workflow is unchanged from normal."
+msgstr "从现在开始，Paul和您自己的工作流程与正常情况相同."
 
-#: ../../source/Securing-Production-Config-Files.rst:153
+#: ../../source/Securing-Production-Config-Files.rst:152
 msgid ""
 "On your machine and Paul’s, ``config/production.json`` is just a normal "
 "JSON file."
-msgstr ""
+msgstr "在你的机器上和Paul的, ``config/production.json`` 只是一个普通的JSON文件."
 
-#: ../../source/Securing-Production-Config-Files.rst:156
+#: ../../source/Securing-Production-Config-Files.rst:155
 msgid "From Ringo’s point of view, ``config/production.json`` is a binary file."
-msgstr "From Ringo’s point of view, ``config/production.json`` is a binary file."
+msgstr "从Ringo的角度来看, ``config/production.json`` 是一个二进制文件."
 
-#: ../../source/Securing-Production-Config-Files.rst:159
+#: ../../source/Securing-Production-Config-Files.rst:158
 msgid "Mimicking production mode"
-msgstr "Mimicking production mode"
+msgstr "模仿生产模式"
 
-#: ../../source/Securing-Production-Config-Files.rst:161
+#: ../../source/Securing-Production-Config-Files.rst:160
 msgid ""
 "Ringo might have the need to run the application with "
 "``NODE_ENV=production`` e.g. to invoke minification, or to debug some "
 "issue on the production server."
-msgstr ""
+msgstr "Ringo可能需要使用 ``NODE_ENV=production`` 运行应用程序, 例如调用缩小, 或调试生产服务器上的某些问题."
 
-#: ../../source/Securing-Production-Config-Files.rst:165
+#: ../../source/Securing-Production-Config-Files.rst:164
 msgid ""
 "But Ringo has a problem: when he runs the node program with "
 "``NODE_ENV=production``, node-config tries to read "
 "``config/production.json``, which on his machine is not a valid JSON file"
 " since it’s encrypted. The app crashes."
 msgstr ""
+"但是Ringo有一个问题:当他用 ``NODE_ENV=production`` 运行节点程序时, node-config尝试读取 "
+"``config/production.json``, 这在他的机器上不是有效的JSON文件, 因为它是加密的.该应用程序崩溃."
 
-#: ../../source/Securing-Production-Config-Files.rst:170
+#: ../../source/Securing-Production-Config-Files.rst:169
 msgid ""
 "To cater for this, Ringo can specify that any git-crypt encrypted files "
 "are skipped, via a ``CONFIG_SKIP_GITCRYPT`` environment variable, for "
 "example:"
-msgstr ""
+msgstr "为了满足这一需求, Ringo可以通过 ``CONFIG_SKIP_GITCRYPT`` 环境变量指定跳过任何git-crypt加密文件, 例如:"
 
-#: ../../source/Securing-Production-Config-Files.rst:178
+#: ../../source/Securing-Production-Config-Files.rst:177
 msgid ""
 "This tells node-config to continue even if a git-crypt file is "
 "encountered."
-msgstr ""
+msgstr "即使遇到git-crypt文件, 这也告诉node-config继续."
 
-#: ../../source/Securing-Production-Config-Files.rst:182
+#: ../../source/Securing-Production-Config-Files.rst:181
 msgid "Deployment Servers, Build Servers, CI Servers"
-msgstr "Deployment Servers, Build Servers, CI Servers"
+msgstr "部署服务器, 构建服务器, CI服务器"
 
-#: ../../source/Securing-Production-Config-Files.rst:185
+#: ../../source/Securing-Production-Config-Files.rst:184
 msgid "Git Clone Once Only"
-msgstr "Git Clone Once Only"
+msgstr "Git克隆一次"
 
-#: ../../source/Securing-Production-Config-Files.rst:187
+#: ../../source/Securing-Production-Config-Files.rst:186
 msgid ""
 "Unless you’re cloning the git repository every time, you need only unlock"
 " it once."
-msgstr ""
+msgstr "除非您每次都克隆git存储库, 否则只需要解锁一次."
 
-#: ../../source/Securing-Production-Config-Files.rst:190
+#: ../../source/Securing-Production-Config-Files.rst:189
 msgid ""
 "You can create a GPG key for a server (or set of servers) so a single "
 "``git-crypt unlock`` command is all that is needed. Of course, the "
 "corresponding private key must be installed on the server’s GPG keychain "
 "already."
 msgstr ""
+"您可以为服务器(或服务器集)创建GPG密钥, 因此只需要一个 ``git-crypt unlock`` 命令.当然, "
+"必须在服务器的GPG钥匙串上安装相应的私钥."
 
-#: ../../source/Securing-Production-Config-Files.rst:196
+#: ../../source/Securing-Production-Config-Files.rst:195
 msgid "Git Clone Every Time"
-msgstr "Git Clone Every Time"
+msgstr "每次Git克隆"
 
-#: ../../source/Securing-Production-Config-Files.rst:198
+#: ../../source/Securing-Production-Config-Files.rst:197
 msgid ""
 "In the case where your server *is* performing a git clone every time, you"
 " can instead export a symmetric (non-GPG) key from an unlocked git-crypt "
 "repository:"
-msgstr ""
+msgstr "如果您的服务器每次都 *执行* git clone, 则可以从未锁定的 git-crypt 存储库导出对称(非GPG)密钥:"
 
-#: ../../source/Securing-Production-Config-Files.rst:206
+#: ../../source/Securing-Production-Config-Files.rst:205
 msgid ""
 "You can then use that symmetric key to unlock the repository from your "
 "server without a pass phrase."
-msgstr ""
+msgstr "然后, 您可以使用该对称密钥从服务器解锁存储库而无需密码短语."
 
 #~ msgid "Securing-Production-Config-Files"
 #~ msgstr ""
@@ -319,4 +336,7 @@ msgstr ""
 #~ "On other systems: `https://github.com/AGWA/git-"
 #~ "crypt/blob/master/INSTALL.md <>`_"
 #~ msgstr ""
+
+#~ msgid "Prerequisites:"
+#~ msgstr "Prerequisites:"
 

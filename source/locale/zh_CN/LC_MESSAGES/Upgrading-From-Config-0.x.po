@@ -24,152 +24,152 @@ msgstr "从Config 0.x升级"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:5
 msgid "Incompatible Changes"
-msgstr "Incompatible Changes"
+msgstr "不兼容的变化"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:7
-msgid ""
+msgid  ""
 "Version 1.0 is a major revision release - a nice way of saying it may "
 "break something relying on a prior version. There are two incompatible "
 "changes - one fairly large and one you probably won’t notice."
-msgstr ""
+msgstr "版本1.0是一个主要的修订版本 - 一种很好的说法, 它可能会破坏依赖于先前版本的东西.有两个不兼容的变化 - 一个相当大, 一个你可能不会注意到."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:12
 msgid "Immutable Configurations"
-msgstr "Immutable Configurations"
+msgstr "不可变配置"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:14
-msgid ""
+msgid  ""
 "Updating configurations at runtime is no longer supported. It was the "
 "feature causing the most confusion, support, code complexity, and frankly"
 " - what were we thinking?"
-msgstr ""
+msgstr "不再支持在运行时更新配置.这是导致最混乱, 支持, 代码复杂性和坦率的功能 - 我们在想什么?"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:18
-msgid ""
+msgid  ""
 "If you relied on the ability to alter configurations at runtime, you will"
 " have to replace that with a different implementation, or continue using "
 "the 0.4.x release branch. This is the most significant compatibility "
 "change, and it came only after serious consideration and community input."
-msgstr ""
+msgstr "如果您依赖于在运行时更改配置的能力, 则必须使用其他实现替换它, 或者继续使用0.4.x版本分支.这是最重要的兼容性更改, 只有经过认真考虑和社区意见后才能实现."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:24
-msgid ""
+msgid  ""
 "Startup code may still set and extend configurations as long as it’s done"
 " before the first use of the ``config.get()`` method. This allows your "
 "app startup to load and merge configurations from external sources. If "
 "this startup code needs access to config values without calling "
 "``config.get()`` you can access values directly from the config object."
-msgstr ""
+msgstr "只要在第一次使用 ``config.get()`` 方法之前完成, 启动代码仍然可以设置和扩展配置.这允许您的应用启动从外部源加载和合并配置.如果此启动代码需要访问配置值而不调用 ``config.get()``, 则可以直接从配置对象访问值."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:30
-msgid ""
+msgid  ""
 "In addition, some use cases such as tests require config mutations. An "
 "``ALLOW_CONFIG_MUTATIONS`` `environment variable "
 "<https://github.com/lorenwest/node-config/wiki/Environment-"
 "Variables#allow_config_mutations>`_ has been added to address these edge "
 "cases."
-msgstr ""
+msgstr "此外, 一些用例如测试需要配置变异.添加了 ``ALLOW_CONFIG_MUTATIONS`` `环境变量 <https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations>`_ 来解决这些边缘情况."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:35
-msgid ""
+msgid  ""
 "Guaranteeing the stability of configuration values is now a core part of "
 "node-config."
-msgstr ""
+msgstr "保证配置值的稳定性现在是node-config的核心部分."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:39
 msgid "Load Ordering"
-msgstr "Load Ordering"
+msgstr "加载订购"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:41
-msgid ""
+msgid  ""
 "Load ordering has been changed from ``hostname.EXT --> deployment.EXT`` "
 "to ``deployment.EXT --> hostname.EXT`` because deployments can be on "
 "multiple machines, and are a *higher level* than host configurations, "
 "which by definition are only applicable to a single host."
-msgstr ""
+msgstr "负载排序已从 ``hostname.EXT - > deployment.EXT`` 更改为 ``deployment.EXT - > hostname.EXT``, 因为部署可以在多台计算机上, 并且比主机高*级别*配置, 根据定义, 仅适用于单个主机."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:46
-msgid ""
+msgid  ""
 "This is unlikely to affect anyone, because it didn’t make sense to have "
 "deployment level configs overwriting host level configs, but it’s "
 "something to be aware of."
-msgstr ""
+msgstr "这不太可能影响任何人, 因为部署级别配置覆盖主机级别配置没有意义, 但需要注意的事项."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:51
 msgid "New Features"
-msgstr "New Features"
+msgstr "新功能"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:54
 msgid "config.get() and config.has()"
 msgstr "config.get() and config.has()"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:56
-msgid ""
+msgid  ""
 "The top level config object and all sub-objects have a ``get()`` function"
 " exposed as the preferred method of accessing configuration values. This "
 "gives you the option of doing this:"
-msgstr ""
+msgstr "顶级配置对象和所有子对象都有一个 ``get()`` 函数, 它是访问配置值的首选方法.这使您可以选择执行此操作:"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:65
 msgid "which is like prior versions that perform no validation, or this:"
-msgstr "which is like prior versions that perform no validation, or this:"
+msgstr "这就像之前的版本不执行验证, 或者:"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:71
 msgid "which throws an exception on typos but is kind of wordy, or this:"
-msgstr "which throws an exception on typos but is kind of wordy, or this:"
+msgstr "在拼写错误中引发了一个例外但是有点罗嗦, 或者这个:"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:77
 msgid "win."
 msgstr "win."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:79
-msgid ""
+msgid  ""
 "Using ``get()`` is the preferred method because it fails fast if you "
 "misspell(sp?) a parameter or if the configs weren’t loaded for some "
 "reason."
-msgstr ""
+msgstr "使用 ``get()`` 是首选方法, 因为如果拼错(sp?)参数或者由于某种原因未加载配置, 它会快速失败."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:83
-msgid ""
+msgid  ""
 "If you want to test if a configuration without wrapping in a try/catch, "
 "``has()`` is available at all config levels:"
-msgstr ""
+msgstr "如果你想测试一个没有包装在try/catch中的配置, ``has()`` 在所有配置级别都可用:"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:93
 msgid "config.util"
 msgstr "config.util"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:95
-msgid ""
+msgid  ""
 "The config package comes with a bunch of `handy utilities "
 "<https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_,"
 " resulting in a large list of `reserved words "
 "<https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ that "
 "couldn’t be used in configurations."
-msgstr ""
+msgstr "配置包附带了一堆 `方便的实用工具 <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_, 产生了大量的 `保留字 <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ 无法在配置中使用."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:101
-msgid ""
+msgid  ""
 "Starting with node-config 1.0, these utilities have been moved to a "
 "single ``util`` object attached to configuration objects. Using these "
 "utilities from ``config`` vs. \\ ``config.util`` will cause a deprecation"
 " warning in node-config 1.0, and will not be supported in `version 2.0 "
 "<https://github.com/lorenwest/node-config/wiki/Future-Compatibility"
 "#upcoming-incompatibilities>`_."
-msgstr ""
+msgstr "从node-config 1.0开始, 这些实用程序已被移动到附加到配置对象的单个 ``util`` 对象.使用 ``config`` 与\\ ``config.util`` 中的这些实用程序将导致node-config 1.0中的弃用警告, 并且在 `版本2.0 <https://github.com/lorenwest中将不再支持/节点配置/维基/未来的兼容性＃即将-不兼容性>`_."
 
 #: ../../source/Upgrading-From-Config-0.x.rst:107
-msgid ""
+msgid  ""
 "This ``util`` object is available at all levels, so if you do something "
 "like this:"
-msgstr ""
+msgstr "这个 ``util`` 对象在所有级别都可用, 所以如果你做这样的事情:"
 
 #: ../../source/Upgrading-From-Config-0.x.rst:114
-msgid ""
+msgid  ""
 "you’ll still be able to access config utilities using ``dbConfig.util``. "
 "For example, if you wanted a deep clone of a JavaScript object, you could"
 " do this:"
-msgstr ""
+msgstr "您仍然可以使用 ``dbConfig.util`` 访问配置实用程序.例如, 如果您想要深度克隆JavaScript对象, 则可以执行此操作:"
 
 #~ msgid "Upgrading-From-Config-0.x"
 #~ msgstr ""

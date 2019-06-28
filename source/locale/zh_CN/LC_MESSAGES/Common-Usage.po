@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 22:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,31 +24,31 @@ msgstr "常见用法"
 
 #: ../../source/Common-Usage.rst:5
 msgid "Create Configuration files"
-msgstr "Create Configuration files"
+msgstr "创建配置文件"
 
 #: ../../source/Common-Usage.rst:7
-msgid "Create your [[configuration files|Configuration-Files]]."
-msgstr "Create your [[configuration files|Configuration-Files]]."
+msgid "Create your :doc:`Configuration-Files`."
+msgstr "创建你的 :doc:`Configuration-Files`"
 
 #: ../../source/Common-Usage.rst:10
 msgid "Loading Node-Config"
-msgstr "Loading Node-Config"
+msgstr "加载节点配置"
 
 #: ../../source/Common-Usage.rst:12
 msgid "Place this at the top of your javascript file:"
-msgstr "Place this at the top of your javascript file:"
+msgstr "将它放在javascript文件的顶部:"
 
 #: ../../source/Common-Usage.rst:18
 msgid "Or load a specific configuration context:"
-msgstr "Or load a specific configuration context:"
+msgstr "或者加载特定的配置上下文:"
 
 #: ../../source/Common-Usage.rst:25
 msgid "Using Config Values"
-msgstr "Using Config Values"
+msgstr "使用配置值"
 
 #: ../../source/Common-Usage.rst:27
 msgid "The preferred method of accessing configurations is through ``get()``:"
-msgstr "The preferred method of accessing configurations is through ``get()``:"
+msgstr "访问配置的首选方法是通过 ``get()``:"
 
 #: ../../source/Common-Usage.rst:33
 msgid ""
@@ -57,6 +57,8 @@ msgid ""
 "make the configuration object immutable during the first call to "
 "``get()``."
 msgstr ""
+"如果(当?)某人搞砸了你的配置文件, 这会给你一个快速失败的系统 - 它比你想象的更常见.在第一次调用 ``get()`` 时, "
+"它也会使配置对象不可变."
 
 #: ../../source/Common-Usage.rst:38
 msgid ""
@@ -66,32 +68,34 @@ msgid ""
 "``get()``. Get will also throw an exception if the parameter passed in to"
 " get is ``null`` or ``undefined``."
 msgstr ""
+"如果配置文件不包含给定属性的值, ``get()`` 将抛出异常.注意 ``null`` 是一个 *可接受的* 值, "
+"并且当 ``get()`` 返回它时不会抛出异常.如果传入get的参数是 ``null`` 或 ``undefined``, Get也会抛出异常."
 
 #: ../../source/Common-Usage.rst:44
 msgid ""
 "Additionally, setting config values explicitly to ``undefined`` is a "
 "helpful way to ensure that they must be defined by a later configuration "
 "file."
-msgstr ""
+msgstr "另外, 将配置值显式设置为 ``undefined`` 是一种有用的方法, 可以确保它们必须由以后的配置文件定义."
 
 #: ../../source/Common-Usage.rst:48
 msgid "The alternative is to attain the value directly:"
-msgstr "The alternative is to attain the value directly:"
+msgstr "另一种方法是直接获得价值:"
 
 #: ../../source/Common-Usage.rst:54
 msgid ""
 "This doesn’t give you protection from typos and configuration file "
 "problems, or immutability. But it is supported for backward "
 "compatibility."
-msgstr ""
+msgstr "这不能保护您免受拼写错误和配置文件问题或不可变性的影响.但它支持向后兼容性."
 
 #: ../../source/Common-Usage.rst:59
 msgid "Testing for config values"
-msgstr "Testing for config values"
+msgstr "测试配置值"
 
 #: ../../source/Common-Usage.rst:61
 msgid "If you want to see if a config value exists, use the ``has()`` method"
-msgstr "If you want to see if a config value exists, use the ``has()`` method"
+msgstr "如果要查看配置值是否存在, 请使用 ``has()`` 方法"
 
 #: ../../source/Common-Usage.rst:69
 msgid ""
@@ -100,13 +104,18 @@ msgid ""
 "true if and only if the configuration file has a defined value for the "
 "provided key. Note that ``null`` is a defined value."
 msgstr ""
+"这可以作为在 try/catch 块周围包装 ``get()`` 的替代方法. ``has()`` 不会抛出异常, "
+"当且仅当配置文件具有所提供键的定义值时才会返回true. 注意 ``null`` 是一个定义的值."
 
 #: ../../source/Common-Usage.rst:74
 msgid ""
 "``has()`` will not throw an exception if the parameter passed is ``null``"
 " or ``undefined`` but will simply return ``false``."
-msgstr ""
+msgstr "``has()`` 如果传递的参数是 ``null`` 或 ``undefined``, 则不会抛出异常, 但只返回 ``false``."
 
 #~ msgid "Common-Usage"
 #~ msgstr ""
+
+#~ msgid "Create your [[configuration files|Configuration-Files]]."
+#~ msgstr "创建[[配置文件|配置文件]]."
 

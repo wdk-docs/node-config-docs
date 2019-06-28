@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -185,85 +184,72 @@
             
   <div class="section" id="using-config-utilities">
 <h1>使用配置实用程序<a class="headerlink" href="#using-config-utilities" title="永久链接至标题">¶</a></h1>
-<p>Node-config comes with a handy set of utilities necessary for
-implementing node-config. These utilities are exposed in the
-<code class="docutils literal notranslate"><span class="pre">config.util</span></code> object for use in your own applications.</p>
-<p>Below is a list of these utilities, in order of general usefulness -
-your mileage may vary.</p>
+<p>Node-config附带了一组实现node-config所需的实用工具.这些实用程序在 <code class="docutils literal notranslate"><span class="pre">config.util</span></code> 对象中公开, 以便在您自己的应用程序中使用.</p>
+<p>以下是这些实用程序的列表, 按一般用途顺序 - 您的里程可能会有所不同.</p>
 <div class="section" id="extenddeep-mergeinto-mergefrom-depth">
 <h2>extendDeep(mergeInto, mergeFrom…, depth)<a class="headerlink" href="#extenddeep-mergeinto-mergefrom-depth" title="永久链接至标题">¶</a></h2>
-<p>Extend an object (and any object it contains) with one or more objects
-(and objects contained in them).</p>
-<p>This does not replace deep objects as other extend functions do, but
-dives into them extending individual elements instead. If more than one
-of the extending objects define the same key, then: * if all the
-respective values are objects, they are merged recursively by calling
-the same function. * if none of the respective values are objects, then
-the latest one is respected. * avoid mixing objects and non-objects for
-the same key as it can lead to unexpected behaviour.</p>
+<p>使用一个或多个对象(以及包含在其中的对象)扩展对象(及其包含的任何对象).</p>
+<p>这并不像其他扩展函数那样替换深层对象, 而是潜入它们来扩展单个元素.如果多个扩展对象定义了相同的键, 则: * 如果所有相应的值都是对象, 则通过调用相同的函数递归合并它们. * 如果各个值都不是对象, 则尊重最新值. * 避免将对象和非对象混合为同一个键, 因为它可能导致意外行为.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>mergeInto</p>
 </td><td><p>object</p>
-</td><td><p>The object to merge into</p>
+</td><td><p>要合并的对象</p>
 </td></tr><tr><td><p>mergeFrom…</p>
 </td><td><p>object</p>
-</td><td><p>Any number of objects to merge from</p>
+</td><td><p>要合并的任意数量的对象</p>
 </td></tr><tr><td><p>depth</p>
 </td><td><p>integer</p>
-</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td><td><p>可选的深度以防止递归.默认值:20.</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>object</p>
-</td><td><p>The altered mergeInto object is returned</p>
-</td></tr></table><p>The following example merges the contents of two objects into a new
-object.</p>
+</td><td><p>返回更改的mergeInto对象</p>
+</td></tr></table><p>以下示例将两个对象的内容合并为一个新对象.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">newObject</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">extendDeep</span><span class="p">({},</span> <span class="n">baseObject</span><span class="p">,</span> <span class="n">anotherObject</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="clonedeep-copyfrom-depth">
 <h2>cloneDeep(copyFrom, depth)<a class="headerlink" href="#clonedeep-copyfrom-depth" title="永久链接至标题">¶</a></h2>
-<p>Return a deep copy of the specified object.</p>
-<p>This returns a new object with all elements copied from the specified
-object. Deep copies are made of objects and arrays so you can do
-anything with the returned object without affecting the input object.</p>
+<p>返回指定对象的深层副本.</p>
+<p>这将返回一个新对象, 其中包含从指定对象复制的所有元素.深层副本由对象和数组组成, 因此您可以对返回的对象执行任何操作, 而不会影响输入对象.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>copyFrom</p>
 </td><td><p>object</p>
-</td><td><p>The original object to copy from</p>
+</td><td><p>要从中复制的原始对象</p>
 </td></tr><tr><td><p>depth</p>
 </td><td><p>integer</p>
-</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td><td><p>可选的深度以防止递归.默认值:20.</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>object</p>
-</td><td><p>A new object with the elements copied from the copyFrom object</p>
-</td></tr></table><p>Example:</p>
+</td><td><p>具有从copyFrom对象复制的元素的新对象</p>
+</td></tr></table><p>例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cloneDeep</span><span class="p">(</span><span class="n">fromObject</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="equalsdeep-object1-object2-depth">
 <h2>equalsDeep(object1, object2, depth)<a class="headerlink" href="#equalsdeep-object1-object2-depth" title="永久链接至标题">¶</a></h2>
-<p>Return true if two objects have equal contents.</p>
+<p>如果两个对象的内容相同, 则返回true.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>object1</p>
 </td><td><p>object</p>
-</td><td><p>The object to compare from</p>
+</td><td><p>要比较的对象</p>
 </td></tr><tr><td><p>object2</p>
 </td><td><p>object</p>
-</td><td><p>The object to compare with</p>
+</td><td><p>要与之比较的对象</p>
 </td></tr><tr><td><p>depth</p>
 </td><td><p>integer</p>
-</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td><td><p>可选的深度以防止递归.默认值:20.</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>boolean</p>
-</td><td><p>true if both objects have equivalent contents</p>
-</td></tr></table><p>Example:</p>
+</td><td><p>如果两个对象具有等效内容, 则为true</p>
+</td></tr></table><p>例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">customerCopy</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cloneDeep</span><span class="p">(</span><span class="n">myCustomer</span><span class="p">);</span>
 <span class="n">var</span> <span class="n">same</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">equalsDeep</span><span class="p">(</span><span class="n">myCustomer</span><span class="p">,</span> <span class="n">customerCopy</span><span class="p">);</span> <span class="o">//</span> <span class="o">&lt;--</span> <span class="n">true</span>
 <span class="n">customerCopy</span><span class="o">.</span><span class="n">creditLimit</span> <span class="o">=</span> <span class="mi">7000</span><span class="p">;</span>
@@ -273,59 +259,47 @@ anything with the returned object without affecting the input object.</p>
 </div>
 <div class="section" id="diffdeep-object1-object2-depth">
 <h2>diffDeep(object1, object2, depth)<a class="headerlink" href="#diffdeep-object1-object2-depth" title="永久链接至标题">¶</a></h2>
-<p>Returns an object containing all elements that differ between two
-objects.</p>
-<p>It works best when object2 originated by deep copying object1, then
-changes were made to object2, and you want an object that would give you
-the changes made to object1 which resulted in object2.</p>
+<p>返回包含两个对象之间不同的所有元素的对象.</p>
+<p>当object2由深度复制object1发起时, 它最有效, 然后对object2进行了更改, 并且您需要一个对象, 该对象将为您提供对object1所做的更改, 从而导致object2.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>object1</p>
 </td><td><p>object</p>
-</td><td><p>The object to compare from</p>
+</td><td><p>要比较的对象</p>
 </td></tr><tr><td><p>object2</p>
 </td><td><p>object</p>
-</td><td><p>The object to compare with</p>
+</td><td><p>要与之比较的对象</p>
 </td></tr><tr><td><p>depth</p>
 </td><td><p>integer</p>
-</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td><td><p>可选的深度以防止递归.默认值:20.</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>object</p>
-</td><td><p>A differential object, which if extended onto object1 would result in
-object2.</p>
+</td><td><p>差异对象, 如果扩展到object1将导致object2.</p>
 </td></tr></table></div>
 <div class="section" id="makeimmutable-object-propertyname-propertyvalue">
 <h2>makeImmutable(object, propertyName, propertyValue)<a class="headerlink" href="#makeimmutable-object-propertyname-propertyvalue" title="永久链接至标题">¶</a></h2>
-<p>Make a javascript object property immutable (assuring it cannot be
-changed from the current value).</p>
-<p>If the propertyName isn’t supplied, all properties of the object are
-made immutable.</p>
-<p>Properties which themselves are objects are called recursively, making
-sub-objects immutable.</p>
-<p>New properties can be added to this (and sub) objects, and those
-properties will not be immutable unless this method is called after
-adding the properties.</p>
-<p>This operation cannot be undone.</p>
+<p>使javascript对象属性不可变(确保它不能从当前值更改).</p>
+<p>如果未提供propertyName, 则该对象的所有属性都是不可变的.</p>
+<p>属于对象的属性是递归调用的, 使子对象不可变.</p>
+<p>可以将新属性添加到此(和子)对象, 并且除非在添加属性后调用此方法, 否则这些属性将不会是不可变的.</p>
+<p>此操作无法撤消.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>object</p>
 </td><td><p>object</p>
-</td><td><p>The object containing the properties to make immutable</p>
+</td><td><p>包含要使其不可变的属性的对象</p>
 </td></tr><tr><td><p>propertyName</p>
 </td><td><p>string | [string]</p>
-</td><td><p>(optional) Property name (or array of names) to make immutable. If not
-specified, all properties of the object are made immutable</p>
+</td><td><p>(可选)要使其不可变的属性名称(或名称数组).如果未指定, 则对象的所有属性都是不可变的</p>
 </td></tr><tr><td><p>propertyValue</p>
 </td><td><p>mixed</p>
-</td><td><p>(optional) Property value to set the property to before making
-immutable. Retained for backward compatibility, and for use only when
-propertyName is not an array.</p>
+</td><td><p>(可选)在创建不可变之前将属性设置为的属性值.保留以实现向后兼容性, 仅在propertyName不是数组时使用.</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>object</p>
-</td><td><p>The original object, with the newly immutable attributes</p>
-</td></tr></table><p>Example:</p>
+</td><td><p>原始对象, 具有新的不可变属性</p>
+</td></tr></table><p>例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">hello</span><span class="p">:</span><span class="s1">&#39;world&#39;</span><span class="p">};</span>
 <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">makeImmutable</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 <span class="n">a</span><span class="o">.</span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;there&#39;</span><span class="p">;</span>
@@ -335,27 +309,24 @@ propertyName is not an array.</p>
 </div>
 <div class="section" id="makehidden-object-propertyname-propertyvalue">
 <h2>makeHidden(object, propertyName, propertyValue)<a class="headerlink" href="#makehidden-object-propertyname-propertyvalue" title="永久链接至标题">¶</a></h2>
-<p>Make an object property hidden so it doesn’t appear when enumerating
-elements of the object.</p>
-<p>The property still exists and can be read from and written to, but it
-won’t show up in <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code> loops, <code class="docutils literal notranslate"><span class="pre">Object.keys()</span></code>, or
-<code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> type methods.</p>
+<p>使对象属性隐藏, 以便在枚举对象的元素时不显示.</p>
+<p>该属性仍然存在, 可以读取和写入, 但它不会出现在 <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code> 循环, <code class="docutils literal notranslate"><span class="pre">Object.keys()</span></code> 或``JSON.stringify() <a href="#id1"><span class="problematic" id="id2">``</span></a>类型方法.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>object</p>
 </td><td><p>object</p>
-</td><td><p>The object containing the property to make hidden</p>
+</td><td><p>包含要隐藏的属性的对象</p>
 </td></tr><tr><td><p>propertyName</p>
-</td><td><p>string</p>
-</td><td><p>Name of the property to make hidden</p>
+</td><td><p>串</p>
+</td><td><p>要隐藏的属性的名称</p>
 </td></tr><tr><td><p>propertyValue</p>
-</td><td><p>string</p>
-</td><td><p>(optional) Set the property to this value</p>
+</td><td><p>串</p>
+</td><td><p>(可选)将属性设置为此值</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>object</p>
-</td><td><p>The original object, with the newly hidden property</p>
-</td></tr></table><p>Example:</p>
+</td><td><p>原始对象, 具有新隐藏的属性</p>
+</td></tr></table><p>例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">hello</span><span class="p">:</span><span class="s2">&quot;world&#39;};</span>
 <span class="n">console</span><span class="o">.</span><span class="n">log</span> <span class="p">(</span><span class="s1">&#39;Before hiding: &#39;</span> <span class="o">+</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
 <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">makeHidden</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">);</span>
@@ -366,36 +337,28 @@ won’t show up in <code class="docutils literal notranslate"><span class="pre">
 </div>
 <div class="section" id="getenv-varname">
 <h2>getEnv(varName)<a class="headerlink" href="#getenv-varname" title="永久链接至标题">¶</a></h2>
-<p>Get the current value of a config environment variable</p>
-<p>This method returns the value of the specified config environment
-variable, including any defaults or overrides.</p>
-<p>Environment variables that you can inspect include <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>,
-<code class="docutils literal notranslate"><span class="pre">CONFIG_DIR</span></code>, <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>, <code class="docutils literal notranslate"><span class="pre">HOSTNAME</span></code>, <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code>,
-and others listed in the <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">environment
-variables</a>
-wiki page.</p>
+<p>获取配置环境变量的当前值</p>
+<p>此方法返回指定的配置环境变量的值, 包括任何默认值或覆盖.</p>
+<p>您可以检查的环境变量包括 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>, <code class="docutils literal notranslate"><span class="pre">CONFIG_DIR</span></code>, <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>, <code class="docutils literal notranslate"><span class="pre">HOSTNAME</span></code>, <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code>, 以及 <a class="reference external" href="https://中列出的其他变量github.com/lorenwest/node-config/wiki/Environment-Variables">环境变量</a> wiki页面.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
+</th><th><p>描述</p>
 </th></tr><tr><td><p>varName</p>
-</td><td><p>string</p>
-</td><td><p>The environment variable name</p>
+</td><td><p>串</p>
+</td><td><p>环境变量名称</p>
 </td></tr><tr><td><p>(return)</p>
-</td><td><p>string</p>
-</td><td><p>The value of the environment variable</p>
-</td></tr></table><p>Example:</p>
+</td><td><p>串</p>
+</td><td><p>环境变量的值</p>
+</td></tr></table><p>例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Configuration directory: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;CONFIG_DIR&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loadfileconfigs-directory">
 <h2>loadFileConfigs(directory)<a class="headerlink" href="#loadfileconfigs-directory" title="永久链接至标题">¶</a></h2>
-<p>Reads the given directory using the same conventions as the main config
-directory (including environment variable reading, except for
-<code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>) and returns an object with the result.</p>
-<p>If no directory is given, reads the standard config directory and parses
-<code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>.</p>
-<p>This is useful for using with submodules, e.g.</p>
+<p>使用与主配置目录相同的约定读取给定目录(包括环境变量读取, 除了 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>)并返回带有结果的对象.</p>
+<p>如果没有给出目录, 则读取标准config目录并解析 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>.</p>
+<p>这对于与子模块一起使用很有用, 例如:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">config</span> <span class="nx">from</span> <span class="s1">&#39;config&#39;</span>
 <span class="kr">const</span> <span class="nx">ourConfigDir</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">)</span>
 <span class="kr">const</span> <span class="nx">baseConfig</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">loadFileConfigs</span><span class="p">(</span><span class="nx">ourConfigDir</span><span class="p">)</span>
@@ -405,20 +368,17 @@ directory (including environment variable reading, except for
 </div>
 <div class="section" id="toobject-config">
 <h2>toObject(config)<a class="headerlink" href="#toobject-config" title="永久链接至标题">¶</a></h2>
-<p>Returns a new deep copy of the current config object, or any part of the
-config if provided.</p>
-<p>If config is not provided (<code class="docutils literal notranslate"><span class="pre">undefined</span></code>), the current config object is
-dumped in its entirety.</p>
+<p>返回当前配置对象的新深层副本, 或者如果提供, 则返回配置的任何部分.</p>
+<p>如果未提供 config (<code class="docutils literal notranslate"><span class="pre">undefined</span></code>), 则完整地转储当前配置对象.</p>
 <table><tr><th><p>param</p>
 </th><th><p>type</p>
-</th><th><p>description</p>
-</th></tr><tr><td><p>config</p>
+</th><th><p>描述</p>
+</th></tr><tr><td><p>配置</p>
 </td><td><p>object</p>
-</td><td><p>The part of the config to copy and serialize. Omit this argument to
-return the entire config.</p>
+</td><td><p>要复制和序列化的配置部分.省略此参数以返回整个配置.</p>
 </td></tr><tr><td><p>(return)</p>
 </td><td><p>object</p>
-</td><td><p>The cloned config or part of the config</p>
+</td><td><p>克隆的配置或配置的一部分</p>
 </td></tr></table><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">toObject</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">));</span>
 </pre></div>
 </div>

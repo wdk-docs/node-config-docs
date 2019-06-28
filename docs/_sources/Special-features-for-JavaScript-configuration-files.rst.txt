@@ -81,5 +81,9 @@ If you’d like to include values from another file in JavaScript, no
 special syntax is required–the full features of Node.js are already
 available!
 
-\``\` config = { // Load credit configs externally credit:
-JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’)) }
+.. code:: js
+
+   config = {
+      // Load credit configs externally credit:
+      JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’))
+   }

@@ -23,11 +23,11 @@ msgid "Altering configuration values for testing at runtime"
 msgstr "更改配置值以便在运行时进行测试"
 
 #: ../../source/Altering-configuration-values-for-testing-at-runtime.rst:4
-msgid ""
+msgid  ""
 "This sample uses ``mock-require`` to alter values in the require cache "
 "and ``import-fresh`` to make sure the objects in the require cache are "
 "the newer versions. Testing library is ``Lab`` (Hapi.js ecosystem)."
-msgstr ""
+msgstr "此示例使用 ``mock-require`` 来修改require缓存中的值和 ``import-fresh``, 以确保require缓存中的对象是较新的版本.测试库是 ``Lab`` (Hapi.js生态系统)."
 
 #~ msgid "Altering-configuration-values-for-testing-at-runtime"
 #~ msgstr ""

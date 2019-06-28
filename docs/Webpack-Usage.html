@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -107,10 +106,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Webpack用法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#option-1">Option 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#option-2">Option 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#option-3">Option 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#option-4">Option 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-1">选项1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-2">选项2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-3">选项3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-4">选项4</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
@@ -180,32 +179,22 @@
             
   <div class="section" id="webpack-usage">
 <h1>Webpack用法<a class="headerlink" href="#webpack-usage" title="永久链接至标题">¶</a></h1>
-<p>Right now <code class="docutils literal notranslate"><span class="pre">node-config</span></code> doesn’t work with
-<a class="reference external" href="https://github.com/webpack/webpack">webpack</a> out of the box because
-it reads the config files at runtime, which can’t be done when the code
-is running on a browser.</p>
+<p>现在 <code class="docutils literal notranslate"><span class="pre">node-config</span></code> 不能与 <a class="reference external" href="https://github.com/webpack/webpack">webpack</a> 开箱即用, 因为它在运行时读取配置文件, 这是无法完成的当代码在浏览器上运行时.</p>
 <div class="section" id="option-1">
-<h2>Option 1<a class="headerlink" href="#option-1" title="永久链接至标题">¶</a></h2>
-<p>If you’re using Webpack 4, it includes excellent handling for complex
-config objects with <code class="docutils literal notranslate"><span class="pre">DefinePlugin</span></code> (as of 2018-05-07). Add the
-following to your <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code>:</p>
+<h2>选项1<a class="headerlink" href="#option-1" title="永久链接至标题">¶</a></h2>
+<p>如果你正在使用Webpack 4, 那么它包含了对 <code class="docutils literal notranslate"><span class="pre">DefinePlugin</span></code> (截至2018-05-07)的复杂配置对象的出色处理.将以下内容添加到 <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code> 中:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
 <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
     <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">DefinePlugin</span><span class="p">({</span> <span class="nx">CONFIG</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">))</span> <span class="p">})</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>You can access all fields, including nested fields, under the <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code>
-object in your client-side scripts, without exposing your entire config
-object. Note that you won’t have access to <code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
-<p>This approach <em>does</em> work in Webpack 3, but it inserts your <em>entire</em>
-config object wherever it is referenced. This is not recommended.</p>
+<p>您可以在客户端脚本的 <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> 对象下访问所有字段, 包括嵌套字段, 而不会暴露整个配置对象.请注意, 您将无法访问 <code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
+<p>这种方法*可以在Webpack 3中运行, 但它会在您引用的任何地方插入 <em>whole</em> config 对象.不建议这样做.</p>
 </div>
 <div class="section" id="option-2">
-<h2>Option 2<a class="headerlink" href="#option-2" title="永久链接至标题">¶</a></h2>
-<p>Install the
-<a class="reference external" href="https://github.com/arthanzel/node-config-webpack">node-config-webpack</a>
-package and put the following in <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code>:</p>
+<h2>选项2<a class="headerlink" href="#option-2" title="永久链接至标题">¶</a></h2>
+<p>安装 <a class="reference external" href="https://github.com/arthanzel/node-config-webpack">node-config-webpack</a> package并将以下内容放在 <a href="#id1"><span class="problematic" id="id2">``</span></a>webpack.config.js``中:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">ConfigWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;config-webpack&quot;</span><span class="p">);</span>
 <span class="p">...</span>
 <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
@@ -213,29 +202,22 @@ package and put the following in <code class="docutils literal notranslate"><spa
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>This allows you to access your configuration on the client in the global
-namespace <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code>.</p>
+<p>这允许您在全局命名空间“CONFIG”中访问客户端上的配置.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can also change the default namespace from <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> to something
-else.</p>
+<p>您还可以将默认命名空间从 <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> 更改为其他名称.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="nx">ConfigWebpackPlugin</span><span class="p">(</span><span class="s2">&quot;myConfigObject&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This method performs direct text replacement of config variables in your
-code with their values, and it doesn’t expose any configs that aren’t
-used.</p>
+<p>此方法使用其值在代码中执行配置变量的直接文本替换, 并且不会公开任何未使用的配置.</p>
 </div>
 <div class="section" id="option-3">
-<h2>Option 3<a class="headerlink" href="#option-3" title="永久链接至标题">¶</a></h2>
-<p>Below is an example of how you can use <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> at build time to
-have a static config built into your webpack bundle.</p>
-<div class="line-block">
-<div class="line"><strong>IMPORTANT NOTE</strong></div>
-<div class="line">This will publish your entire config file into your front end
-application. If you have sensitive information you do not want
-downloaded, see the notes after the example.</div>
+<h2>选项3<a class="headerlink" href="#option-3" title="永久链接至标题">¶</a></h2>
+<p>下面是一个如何在构建时使用 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 来在webpack包中内置静态配置的示例.</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>这会将整个配置文件发布到您的前端应用程序中.如果您有不想下载的敏感信息, 请参阅示例后的注释.</p>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// webpack-config.js</span>
 <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)</span>
@@ -257,23 +239,13 @@ downloaded, see the notes after the example.</div>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Both server and client now can happily use
-<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">config</span> <span class="pre">from</span> <span class="pre">'config'</span></code>.</p>
-<p>If you have things in the config that you do not want to publish to the
-front end, you may consider making a specific <code class="docutils literal notranslate"><span class="pre">client</span></code> section of the
-config, and only publishing that key to the static json file,
-e.g. <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">{</span> <span class="pre">client</span> <span class="pre">}</span> <span class="pre">from</span> <span class="pre">'config';</span></code></p>
-<p>Alternatively you could use
-<a class="reference external" href="https://github.com/lodash/lodash">lodash</a> <code class="docutils literal notranslate"><span class="pre">pick</span></code> or <code class="docutils literal notranslate"><span class="pre">omit</span></code> to
-control what data is written to the file.</p>
+<p>服务器和客户端现在都可以愉快地使用 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">config</span> <span class="pre">from</span> <span class="pre">'config'</span></code>.</p>
+<p>如果您在配置中有不想发布到前端的东西, 您可以考虑在配置中创建一个特定的 <code class="docutils literal notranslate"><span class="pre">client</span></code> 部分, 并且只将该密钥发布到静态json文件, 例如 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">{</span> <span class="pre">client</span> <span class="pre">}</span> <span class="pre">from</span> <span class="pre">'config';</span></code></p>
+<p>或者你可以使用 <a class="reference external" href="https://github.com/lodash/lodash">lodash</a> <code class="docutils literal notranslate"><span class="pre">pick</span></code> 或 <code class="docutils literal notranslate"><span class="pre">omit</span></code> 来控制写入文件的数据.</p>
 </div>
 <div class="section" id="option-4">
-<h2>Option 4<a class="headerlink" href="#option-4" title="永久链接至标题">¶</a></h2>
-<p>Another solution is to take advantage of the <code class="docutils literal notranslate"><span class="pre">`NODE_CONFIG</span></code>
-environment
-variable &lt;<a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config">https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config</a>&gt;`_
-with <code class="docutils literal notranslate"><span class="pre">webpack.DefinePlugin</span></code>. With this method you <strong>CAN</strong> still use
-<code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
+<h2>选项4<a class="headerlink" href="#option-4" title="永久链接至标题">¶</a></h2>
+<p>另一个解决方案是利用 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config">环境变量</a> 和 <code class="docutils literal notranslate"><span class="pre">webpack.DefinePlugin</span></code>.使用这种方法你仍然 <strong>可以</strong> 使用 <code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">webpackConfig</span> <span class="o">=</span> <span class="p">{</span>

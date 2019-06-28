@@ -4,7 +4,7 @@ Common Usage
 Create Configuration files
 --------------------------
 
-Create your [[configuration files|Configuration-Files]].
+Create your :doc:`Configuration-Files`.
 
 Loading Node-Config
 -------------------

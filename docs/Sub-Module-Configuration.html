@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -174,10 +173,8 @@
             
   <div class="section" id="sub-module-configuration">
 <h1>子模块配置<a class="headerlink" href="#sub-module-configuration" title="永久链接至标题">¶</a></h1>
-<p>Are you the author of a NodeJS <a class="reference external" href="http://npmjs.org">NPM module</a> that
-accepts initialization parameters?</p>
-<p>If so, and you’re following a pattern like this for your module
-configuration:</p>
+<p>您是接受初始化参数的NodeJS <a class="reference external" href="http://npmjs.org">NPM模块</a> 的作者吗?</p>
+<p>如果是这样, 并且您正在为您的模块配置遵循这样的模式:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">initParams</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">param1</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
   <span class="n">param2</span><span class="p">:</span> <span class="mi">22</span>
@@ -186,37 +183,26 @@ configuration:</p>
 <span class="n">var</span> <span class="n">myModule</span> <span class="o">=</span> <span class="n">new</span> <span class="n">MyModule</span><span class="p">(</span><span class="n">initParams</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Or this:</p>
+<p>或这个:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyModule</span><span class="o">.</span><span class="n">setDefaults</span><span class="p">(</span><span class="n">initParams</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then read on.</p>
-<p>By following a common pattern, you give developers using your module:</p>
+<p>然后继续阅读.</p>
+<p>通过遵循通用模式, 您可以为开发人员使用您的模块:</p>
 <ul class="simple">
-<li><p>A consistent interface for <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">defining and
-extending</a>
-your configurations</p></li>
-<li><p>A way to pass configurations via <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">O/S environment
-variables</a></p></li>
-<li><p>A way to pass configurations via <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides">command line
-arguments</a></p></li>
-<li><p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki">Other features</a>
-built in to node-config</p></li>
+<li><p>用于 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">定义和扩展</a> 您的配置的一致界面</p></li>
+<li><p>通过 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">O/S环境变量传递配置的方法</a></p></li>
+<li><p>通过 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides">命令行参数</a> 传递配置的方法</p></li>
+<li><p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki">其他功能</a> 内置于node-config</p></li>
 </ul>
-<p>Without breaking existing usage of your module, and without requiring
-node-config in their own app (unless they want).</p>
-<p>Here’s how it works:</p>
-<p>Load node-config at the top of your module like normal, and specify the
-<code class="docutils literal notranslate"><span class="pre">SUPPRESS_NO_CONFIG_WARNING</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">environment
-variable</a>
-so applications don’t get <em>No config files</em> warnings if they aren’t
-using node-config.</p>
+<p>不破坏模块的现有用法, 也不需要在自己的应用程序中使用node-config(除非他们想要).</p>
+<p>这是它的工作原理:</p>
+<p>像正常一样在模块顶部加载node-config, 并指定 <code class="docutils literal notranslate"><span class="pre">SUPPRESS_NO_CONFIG_WARNING</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">环境变量</a> 所以应用程序不要如果他们没有使用node-config, 则获取 <em>No config files</em> 警告.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">SUPPRESS_NO_CONFIG_WARNING</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">;</span>
 <span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Then do something like this where your configurations are passed in by
-the app:</p>
+<p>然后执行类似这样的操作, 您的配置将由应用程序传入:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span> <span class="n">myModuleConstructor</span><span class="p">(</span><span class="n">configs</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="n">var</span> <span class="n">myDefaultConfigs</span> <span class="o">=</span> <span class="p">{</span>
@@ -230,16 +216,12 @@ the app:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Then use the config object as usual to access configurations within your
-module:</p>
+<p>然后像往常一样使用配置对象来访问模块中的配置:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;My module config param1: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MyModule.param1&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>This pattern gives apps using your module the choice of using
-node-config mechanisms for configuration, or using your existing methods
-(as shown at the top of this page).</p>
-<p>For example, they can put your module configurations next to their other
-configurations and extend configs based on deployment type:</p>
+<p>此模式为使用您的模块的应用程序提供了使用node-config机制进行配置或使用现有方法的选择(如本页顶部所示).</p>
+<p>例如, 他们可以将您的模块配置放在其他配置旁边, 并根据部署类型扩展配置:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
 
 <span class="p">{</span>
@@ -251,11 +233,8 @@ configurations and extend configs based on deployment type:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This is an easy way to add new configuration functionality to your NPM
-module, while staying compatible with existing usage.</p>
-<p>It unifies your module configuration with apps choosing to use
-node-config, and stays out of the way for apps using other configuration
-systems.</p>
+<p>这是向NPM模块添加新配置功能的简便方法, 同时与现有使用保持兼容.</p>
+<p>它将您的模块配置与选择使用node-config的应用程序统一起来, 并保持对使用其他配置系统的应用程序不远.</p>
 </div>
 
 

@@ -212,13 +212,13 @@ for more information about using node-config in an NPM module.
 The current value of ``SUPPRESS_NO_CONFIG_WARNING`` is available in
 ``config.util.getEnv()``
 
-::
+.. code:: js
 
    var config = require('config');
    console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CONFIG_WARNING'));
 
 Custom Environment Variables
-============================
+------------------------------------
 
 (New as of 1.1.0) Some deployment situations rely heavily on environment
 variables to configure secrets and settings best left out of a codebase.

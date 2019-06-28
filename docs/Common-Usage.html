@@ -87,14 +87,14 @@
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">常见用法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#create-configuration-files">Create Configuration files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#loading-node-config">Loading Node-Config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-config-values">Using Config Values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#testing-for-config-values">Testing for config values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-configuration-files">创建配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-node-config">加载节点配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-config-values">使用配置值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-for-config-values">测试配置值</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">自定义环境变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -181,60 +181,45 @@
   <div class="section" id="common-usage">
 <h1>常见用法<a class="headerlink" href="#common-usage" title="永久链接至标题">¶</a></h1>
 <div class="section" id="create-configuration-files">
-<h2>Create Configuration files<a class="headerlink" href="#create-configuration-files" title="永久链接至标题">¶</a></h2>
-<p>Create your [[configuration files|Configuration-Files]].</p>
+<h2>创建配置文件<a class="headerlink" href="#create-configuration-files" title="永久链接至标题">¶</a></h2>
+<p>创建你的 <a class="reference internal" href="Configuration-Files.html"><span class="doc">配置文件</span></a></p>
 </div>
 <div class="section" id="loading-node-config">
-<h2>Loading Node-Config<a class="headerlink" href="#loading-node-config" title="永久链接至标题">¶</a></h2>
-<p>Place this at the top of your javascript file:</p>
+<h2>加载节点配置<a class="headerlink" href="#loading-node-config" title="永久链接至标题">¶</a></h2>
+<p>将它放在javascript文件的顶部:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Or load a specific configuration context:</p>
+<p>或者加载特定的配置上下文:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Customer&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="using-config-values">
-<h2>Using Config Values<a class="headerlink" href="#using-config-values" title="永久链接至标题">¶</a></h2>
-<p>The preferred method of accessing configurations is through <code class="docutils literal notranslate"><span class="pre">get()</span></code>:</p>
+<h2>使用配置值<a class="headerlink" href="#using-config-values" title="永久链接至标题">¶</a></h2>
+<p>访问配置的首选方法是通过 <code class="docutils literal notranslate"><span class="pre">get()</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">dbHost</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dbConfig.host&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This gives you a fail-fast system if (when?) someone screws up your
-configuration files - it’s more common than you’d think. It will also
-make the configuration object immutable during the first call to
-<code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
-<p>If a configuration file does not contain a value for a given property,
-<code class="docutils literal notranslate"><span class="pre">get()</span></code> will throw an exception. Note that <code class="docutils literal notranslate"><span class="pre">null</span></code> is an <em>acceptable</em>
-value, and will not throw an exception when it would be returned by
-<code class="docutils literal notranslate"><span class="pre">get()</span></code>. Get will also throw an exception if the parameter passed in
-to get is <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
-<p>Additionally, setting config values explicitly to <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is a
-helpful way to ensure that they must be defined by a later configuration
-file.</p>
-<p>The alternative is to attain the value directly:</p>
+<p>如果(当?)某人搞砸了你的配置文件, 这会给你一个快速失败的系统 - 它比你想象的更常见.在第一次调用 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 时, 它也会使配置对象不可变.</p>
+<p>如果配置文件不包含给定属性的值, <code class="docutils literal notranslate"><span class="pre">get()</span></code> 将抛出异常.注意 <code class="docutils literal notranslate"><span class="pre">null</span></code> 是一个 <em>可接受的</em> 值, 并且当 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 返回它时不会抛出异常.如果传入get的参数是 <code class="docutils literal notranslate"><span class="pre">null</span></code> 或 <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, Get也会抛出异常.</p>
+<p>另外, 将配置值显式设置为 <code class="docutils literal notranslate"><span class="pre">undefined</span></code> 是一种有用的方法, 可以确保它们必须由以后的配置文件定义.</p>
+<p>另一种方法是直接获得价值:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">dbHost</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">.</span><span class="n">host</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This doesn’t give you protection from typos and configuration file
-problems, or immutability. But it is supported for backward
-compatibility.</p>
+<p>这不能保护您免受拼写错误和配置文件问题或不可变性的影响.但它支持向后兼容性.</p>
 </div>
 <div class="section" id="testing-for-config-values">
-<h2>Testing for config values<a class="headerlink" href="#testing-for-config-values" title="永久链接至标题">¶</a></h2>
-<p>If you want to see if a config value exists, use the <code class="docutils literal notranslate"><span class="pre">has()</span></code> method</p>
+<h2>测试配置值<a class="headerlink" href="#testing-for-config-values" title="永久链接至标题">¶</a></h2>
+<p>如果要查看配置值是否存在, 请使用 <code class="docutils literal notranslate"><span class="pre">has()</span></code> 方法</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s1">&#39;dbConfig&#39;</span><span class="p">))</span> <span class="p">{</span>
   <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This can be done as an alternative to wrapping your <code class="docutils literal notranslate"><span class="pre">get()</span></code> around a
-try/catch block. <code class="docutils literal notranslate"><span class="pre">has()</span></code> will not throw exceptions, and will return
-true if and only if the configuration file has a defined value for the
-provided key. Note that <code class="docutils literal notranslate"><span class="pre">null</span></code> is a defined value.</p>
-<p><code class="docutils literal notranslate"><span class="pre">has()</span></code> will not throw an exception if the parameter passed is
-<code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">undefined</span></code> but will simply return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>这可以作为在 try/catch 块周围包装 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 的替代方法. <code class="docutils literal notranslate"><span class="pre">has()</span></code> 不会抛出异常, 当且仅当配置文件具有所提供键的定义值时才会返回true. 注意 <code class="docutils literal notranslate"><span class="pre">null</span></code> 是一个定义的值.</p>
+<p><code class="docutils literal notranslate"><span class="pre">has()</span></code> 如果传递的参数是 <code class="docutils literal notranslate"><span class="pre">null</span></code> 或 <code class="docutils literal notranslate"><span class="pre">undefined</span></code>, 则不会抛出异常, 但只返回 <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 </div>
 

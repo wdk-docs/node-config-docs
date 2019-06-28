@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -96,7 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">检查配置源</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#example-output-of-getconfigsources">Example output of getConfigSources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-output-of-getconfigsources">getConfigSources的输出示例</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
@@ -177,15 +176,10 @@
             
   <div class="section" id="examining-configuration-sources">
 <h1>检查配置源<a class="headerlink" href="#examining-configuration-sources" title="永久链接至标题">¶</a></h1>
-<p>Configurations are similar to CSS in that they <em>cascade</em> from less
-specific to more specific. The <code class="docutils literal notranslate"><span class="pre">config.util.getConfigSources();</span></code>
-method can be used to see all sources contributing to the ultimate
-configuration, and the order in which they were are applied.</p>
-<p>This would allow a UI similar to a CSS inspector to show all source
-values, with strikethroughs for values overwritten by more specific
-cascading values.</p>
+<p>配置类似于CSS, 因为它们 <em>级联</em> 从较不具体到更具体. <code class="docutils literal notranslate"><span class="pre">config.util.getConfigSources();</span></code> 方法可用于查看有助于最终配置的所有源, 以及它们的应用顺序.</p>
+<p>这将允许类似于CSS检查器的UI显示所有源值, 并且更多特定级联值覆盖值的删除线.</p>
 <div class="section" id="example-output-of-getconfigsources">
-<h2>Example output of getConfigSources<a class="headerlink" href="#example-output-of-getconfigsources" title="永久链接至标题">¶</a></h2>
+<h2>getConfigSources的输出示例<a class="headerlink" href="#example-output-of-getconfigsources" title="永久链接至标题">¶</a></h2>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;/full/path/to/config/default.js&#39;</span><span class="p">,</span>
     <span class="nx">original</span><span class="o">:</span> <span class="s1">&#39;\nvar config = {\n  siteName : \&#39;default site name\&#39;,\n};\n\nconfig.email = {\n    subject : \&#39;default subject\&#39;,\n}\n\nmodule.exports = config;\n&#39;</span><span class="p">,</span>
     <span class="nx">parsed</span><span class="o">:</span> <span class="p">{</span> <span class="nx">siteName</span><span class="o">:</span> <span class="s1">&#39;default site name&#39;</span><span class="p">,</span> <span class="nx">email</span><span class="o">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">]</span> <span class="p">}</span> <span class="p">},</span>
@@ -197,11 +191,8 @@ cascading values.</p>
     <span class="nx">parsed</span><span class="o">:</span> <span class="p">{</span> <span class="nx">EnvOverride</span><span class="o">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">]</span> <span class="p">}</span> <span class="p">}</span> <span class="p">]</span>
 </pre></div>
 </div>
-<p>Notice that in additon to full paths, some other special names are
-included: <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG</span></code> from the environment and
-<code class="docutils literal notranslate"><span class="pre">--NODE_CONFIG</span> <span class="pre">argument</span></code> from the command line.</p>
-<p>While <code class="docutils literal notranslate"><span class="pre">[Object]</span></code> is shown here, the full objects are available in the
-actual output.</p>
+<p>请注意, 除了完整路径之外, 还包括一些其他特殊名称: 来自环境的 <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG</span></code> 和来自命令行的 <code class="docutils literal notranslate"><span class="pre">--NODE_CONFIG</span> <span class="pre">argument</span></code> .</p>
+<p>虽然这里显示了 <code class="docutils literal notranslate"><span class="pre">[Object]</span></code>, 但实际输出中有完整的对象.</p>
 </div>
 </div>
 

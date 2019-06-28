@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,9 @@ msgstr ""
 
 #: ../../source/External-Configuration-Management-Tools.rst:2
 msgid "External Configuration Management Tools"
-msgstr "External Configuration Management Tools"
+msgstr ""
 
 #: ../../source/External-Configuration-Management-Tools.rst:4
 msgid "(still to be written) In a nutshell: Define all default configurations in default.json, and use the external CM tool like Chef to build the deployment-specific override files. This keeps default configurations in the application repository, and deployment-specific configurations in the CM repository."
-msgstr "(still to be written) In a nutshell: Define all default configurations in default.json, and use the external CM tool like Chef to build the deployment-specific override files. This keeps default configurations in the application repository, and deployment-specific configurations in the CM repository."
+msgstr ""
 

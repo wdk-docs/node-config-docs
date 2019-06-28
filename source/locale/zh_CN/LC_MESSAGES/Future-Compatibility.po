@@ -23,94 +23,94 @@ msgid "Future Compatibility"
 msgstr "未来兼容性"
 
 #: ../../source/Future-Compatibility.rst:4
-msgid ""
+msgid  ""
 "In acknowledgement of the effort required to change dependent software, "
 "node-config will:"
-msgstr ""
+msgstr "为了确认更改相关软件所需的工作, node-config将会:"
 
 #: ../../source/Future-Compatibility.rst:7
-msgid ""
+msgid  ""
 "Use `semver versioning <https://github.com/lorenwest/node-config/wiki"
 "/Future-Compatibility#semver-versioning>`_ to promote stable deployments,"
-msgstr ""
+msgstr "使用 `semver versioning <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#semver-versioning>`_ 来促进稳定的部署, "
 
 #: ../../source/Future-Compatibility.rst:10
 msgid "Limit backward incompatibilities in favor of alternate solutions,"
-msgstr "Limit backward incompatibilities in favor of alternate solutions,"
+msgstr "限制后向不兼容性以支持替代解决方案, "
 
 #: ../../source/Future-Compatibility.rst:11
-msgid ""
+msgid  ""
 "Provide `ample warning <https://github.com/lorenwest/node-config/wiki"
 "/Future-Compatibility#ample-warning>`_ for upcoming incompatible "
 "releases,"
-msgstr ""
+msgstr "为即将发布的不兼容版本提供 `充足的警告 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#ample-warning>`_"
 
 #: ../../source/Future-Compatibility.rst:14
 msgid "Attempt to detect and output errors on incompatible usage, and"
-msgstr "Attempt to detect and output errors on incompatible usage, and"
+msgstr "尝试在不兼容的使用情况下检测并输出错误, 以及"
 
 #: ../../source/Future-Compatibility.rst:15
-msgid ""
+msgid  ""
 "Post all `upcoming incompatibilities <https://github.com/lorenwest/node-"
 "config/wiki/Future-Compatibility#upcoming-incompatibilities>`_ on this "
 "page"
-msgstr ""
+msgstr "发布所有 `即将发生的不兼容性 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities>`_ 在此页面上"
 
 #: ../../source/Future-Compatibility.rst:20
 msgid "Semver Versioning"
-msgstr "Semver Versioning"
+msgstr "Semver版本控制"
 
 #: ../../source/Future-Compatibility.rst:22
-msgid ""
+msgid  ""
 "To promote stable deployments, node-config uses `semver versioning "
 "<http://semver.org/>`_ when expressing deployment versions."
-msgstr ""
+msgstr "为了促进稳定部署, node-config在表达部署版本时使用 `semver versioning <http://semver.org/>`_."
 
 #: ../../source/Future-Compatibility.rst:25
-msgid ""
+msgid  ""
 "This makes it appropriate to run tests for a particular ``MAJOR.MINOR`` "
 "version, and be confident about specifying a wildcard ``PATCH`` version. "
 "For example, if the current version you’ve tested with is ``1.3.4``, your"
 " node-config dependency in package.json could be:"
-msgstr ""
+msgstr "这使得适合运行特定 ``MAJOR.MINOR`` 版本的测试, 并对指定通配符 ``PATCH`` 版本充满信心.例如, 如果您测试过的当前版本是 ``1.3.4``, 那么 package.json 中的 node-config 依赖关系可能是:"
 
 #: ../../source/Future-Compatibility.rst:36
-msgid ""
+msgid  ""
 "without introducing significant risk. You can also specify ``\"config\": "
 "\"1.3.4\",`` if you prefer version stability to bug fixes."
-msgstr ""
+msgstr "没有引入重大风险.您还可以指定 ``\"config\": \"1.3.4\",`` 如果您更喜欢版本稳定性来修复错误."
 
 #: ../../source/Future-Compatibility.rst:40
 msgid "Ample Warning"
-msgstr "Ample Warning"
+msgstr "充足的警告"
 
 #: ../../source/Future-Compatibility.rst:42
-msgid ""
+msgid  ""
 "A minimum of one year will be given between the time of an "
 "incompatibility announcement (below) and the release of the version "
 "containing the incompatibility."
-msgstr ""
+msgstr "在不兼容性公告(下方)和包含不兼容性的版本的发布之间至少应给出一年的时间."
 
 #: ../../source/Future-Compatibility.rst:46
-msgid ""
+msgid  ""
 "If it’s possible to detect your application using a future "
 "incompatibility, a one-time warning per application run will be placed "
 "onto ``console.error`` for each type of incompatibility."
-msgstr ""
+msgstr "如果可以使用将来的不兼容性来检测您的应用程序, 则每个应用程序运行的一次性警告将被置于 ``console.error`` 中, 用于每种类型的不兼容性."
 
 #: ../../source/Future-Compatibility.rst:50
-msgid ""
+msgid  ""
 "Once the incompatibility is introduced, an error will be placed into "
 "``console.error`` if an incompatible usage is detected."
-msgstr ""
+msgstr "一旦引入了不兼容性, 如果检测到不兼容的用法, 则会在 ``console.error`` 中输入错误."
 
 #: ../../source/Future-Compatibility.rst:54
 msgid "Upcoming Incompatibilities"
-msgstr "Upcoming Incompatibilities"
+msgstr "即将到来的不兼容性"
 
 #: ../../source/Future-Compatibility.rst:57
 msgid "Version 2.0 - (not before July, 2015)"
-msgstr "Version 2.0 - (not before July, 2015)"
+msgstr "版本2.0 - (不是在2015年7月之前)"
 
 #: ../../source/Future-Compatibility.rst:59
 msgid ""
@@ -122,16 +122,16 @@ msgid ""
 "and the only words in the `Reserved Words <https://github.com/lorenwest"
 "/node-config/wiki/Reserved-Words>`_ list will be ``get``, ``has``, and "
 "``util``."
-msgstr ""
+msgstr "较少杂乱的顶级命名空间（2014年6月公布）\\ `实用程序函数 <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_ 在 ``config.util`` 下可用`命名空间，因为版本1.0将不再在顶级 ``config`` 命名空间中可用。从版本2开始，它们只能在 ``config.util`` 下使用，并且 `保留字 <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ 中的唯一单词list将是 ``get``，``has`` 和 ``util``。"
 
 #: ../../source/Future-Compatibility.rst:68
-msgid ""
+msgid  ""
 "Watch utility deprecated (announced July, 2014) The ``watch`` method was "
 "built as a notification of changed configuration values. Since node-"
 "config 1.0, configuration changes are no longer advised, and the watch "
 "function was kept in but deprecated with a warning. The watch function "
 "will not be available in Version 2.0."
-msgstr ""
+msgstr "不推荐使用Watch实用程序(2014年7月发布) ``watch`` 方法是作为已更改配置值的通知而构建的.从node-config 1.0开始, 不再建议配置更改, 并且监视功能保留在但不建议使用警告.手表功能在2.0版中不可用."
 
 #~ msgid "Future-Compatibility"
 #~ msgstr ""

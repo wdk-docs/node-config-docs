@@ -23,55 +23,56 @@ msgid "Asynchronous Configurations"
 msgstr "异步配置"
 
 #: ../../source/Asynchronous-Configurations.rst:4
-msgid ""
+msgid  ""
 "In the JavaScript modules you have an option to define a configuration "
 "value asynchronously."
-msgstr ""
+msgstr "在JavaScript模块中, 您可以选择异步定义配置值."
 
 #: ../../source/Asynchronous-Configurations.rst:8
 msgid "Async configuration"
-msgstr "Async configuration"
+msgstr "异步配置"
 
 #: ../../source/Asynchronous-Configurations.rst:10
-msgid ""
+msgid  ""
 "Using the ``asyncConfig`` utility method you can wrap both promises and "
 "async functions (a function which returns a promise) whose resolution "
 "will be deferred until:"
-msgstr ""
+msgstr "使用 ``asyncConfig`` 实用程序方法, 你可以包含promises和async函数(一个返回一个promise的函数), 其解析将推迟到:"
 
 #: ../../source/Asynchronous-Configurations.rst:14
-msgid ""
+msgid  ""
 "the final merged configuration structure is built (that’s when async "
 "functions are executed; see `deferConfig <https://github.com/lorenwest"
 "/node-config/wiki/Special-features-for-JavaScript-configuration-files"
 "#deferred-values-in-javascript-configuration-files>`_)"
-msgstr ""
+msgstr "构建最终的合并配置结构(即异步函数执行时;请参阅 `deferConfig <https://github.com/lorenwest"
+"/node-config/wiki/Special-features-for-JavaScript-configuration-files#deferred-values-in-javascript-configuration-files>`_)"
 
 #: ../../source/Asynchronous-Configurations.rst:17
-msgid ""
+msgid  ""
 "the ``resolveAsyncConfigs`` utility method has been called and resolved "
 "(all asynchronous configurations been resolved)"
-msgstr ""
+msgstr "已经调用并解析了 ``resolveAsyncConfigs`` 实用程序方法(已解决所有异步配置)"
 
 #: ../../source/Asynchronous-Configurations.rst:36
 msgid "Resolving async configurations"
-msgstr "Resolving async configurations"
+msgstr "解决异步配置"
 
 #: ../../source/Asynchronous-Configurations.rst:38
 msgid "**Important!** - Never call ``config.get`` before ``resolveAsyncConfigs``"
-msgstr "**Important!** - Never call ``config.get`` before ``resolveAsyncConfigs``"
+msgstr "**Important!** - 永远不要在 ``resolveAsyncConfigs`` 之前调用 ``config.get``"
 
 #: ../../source/Asynchronous-Configurations.rst:41
-msgid ""
+msgid  ""
 "It will cause the config object to freeze and will make resolving values "
 "impossible."
-msgstr ""
+msgstr "它会导致配置对象冻结, 并且无法解析值."
 
 #: ../../source/Asynchronous-Configurations.rst:59
-msgid ""
+msgid  ""
 "**Note**: support of advance syntax will depend on your node version "
 "and/or babel configurations"
-msgstr ""
+msgstr "**Note**: 支持高级语法将取决于您的节点版本和/或babel配置"
 
 #~ msgid "Asynchronous-Configurations"
 #~ msgstr ""

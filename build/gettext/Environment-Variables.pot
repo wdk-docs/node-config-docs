@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,197 +18,197 @@ msgstr ""
 
 #: ../../source/Environment-Variables.rst:2
 msgid "Environment Variables"
-msgstr "Environment Variables"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:4
 msgid "Node-config uses a handful of environment variables for its own configuration. It can also use `custom environment variables <#custom-environment-variables>`_ to override your app’s configuration. In both cases, these are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap."
-msgstr "Node-config uses a handful of environment variables for its own configuration. It can also use `custom environment variables <#custom-environment-variables>`_ to override your app’s configuration. In both cases, these are generally exported in your shell before loading the app, but can also be supplied on the command line or in your app bootstrap."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:11
 msgid "Example exporting to the O/S before loading your app:"
-msgstr "Example exporting to the O/S before loading your app:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:19
 msgid "Example passing on the command line:"
-msgstr "Example passing on the command line:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:26
 msgid "Example setting in JavaScript before the first load of node-config:"
-msgstr "Example setting in JavaScript before the first load of node-config:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:34
 msgid "NODE_ENV"
-msgstr "NODE_ENV"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:36
 msgid "This variable contains the name of your application’s deployment environment, representing the ``{deployment}`` when determining config `file loading order <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_. Common values include ``dev``, ``stage``, ``production-east``, etc. to fit your deployment strategy. The value for ``NODE_ENV`` can be overridden with the `NODE_CONFIG_ENV <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env>`_ environment variable."
-msgstr "This variable contains the name of your application’s deployment environment, representing the ``{deployment}`` when determining config `file loading order <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_. Common values include ``dev``, ``stage``, ``production-east``, etc. to fit your deployment strategy. The value for ``NODE_ENV`` can be overridden with the `NODE_CONFIG_ENV <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env>`_ environment variable."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:46
 msgid "The current value of ``NODE_ENV`` is available in ``config.util.getEnv()``:"
-msgstr "The current value of ``NODE_ENV`` is available in ``config.util.getEnv()``:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:55
 msgid "NODE_CONFIG_ENV"
-msgstr "NODE_CONFIG_ENV"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:57
 msgid "In certain circumstances ``NODE_ENV`` may not be the preferred value for configuration identification. The ``NODE_CONFIG_ENV`` environment variable was introduced with (v1.28.0) which transparently, overrides the value of ``NODE_ENV``."
-msgstr "In certain circumstances ``NODE_ENV`` may not be the preferred value for configuration identification. The ``NODE_CONFIG_ENV`` environment variable was introduced with (v1.28.0) which transparently, overrides the value of ``NODE_ENV``."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:62
 msgid "The current value of ``NODE_CONFIG_ENV`` is available in ``config.util.getEnv()``:"
-msgstr "The current value of ``NODE_CONFIG_ENV`` is available in ``config.util.getEnv()``:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:72
 msgid "The ``qa`` configuration will be used in place of ``production``."
-msgstr "The ``qa`` configuration will be used in place of ``production``."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:75
 msgid "NODE_CONFIG_DIR"
-msgstr "NODE_CONFIG_DIR"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:77
 msgid "This contains the path to the directory containing your `configuration files <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_. It can be a direct path from the root, or a relative path if it begins with ``./`` or ``../``. The default ``NODE_CONFIG_DIR`` is the ``/config`` directory under the *current working directory*, usually your application root - the value returned by ``process.cwd() + '/config'``."
-msgstr "This contains the path to the directory containing your `configuration files <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_. It can be a direct path from the root, or a relative path if it begins with ``./`` or ``../``. The default ``NODE_CONFIG_DIR`` is the ``/config`` directory under the *current working directory*, usually your application root - the value returned by ``process.cwd() + '/config'``."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:85
 msgid "The current value of ``NODE_CONFIG_DIR`` is available in ``config.util.getEnv()``:"
-msgstr "The current value of ``NODE_CONFIG_DIR`` is available in ``config.util.getEnv()``:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:94
 msgid "NODE_CONFIG"
-msgstr "NODE_CONFIG"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:96
 msgid "This allows you to override any configuration from the command line or shell environment. The ``NODE_CONFIG`` environment variable must be a JSON formatted string. Any configurations contained in this will override the configurations found and merged from the config files."
-msgstr "This allows you to override any configuration from the command line or shell environment. The ``NODE_CONFIG`` environment variable must be a JSON formatted string. Any configurations contained in this will override the configurations found and merged from the config files."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:101
 msgid "If ``NODE_CONFIG`` is supplied both from the O/S environment *and* the command line, they’ll both be used with command line values favored over O/S environment values."
-msgstr "If ``NODE_CONFIG`` is supplied both from the O/S environment *and* the command line, they’ll both be used with command line values favored over O/S environment values."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:105
 msgid "Example:"
-msgstr "Example:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:112
 msgid "The current value of ``NODE_CONFIG``, mixed from the O/S environment and command line is available in ``config.util.getEnv()``:"
-msgstr "The current value of ``NODE_CONFIG``, mixed from the O/S environment and command line is available in ``config.util.getEnv()``:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:121
 msgid "HOSTNAME (or HOST)"
-msgstr "HOSTNAME (or HOST)"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:123
 msgid "This variable contains the name of your host server, representing the ``{hostname}`` when determining config `file loading order <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_."
-msgstr "This variable contains the name of your host server, representing the ``{hostname}`` when determining config `file loading order <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:127
 msgid "Sometimes the default hostname returned by ``os.hostname()`` isn’t what you expect, and setting this before running your app makes sure you’ve got the right name."
-msgstr "Sometimes the default hostname returned by ``os.hostname()`` isn’t what you expect, and setting this before running your app makes sure you’ve got the right name."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:131
 msgid "For backward compatibility, if the **HOST** variable is set, that value is used instead."
-msgstr "For backward compatibility, if the **HOST** variable is set, that value is used instead."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:134
 msgid "Regardless of the variable or default used, the current value of ``HOSTNAME`` is available in ``config.util.getEnv()``:"
-msgstr "Regardless of the variable or default used, the current value of ``HOSTNAME`` is available in ``config.util.getEnv()``:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:143
 msgid "NODE_APP_INSTANCE"
-msgstr "NODE_APP_INSTANCE"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:145
 msgid "As described in the `multi instance deployment <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_ section, if you’re running multiple instances of your app and need different configurations for each instance, this enables loading of instance specific config files."
-msgstr "As described in the `multi instance deployment <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_ section, if you’re running multiple instances of your app and need different configurations for each instance, this enables loading of instance specific config files."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:151
 msgid "The current value of ``NODE_APP_INSTANCE`` is available in ``config.util.getEnv()``"
-msgstr "The current value of ``NODE_APP_INSTANCE`` is available in ``config.util.getEnv()``"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:160
 msgid "ALLOW_CONFIG_MUTATIONS"
-msgstr "ALLOW_CONFIG_MUTATIONS"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:162
 msgid "If this environment variable contains anything, then mutations of the configuration object are allowed. This is for edge cases such as testing, where it is important to mutate configurations for different scenarios within the same execution."
-msgstr "If this environment variable contains anything, then mutations of the configuration object are allowed. This is for edge cases such as testing, where it is important to mutate configurations for different scenarios within the same execution."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:167
 msgid "The safety afforded by making the configuration object immutable is lost when this environment variable is used."
-msgstr "The safety afforded by making the configuration object immutable is lost when this environment variable is used."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:170
 msgid "The current value of ``ALLOW_CONFIG_MUTATIONS`` is available in ``config.util.getEnv()``"
-msgstr "The current value of ``ALLOW_CONFIG_MUTATIONS`` is available in ``config.util.getEnv()``"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:179
 msgid "NODE_CONFIG_STRICT_MODE"
-msgstr "NODE_CONFIG_STRICT_MODE"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:181
 msgid "When strict mode is enabled, the following conditions must be true or an exception will thrown at require-time:"
-msgstr "When strict mode is enabled, the following conditions must be true or an exception will thrown at require-time:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:184
 msgid "There must be an explicit config file matching ``NODE_ENV`` if ``NODE_ENV`` is set."
-msgstr "There must be an explicit config file matching ``NODE_ENV`` if ``NODE_ENV`` is set."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:186
 msgid "There must be an explicit config file matching ``NODE_APP_INSTANCE`` if ``NODE_APP_INSTANCE`` is set"
-msgstr "There must be an explicit config file matching ``NODE_APP_INSTANCE`` if ``NODE_APP_INSTANCE`` is set"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:188
 msgid "``NODE_ENV`` must not match ‘default’ or ‘local’ to avoid ambiguity."
-msgstr "``NODE_ENV`` must not match ‘default’ or ‘local’ to avoid ambiguity."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:190
 msgid "Strict mode is off by default."
-msgstr "Strict mode is off by default."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:193
 msgid "SUPPRESS_NO_CONFIG_WARNING"
-msgstr "SUPPRESS_NO_CONFIG_WARNING"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:195
 msgid "If this environment variable contains anything, then the following message"
-msgstr "If this environment variable contains anything, then the following message"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:202
 msgid "will be suppressed if no configurations were found when loading node-config. This is important for NPM modules using node-config to allow apps using these sub-modules the option of using node-config if they choose, or a different configuration system without getting annoying warning messages."
-msgstr "will be suppressed if no configurations were found when loading node-config. This is important for NPM modules using node-config to allow apps using these sub-modules the option of using node-config if they choose, or a different configuration system without getting annoying warning messages."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:208
 msgid "See the article on `sub module configuration <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_ for more information about using node-config in an NPM module."
-msgstr "See the article on `sub module configuration <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_ for more information about using node-config in an NPM module."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:212
 msgid "The current value of ``SUPPRESS_NO_CONFIG_WARNING`` is available in ``config.util.getEnv()``"
-msgstr "The current value of ``SUPPRESS_NO_CONFIG_WARNING`` is available in ``config.util.getEnv()``"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:221
 msgid "Custom Environment Variables"
-msgstr "Custom Environment Variables"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:223
 msgid "(New as of 1.1.0) Some deployment situations rely heavily on environment variables to configure secrets and settings best left out of a codebase. `NODE_CONFIG <#node_config>`_ lets you use a JSON string to deal with this, but sometimes simpler, flatter environment variables are better suited."
-msgstr "(New as of 1.1.0) Some deployment situations rely heavily on environment variables to configure secrets and settings best left out of a codebase. `NODE_CONFIG <#node_config>`_ lets you use a JSON string to deal with this, but sometimes simpler, flatter environment variables are better suited."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:229
 msgid "To enable custom environment variables, create a configuration file, ``config/custom-environment-variables.json`` (or ``.yaml`` or ``.js`` or ``coffee``) mapping the environment variable names into your configuration structure. For example:"
-msgstr "To enable custom environment variables, create a configuration file, ``config/custom-environment-variables.json`` (or ``.yaml`` or ``.js`` or ``coffee``) mapping the environment variable names into your configuration structure. For example:"
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:256
 msgid "…would cause ``node-config`` to check for the environment variables ``PROD_SERVER`` and ``CR_ID``. If they exist, they would *override* the values for ``Customer.dbConfig.host``, and ``Customer.credit.initialDays`` in your configuration."
-msgstr "…would cause ``node-config`` to check for the environment variables ``PROD_SERVER`` and ``CR_ID``. If they exist, they would *override* the values for ``Customer.dbConfig.host``, and ``Customer.credit.initialDays`` in your configuration."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:261
 msgid "For ``ADMIN_ACCS`` it will try to parse the found environment variable according to the specified format in ``_format`` and *extend* the values for ``Customer.settings.adminAccounts``. Empty environment variables are ignored, and their mappings have no effect on your config."
-msgstr "For ``ADMIN_ACCS`` it will try to parse the found environment variable according to the specified format in ``_format`` and *extend* the values for ``Customer.settings.adminAccounts``. Empty environment variables are ignored, and their mappings have no effect on your config."
+msgstr ""
 
 #: ../../source/Environment-Variables.rst:266
 msgid "**Precedence**: Custom environment variables override all configuration files, including ``local.json``. Only command line options take precedence over them."
-msgstr "**Precedence**: Custom environment variables override all configuration files, including ``local.json``. Only command line options take precedence over them."
+msgstr ""
 

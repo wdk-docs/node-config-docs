@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -105,19 +104,19 @@
 <li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">保护生产配置文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#git-crypt-workflow">Git-crypt Workflow</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mimicking-production-mode">Mimicking production mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">先决条件:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps">脚步</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initial-setup">初始设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-crypt-workflow">Git-crypt 工作流程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mimicking-production-mode">模仿生产模式</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#deployment-servers-build-servers-ci-servers">Deployment Servers, Build Servers, CI Servers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#git-clone-once-only">Git Clone Once Only</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#git-clone-every-time">Git Clone Every Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-servers-build-servers-ci-servers">部署服务器, 构建服务器, CI服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#git-clone-once-only">Git克隆一次</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-clone-every-time">每次Git克隆</a></li>
 </ul>
 </li>
 </ul>
@@ -192,82 +191,62 @@
   <div class="section" id="securing-production-config-files">
 <h1>保护生产配置文件<a class="headerlink" href="#securing-production-config-files" title="永久链接至标题">¶</a></h1>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
-<p>Once you have split out your production config, you may want to encrypt
-any files that contain sensitive information (API Keys, passwords etc).
-This page will get you started with <a class="reference external" href="https://github.com/AGWA/git-crypt">git-crypt</a> ,
-which works well with node-config. With git-crypt, you can keep your production config
-files under version control with git, while also keeping them secure via
-encryption.</p>
-<p>Here is the scenario we’ll be configuring:</p>
+<h2>介绍<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>分离出生产配置后, 您可能希望加密包含敏感信息的任何文件(API密钥, 密码等).这个页面将开始使用 <a class="reference external" href="https://github.com/AGWA/git-crypt">git-crypt</a>, 它适用于node-config.使用git-crypt, 您可以使用git将生产配置文件保留在版本控制下, 同时通过加密使其保持安全.</p>
+<p>这是我们将要配置的场景:</p>
 <ul class="simple">
-<li><p>You, Paul and Ringo are all working on a project, using git. There
-are server deployments involved.</p></li>
-<li><p>Ringo is a contributor, and doesn’t need or want to see production
-passwords, API secret keys etc.</p></li>
-<li><p>You and Paul both maintain the servers and need access to the
-sensitive info.</p></li>
+<li><p>你, Paul和Ringo都在使用git从事一个项目.涉及服务器部署.</p></li>
+<li><p>Ringo是贡献者, 不需要或不想看到生产密码, API密钥等.</p></li>
+<li><p>您和Paul都维护服务器并需要访问敏感信息.</p></li>
 </ul>
 </div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites:<a class="headerlink" href="#prerequisites" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>先决条件:<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/AGWA/git-crypt.git">git-crypt</a> is installed.</p>
+<li><p><a class="reference external" href="https://github.com/AGWA/git-crypt.git">git-crypt</a> 已安装.</p>
 <ul>
-<li><p>On OS X : <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git-crypt</span></code></p></li>
-<li><p>On Ubuntu / Debian (since 16.04 LTS) <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-crypt</span></code></p></li>
-<li><p>On other systems: <a class="reference external" href="https://github.com/AGWA/git-crypt/blob/master/INSTALL.md">INSTALL</a></p></li>
+<li><p>在OS X上: <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git-crypt</span></code></p></li>
+<li><p>在Ubuntu/Debian上(自16.04 LTS起) <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-crypt</span></code></p></li>
+<li><p>在其他系统上: <a class="reference external" href="https://github.com/AGWA/git-crypt/blob/master/INSTALL.md">安装</a></p></li>
 </ul>
 </li>
-<li><p>Your project is using git, your working copy is clean, and you
-haven’t committed any sensitive information to it yet.</p>
+<li><p>您的项目正在使用git, 您的工作副本是干净的, 并且您尚未向其提交任何敏感信息.</p>
 <ul>
-<li><p>If you <em>have</em> accidentally committed sensitive information to your
-repository, you’ll need to clean it using <a class="reference external" href="https://rtyley.github.io/bfg-repo-cleaner/">bfg repo
-cleaner</a>.</p></li>
+<li><p>如果您*意外地将敏感信息提交到您的存储库, 您将需要使用 <a class="reference external" href="https://rtyley.github.io/bfg-repo-cleaner/">bfg repo cleaner</a> 进行清理.</p></li>
 </ul>
 </li>
-<li><p>You have <a class="reference external" href="https://www.gnupg.org/">GnuPG</a> installed.</p>
+<li><p>你安装了 <a class="reference external" href="https://www.gnupg.org/">GnuPG</a>.</p>
 <ul>
-<li><p>On OS X, the GPG Keychain that is part of <a class="reference external" href="https://gpgtools.org/gpgsuite.html">GPG
-Suite</a> is very easy to use.</p></li>
-<li><p>On Windows, <a class="reference external" href="https://www.gpg4win.org/">GPG4Win</a> looks pretty
-good.</p></li>
-<li><p>On Unix/Linux,
-<a class="reference external" href="https://www.gnupg.org/related_software/gpa/index.html">GPA</a>
-provides a front-end.</p></li>
+<li><p>在OS X上, 作为 <a class="reference external" href="https://gpgtools.org/gpgsuite.html">GPG Suite</a> 一部分的GPG Keychain非常易于使用.</p></li>
+<li><p>在Windows上, <a class="reference external" href="https://www.gpg4win.org/">GPG4Win</a> 看起来很不错.</p></li>
+<li><p>在Unix/Linux上, <a class="reference external" href="https://www.gnupg.org/related_software/gpa/index.html">GPA</a> 提供了一个前端.</p></li>
 </ul>
 </li>
-<li><p>You have a <code class="docutils literal notranslate"><span class="pre">config</span></code> folder where your configuration files will be
-kept.</p></li>
+<li><p>你有一个 <code class="docutils literal notranslate"><span class="pre">config</span></code> 文件夹, 你的配置文件将被保存.</p></li>
 </ul>
 </div>
 <div class="section" id="steps">
-<h2>Steps<a class="headerlink" href="#steps" title="永久链接至标题">¶</a></h2>
+<h2>脚步<a class="headerlink" href="#steps" title="永久链接至标题">¶</a></h2>
 <div class="section" id="initial-setup">
-<span id="id2"></span><h3>Initial Setup<a class="headerlink" href="#initial-setup" title="永久链接至标题">¶</a></h3>
-<p>We’re going to set up git-crypt so that the <code class="docutils literal notranslate"><span class="pre">production.json</span></code> file is
-encrypted for Ringo, but the same file is plain JSON for yourself and
-Paul.</p>
+<span id="id3"></span><h3>初始设置<a class="headerlink" href="#initial-setup" title="永久链接至标题">¶</a></h3>
+<p>我们将设置git-crypt, 以便为Ringo加密 <code class="docutils literal notranslate"><span class="pre">production.json</span></code> 文件, 但同样的文件对于你自己和Paul来说都是简单的JSON.</p>
 <ol class="arabic">
-<li><p>Initialise the repository to use git-crypt</p>
+<li><p>初始化存储库以使用git-crypt</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">init</span>
 </pre></div>
 </div>
 </li>
-<li><p>Add your own public GPG key (already on your GPG keychain) as a
-trusted user</p>
+<li><p>添加您自己的公共GPG密钥(已在您的GPG钥匙串上)作为受信任的用户</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">add</span><span class="o">-</span><span class="n">gpg</span><span class="o">-</span><span class="n">user</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 </li>
-<li><p>Import Paul’s public GPG key to your own GPG keychain (Paul probably
-emailed this to You)</p>
+<li><p>将Paul的公共GPG密钥导入您自己的GPG钥匙串(Paul可能会通过电子邮件发送给您)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gpg</span> <span class="o">--</span><span class="kn">import</span> <span class="nn">Paul_pub.gpg</span>
 </pre></div>
 </div>
 </li>
-<li><p>Mark both your own key and Paul’s key with ‘ultimate’ trust in GPG.</p>
+<li><p>用GPG中的“终极”信任标记自己的密钥和Paul的密钥.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gpg --edit john@example.com  (or) gpg --edit-key john@example.com
 gpg&gt; trust
 
@@ -285,23 +264,19 @@ Your decision? 5
 Do you really want to set this key to ultimate trust? (y/N) y
 </pre></div>
 </div>
-<p>Do the same for <code class="docutils literal notranslate"><span class="pre">paul&#64;example.com</span></code></p>
+<p>为 <code class="docutils literal notranslate"><span class="pre">paul&#64;example.com</span></code> 做同样的事情</p>
 </li>
-<li><p>Add Paul’s public GPG key as a trusted git-crypt user</p>
+<li><p>将Paul的公共GPG密钥添加为可信的git-crypt用户</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">add</span><span class="o">-</span><span class="n">gpg</span><span class="o">-</span><span class="n">user</span> <span class="n">paul</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 </li>
-<li><p>Add the <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> file (or equivalent YAML etc) to
-the <code class="docutils literal notranslate"><span class="pre">.gitattributes</span> <span class="pre">file</span></code>, so git-crypt will manage the encryption
-/ decryption where necessary. Add the following line to the
-<code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> file (substituting the appropriate extension):</p>
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> 文件(或等效的YAML等)添加到 <code class="docutils literal notranslate"><span class="pre">.gitattributes文件</span></code> 中, 因此git-crypt将在必要时管理加密/解密.将以下行添加到``.gitattributes`` 文件中(替换相应的扩展名):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">/</span><span class="n">production</span><span class="o">.</span><span class="n">json</span> <span class="nb">filter</span><span class="o">=</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">diff</span><span class="o">=</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span>
 </pre></div>
 </div>
 </li>
-<li><p>Now create the file and add it to your repo (substituting the
-appropriate syntax and extension):</p>
+<li><p>现在创建文件并将其添加到您的仓库(替换相应的语法和扩展名):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;{foo:&quot;secret&quot;}&#39;</span> &gt; config/production.json
 git add config/production.json
 git commit -m <span class="s2">&quot;production settings&quot;</span>
@@ -310,64 +285,45 @@ git push origin
 </div>
 </li>
 </ol>
-<p>On the git remote (server), <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is now encrypted.</p>
+<p>在git remote(服务器)上, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> 现在已加密.</p>
 </div>
 <div class="section" id="git-crypt-workflow">
-<span id="id3"></span><h3>Git-crypt Workflow<a class="headerlink" href="#git-crypt-workflow" title="永久链接至标题">¶</a></h3>
-<p>Initially, when Paul clones or pulls the repo,
-<code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is encrypted for him too.</p>
-<p>But his public key is listed as trusted, and he has the corresponding
-private key on his keyring. So he can unlock all encrypted files with a
-single command:</p>
+<span id="id4"></span><h3>Git-crypt 工作流程<a class="headerlink" href="#git-crypt-workflow" title="永久链接至标题">¶</a></h3>
+<p>最初, 当Paul克隆或拉回购时, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> 也为他加密.</p>
+<p>但是他的公钥被列为可信任, 并且他的密钥环上有相应的私钥.因此, 他可以使用一个命令解锁所有加密文件:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">unlock</span>
 </pre></div>
 </div>
-<p>Paul is prompted for his private key password.</p>
-<p>From now on, Paul’s and your own workflow is unchanged from normal.</p>
-<p>On your machine and Paul’s, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is just a normal
-JSON file.</p>
-<p>From Ringo’s point of view, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is a binary file.</p>
+<p>保罗被提示输入他的私钥密码.</p>
+<p>从现在开始，Paul和您自己的工作流程与正常情况相同.</p>
+<p>在你的机器上和Paul的, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> 只是一个普通的JSON文件.</p>
+<p>从Ringo的角度来看, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> 是一个二进制文件.</p>
 <div class="section" id="mimicking-production-mode">
-<h4>Mimicking production mode<a class="headerlink" href="#mimicking-production-mode" title="永久链接至标题">¶</a></h4>
-<p>Ringo might have the need to run the application with
-<code class="docutils literal notranslate"><span class="pre">NODE_ENV=production</span></code> e.g. to invoke minification, or to debug some
-issue on the production server.</p>
-<p>But Ringo has a problem: when he runs the node program with
-<code class="docutils literal notranslate"><span class="pre">NODE_ENV=production</span></code>, node-config tries to read
-<code class="docutils literal notranslate"><span class="pre">config/production.json</span></code>, which on his machine is not a valid JSON
-file since it’s encrypted. The app crashes.</p>
-<p>To cater for this, Ringo can specify that any git-crypt encrypted files
-are skipped, via a <code class="docutils literal notranslate"><span class="pre">CONFIG_SKIP_GITCRYPT</span></code> environment variable, for
-example:</p>
+<h4>模仿生产模式<a class="headerlink" href="#mimicking-production-mode" title="永久链接至标题">¶</a></h4>
+<p>Ringo可能需要使用 <code class="docutils literal notranslate"><span class="pre">NODE_ENV=production</span></code> 运行应用程序, 例如调用缩小, 或调试生产服务器上的某些问题.</p>
+<p>但是Ringo有一个问题:当他用 <code class="docutils literal notranslate"><span class="pre">NODE_ENV=production</span></code> 运行节点程序时, node-config尝试读取 <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code>, 这在他的机器上不是有效的JSON文件, 因为它是加密的.该应用程序崩溃.</p>
+<p>为了满足这一需求, Ringo可以通过 <code class="docutils literal notranslate"><span class="pre">CONFIG_SKIP_GITCRYPT</span></code> 环境变量指定跳过任何git-crypt加密文件, 例如:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">NODE_ENV</span><span class="o">=</span>production <span class="nv">CONFIG_SKIP_GITCRYPT</span><span class="o">=</span><span class="m">1</span> node foo.js
 </pre></div>
 </div>
-<p>This tells node-config to continue even if a git-crypt file is
-encountered.</p>
+<p>即使遇到git-crypt文件, 这也告诉node-config继续.</p>
 </div>
 </div>
 </div>
 <div class="section" id="deployment-servers-build-servers-ci-servers">
-<h2>Deployment Servers, Build Servers, CI Servers<a class="headerlink" href="#deployment-servers-build-servers-ci-servers" title="永久链接至标题">¶</a></h2>
+<h2>部署服务器, 构建服务器, CI服务器<a class="headerlink" href="#deployment-servers-build-servers-ci-servers" title="永久链接至标题">¶</a></h2>
 <div class="section" id="git-clone-once-only">
-<h3>Git Clone Once Only<a class="headerlink" href="#git-clone-once-only" title="永久链接至标题">¶</a></h3>
-<p>Unless you’re cloning the git repository every time, you need only
-unlock it once.</p>
-<p>You can create a GPG key for a server (or set of servers) so a single
-<code class="docutils literal notranslate"><span class="pre">git-crypt</span> <span class="pre">unlock</span></code> command is all that is needed. Of course, the
-corresponding private key must be installed on the server’s GPG keychain
-already.</p>
+<h3>Git克隆一次<a class="headerlink" href="#git-clone-once-only" title="永久链接至标题">¶</a></h3>
+<p>除非您每次都克隆git存储库, 否则只需要解锁一次.</p>
+<p>您可以为服务器(或服务器集)创建GPG密钥, 因此只需要一个 <code class="docutils literal notranslate"><span class="pre">git-crypt</span> <span class="pre">unlock</span></code> 命令.当然, 必须在服务器的GPG钥匙串上安装相应的私钥.</p>
 </div>
 <div class="section" id="git-clone-every-time">
-<h3>Git Clone Every Time<a class="headerlink" href="#git-clone-every-time" title="永久链接至标题">¶</a></h3>
-<p>In the case where your server <em>is</em> performing a git clone every time,
-you can instead export a symmetric (non-GPG) key from an unlocked
-git-crypt repository:</p>
+<h3>每次Git克隆<a class="headerlink" href="#git-clone-every-time" title="永久链接至标题">¶</a></h3>
+<p>如果您的服务器每次都 <em>执行</em> git clone, 则可以从未锁定的 git-crypt 存储库导出对称(非GPG)密钥:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">export</span><span class="o">-</span><span class="n">key</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span><span class="o">-</span><span class="n">key</span>
 </pre></div>
 </div>
-<p>You can then use that symmetric key to unlock the repository from your
-server without a pass phrase.</p>
+<p>然后, 您可以使用该对称密钥从服务器解锁存储库而无需密码短语.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">unlock</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span><span class="o">-</span><span class="n">key</span>
 </pre></div>
 </div>

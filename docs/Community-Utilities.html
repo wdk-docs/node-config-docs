@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -98,8 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">社区公用事业</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cev-custom-environment-variable-generator">CEV - Custom Environment Variable Generator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#config-uncached">config-uncached</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cev-custom-environment-variable-generator">CEV - 定制环境变量生成器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-uncached">配置 - 未缓存</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
@@ -179,20 +178,12 @@
   <div class="section" id="community-utilities">
 <h1>社区公用事业<a class="headerlink" href="#community-utilities" title="永久链接至标题">¶</a></h1>
 <div class="section" id="cev-custom-environment-variable-generator">
-<h2>CEV - Custom Environment Variable Generator<a class="headerlink" href="#cev-custom-environment-variable-generator" title="永久链接至标题">¶</a></h2>
-<p>If you use <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables">custom environment
-variables</a>
-a lot, here’s a generator for them
-<a class="reference external" href="http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/">http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/</a></p>
+<h2>CEV - 定制环境变量生成器<a class="headerlink" href="#cev-custom-environment-variable-generator" title="永久链接至标题">¶</a></h2>
+<p>如果您使用 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables">自定义环境变量</a> 很多, 这里有一个生成器 <a class="reference external" href="http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/">http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/</a></p>
 </div>
 <div class="section" id="config-uncached">
-<h2>config-uncached<a class="headerlink" href="#config-uncached" title="永久链接至标题">¶</a></h2>
-<p>Sometimes for testing or DevOps, you need one script to load more than
-configuration. This is normally a challenge with <code class="docutils literal notranslate"><span class="pre">node-config</span></code> As a
-singleton, it returns the same configuration each time. To force
-node-config to reload the configuration, use the
-<code class="docutils literal notranslate"><span class="pre">`config-uncached</span></code> &lt;<a class="reference external" href="https://www.npmjs.com/package/config-uncached">https://www.npmjs.com/package/config-uncached</a>&gt;`_
-module.</p>
+<h2>配置 - 未缓存<a class="headerlink" href="#config-uncached" title="永久链接至标题">¶</a></h2>
+<p>有时, 对于测试或DevOps, 您需要一个脚本来加载超过配置.这通常是 <code class="docutils literal notranslate"><span class="pre">node-config</span></code> 的挑战.作为单例, 它每次都返回相同的配置.要强制node-config重新加载配置, 请使用 <a class="reference external" href="https://www.npmjs.com/package/config-uncached">config-uncached</a> 模块.</p>
 </div>
 </div>
 

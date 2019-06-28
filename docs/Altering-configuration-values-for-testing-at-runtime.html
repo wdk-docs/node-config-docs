@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -174,9 +173,7 @@
             
   <div class="section" id="altering-configuration-values-for-testing-at-runtime">
 <h1>更改配置值以便在运行时进行测试<a class="headerlink" href="#altering-configuration-values-for-testing-at-runtime" title="永久链接至标题">¶</a></h1>
-<p>This sample uses <code class="docutils literal notranslate"><span class="pre">mock-require</span></code> to alter values in the require cache
-and <code class="docutils literal notranslate"><span class="pre">import-fresh</span></code> to make sure the objects in the require cache are
-the newer versions. Testing library is <code class="docutils literal notranslate"><span class="pre">Lab</span></code> (Hapi.js ecosystem).</p>
+<p>此示例使用 <code class="docutils literal notranslate"><span class="pre">mock-require</span></code> 来修改require缓存中的值和 <code class="docutils literal notranslate"><span class="pre">import-fresh</span></code>, 以确保require缓存中的对象是较新的版本.测试库是 <code class="docutils literal notranslate"><span class="pre">Lab</span></code> (Hapi.js生态系统).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">mockRequire</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;mock-require&quot;</span><span class="p">);</span>
 <span class="n">const</span> <span class="n">importFresh</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;import-fresh&quot;</span><span class="p">);</span>
 

@@ -23,30 +23,30 @@ msgid "Using Config Utilities"
 msgstr "使用配置实用程序"
 
 #: ../../source/Using-Config-Utilities.rst:4
-msgid ""
+msgid  ""
 "Node-config comes with a handy set of utilities necessary for "
 "implementing node-config. These utilities are exposed in the "
 "``config.util`` object for use in your own applications."
-msgstr ""
+msgstr "Node-config附带了一组实现node-config所需的实用工具.这些实用程序在 ``config.util`` 对象中公开, 以便在您自己的应用程序中使用."
 
 #: ../../source/Using-Config-Utilities.rst:8
-msgid ""
+msgid  ""
 "Below is a list of these utilities, in order of general usefulness - your"
 " mileage may vary."
-msgstr ""
+msgstr "以下是这些实用程序的列表, 按一般用途顺序 - 您的里程可能会有所不同."
 
 #: ../../source/Using-Config-Utilities.rst:12
 msgid "extendDeep(mergeInto, mergeFrom…, depth)"
 msgstr "extendDeep(mergeInto, mergeFrom…, depth)"
 
 #: ../../source/Using-Config-Utilities.rst:14
-msgid ""
+msgid  ""
 "Extend an object (and any object it contains) with one or more objects "
 "(and objects contained in them)."
-msgstr ""
+msgstr "使用一个或多个对象(以及包含在其中的对象)扩展对象(及其包含的任何对象)."
 
 #: ../../source/Using-Config-Utilities.rst:17
-msgid ""
+msgid  ""
 "This does not replace deep objects as other extend functions do, but "
 "dives into them extending individual elements instead. If more than one "
 "of the extending objects define the same key, then: \\* if all the "
@@ -54,7 +54,7 @@ msgid ""
 " same function. \\* if none of the respective values are objects, then "
 "the latest one is respected. \\* avoid mixing objects and non-objects for"
 " the same key as it can lead to unexpected behaviour."
-msgstr ""
+msgstr "这并不像其他扩展函数那样替换深层对象, 而是潜入它们来扩展单个元素.如果多个扩展对象定义了相同的键, 则: \\* 如果所有相应的值都是对象, 则通过调用相同的函数递归合并它们. \\* 如果各个值都不是对象, 则尊重最新值. \\* 避免将对象和非对象混合为同一个键, 因为它可能导致意外行为."
 
 #: ../../source/Using-Config-Utilities.rst:37
 #: ../../source/Using-Config-Utilities.rst:251
@@ -87,7 +87,7 @@ msgstr "type"
 #: ../../source/Using-Config-Utilities.rst:1318
 #: ../../source/Using-Config-Utilities.rst:1474
 msgid "description"
-msgstr "description"
+msgstr "描述"
 
 #: ../../source/Using-Config-Utilities.rst:75
 msgid "mergeInto"
@@ -116,7 +116,7 @@ msgstr "object"
 
 #: ../../source/Using-Config-Utilities.rst:95
 msgid "The object to merge into"
-msgstr "The object to merge into"
+msgstr "要合并的对象"
 
 #: ../../source/Using-Config-Utilities.rst:113
 msgid "mergeFrom…"
@@ -124,7 +124,7 @@ msgstr "mergeFrom…"
 
 #: ../../source/Using-Config-Utilities.rst:133
 msgid "Any number of objects to merge from"
-msgstr "Any number of objects to merge from"
+msgstr "要合并的任意数量的对象"
 
 #: ../../source/Using-Config-Utilities.rst:151
 #: ../../source/Using-Config-Utilities.rst:327
@@ -145,7 +145,7 @@ msgstr "integer"
 #: ../../source/Using-Config-Utilities.rst:556
 #: ../../source/Using-Config-Utilities.rst:773
 msgid "An optional depth to prevent recursion. Default: 20."
-msgstr "An optional depth to prevent recursion. Default: 20."
+msgstr "可选的深度以防止递归.默认值:20."
 
 #: ../../source/Using-Config-Utilities.rst:189
 #: ../../source/Using-Config-Utilities.rst:365
@@ -160,13 +160,13 @@ msgstr "(return)"
 
 #: ../../source/Using-Config-Utilities.rst:209
 msgid "The altered mergeInto object is returned"
-msgstr "The altered mergeInto object is returned"
+msgstr "返回更改的mergeInto对象"
 
 #: ../../source/Using-Config-Utilities.rst:223
-msgid ""
+msgid  ""
 "The following example merges the contents of two objects into a new "
 "object."
-msgstr ""
+msgstr "以下示例将两个对象的内容合并为一个新对象."
 
 #: ../../source/Using-Config-Utilities.rst:231
 msgid "cloneDeep(copyFrom, depth)"
@@ -174,14 +174,14 @@ msgstr "cloneDeep(copyFrom, depth)"
 
 #: ../../source/Using-Config-Utilities.rst:233
 msgid "Return a deep copy of the specified object."
-msgstr "Return a deep copy of the specified object."
+msgstr "返回指定对象的深层副本."
 
 #: ../../source/Using-Config-Utilities.rst:235
-msgid ""
+msgid  ""
 "This returns a new object with all elements copied from the specified "
 "object. Deep copies are made of objects and arrays so you can do anything"
 " with the returned object without affecting the input object."
-msgstr ""
+msgstr "这将返回一个新对象, 其中包含从指定对象复制的所有元素.深层副本由对象和数组组成, 因此您可以对返回的对象执行任何操作, 而不会影响输入对象."
 
 #: ../../source/Using-Config-Utilities.rst:289
 msgid "copyFrom"
@@ -189,11 +189,11 @@ msgstr "copyFrom"
 
 #: ../../source/Using-Config-Utilities.rst:309
 msgid "The original object to copy from"
-msgstr "The original object to copy from"
+msgstr "要从中复制的原始对象"
 
 #: ../../source/Using-Config-Utilities.rst:385
 msgid "A new object with the elements copied from the copyFrom object"
-msgstr "A new object with the elements copied from the copyFrom object"
+msgstr "具有从copyFrom对象复制的元素的新对象"
 
 #: ../../source/Using-Config-Utilities.rst:399
 #: ../../source/Using-Config-Utilities.rst:608
@@ -201,7 +201,7 @@ msgstr "A new object with the elements copied from the copyFrom object"
 #: ../../source/Using-Config-Utilities.rst:1262
 #: ../../source/Using-Config-Utilities.rst:1408
 msgid "Example:"
-msgstr "Example:"
+msgstr "例:"
 
 #: ../../source/Using-Config-Utilities.rst:406
 msgid "equalsDeep(object1, object2, depth)"
@@ -209,7 +209,7 @@ msgstr "equalsDeep(object1, object2, depth)"
 
 #: ../../source/Using-Config-Utilities.rst:408
 msgid "Return true if two objects have equal contents."
-msgstr "Return true if two objects have equal contents."
+msgstr "如果两个对象的内容相同, 则返回true."
 
 #: ../../source/Using-Config-Utilities.rst:460
 #: ../../source/Using-Config-Utilities.rst:677
@@ -219,7 +219,7 @@ msgstr "object1"
 #: ../../source/Using-Config-Utilities.rst:480
 #: ../../source/Using-Config-Utilities.rst:697
 msgid "The object to compare from"
-msgstr "The object to compare from"
+msgstr "要比较的对象"
 
 #: ../../source/Using-Config-Utilities.rst:498
 #: ../../source/Using-Config-Utilities.rst:715
@@ -229,7 +229,7 @@ msgstr "object2"
 #: ../../source/Using-Config-Utilities.rst:518
 #: ../../source/Using-Config-Utilities.rst:735
 msgid "The object to compare with"
-msgstr "The object to compare with"
+msgstr "要与之比较的对象"
 
 #: ../../source/Using-Config-Utilities.rst:584
 msgid "boolean"
@@ -237,7 +237,7 @@ msgstr "boolean"
 
 #: ../../source/Using-Config-Utilities.rst:594
 msgid "true if both objects have equivalent contents"
-msgstr "true if both objects have equivalent contents"
+msgstr "如果两个对象具有等效内容, 则为true"
 
 #: ../../source/Using-Config-Utilities.rst:618
 msgid "diffDeep(object1, object2, depth)"
@@ -245,57 +245,57 @@ msgstr "diffDeep(object1, object2, depth)"
 
 #: ../../source/Using-Config-Utilities.rst:620
 msgid "Returns an object containing all elements that differ between two objects."
-msgstr "Returns an object containing all elements that differ between two objects."
+msgstr "返回包含两个对象之间不同的所有元素的对象."
 
 #: ../../source/Using-Config-Utilities.rst:623
-msgid ""
+msgid  ""
 "It works best when object2 originated by deep copying object1, then "
 "changes were made to object2, and you want an object that would give you "
 "the changes made to object1 which resulted in object2."
-msgstr ""
+msgstr "当object2由深度复制object1发起时, 它最有效, 然后对object2进行了更改, 并且您需要一个对象, 该对象将为您提供对object1所做的更改, 从而导致object2."
 
 #: ../../source/Using-Config-Utilities.rst:811
-msgid ""
+msgid  ""
 "A differential object, which if extended onto object1 would result in "
 "object2."
-msgstr ""
+msgstr "差异对象, 如果扩展到object1将导致object2."
 
 #: ../../source/Using-Config-Utilities.rst:827
 msgid "makeImmutable(object, propertyName, propertyValue)"
 msgstr "makeImmutable(object, propertyName, propertyValue)"
 
 #: ../../source/Using-Config-Utilities.rst:829
-msgid ""
+msgid  ""
 "Make a javascript object property immutable (assuring it cannot be "
 "changed from the current value)."
-msgstr ""
+msgstr "使javascript对象属性不可变(确保它不能从当前值更改)."
 
 #: ../../source/Using-Config-Utilities.rst:832
-msgid ""
+msgid  ""
 "If the propertyName isn’t supplied, all properties of the object are made"
 " immutable."
-msgstr ""
+msgstr "如果未提供propertyName, 则该对象的所有属性都是不可变的."
 
 #: ../../source/Using-Config-Utilities.rst:835
-msgid ""
+msgid  ""
 "Properties which themselves are objects are called recursively, making "
 "sub-objects immutable."
-msgstr ""
+msgstr "属于对象的属性是递归调用的, 使子对象不可变."
 
 #: ../../source/Using-Config-Utilities.rst:838
-msgid ""
+msgid  ""
 "New properties can be added to this (and sub) objects, and those "
 "properties will not be immutable unless this method is called after "
 "adding the properties."
-msgstr ""
+msgstr "可以将新属性添加到此(和子)对象, 并且除非在添加属性后调用此方法, 否则这些属性将不会是不可变的."
 
 #: ../../source/Using-Config-Utilities.rst:842
 msgid "This operation cannot be undone."
-msgstr "This operation cannot be undone."
+msgstr "此操作无法撤消."
 
 #: ../../source/Using-Config-Utilities.rst:914
 msgid "The object containing the properties to make immutable"
-msgstr "The object containing the properties to make immutable"
+msgstr "包含要使其不可变的属性的对象"
 
 #: ../../source/Using-Config-Utilities.rst:932
 #: ../../source/Using-Config-Utilities.rst:1152
@@ -307,10 +307,10 @@ msgid "string \\| [string]"
 msgstr "string \\| [string]"
 
 #: ../../source/Using-Config-Utilities.rst:952
-msgid ""
+msgid  ""
 "(optional) Property name (or array of names) to make immutable. If not "
 "specified, all properties of the object are made immutable"
-msgstr ""
+msgstr "(可选)要使其不可变的属性名称(或名称数组).如果未指定, 则对象的所有属性都是不可变的"
 
 #: ../../source/Using-Config-Utilities.rst:971
 #: ../../source/Using-Config-Utilities.rst:1190
@@ -322,55 +322,55 @@ msgid "mixed"
 msgstr "mixed"
 
 #: ../../source/Using-Config-Utilities.rst:991
-msgid ""
+msgid  ""
 "(optional) Property value to set the property to before making immutable."
 " Retained for backward compatibility, and for use only when propertyName "
 "is not an array."
-msgstr ""
+msgstr "(可选)在创建不可变之前将属性设置为的属性值.保留以实现向后兼容性, 仅在propertyName不是数组时使用."
 
 #: ../../source/Using-Config-Utilities.rst:1031
 msgid "The original object, with the newly immutable attributes"
-msgstr "The original object, with the newly immutable attributes"
+msgstr "原始对象, 具有新的不可变属性"
 
 #: ../../source/Using-Config-Utilities.rst:1055
 msgid "makeHidden(object, propertyName, propertyValue)"
 msgstr "makeHidden(object, propertyName, propertyValue)"
 
 #: ../../source/Using-Config-Utilities.rst:1057
-msgid ""
+msgid  ""
 "Make an object property hidden so it doesn’t appear when enumerating "
 "elements of the object."
-msgstr ""
+msgstr "使对象属性隐藏, 以便在枚举对象的元素时不显示."
 
 #: ../../source/Using-Config-Utilities.rst:1060
-msgid ""
+msgid  ""
 "The property still exists and can be read from and written to, but it "
 "won’t show up in ``for ... in`` loops, ``Object.keys()``, or "
 "``JSON.stringify()`` type methods."
-msgstr ""
+msgstr "该属性仍然存在, 可以读取和写入, 但它不会出现在 ``for ... in`` 循环, ``Object.keys()`` 或``JSON.stringify() ``类型方法."
 
 #: ../../source/Using-Config-Utilities.rst:1134
 msgid "The object containing the property to make hidden"
-msgstr "The object containing the property to make hidden"
+msgstr "包含要隐藏的属性的对象"
 
 #: ../../source/Using-Config-Utilities.rst:1162
 #: ../../source/Using-Config-Utilities.rst:1200
 #: ../../source/Using-Config-Utilities.rst:1346
 #: ../../source/Using-Config-Utilities.rst:1384
 msgid "string"
-msgstr "string"
+msgstr "串"
 
 #: ../../source/Using-Config-Utilities.rst:1172
 msgid "Name of the property to make hidden"
-msgstr "Name of the property to make hidden"
+msgstr "要隐藏的属性的名称"
 
 #: ../../source/Using-Config-Utilities.rst:1210
 msgid "(optional) Set the property to this value"
-msgstr "(optional) Set the property to this value"
+msgstr "(可选)将属性设置为此值"
 
 #: ../../source/Using-Config-Utilities.rst:1248
 msgid "The original object, with the newly hidden property"
-msgstr "The original object, with the newly hidden property"
+msgstr "原始对象, 具有新隐藏的属性"
 
 #: ../../source/Using-Config-Utilities.rst:1273
 msgid "getEnv(varName)"
@@ -378,22 +378,22 @@ msgstr "getEnv(varName)"
 
 #: ../../source/Using-Config-Utilities.rst:1275
 msgid "Get the current value of a config environment variable"
-msgstr "Get the current value of a config environment variable"
+msgstr "获取配置环境变量的当前值"
 
 #: ../../source/Using-Config-Utilities.rst:1277
-msgid ""
+msgid  ""
 "This method returns the value of the specified config environment "
 "variable, including any defaults or overrides."
-msgstr ""
+msgstr "此方法返回指定的配置环境变量的值, 包括任何默认值或覆盖."
 
 #: ../../source/Using-Config-Utilities.rst:1280
-msgid ""
+msgid  ""
 "Environment variables that you can inspect include ``NODE_ENV``, "
 "``CONFIG_DIR``, ``NODE_CONFIG``, ``HOSTNAME``, ``NODE_APP_INSTANCE``, and"
 " others listed in the `environment variables "
 "<https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ "
 "wiki page."
-msgstr ""
+msgstr "您可以检查的环境变量包括 ``NODE_ENV``, ``CONFIG_DIR``, ``NODE_CONFIG``, ``HOSTNAME``, ``NODE_APP_INSTANCE``, 以及 `环境变量 <https://中列出的其他变量github.com/lorenwest/node-config/wiki/Environment-Variables>`_ wiki页面."
 
 #: ../../source/Using-Config-Utilities.rst:1336
 msgid "varName"
@@ -401,62 +401,62 @@ msgstr "varName"
 
 #: ../../source/Using-Config-Utilities.rst:1356
 msgid "The environment variable name"
-msgstr "The environment variable name"
+msgstr "环境变量名称"
 
 #: ../../source/Using-Config-Utilities.rst:1394
 msgid "The value of the environment variable"
-msgstr "The value of the environment variable"
+msgstr "环境变量的值"
 
 #: ../../source/Using-Config-Utilities.rst:1415
 msgid "loadFileConfigs(directory)"
 msgstr "loadFileConfigs(directory)"
 
 #: ../../source/Using-Config-Utilities.rst:1417
-msgid ""
+msgid  ""
 "Reads the given directory using the same conventions as the main config "
 "directory (including environment variable reading, except for "
 "``NODE_CONFIG``) and returns an object with the result."
-msgstr ""
+msgstr "使用与主配置目录相同的约定读取给定目录(包括环境变量读取, 除了 ``NODE_CONFIG``)并返回带有结果的对象."
 
 #: ../../source/Using-Config-Utilities.rst:1421
-msgid ""
+msgid  ""
 "If no directory is given, reads the standard config directory and parses "
 "``NODE_CONFIG``."
-msgstr ""
+msgstr "如果没有给出目录, 则读取标准config目录并解析 ``NODE_CONFIG``."
 
 #: ../../source/Using-Config-Utilities.rst:1424
 msgid "This is useful for using with submodules, e.g."
-msgstr "This is useful for using with submodules, e.g."
+msgstr "这对于与子模块一起使用很有用, 例如:"
 
 #: ../../source/Using-Config-Utilities.rst:1434
 msgid "toObject(config)"
 msgstr "toObject(config)"
 
 #: ../../source/Using-Config-Utilities.rst:1436
-msgid ""
+msgid  ""
 "Returns a new deep copy of the current config object, or any part of the "
 "config if provided."
-msgstr ""
+msgstr "返回当前配置对象的新深层副本, 或者如果提供, 则返回配置的任何部分."
 
 #: ../../source/Using-Config-Utilities.rst:1439
-msgid ""
+msgid  ""
 "If config is not provided (``undefined``), the current config object is "
 "dumped in its entirety."
-msgstr ""
+msgstr "如果未提供 config (``undefined``), 则完整地转储当前配置对象."
 
 #: ../../source/Using-Config-Utilities.rst:1492
 msgid "config"
-msgstr "config"
+msgstr "配置"
 
 #: ../../source/Using-Config-Utilities.rst:1512
-msgid ""
+msgid  ""
 "The part of the config to copy and serialize. Omit this argument to "
 "return the entire config."
-msgstr ""
+msgstr "要复制和序列化的配置部分.省略此参数以返回整个配置."
 
 #: ../../source/Using-Config-Utilities.rst:1551
 msgid "The cloned config or part of the config"
-msgstr "The cloned config or part of the config"
+msgstr "克隆的配置或配置的一部分"
 
 #~ msgid "Using-Config-Utilities"
 #~ msgstr ""

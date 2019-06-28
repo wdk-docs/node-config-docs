@@ -23,110 +23,110 @@ msgid "Sub Module Configuration"
 msgstr "子模块配置"
 
 #: ../../source/Sub-Module-Configuration.rst:4
-msgid ""
+msgid  ""
 "Are you the author of a NodeJS `NPM module <http://npmjs.org>`_ that "
 "accepts initialization parameters?"
-msgstr ""
+msgstr "您是接受初始化参数的NodeJS `NPM模块 <http://npmjs.org>`_ 的作者吗?"
 
 #: ../../source/Sub-Module-Configuration.rst:7
-msgid ""
+msgid  ""
 "If so, and you’re following a pattern like this for your module "
 "configuration:"
-msgstr ""
+msgstr "如果是这样, 并且您正在为您的模块配置遵循这样的模式:"
 
 #: ../../source/Sub-Module-Configuration.rst:19
 msgid "Or this:"
-msgstr "Or this:"
+msgstr "或这个:"
 
 #: ../../source/Sub-Module-Configuration.rst:25
 msgid "Then read on."
-msgstr "Then read on."
+msgstr "然后继续阅读."
 
 #: ../../source/Sub-Module-Configuration.rst:27
 msgid "By following a common pattern, you give developers using your module:"
-msgstr "By following a common pattern, you give developers using your module:"
+msgstr "通过遵循通用模式, 您可以为开发人员使用您的模块:"
 
 #: ../../source/Sub-Module-Configuration.rst:29
-msgid ""
+msgid  ""
 "A consistent interface for `defining and extending "
 "<https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ "
 "your configurations"
-msgstr ""
+msgstr "用于 `定义和扩展 <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ 您的配置的一致界面"
 
 #: ../../source/Sub-Module-Configuration.rst:32
-msgid ""
+msgid  ""
 "A way to pass configurations via `O/S environment variables "
 "<https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_"
-msgstr ""
+msgstr "通过 `O/S环境变量传递配置的方法 <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_"
 
 #: ../../source/Sub-Module-Configuration.rst:34
-msgid ""
+msgid  ""
 "A way to pass configurations via `command line arguments "
 "<https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_"
-msgstr ""
+msgstr "通过 `命令行参数 <https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_ 传递配置的方法"
 
 #: ../../source/Sub-Module-Configuration.rst:36
-msgid ""
+msgid  ""
 "`Other features <https://github.com/lorenwest/node-config/wiki>`_ built "
 "in to node-config"
-msgstr ""
+msgstr "`其他功能 <https://github.com/lorenwest/node-config/wiki>`_ 内置于node-config"
 
 #: ../../source/Sub-Module-Configuration.rst:39
-msgid ""
+msgid  ""
 "Without breaking existing usage of your module, and without requiring "
 "node-config in their own app (unless they want)."
-msgstr ""
+msgstr "不破坏模块的现有用法, 也不需要在自己的应用程序中使用node-config(除非他们想要)."
 
 #: ../../source/Sub-Module-Configuration.rst:42
 msgid "Here’s how it works:"
-msgstr "Here’s how it works:"
+msgstr "这是它的工作原理:"
 
 #: ../../source/Sub-Module-Configuration.rst:44
-msgid ""
+msgid  ""
 "Load node-config at the top of your module like normal, and specify the "
 "``SUPPRESS_NO_CONFIG_WARNING`` `environment variable "
 "<https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ "
 "so applications don’t get *No config files* warnings if they aren’t using"
 " node-config."
-msgstr ""
+msgstr "像正常一样在模块顶部加载node-config, 并指定 ``SUPPRESS_NO_CONFIG_WARNING`` `环境变量 <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ 所以应用程序不要如果他们没有使用node-config, 则获取 *No config files* 警告."
 
 #: ../../source/Sub-Module-Configuration.rst:55
-msgid ""
+msgid  ""
 "Then do something like this where your configurations are passed in by "
 "the app:"
-msgstr ""
+msgstr "然后执行类似这样的操作, 您的配置将由应用程序传入:"
 
 #: ../../source/Sub-Module-Configuration.rst:72
-msgid ""
+msgid  ""
 "Then use the config object as usual to access configurations within your "
 "module:"
-msgstr ""
+msgstr "然后像往常一样使用配置对象来访问模块中的配置:"
 
 #: ../../source/Sub-Module-Configuration.rst:79
-msgid ""
+msgid  ""
 "This pattern gives apps using your module the choice of using node-config"
 " mechanisms for configuration, or using your existing methods (as shown "
 "at the top of this page)."
-msgstr ""
+msgstr "此模式为使用您的模块的应用程序提供了使用node-config机制进行配置或使用现有方法的选择(如本页顶部所示)."
 
 #: ../../source/Sub-Module-Configuration.rst:83
-msgid ""
+msgid  ""
 "For example, they can put your module configurations next to their other "
 "configurations and extend configs based on deployment type:"
-msgstr ""
+msgstr "例如, 他们可以将您的模块配置放在其他配置旁边, 并根据部署类型扩展配置:"
 
 #: ../../source/Sub-Module-Configuration.rst:98
-msgid ""
+msgid  ""
 "This is an easy way to add new configuration functionality to your NPM "
 "module, while staying compatible with existing usage."
-msgstr ""
+msgstr "这是向NPM模块添加新配置功能的简便方法, 同时与现有使用保持兼容."
 
 #: ../../source/Sub-Module-Configuration.rst:101
-msgid ""
+msgid  ""
 "It unifies your module configuration with apps choosing to use node-"
 "config, and stays out of the way for apps using other configuration "
 "systems."
-msgstr ""
+msgstr "它将您的模块配置与选择使用node-config的应用程序统一起来, 并保持对使用其他配置系统的应用程序不远."
 
 #~ msgid "Sub-Module-Configuration"
 #~ msgstr ""

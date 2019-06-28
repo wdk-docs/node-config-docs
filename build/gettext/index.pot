@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,25 +19,25 @@ msgstr ""
 #: ../../source/index.rst:9
 #: ../../source/index.rst:9
 msgid "Contents:"
-msgstr "Contents:"
+msgstr ""
 
 #: ../../source/index.rst:7
 msgid "Welcome to node-config docs's documentation!"
-msgstr "Welcome to node-config docs's documentation!"
+msgstr ""
 
 #: ../../source/index.rst:40
 msgid "Indices and tables"
-msgstr "Indices and tables"
+msgstr ""
 
 #: ../../source/index.rst:42
 msgid ":ref:`genindex`"
-msgstr ":ref:`genindex`"
+msgstr ""
 
 #: ../../source/index.rst:43
 msgid ":ref:`modindex`"
-msgstr ":ref:`modindex`"
+msgstr ""
 
 #: ../../source/index.rst:44
 msgid ":ref:`search`"
-msgstr ":ref:`search`"
+msgstr ""
 

@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -100,12 +99,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">从Config 0.x升级</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#incompatible-changes">Incompatible Changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#immutable-configurations">Immutable Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-ordering">Load Ordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incompatible-changes">不兼容的变化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#immutable-configurations">不可变配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-ordering">加载订购</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#new-features">New Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-features">新功能</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#config-get-and-config-has">config.get() and config.has()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#config-util">config.util</a></li>
 </ul>
@@ -187,68 +186,42 @@
   <div class="section" id="upgrading-from-config-0-x">
 <h1>从Config 0.x升级<a class="headerlink" href="#upgrading-from-config-0-x" title="永久链接至标题">¶</a></h1>
 <div class="section" id="incompatible-changes">
-<h2>Incompatible Changes<a class="headerlink" href="#incompatible-changes" title="永久链接至标题">¶</a></h2>
-<p>Version 1.0 is a major revision release - a nice way of saying it may
-break something relying on a prior version. There are two incompatible
-changes - one fairly large and one you probably won’t notice.</p>
+<h2>不兼容的变化<a class="headerlink" href="#incompatible-changes" title="永久链接至标题">¶</a></h2>
+<p>版本1.0是一个主要的修订版本 - 一种很好的说法, 它可能会破坏依赖于先前版本的东西.有两个不兼容的变化 - 一个相当大, 一个你可能不会注意到.</p>
 <div class="section" id="immutable-configurations">
-<h3>Immutable Configurations<a class="headerlink" href="#immutable-configurations" title="永久链接至标题">¶</a></h3>
-<p>Updating configurations at runtime is no longer supported. It was the
-feature causing the most confusion, support, code complexity, and
-frankly - what were we thinking?</p>
-<p>If you relied on the ability to alter configurations at runtime, you
-will have to replace that with a different implementation, or continue
-using the 0.4.x release branch. This is the most significant
-compatibility change, and it came only after serious consideration and
-community input.</p>
-<p>Startup code may still set and extend configurations as long as it’s
-done before the first use of the <code class="docutils literal notranslate"><span class="pre">config.get()</span></code> method. This allows
-your app startup to load and merge configurations from external sources.
-If this startup code needs access to config values without calling
-<code class="docutils literal notranslate"><span class="pre">config.get()</span></code> you can access values directly from the config object.</p>
-<p>In addition, some use cases such as tests require config mutations. An
-<code class="docutils literal notranslate"><span class="pre">ALLOW_CONFIG_MUTATIONS</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations">environment
-variable</a>
-has been added to address these edge cases.</p>
-<p>Guaranteeing the stability of configuration values is now a core part of
-node-config.</p>
+<h3>不可变配置<a class="headerlink" href="#immutable-configurations" title="永久链接至标题">¶</a></h3>
+<p>不再支持在运行时更新配置.这是导致最混乱, 支持, 代码复杂性和坦率的功能 - 我们在想什么?</p>
+<p>如果您依赖于在运行时更改配置的能力, 则必须使用其他实现替换它, 或者继续使用0.4.x版本分支.这是最重要的兼容性更改, 只有经过认真考虑和社区意见后才能实现.</p>
+<p>只要在第一次使用 <code class="docutils literal notranslate"><span class="pre">config.get()</span></code> 方法之前完成, 启动代码仍然可以设置和扩展配置.这允许您的应用启动从外部源加载和合并配置.如果此启动代码需要访问配置值而不调用 <code class="docutils literal notranslate"><span class="pre">config.get()</span></code>, 则可以直接从配置对象访问值.</p>
+<p>此外, 一些用例如测试需要配置变异.添加了 <code class="docutils literal notranslate"><span class="pre">ALLOW_CONFIG_MUTATIONS</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations">环境变量</a> 来解决这些边缘情况.</p>
+<p>保证配置值的稳定性现在是node-config的核心部分.</p>
 </div>
 <div class="section" id="load-ordering">
-<h3>Load Ordering<a class="headerlink" href="#load-ordering" title="永久链接至标题">¶</a></h3>
-<p>Load ordering has been changed from <code class="docutils literal notranslate"><span class="pre">hostname.EXT</span> <span class="pre">--&gt;</span> <span class="pre">deployment.EXT</span></code>
-to <code class="docutils literal notranslate"><span class="pre">deployment.EXT</span> <span class="pre">--&gt;</span> <span class="pre">hostname.EXT</span></code> because deployments can be on
-multiple machines, and are a <em>higher level</em> than host configurations,
-which by definition are only applicable to a single host.</p>
-<p>This is unlikely to affect anyone, because it didn’t make sense to have
-deployment level configs overwriting host level configs, but it’s
-something to be aware of.</p>
+<h3>加载订购<a class="headerlink" href="#load-ordering" title="永久链接至标题">¶</a></h3>
+<p>负载排序已从 <code class="docutils literal notranslate"><span class="pre">hostname.EXT</span> <span class="pre">-</span> <span class="pre">&gt;</span> <span class="pre">deployment.EXT</span></code> 更改为 <code class="docutils literal notranslate"><span class="pre">deployment.EXT</span> <span class="pre">-</span> <span class="pre">&gt;</span> <span class="pre">hostname.EXT</span></code>, 因为部署可以在多台计算机上, 并且比主机高*级别*配置, 根据定义, 仅适用于单个主机.</p>
+<p>这不太可能影响任何人, 因为部署级别配置覆盖主机级别配置没有意义, 但需要注意的事项.</p>
 </div>
 </div>
 <div class="section" id="new-features">
-<h2>New Features<a class="headerlink" href="#new-features" title="永久链接至标题">¶</a></h2>
+<h2>新功能<a class="headerlink" href="#new-features" title="永久链接至标题">¶</a></h2>
 <div class="section" id="config-get-and-config-has">
 <h3>config.get() and config.has()<a class="headerlink" href="#config-get-and-config-has" title="永久链接至标题">¶</a></h3>
-<p>The top level config object and all sub-objects have a <code class="docutils literal notranslate"><span class="pre">get()</span></code>
-function exposed as the preferred method of accessing configuration
-values. This gives you the option of doing this:</p>
+<p>顶级配置对象和所有子对象都有一个 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 函数, 它是访问配置值的首选方法.这使您可以选择执行此操作:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 <span class="n">var</span> <span class="n">customerDbHost</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">Customer</span><span class="o">.</span><span class="n">dbConfig</span><span class="o">.</span><span class="n">host</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>which is like prior versions that perform no validation, or this:</p>
+<p>这就像之前的版本不执行验证, 或者:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">customerDbHost</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Customer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dbConfig&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>which throws an exception on typos but is kind of wordy, or this:</p>
+<p>在拼写错误中引发了一个例外但是有点罗嗦, 或者这个:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">customerDbHost</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Customer.dbConfig.host&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>win.</p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">get()</span></code> is the preferred method because it fails fast if you
-misspell(sp?) a parameter or if the configs weren’t loaded for some
-reason.</p>
-<p>If you want to test if a configuration without wrapping in a try/catch,
-<code class="docutils literal notranslate"><span class="pre">has()</span></code> is available at all config levels:</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 是首选方法, 因为如果拼错(sp?)参数或者由于某种原因未加载配置, 它会快速失败.</p>
+<p>如果你想测试一个没有包装在try/catch中的配置, <code class="docutils literal notranslate"><span class="pre">has()</span></code> 在所有配置级别都可用:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="s1">&#39;Customer.dbConfig&#39;</span><span class="p">))</span> <span class="p">{</span>
    <span class="o">...</span>
 <span class="p">}</span>
@@ -257,24 +230,13 @@ reason.</p>
 </div>
 <div class="section" id="config-util">
 <h3>config.util<a class="headerlink" href="#config-util" title="永久链接至标题">¶</a></h3>
-<p>The config package comes with a bunch of <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities">handy
-utilities</a>,
-resulting in a large list of <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Reserved-Words">reserved
-words</a>
-that couldn’t be used in configurations.</p>
-<p>Starting with node-config 1.0, these utilities have been moved to a
-single <code class="docutils literal notranslate"><span class="pre">util</span></code> object attached to configuration objects. Using these
-utilities from <code class="docutils literal notranslate"><span class="pre">config</span></code> vs. <code class="docutils literal notranslate"><span class="pre">config.util</span></code> will cause a deprecation
-warning in node-config 1.0, and will not be supported in <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities">version
-2.0</a>.</p>
-<p>This <code class="docutils literal notranslate"><span class="pre">util</span></code> object is available at all levels, so if you do something
-like this:</p>
+<p>配置包附带了一堆 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities">方便的实用工具</a>, 产生了大量的 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Reserved-Words">保留字</a> 无法在配置中使用.</p>
+<p>从node-config 1.0开始, 这些实用程序已被移动到附加到配置对象的单个 <code class="docutils literal notranslate"><span class="pre">util</span></code> 对象.使用 <code class="docutils literal notranslate"><span class="pre">config</span></code> 与<code class="docutils literal notranslate"><span class="pre">config.util</span></code> 中的这些实用程序将导致node-config 1.0中的弃用警告, 并且在 <a class="reference external" href="https://github.com/lorenwest中将不再支持/节点配置/维基/未来的兼容性＃即将-不兼容性">版本2.0</a>.</p>
+<p>这个 <code class="docutils literal notranslate"><span class="pre">util</span></code> 对象在所有级别都可用, 所以如果你做这样的事情:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">dbConfig</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Customer.dbConfig&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>you’ll still be able to access config utilities using <code class="docutils literal notranslate"><span class="pre">dbConfig.util</span></code>.
-For example, if you wanted a deep clone of a JavaScript object, you
-could do this:</p>
+<p>您仍然可以使用 <code class="docutils literal notranslate"><span class="pre">dbConfig.util</span></code> 访问配置实用程序.例如, 如果您想要深度克隆JavaScript对象, 则可以执行此操作:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">clonedObject</span> <span class="o">=</span> <span class="n">dbConfig</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cloneDeep</span><span class="p">(</span><span class="n">myObject</span><span class="p">);</span>
 </pre></div>
 </div>

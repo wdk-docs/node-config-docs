@@ -24,96 +24,96 @@ msgstr "配置文件"
 
 #: ../../source/Configuration-Files.rst:5
 msgid "Config Directory"
-msgstr "Config Directory"
+msgstr "配置目录"
 
 #: ../../source/Configuration-Files.rst:7
-msgid ""
+msgid  ""
 "Node-config reads configuration files in the ``./config`` directory for "
 "the running process, typically the application root. This can be "
 "overridden by setting the ``$NODE_CONFIG_DIR`` environment variable to "
 "the directory containing your configuration files. It can also be set "
 "from node, before loading Node-config:"
-msgstr ""
+msgstr "Node-config为正在运行的进程(通常是应用程序根目录)读取 ``./config`` 目录中的配置文件.这可以通过将 ``$NODE_CONFIG_DIR`` 环境变量设置为包含配置文件的目录来覆盖.在加载 Node-config 之前, 它也可以从 node 设置:"
 
 #: ../../source/Configuration-Files.rst:18
-msgid ""
+msgid  ""
 "``$NODE_CONFIG_DIR`` can be a full path from your root directory, or a "
 "relative path from the process if the value begins with ``./`` or "
 "``../``."
-msgstr ""
+msgstr "``$NODE_CONFIG_DIR`` 可以是来自根目录的完整路径, 或者值以 ``./`` 或 ``../`` 开头则是来自进程的相对路径. "
 
 #: ../../source/Configuration-Files.rst:23
 msgid "File Load Order"
-msgstr "File Load Order"
+msgstr "文件加载顺序"
 
 #: ../../source/Configuration-Files.rst:25
 msgid "Files in the config directory are loaded in the following order:"
-msgstr "Files in the config directory are loaded in the following order:"
+msgstr "config目录中的文件按以下顺序加载:"
 
 #: ../../source/Configuration-Files.rst:47
 msgid "Where"
-msgstr "Where"
+msgstr "哪里"
 
 #: ../../source/Configuration-Files.rst:49
-msgid ""
+msgid  ""
 "``EXT`` can be .yml, .yaml, .xml, .coffee, .cson, `.properties "
 "<https://github.com/gagle/node-properties>`_, `.json "
 "<http://json.org/>`_, `.json5 <http://json5.org/>`_, `.hjson "
 "<http://laktak.github.io/hjson/>`_, .ts or .js depending on the format "
 "you prefer (see below)"
-msgstr ""
+msgstr "``EXT`` 可以是.yml, .yaml, .xml, .coffee, .cson, `.properties <https://github.com/gagle/node-properties>`_, `.json <http://json.org/>`_, `.json5 <http://json5.org/>`_, `.hjson <http://laktak.github.io/hjson/>`_, .ts或.js取决于您喜欢的格式(见下文)"
 
 #: ../../source/Configuration-Files.rst:54
-msgid ""
+msgid  ""
 "``{instance}`` is an optional instance name string for `Multi-Instance "
 "Deployments <#multi-instance-deployments>`_"
-msgstr ""
+msgstr "``{instance}`` 是 `多实例部署 <#multi-instance-deployments>`_ 的可选实例名称字符串"
 
 #: ../../source/Configuration-Files.rst:56
-msgid ""
+msgid  ""
 "``{short_hostname}`` is your server name up to the first dot, from the "
 "``$HOST`` or ``$HOSTNAME`` environment variable or ``os.hostname()`` (in "
 "that order). For example if your hostname is ``www.example.com`` then it "
 "would load ``www.EXT``."
-msgstr ""
+msgstr "``{short_hostname}`` 是你的服务器名, 直到第一个点, 来自 ``$HOST`` 或 ``$HOSTNAME`` 环境变量或 ``os.hostname()`` (按此顺序).例如, 如果你的主机名是 ``www.example.com`` 那么它将加载 ``www.EXT``."
 
 #: ../../source/Configuration-Files.rst:60
-msgid ""
+msgid  ""
 "``{full_hostname}`` is your whole server name, you may use this when "
 "``{short_hostname}`` collides with other machines."
-msgstr ""
+msgstr "``{full_hostname}`` 是你的整个服务器名, 当 ``{short_hostname}`` 与其他机器发生冲突时你可以使用它."
 
 #: ../../source/Configuration-Files.rst:62
-msgid ""
+msgid  ""
 "``{deployment}`` is the deployment name, from the ``$NODE_ENV`` (or if "
 "specified, ``$NODE_CONFIG_ENV``) environment variable"
-msgstr ""
+msgstr "``{deployment}`` 是部署名称, 来自 ``$NODE_ENV`` (或者如果指定的话, ``$NODE_CONFIG_ENV``)环境变量"
 
 #: ../../source/Configuration-Files.rst:65
-msgid ""
+msgid  ""
 "The ``default.EXT`` file is designed to contain all configuration "
 "parameters from which other files may overwrite. Overwriting is done on a"
 " parameter by parameter basis, so subsequent files contain only the "
 "parameters unique for that override."
-msgstr ""
+msgstr "``default.EXT`` 文件旨在包含其他文件可能覆盖的所有配置参数.覆盖是在逐个参数的基础上完成的, 因此后续文件仅包含该覆盖的唯一参数."
 
 #: ../../source/Configuration-Files.rst:70
-msgid ""
+msgid  ""
 "``{hostname}`` and ``{deployment}`` files allow you to tune "
 "configurations for a particular server or deployment. These files are "
 "designed to live along with other files in your version control system."
-msgstr ""
+msgstr "``{hostname}`` 和 ``{deployment}`` 文件允许您调整特定服务器或部署的配置.这些文件旨在与版本控制系统中的其他文件一起使用."
 
 #: ../../source/Configuration-Files.rst:75
 msgid "``local`` files"
-msgstr "``local`` files"
+msgstr "``local`` 文件"
 
 #: ../../source/Configuration-Files.rst:77
-msgid ""
+msgid  ""
 "The ``local`` files are intended to *not* be tracked in your version "
 "control system. External configuration management tools can write these "
 "files upon application deployment, before application loading."
-msgstr ""
+msgstr "``local`` 文件旨在 *不* 在您的版本控制系统中跟踪.外部配置管理工具可以在应用程序部署之前, 在加载应用程"
 
 #: ../../source/Configuration-Files.rst:81
 msgid ""
@@ -125,278 +125,278 @@ msgid ""
 "can avoid a case where tests pass locally due to local overrides but "
 "don’t pass after you push. Choose a ``local`` file variant that is not "
 "used for your testing context!"
-msgstr ""
+msgstr "使用 ``local`` 文件的最佳实践是避免使用会影响所有 ‘{deployment}’ 和 ‘{instance}’ 情况的全局 ``local.EXT`` 文件.相反, 选择适用的 ``local-{instance}.EXT``, ``local-{deployment}.EXT`` 或 ``local-{deployment}-{instance}.EXT`` 的最具体变体.使用此设计, 您可以避免由于本地覆盖而导致测试在本地传递但在推送后未通过的情况.选择一个不用于测试环境的 ``local`` 文件变体！"
 
 #: ../../source/Configuration-Files.rst:91
 msgid "Default NODE_ENV"
-msgstr "Default NODE_ENV"
+msgstr "默认 NODE_ENV"
 
 #: ../../source/Configuration-Files.rst:93
-msgid ""
+msgid  ""
 "If ``NODE_ENV`` is not set in the environment, a default value of "
 "``development`` is used."
-msgstr ""
+msgstr "如果在环境中没有设置 ``NODE_ENV``, 则使用默认值 ``development``."
 
 #: ../../source/Configuration-Files.rst:97
 msgid "Arrays are merged by replacement"
-msgstr "Arrays are merged by replacement"
+msgstr "数组通过替换合并"
 
 #: ../../source/Configuration-Files.rst:99
-msgid ""
+msgid  ""
 "Note that arrays are always merged by replacement. That is, the complete "
 "contents of an array in an override file will replace the complete array "
 "from a parent file."
-msgstr ""
+msgstr "请注意, 数组始终通过替换合并.也就是说, 覆盖文件中数组的完整内容将替换父文件中的完整数组."
 
 #: ../../source/Configuration-Files.rst:104
 msgid "Multi Instance Deployments"
-msgstr "Multi Instance Deployments"
+msgstr "多实例部署"
 
 #: ../../source/Configuration-Files.rst:106
-msgid ""
+msgid  ""
 "In order to support different configurations for each application "
 "instance running on a machine, the ``NODE_APP_INSTANCE`` `environment "
 "variable <https://github.com/lorenwest/node-config/wiki/Environment-"
 "Variables>`_ is inspected, and used for loading instance specific files."
-msgstr ""
+msgstr "为了支持在机器上运行的每个应用程序实例的不同配置, 检查 ``NODE_APP_INSTANCE`` `环境变量 <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_, 并用于加载实例特定文件."
 
 #: ../../source/Configuration-Files.rst:111
-msgid ""
+msgid  ""
 "For example, if the ``NODE_APP_INSTANCE=3`` environment variable is set, "
 "immediately following the load of ``default.json``, a file by the name of"
 " ``default-3.json`` will be loaded if present."
-msgstr ""
+msgstr "例如, 如果设置了 ``NODE_APP_INSTANCE=3`` 环境变量, 则在加载 ``default.json`` 之后立即加载一个名为 ``default-3.json`` 的文件. ."
 
 #: ../../source/Configuration-Files.rst:115
-msgid ""
+msgid  ""
 "This works for all configuration files, so if your "
 "``NODE_APP_INSTANCE=3`` and ``NODE_ENV=stage``, then immediately after "
 "loading ``stage.yaml``, a file by the name of ``stage-3.yaml`` will be "
 "loaded if present."
-msgstr ""
+msgstr "这适用于所有配置文件, 因此如果您的 ``NODE_APP_INSTANCE=3`` 和 ``NODE_ENV=stage``, 则在加载 ``stage.yaml`` 之后立即使用名为 ``stage-3.yaml`` 的文件如果存在, 将加载."
 
 #: ../../source/Configuration-Files.rst:121
 msgid "Environment variables"
-msgstr "Environment variables"
+msgstr "环境变量"
 
 #: ../../source/Configuration-Files.rst:123
-msgid ""
+msgid  ""
 "`Custom environment variables <https://github.com/lorenwest/node-"
 "config/wiki/Environment-Variables#custom-environment-variables>`_ "
 "override all configuration files, including local.json. Only command line"
 " options take precedence over them."
-msgstr ""
+msgstr "`自定义环境变量 <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_ 覆盖所有配置文件, 包括local.json.只有命令行选项优先于它们."
 
 #: ../../source/Configuration-Files.rst:129
 msgid "File Formats"
-msgstr "File Formats"
+msgstr "文件格式"
 
 #: ../../source/Configuration-Files.rst:131
-msgid ""
+msgid  ""
 "The following file formats are supported, recognized by their file "
 "extension."
-msgstr ""
+msgstr "支持以下文件格式, 可通过文件扩展名识别."
 
 #: ../../source/Configuration-Files.rst:134
-msgid ""
+msgid  ""
 "All ``//`` and ``/* ... */`` style comments are removed before file "
 "loading, allowing you to add comments to file formats such as .json that "
 "don’t natively support comments."
-msgstr ""
+msgstr "在文件加载之前删除所有 ``//`` 和 ``/* ... */`` 样式注释, 允许您添加注释到文件格式, 例如.json本身不支持注释."
 
 #: ../../source/Configuration-Files.rst:139
 msgid "Javascript Object Notation - .json"
-msgstr "Javascript Object Notation - .json"
+msgstr "Javascript对象表示法 - .json"
 
 #: ../../source/Configuration-Files.rst:141
 msgid "Files ending in ``.json`` are parsed in JSON format. Example:"
-msgstr "Files ending in ``.json`` are parsed in JSON format. Example:"
+msgstr "以 ``.json`` 结尾的文件以JSON格式解析.例:"
 
 #: ../../source/Configuration-Files.rst:160
 msgid "Javascript 5 Object Notation - .json5"
-msgstr "Javascript 5 Object Notation - .json5"
+msgstr "Javascript 5对象表示法 -  .json5"
 
 #: ../../source/Configuration-Files.rst:162
-msgid ""
+msgid  ""
 "Files ending in ``.json5`` are parsed in `JSON5 <http://json5.org/>`_ "
 "format. Example:"
-msgstr ""
+msgstr "以 ``.json5`` 结尾的文件以 `JSON5 <http://json5.org/>`_ format进行解析.例:"
 
 #: ../../source/Configuration-Files.rst:181
-msgid ""
+msgid  ""
 "The .json5 parser is dependency of node-config. This is the only custom "
 "file format which doesn’t require you to add it as a dependency to "
 "application."
-msgstr ""
+msgstr ".json5解析器是node-config的依赖项.这是唯一的自定义文件格式, 不需要将其作为依赖项添加到应用程序."
 
 #: ../../source/Configuration-Files.rst:186
 msgid "Human JSON - .hjson"
-msgstr "Human JSON - .hjson"
+msgstr "人类JSON  -  .hjson"
 
 #: ../../source/Configuration-Files.rst:188
-msgid ""
+msgid  ""
 "Files ending in ``.hjson`` are parsed in `Hjson "
 "<http://laktak.github.io/hjson/>`_ format. Example:"
-msgstr ""
+msgstr "以 ``.hjson`` 结尾的文件在 `Hjson <http://laktak.github.io/hjson/>`_ format中解析.例:"
 
 #: ../../source/Configuration-Files.rst:210
-msgid ""
+msgid  ""
 "The .hjson parser is not a dependency of node-config. The "
 "``dependencies`` section of your application’s ``package.json`` file must"
 " contain the ``hjson`` module in order to read and parse .hjson files."
-msgstr ""
+msgstr ".hjson解析器不是node-config的依赖项.应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含 ``hjson`` 模块才能读取和解析.hjson文件."
 
 #: ../../source/Configuration-Files.rst:216
 msgid "Yaml ain’t Markup Language - .yaml"
 msgstr "Yaml ain’t Markup Language - .yaml"
 
 #: ../../source/Configuration-Files.rst:218
-msgid ""
+msgid  ""
 "Files ending in ``.yaml`` or ``.yml`` are parsed in YAML format. Node-"
 "config doesn’t include a YAML library, and beware there are some good "
 "ones and some not-so-good ones out there. If no global ``Yaml`` variable "
 "is available, node-config will attempt to load a good one (`js-yaml "
 "<https://github.com/nodeca/js-yaml>`_). Example:"
-msgstr ""
+msgstr "以 ``.yaml`` 或 ``.yml`` 结尾的文件以YAML格式解析. Node-config不包含YAML库, 请注意有一些好的库和一些不那么好的库.如果没有可用的全局 ``Yaml`` 变量, node-config将尝试加载一个好的变量(`js-yaml <https://github.com/nodeca/js-yaml>`_).例:"
 
 #: ../../source/Configuration-Files.rst:237
-msgid ""
+msgid  ""
 "The ``dependencies`` section of your application’s ``package.json`` file "
 "must contain the yaml parser, and ``js-yaml`` is the suggested parser."
-msgstr ""
+msgstr "应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含yaml解析器, 而 ``js-yaml`` 是建议的解析器."
 
 #: ../../source/Configuration-Files.rst:241
 msgid "JavaScript module - .js"
-msgstr "JavaScript module - .js"
+msgstr "JavaScript 模块 - .js"
 
 #: ../../source/Configuration-Files.rst:243
-msgid ""
+msgid  ""
 "Files ending in ``.js`` are loaded and run as a JavaScript module. The "
 "module must export the configuration object. JavaScript modules support "
 "the ability to have “deferred” and “raw” values."
-msgstr ""
+msgstr "以 ``.js`` 结尾的文件将作为JavaScript模块加载并运行.模块必须导出配置对象. JavaScript模块支持具有“延迟”和“原始”值的功能."
 
 #: ../../source/Configuration-Files.rst:247
-msgid ""
+msgid  ""
 "See `Special features for JavaScript configuration files "
 "<https://github.com/lorenwest/node-config/wiki/Special-features-for-"
 "JavaScript-configuration-files>`_ for details."
-msgstr ""
+msgstr "有关详细信息, 请参阅 `JavaScript配置文件的特殊功能 <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_."
 
 #: ../../source/Configuration-Files.rst:252
 msgid "CoffeeScript module - .coffee"
-msgstr "CoffeeScript module - .coffee"
+msgstr "CoffeeScript模块 - .coffee"
 
 #: ../../source/Configuration-Files.rst:254
-msgid ""
+msgid  ""
 "You know what you like. Files ending in ``.coffee`` are loaded and run as"
 " a CoffeeScript module. Example CoffeeScript configuration file:"
-msgstr ""
+msgstr "你知道你喜欢什么.以 ``.coffee`` 结尾的文件将作为CoffeeScript模块加载并运行.示例CoffeeScript配置文件:"
 
 #: ../../source/Configuration-Files.rst:271
-msgid ""
+msgid  ""
 "CoffeeScript is not a dependency of node-config. The ``dependencies`` "
 "section of your application’s ``package.json`` file must contain coffee-"
 "script in order to read CoffeeScript configuration files."
-msgstr ""
+msgstr "CoffeeScript不是node-config的依赖项.应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含coffee-script才能读取CoffeeScript配置文件."
 
 #: ../../source/Configuration-Files.rst:276
 msgid "CoffeeScript Object Notation - .cson"
-msgstr "CoffeeScript Object Notation - .cson"
+msgstr "CoffeeScript对象表示法 - .cson"
 
 #: ../../source/Configuration-Files.rst:278
-msgid ""
+msgid  ""
 "Files ending in ``.cson`` are loaded and parsed in CoffeeScript object "
 "notation, because you can never have enough file formats. Example CSON "
 "configuration file:"
-msgstr ""
+msgstr "以 ``.cson`` 结尾的文件以CoffeeScript对象表示法加载和解析, 因为你永远不会有足够的文件格式.示例CSON配置文件:"
 
 #: ../../source/Configuration-Files.rst:304
-msgid ""
+msgid  ""
 "CSON is not a dependency of node-config. The ``dependencies`` section of "
 "your application’s ``package.json`` file must contain the ``cson`` module"
 " in order to read CoffeeScript object notation configuration files."
-msgstr ""
+msgstr "CSON不是node-config的依赖项.应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含 ``cson`` 模块才能读取CoffeeScript对象表示法配置文件."
 
 #: ../../source/Configuration-Files.rst:310
 msgid "Properties file format - .properties"
-msgstr "Properties file format - .properties"
+msgstr "属性文件格式 -  .properties"
 
 #: ../../source/Configuration-Files.rst:312
-msgid ""
+msgid  ""
 "Files ending in ``.properties`` are loaded and parsed in properties file "
 "notation, a dot-style name spacing style popular in many non-javascript "
 "utilities. Example .properties configuration file:"
-msgstr ""
+msgstr "以 ``.properties`` 结尾的文件在属性文件表示法中加载和解析, 这是一种在许多非JavaScript实用程序中很流行的点式名称间距样式.示例.properties配置文件:"
 
 #: ../../source/Configuration-Files.rst:322
-msgid ""
+msgid  ""
 "Every configuration would end up being a string, but that’s not "
 "particularly troublesome in javascript."
-msgstr ""
+msgstr "每个配置最终都会成为一个字符串, 但这在javascript中并不是特别麻烦."
 
 #: ../../source/Configuration-Files.rst:325
-msgid ""
+msgid  ""
 "The .properties parser is not a dependency of node-config. The "
 "``dependencies`` section of your application’s ``package.json`` file must"
 " contain the ``properties`` module in order to read and parse .properties"
 " files."
-msgstr ""
+msgstr ".properties解析器不是node-config的依赖项.应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含 ``properties`` 模块才能读取和解析.properties文件."
 
 #: ../../source/Configuration-Files.rst:331
 msgid "TOML file format - .toml"
-msgstr "TOML file format - .toml"
+msgstr "TOML文件格式 - .toml"
 
 #: ../../source/Configuration-Files.rst:333
-msgid ""
+msgid  ""
 "Files ending in ``.toml`` are loaded and parsed in TOML (Tom’s Obvious, "
 "Minimal Language), a new and very simple configuration file format. "
 "Example .toml configuration file:"
-msgstr ""
+msgstr "以 ``.toml`` 结尾的文件在TOML(Tom's Obvious, Minimal Language)中加载和解析, 这是一种新的非常简单的配置文件格式.示例.toml配置文件:"
 
 #: ../../source/Configuration-Files.rst:343
-msgid ""
+msgid  ""
 "The .toml parser is not a dependency of node-config. The ``dependencies``"
 " section of your application’s ``package.json`` file must contain the "
 "``toml`` module in order to read and parse .toml files."
-msgstr ""
+msgstr ".toml解析器不是node-config的依赖项.应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含 ``toml`` 模块才能读取和解析.toml文件."
 
 #: ../../source/Configuration-Files.rst:348
 msgid "Typescript - .ts"
 msgstr "Typescript - .ts"
 
 #: ../../source/Configuration-Files.rst:350
-msgid ""
+msgid  ""
 "Files ending in ``.ts`` are loaded and run as Typescript modules. Example"
 " .ts configuration file:"
-msgstr ""
+msgstr "以 ``.ts`` 结尾的文件将作为Typescript模块加载并运行.示例.ts配置文件:"
 
 #: ../../source/Configuration-Files.rst:369
-msgid ""
+msgid  ""
 "See `Typescript testing files <../tree/master/test/x-config-ts>`_ for "
 "more examples."
-msgstr ""
+msgstr "有关更多示例, 请参阅 `Typescript测试文件 <../tree/master/test/x-config-ts>`_."
 
 #: ../../source/Configuration-Files.rst:372
-msgid ""
+msgid  ""
 "Typescript is not a dependency of node-config. The ``dependencies`` "
 "section of your application’s ``package.json`` file must contain "
 "typescript in order to read Typescript configuration files."
-msgstr ""
+msgstr "Typescript不是node-config的依赖项.应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含typescript才能读取Typescript配置文件."
 
 #: ../../source/Configuration-Files.rst:377
 msgid "Extensible Markup Language - .xml"
-msgstr "Extensible Markup Language - .xml"
+msgstr "可扩展标记语言 - .xml"
 
 #: ../../source/Configuration-Files.rst:379
 msgid "Files ending in ``.xml`` are parsed in XML format. Example:"
-msgstr "Files ending in ``.xml`` are parsed in XML format. Example:"
+msgstr "以 ``.xml`` 结尾的文件以XML格式解析.例:"
 
 #: ../../source/Configuration-Files.rst:398
-msgid ""
+msgid  ""
 "The ``dependencies`` section of your application’s ``package.json`` file "
 "must contain x2js in order to read XML configuration files."
-msgstr ""
+msgstr "应用程序的 ``package.json`` 文件的 ``dependencies`` 部分必须包含x2js才能读取XML配置文件."
 
 #~ msgid "Configuration-Files"
 #~ msgstr ""

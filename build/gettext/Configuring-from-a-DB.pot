@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,9 @@ msgstr ""
 
 #: ../../source/Configuring-from-a-DB.rst:2
 msgid "Configuring from a DB"
-msgstr "Configuring from a DB"
+msgstr ""
 
 #: ../../source/Configuring-from-a-DB.rst:4
 msgid "This page has been moved to `Configuring from an External Source <https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source>`_"
-msgstr "This page has been moved to `Configuring from an External Source <https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source>`_"
+msgstr ""
 

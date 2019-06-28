@@ -20,13 +20,13 @@ Here is the scenario we’ll be configuring:
 -  You and Paul both maintain the servers and need access to the
    sensitive info.
 
-Prerequisites:
+先决条件:
 ----------------------
 
 -  `git-crypt <https://github.com/AGWA/git-crypt.git>`_ is installed.
 
    -  On OS X : ``brew install git-crypt``
-   -  On Ubuntu / Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``
+   -  On Ubuntu/Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``
    -  On other systems: `INSTALL <https://github.com/AGWA/git-crypt/blob/master/INSTALL.md>`_
 
 -  Your project is using git, your working copy is clean, and you
@@ -109,10 +109,9 @@ Paul.
 
       git-crypt add-gpg-user paul@example.com
 
-6. Add the ``config/production.json`` file (or equivalent YAML etc) to
-   the ``.gitattributes file``, so git-crypt will manage the encryption
-   / decryption where necessary. Add the following line to the
-   ``.gitattributes`` file (substituting the appropriate extension):
+6. Add the ``config/production.json`` file (or equivalent YAML etc) to the ``.gitattributes file``,
+   so git-crypt will manage the encryption/decryption where necessary.
+   Add the following line to the ``.gitattributes`` file (substituting the appropriate extension):
 
    ::
 

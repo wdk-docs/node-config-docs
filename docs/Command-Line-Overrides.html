@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -174,18 +173,13 @@
             
   <div class="section" id="command-line-overrides">
 <h1>命令行覆盖<a class="headerlink" href="#command-line-overrides" title="永久链接至标题">¶</a></h1>
-<p>Configurations can be overridden by specifying <code class="docutils literal notranslate"><span class="pre">--NODE_CONFIG='{...}'</span></code>
-command line parameter when starting your application.</p>
-<p>The parameter value must be supplied as a valid JSON string. The
-following example overrides the Customer.dbConfig.host configuration:</p>
+<p>在启动应用程序时, 可以通过指定 <cite>–NODE_CONFIG =’{…}’</cite> 命令行参数来覆盖配置.</p>
+<p>必须将参数值作为有效的JSON字符串提供.以下示例将覆盖Customer.dbConfig.host配置:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ node myapp.js --NODE_CONFIG=&#39;{&quot;Customer&quot;:{&quot;dbConfig&quot;:{&quot;host&quot;:&quot;customerdb.prod&quot;}}}&#39;
 </pre></div>
 </div>
-<p>The single quotes around the JSON value preserve the double quotes, and
-you may have to escape special characters, based on your O/S shell.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> parameter may also be supplied <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config">as a shell
-environment
-variable</a></p>
+<p>JSON值周围的单引号保留双引号, 您可能必须根据O/S shell转义特殊字符.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> 参数也可以 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config">作为shell环境变量提供</a></p>
 </div>
 
 

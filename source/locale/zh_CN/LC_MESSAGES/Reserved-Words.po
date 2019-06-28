@@ -23,20 +23,20 @@ msgid "Reserved Words"
 msgstr "保留字"
 
 #: ../../source/Reserved-Words.rst:4
-msgid ""
+msgid  ""
 "To `retain compatibility <https://github.com/lorenwest/node-config/wiki"
 "/Future-Compatibility#compatibility-statement>`_ with pre-1.0, the "
 "following configuration names cannot be used in version 1.0."
-msgstr ""
+msgstr "要保留与1.0 `之前的兼容性 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#compatibility-statement>`_, 以下配置名称不能在1.0版中使用."
 
 #: ../../source/Reserved-Words.rst:33
-msgid ""
+msgid  ""
 "Starting with `version 2.0 <https://github.com/lorenwest/node-config/wiki"
 "/Future-Compatibility#version-20---not-before-july-2015>`_, config "
 "`utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-"
 "Utilities>`_ will only be accessible under ``util``, and the following "
 "keywords will be reserved:"
-msgstr ""
+msgstr "从 `版本2.0 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#version-20---not-before-july-2015>`_ 开始, 配置 `utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_ 只能在 ``util`` 下访问, 并保留以下关键字:"
 
 #~ msgid "Reserved-Words"
 #~ msgstr ""

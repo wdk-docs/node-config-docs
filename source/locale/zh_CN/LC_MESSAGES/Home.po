@@ -23,111 +23,111 @@ msgid "Wiki Pages"
 msgstr "维基页面"
 
 #: ../../source/Home.rst:4
-msgid ""
+msgid  ""
 "`Configuration Files <https://github.com/lorenwest/node-config/wiki"
 "/Configuration-Files>`_ - Managing configuration files for your "
 "application"
-msgstr ""
+msgstr "`配置文件 <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ - 管理应用程序的配置文件"
 
 #: ../../source/Home.rst:8
-msgid ""
+msgid  ""
 "`Special Features for JavaScript Config Files "
 "<https://github.com/lorenwest/node-config/wiki/Special-features-for-"
 "JavaScript-configuration-files>`_"
-msgstr ""
+msgstr "`JavaScript配置文件的特殊功能 <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_"
 
 #: ../../source/Home.rst:11
-msgid ""
+msgid  ""
 "`Common Usage <https://github.com/lorenwest/node-config/wiki/Common-"
 "Usage>`_ - Using node-config in your application code"
-msgstr ""
+msgstr "`常见用法 <https://github.com/lorenwest/node-config/wiki/Common-Usage>`_ - 在应用程序代码中使用node-config"
 
 #: ../../source/Home.rst:15
-msgid ""
+msgid  ""
 "`Environment Variables <https://github.com/lorenwest/node-config/wiki"
 "/Environment-Variables>`_ - Operating system environment variables used "
 "in node-config"
-msgstr ""
+msgstr "`环境变量 <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ - node-config中使用的操作系统环境变量"
 
 #: ../../source/Home.rst:19
-msgid ""
+msgid  ""
 "`Reserved Words <https://github.com/lorenwest/node-config/wiki/Reserved-"
 "Words>`_ - Configuration variable names to stay away from"
-msgstr ""
+msgstr "`保留字 <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ - 配置变量名称远离"
 
 #: ../../source/Home.rst:23
-msgid ""
+msgid  ""
 "`Command Line Overrides <https://github.com/lorenwest/node-config/wiki"
 "/Command-Line-Overrides>`_ - Specifying configurations when starting your"
 " app"
-msgstr ""
+msgstr "`命令行覆盖 <https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_ - 在启动应用程序时指定配置"
 
 #: ../../source/Home.rst:27
-msgid ""
+msgid  ""
 "`Multiple Node Instances <https://github.com/lorenwest/node-config/wiki"
 "/Multiple-Node-Instances>`_ - When running multiple instances of your app"
-msgstr ""
+msgstr "`多节点实例 <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_ - 运行应用程序的多个实例时"
 
 #: ../../source/Home.rst:31
-msgid ""
+msgid  ""
 "`Sub-Module Configuration <https://github.com/lorenwest/node-config/wiki"
 "/Sub-Module-Configuration>`_ - Using node-config in your NPM module"
-msgstr ""
+msgstr "`子模块配置 <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_ - 在NPM模块中使用node-config"
 
 #: ../../source/Home.rst:35
-msgid ""
+msgid  ""
 "`Configuring from a DB or External Source <https://github.com/lorenwest"
 "/node-config/wiki/Configuring-from-an-External-Source>`_ - Merging "
 "external configurations at runtime"
-msgstr ""
+msgstr "`从DB或外部源配置 <https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source>`_ - 在运行时合并外部配置"
 
 #: ../../source/Home.rst:39
-msgid ""
+msgid  ""
 "`External Configuration Management Tools <https://github.com/lorenwest"
 "/node-config/wiki/External-Configuration-Management-Tools>`_ - Using "
 "node-config with other CM tools"
-msgstr ""
+msgstr "`外部配置管理工具 <https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools>`_ - 将node-config与其他CM工具一起使用"
 
 #: ../../source/Home.rst:43
-msgid ""
+msgid  ""
 "`Examining Configuration Sources <https://github.com/lorenwest/node-"
 "config/wiki/Examining-Configuration-Sources>`_ - Determining the origin "
 "of configuration values"
-msgstr ""
+msgstr "`检查配置源 <https://github.com/lorenwest/node-config/wiki/Examining-Configuration-Sources>`_ - 确定配置值的来源"
 
 #: ../../source/Home.rst:47
-msgid ""
+msgid  ""
 "`Using Config Utilities <https://github.com/lorenwest/node-config/wiki"
 "/Using-Config-Utilities>`_ - Useful utilities that come with node-config"
-msgstr ""
+msgstr "`使用配置实用程序 <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_ - node-config附带的有用实用程序"
 
 #: ../../source/Home.rst:51
-msgid ""
+msgid  ""
 "`Community Utilities <https://github.com/lorenwest/node-config/wiki"
 "/Community-Utilities>`_ - Useful utilities written by the node-config "
 "community"
-msgstr ""
+msgstr "`社区公用事业 <https://github.com/lorenwest/node-config/wiki/Community-Utilities>`_ - node-config社区编写的有用实用程序"
 
 #: ../../source/Home.rst:55
-msgid ""
+msgid  ""
 "`Future Compatibility <https://github.com/lorenwest/node-config/wiki"
 "/Future-Compatibility>`_ - Compatibility statement and future "
 "incompatibilities"
-msgstr ""
+msgstr "`未来兼容性 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility>`_ - 兼容性声明和未来的不兼容性"
 
 #: ../../source/Home.rst:59
-msgid ""
+msgid  ""
 "`Upgrading from Config 0.x <https://github.com/lorenwest/node-config/wiki"
 "/Upgrading-From-Config-0.x>`_ - How to upgrade to node-config version 1.x"
-msgstr ""
+msgstr "`从Config 0.x升级 <https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x>`_ - 如何升级到node-config版本1.x."
 
 #: ../../source/Home.rst:63
 msgid "`Plugins <https://github.com/lorenwest/node-config/wiki/Plugins>`_"
-msgstr "`Plugins <https://github.com/lorenwest/node-config/wiki/Plugins>`_"
+msgstr "`插件 <https://github.com/lorenwest/node-config/wiki/Plugins>`_"
 
 #: ../../source/Home.rst:65
-msgid ""
+msgid  ""
 "`Runtime config for testing <https://github.com/lorenwest/node-"
 "config/wiki/Altering-configuration-values-for-testing-at-runtime>`_"
-msgstr ""
+msgstr "`用于测试的运行时配置 <https://github.com/lorenwest/node-config/wiki/Altering-configuration-values-for-testing-at-runtime>`_"
 

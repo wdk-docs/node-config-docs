@@ -66,10 +66,10 @@ Option 3
 Below is an example of how you can use ``NODE_ENV`` at build time to
 have a static config built into your webpack bundle.
 
-| **IMPORTANT NOTE**
-| This will publish your entire config file into your front end
-  application. If you have sensitive information you do not want
-  downloaded, see the notes after the example.
+.. important::
+   This will publish your entire config file into your front end
+   application. If you have sensitive information you do not want
+   downloaded, see the notes after the example.
 
 .. code:: javascript
 

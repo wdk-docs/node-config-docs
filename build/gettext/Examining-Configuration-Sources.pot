@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,25 @@ msgstr ""
 
 #: ../../source/Examining-Configuration-Sources.rst:2
 msgid "Examining Configuration Sources"
-msgstr "Examining Configuration Sources"
+msgstr ""
 
 #: ../../source/Examining-Configuration-Sources.rst:4
 msgid "Configurations are similar to CSS in that they *cascade* from less specific to more specific. The ``config.util.getConfigSources();`` method can be used to see all sources contributing to the ultimate configuration, and the order in which they were are applied."
-msgstr "Configurations are similar to CSS in that they *cascade* from less specific to more specific. The ``config.util.getConfigSources();`` method can be used to see all sources contributing to the ultimate configuration, and the order in which they were are applied."
+msgstr ""
 
 #: ../../source/Examining-Configuration-Sources.rst:9
 msgid "This would allow a UI similar to a CSS inspector to show all source values, with strikethroughs for values overwritten by more specific cascading values."
-msgstr "This would allow a UI similar to a CSS inspector to show all source values, with strikethroughs for values overwritten by more specific cascading values."
+msgstr ""
 
 #: ../../source/Examining-Configuration-Sources.rst:14
 msgid "Example output of getConfigSources"
-msgstr "Example output of getConfigSources"
+msgstr ""
 
 #: ../../source/Examining-Configuration-Sources.rst:28
 msgid "Notice that in additon to full paths, some other special names are included: ``$NODE_CONFIG`` from the environment and ``--NODE_CONFIG argument`` from the command line."
-msgstr "Notice that in additon to full paths, some other special names are included: ``$NODE_CONFIG`` from the environment and ``--NODE_CONFIG argument`` from the command line."
+msgstr ""
 
 #: ../../source/Examining-Configuration-Sources.rst:32
 msgid "While ``[Object]`` is shown here, the full objects are available in the actual output."
-msgstr "While ``[Object]`` is shown here, the full objects are available in the actual output."
+msgstr ""
 

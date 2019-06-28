@@ -23,36 +23,36 @@ msgid "Examining Configuration Sources"
 msgstr "检查配置源"
 
 #: ../../source/Examining-Configuration-Sources.rst:4
-msgid ""
+msgid  ""
 "Configurations are similar to CSS in that they *cascade* from less "
 "specific to more specific. The ``config.util.getConfigSources();`` method"
 " can be used to see all sources contributing to the ultimate "
 "configuration, and the order in which they were are applied."
-msgstr ""
+msgstr "配置类似于CSS, 因为它们 *级联* 从较不具体到更具体. ``config.util.getConfigSources();`` 方法可用于查看有助于最终配置的所有源, 以及它们的应用顺序."
 
 #: ../../source/Examining-Configuration-Sources.rst:9
-msgid ""
+msgid  ""
 "This would allow a UI similar to a CSS inspector to show all source "
 "values, with strikethroughs for values overwritten by more specific "
 "cascading values."
-msgstr ""
+msgstr "这将允许类似于CSS检查器的UI显示所有源值, 并且更多特定级联值覆盖值的删除线."
 
 #: ../../source/Examining-Configuration-Sources.rst:14
 msgid "Example output of getConfigSources"
-msgstr "Example output of getConfigSources"
+msgstr "getConfigSources的输出示例"
 
 #: ../../source/Examining-Configuration-Sources.rst:28
-msgid ""
+msgid  ""
 "Notice that in additon to full paths, some other special names are "
 "included: ``$NODE_CONFIG`` from the environment and ``--NODE_CONFIG "
 "argument`` from the command line."
-msgstr ""
+msgstr "请注意, 除了完整路径之外, 还包括一些其他特殊名称: 来自环境的 ``$NODE_CONFIG`` 和来自命令行的 ``--NODE_CONFIG argument`` ."
 
 #: ../../source/Examining-Configuration-Sources.rst:32
-msgid ""
+msgid  ""
 "While ``[Object]`` is shown here, the full objects are available in the "
 "actual output."
-msgstr ""
+msgstr "虽然这里显示了 ``[Object]``, 但实际输出中有完整的对象."
 
 #~ msgid "Examining-Configuration-Sources"
 #~ msgstr ""

@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -106,11 +105,11 @@
 <li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">严格的模式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#diagnostic-messages">Diagnostic messages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#node-env-value-of-node-env-did-not-match-any-deployment-config-file-names">NODE_ENV value of ‘{NODE_ENV}’ did not match any deployment config file names.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#node-app-instance-value-of-node-app-instance-did-not-match-any-instance-config-file-names">NODE_APP_INSTANCE value of ‘{NODE_APP_INSTANCE}’ did not match any instance config file names.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#node-env-value-of-default-is-ambiguous">NODE_ENV value of ‘default’ is ambiguous.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#node-env-value-of-local-is-ambiguous">NODE_ENV value of ‘local’ is ambiguous.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diagnostic-messages">诊断信息</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-env-value-of-node-env-did-not-match-any-deployment-config-file-names">‘{NODE_ENV}’ 的NODE_ENV值与任何部署配置文件名都不匹配.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-app-instance-value-of-node-app-instance-did-not-match-any-instance-config-file-names">‘{NODE_APP_INSTANCE}’ 的NODE_APP_INSTANCE值与任何实例配置文件名都不匹配.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-env-value-of-default-is-ambiguous">‘default’ 的NODE_ENV值不明确.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-env-value-of-local-is-ambiguous">“local” 的NODE_ENV值不明确.</a></li>
 </ul>
 </li>
 </ul>
@@ -183,48 +182,26 @@
             
   <div class="section" id="strict-mode">
 <h1>严格的模式<a class="headerlink" href="#strict-mode" title="永久链接至标题">¶</a></h1>
-<p><em>Strict Mode was added in node-config 1.9.0.</em></p>
-<p>Several checks are made to make sure that <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> and
-<code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> values are sensible. If something appears to be
-unsafe or ambiguous, a warning will always be issued. If
-<code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_STRICT_MODE</span></code> is set to ‘true’ or ‘1’ in the environment,
-an exception will be thrown to ensure that the application doesn’t start
-up with a configuration that might be broken.</p>
+<p><em>在node-config 1.9.0中添加了严格模式.</em></p>
+<p>进行了几项检查以确保 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 和 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> 值是合理的.如果某些东西看起来不安全或含糊不清, 将始终发出警告.如果在环境中将 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_STRICT_MODE</span></code> 设置为 ‘true’ 或 ‘1’, 则会抛出异常以确保应用程序无法使用可能已损坏的配置启动.</p>
 <div class="section" id="diagnostic-messages">
-<h2>Diagnostic messages<a class="headerlink" href="#diagnostic-messages" title="永久链接至标题">¶</a></h2>
+<h2>诊断信息<a class="headerlink" href="#diagnostic-messages" title="永久链接至标题">¶</a></h2>
 <div class="section" id="node-env-value-of-node-env-did-not-match-any-deployment-config-file-names">
-<h3>NODE_ENV value of ‘{NODE_ENV}’ did not match any deployment config file names.<a class="headerlink" href="#node-env-value-of-node-env-did-not-match-any-deployment-config-file-names" title="永久链接至标题">¶</a></h3>
-<p>If <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> is set in the environment, we check if there is any file
-matching that name in the <code class="docutils literal notranslate"><span class="pre">config/</span></code> directory containing valid syntax.
-You can create a file with the name matching the desired <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>
-value: <code class="docutils literal notranslate"><span class="pre">{NODE_ENV}.json</span></code> and include the contents ‘{}’, which is an
-empty valid JSON object.</p>
-<p>This could also indicate a problem with specifying your <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">configuration
-directory or the file load
-order</a>.</p>
+<h3>‘{NODE_ENV}’ 的NODE_ENV值与任何部署配置文件名都不匹配.<a class="headerlink" href="#node-env-value-of-node-env-did-not-match-any-deployment-config-file-names" title="永久链接至标题">¶</a></h3>
+<p>如果在环境中设置了 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>, 我们检查在包含有效语法的 <code class="docutils literal notranslate"><span class="pre">config/</span></code> 目录中是否有与该名称匹配的文件.您可以创建一个名称与所需 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 值匹配的文件: <code class="docutils literal notranslate"><span class="pre">{NODE_ENV}.json</span></code> 并包含内容 ‘{}’, 这是一个空的有效JSON对象.</p>
+<p>这也可能表示指定您的 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">配置目录或文件加载顺序</a> 时出现问题.</p>
 </div>
 <div class="section" id="node-app-instance-value-of-node-app-instance-did-not-match-any-instance-config-file-names">
-<h3>NODE_APP_INSTANCE value of ‘{NODE_APP_INSTANCE}’ did not match any instance config file names.<a class="headerlink" href="#node-app-instance-value-of-node-app-instance-did-not-match-any-instance-config-file-names" title="永久链接至标题">¶</a></h3>
-<p>If <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> is set in the environment, we check if there
-any file matching that name in the <code class="docutils literal notranslate"><span class="pre">config/</span></code> directory. If there’s
-actually no problem, create a file name matching the desired
-<code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> value: <code class="docutils literal notranslate"><span class="pre">default-{NODE_APP_INSTANCE}.json</span></code> and include the
-contents ‘{}’, which is an empty valid JSON object.</p>
-<p>This could also indicate a problem with specifying your <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">configuration
-directory or the file load
-order</a>.</p>
+<h3>‘{NODE_APP_INSTANCE}’ 的NODE_APP_INSTANCE值与任何实例配置文件名都不匹配.<a class="headerlink" href="#node-app-instance-value-of-node-app-instance-did-not-match-any-instance-config-file-names" title="永久链接至标题">¶</a></h3>
+<p>如果在环境中设置了 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code>, 我们检查 <code class="docutils literal notranslate"><span class="pre">config/</span></code> 目录中是否有与该名称匹配的文件.如果确实没有问题, 请创建一个与所需 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 值匹配的文件名: <code class="docutils literal notranslate"><span class="pre">default-{NODE_APP_INSTANCE}.json</span></code> 并包含内容 ‘{}’, 这是一个空的有效JSON对象.</p>
+<p>这也可能表示指定您的 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">配置目录或文件加载顺序</a> 时出现问题.</p>
 </div>
 <div class="section" id="node-env-value-of-default-is-ambiguous">
-<h3>NODE_ENV value of ‘default’ is ambiguous.<a class="headerlink" href="#node-env-value-of-default-is-ambiguous" title="永久链接至标题">¶</a></h3>
+<h3>‘default’ 的NODE_ENV值不明确.<a class="headerlink" href="#node-env-value-of-default-is-ambiguous" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="node-env-value-of-local-is-ambiguous">
-<h3>NODE_ENV value of ‘local’ is ambiguous.<a class="headerlink" href="#node-env-value-of-local-is-ambiguous" title="永久链接至标题">¶</a></h3>
-<p>Files named <code class="docutils literal notranslate"><span class="pre">default</span></code> and <code class="docutils literal notranslate"><span class="pre">local</span></code> have a special place in the config
-loading order. Since we also support files simply named after
-<code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> we can’t be sure whether a file named <code class="docutils literal notranslate"><span class="pre">default</span></code> or
-<code class="docutils literal notranslate"><span class="pre">local</span></code> was meant be represent one of these special files, or after
-your NODE_ENV. Without Strict Mode, these files could end up being
-loaded <em>twice</em> in the load order which is probably not what you want.</p>
+<h3>“local” 的NODE_ENV值不明确.<a class="headerlink" href="#node-env-value-of-local-is-ambiguous" title="永久链接至标题">¶</a></h3>
+<p>名为 <code class="docutils literal notranslate"><span class="pre">default</span></code> 和 <code class="docutils literal notranslate"><span class="pre">local</span></code> 的文件在配置加载顺序中有一个特殊的位置.由于我们也支持简单地命名为 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 的文件, 我们无法确定名为 <code class="docutils literal notranslate"><span class="pre">default</span></code> 或 <code class="docutils literal notranslate"><span class="pre">local</span></code> 的文件是代表这些特殊文件之一, 还是代表NODE_ENV之后.如果没有严格模式, 这些文件最终可能会在加载顺序中加载 <em>两次</em>, 这可能不是您想要的.</p>
 </div>
 </div>
 </div>

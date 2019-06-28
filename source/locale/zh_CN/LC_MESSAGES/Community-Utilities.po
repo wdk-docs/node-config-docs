@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-28 23:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "社区公用事业"
 
 #: ../../source/Community-Utilities.rst:5
 msgid "CEV - Custom Environment Variable Generator"
-msgstr "CEV - Custom Environment Variable Generator"
+msgstr "CEV - 定制环境变量生成器"
 
 #: ../../source/Community-Utilities.rst:7
 msgid ""
@@ -33,19 +33,25 @@ msgid ""
 " lot, here’s a generator for them http://www.scispike.com/blog/get-rid-"
 "of-node-js-config-grunt-work/"
 msgstr ""
+"如果您使用 `自定义环境变量 <https://github.com/lorenwest/node-config/wiki"
+"/Environment-Variables#custom-environment-variables>`_ 很多, 这里有一个生成器 "
+"http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/"
 
 #: ../../source/Community-Utilities.rst:13
 msgid "config-uncached"
-msgstr "config-uncached"
+msgstr "配置 - 未缓存"
 
 #: ../../source/Community-Utilities.rst:15
 msgid ""
 "Sometimes for testing or DevOps, you need one script to load more than "
 "configuration. This is normally a challenge with ``node-config`` As a "
 "singleton, it returns the same configuration each time. To force node-"
-"config to reload the configuration, use the ```config-uncached`` "
+"config to reload the configuration, use the `config-uncached "
 "<https://www.npmjs.com/package/config-uncached>`_ module."
 msgstr ""
+"有时, 对于测试或DevOps, 您需要一个脚本来加载超过配置.这通常是 ``node-config`` 的挑战.作为单例, "
+"它每次都返回相同的配置.要强制node-config重新加载配置, 请使用 `config-uncached "
+"<https://www.npmjs.com/package/config-uncached>`_ 模块."
 
 #~ msgid "Community-Utilities"
 #~ msgstr ""

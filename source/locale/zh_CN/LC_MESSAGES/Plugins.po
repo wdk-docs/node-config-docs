@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:21+0800\n"
+"POT-Creation-Date: 2019-06-28 23:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,14 +24,18 @@ msgstr "插件"
 
 #: ../../source/Plugins.rst:4
 msgid ""
-"```node-config-uncached`` <https://github.com/MrBoolean/node-config-"
+"`node-config-uncached <https://github.com/MrBoolean/node-config-"
 "uncached>`_ - purges the internal ``require.cache`` for all files used by"
 " ``config``"
 msgstr ""
+"`node-config-uncached <https://github.com/MrBoolean/node-config-"
+"uncached>`_ - 清除 ``config`` 使用的所有文件的内部 ``require.cache``"
 
-#: ../../source/Plugins.rst:7
+#: ../../source/Plugins.rst:5
 msgid ""
-"```config-secrets`` <https://github.com/lee5i3/config-secrets>`_ - allows"
-" to use of docker secrets for configuration"
+"`config-secrets <https://github.com/lee5i3/config-secrets>`_ - allows to "
+"use of docker secrets for configuration"
 msgstr ""
+"`config-secrets <https://github.com/lee5i3/config-secrets>`_ - "
+"允许使用docker机密进行配置"
 
