@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Command-Line-Overrides.rst:2
+msgid "Command Line Overrides"
+msgstr "命令行覆盖"
+
+#: ../../source/Command-Line-Overrides.rst:4
+msgid ""
+"Configurations can be overridden by specifying ``--NODE_CONFIG='{...}'`` "
+"command line parameter when starting your application."
+msgstr ""
+
+#: ../../source/Command-Line-Overrides.rst:7
+msgid ""
+"The parameter value must be supplied as a valid JSON string. The "
+"following example overrides the Customer.dbConfig.host configuration:"
+msgstr ""
+
+#: ../../source/Command-Line-Overrides.rst:14
+msgid ""
+"The single quotes around the JSON value preserve the double quotes, and "
+"you may have to escape special characters, based on your O/S shell."
+msgstr ""
+
+#: ../../source/Command-Line-Overrides.rst:17
+msgid ""
+"The ``NODE_CONFIG`` parameter may also be supplied `as a shell "
+"environment variable <https://github.com/lorenwest/node-config/wiki"
+"/Environment-Variables#node_config>`_"
+msgstr ""
+
+#~ msgid "Command-Line-Overrides"
+#~ msgstr ""
+

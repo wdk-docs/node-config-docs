@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>子模块配置 &mdash; node-config docs v2019.06.28 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="从外部源配置" href="Configuring-from-an-External-Source.html" />
+    <link rel="prev" title="多节点实例" href="Multiple-Node-Instances.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> node-config docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">子模块配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-From-Config-0.x.html">从Config 0.x升级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugins.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Altering-configuration-values-for-testing-at-runtime.html">更改配置值以便在运行时进行测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webpack-Usage.html">Webpack用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">node-config docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>子模块配置</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Sub-Module-Configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sub-module-configuration">
+<h1>子模块配置<a class="headerlink" href="#sub-module-configuration" title="永久链接至标题">¶</a></h1>
+<p>Are you the author of a NodeJS <a class="reference external" href="http://npmjs.org">NPM module</a> that
+accepts initialization parameters?</p>
+<p>If so, and you’re following a pattern like this for your module
+configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">initParams</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">param1</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+  <span class="n">param2</span><span class="p">:</span> <span class="mi">22</span>
+<span class="p">}</span>
+<span class="n">var</span> <span class="n">MyModule</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;my-module&#39;</span><span class="p">);</span>
+<span class="n">var</span> <span class="n">myModule</span> <span class="o">=</span> <span class="n">new</span> <span class="n">MyModule</span><span class="p">(</span><span class="n">initParams</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Or this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyModule</span><span class="o">.</span><span class="n">setDefaults</span><span class="p">(</span><span class="n">initParams</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then read on.</p>
+<p>By following a common pattern, you give developers using your module:</p>
+<ul class="simple">
+<li><p>A consistent interface for <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">defining and
+extending</a>
+your configurations</p></li>
+<li><p>A way to pass configurations via <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">O/S environment
+variables</a></p></li>
+<li><p>A way to pass configurations via <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides">command line
+arguments</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki">Other features</a>
+built in to node-config</p></li>
+</ul>
+<p>Without breaking existing usage of your module, and without requiring
+node-config in their own app (unless they want).</p>
+<p>Here’s how it works:</p>
+<p>Load node-config at the top of your module like normal, and specify the
+<code class="docutils literal notranslate"><span class="pre">SUPPRESS_NO_CONFIG_WARNING</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">environment
+variable</a>
+so applications don’t get <em>No config files</em> warnings if they aren’t
+using node-config.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">SUPPRESS_NO_CONFIG_WARNING</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Then do something like this where your configurations are passed in by
+the app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span> <span class="n">myModuleConstructor</span><span class="p">(</span><span class="n">configs</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="n">var</span> <span class="n">myDefaultConfigs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">param1</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+    <span class="n">param2</span><span class="p">:</span> <span class="mi">22</span>
+  <span class="p">};</span>
+
+  <span class="o">//</span> <span class="n">Mixin</span> <span class="n">configs</span> <span class="n">that</span> <span class="n">have</span> <span class="n">been</span> <span class="n">passed</span> <span class="ow">in</span><span class="p">,</span> <span class="ow">and</span> <span class="n">make</span> <span class="n">those</span> <span class="n">my</span> <span class="n">defaults</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">extendDeep</span><span class="p">(</span><span class="n">myDefaultConfigs</span><span class="p">,</span> <span class="n">configs</span><span class="p">);</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">setModuleDefaults</span><span class="p">(</span><span class="s1">&#39;MyModule&#39;</span><span class="p">,</span> <span class="n">myDefaultConfigs</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then use the config object as usual to access configurations within your
+module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;My module config param1: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MyModule.param1&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>This pattern gives apps using your module the choice of using
+node-config mechanisms for configuration, or using your existing methods
+(as shown at the top of this page).</p>
+<p>For example, they can put your module configurations next to their other
+configurations and extend configs based on deployment type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="p">{</span>
+  <span class="o">...</span>
+  <span class="s2">&quot;MyModule&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;Some value&quot;</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is an easy way to add new configuration functionality to your NPM
+module, while staying compatible with existing usage.</p>
+<p>It unifies your module configuration with apps choosing to use
+node-config, and stays out of the way for apps using other configuration
+systems.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Configuring-from-an-External-Source.html" class="btn btn-neutral float-right" title="从外部源配置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Multiple-Node-Instances.html" class="btn btn-neutral float-left" title="多节点实例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

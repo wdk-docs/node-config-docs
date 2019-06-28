@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/Asynchronous-Configurations.rst:2
+msgid "Asynchronous Configurations"
+msgstr "Asynchronous Configurations"
+
+#: ../../source/Asynchronous-Configurations.rst:4
+msgid "In the JavaScript modules you have an option to define a configuration value asynchronously."
+msgstr "In the JavaScript modules you have an option to define a configuration value asynchronously."
+
+#: ../../source/Asynchronous-Configurations.rst:8
+msgid "Async configuration"
+msgstr "Async configuration"
+
+#: ../../source/Asynchronous-Configurations.rst:10
+msgid "Using the ``asyncConfig`` utility method you can wrap both promises and async functions (a function which returns a promise) whose resolution will be deferred until:"
+msgstr "Using the ``asyncConfig`` utility method you can wrap both promises and async functions (a function which returns a promise) whose resolution will be deferred until:"
+
+#: ../../source/Asynchronous-Configurations.rst:14
+msgid "the final merged configuration structure is built (that’s when async functions are executed; see `deferConfig <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files#deferred-values-in-javascript-configuration-files>`_)"
+msgstr "the final merged configuration structure is built (that’s when async functions are executed; see `deferConfig <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files#deferred-values-in-javascript-configuration-files>`_)"
+
+#: ../../source/Asynchronous-Configurations.rst:17
+msgid "the ``resolveAsyncConfigs`` utility method has been called and resolved (all asynchronous configurations been resolved)"
+msgstr "the ``resolveAsyncConfigs`` utility method has been called and resolved (all asynchronous configurations been resolved)"
+
+#: ../../source/Asynchronous-Configurations.rst:36
+msgid "Resolving async configurations"
+msgstr "Resolving async configurations"
+
+#: ../../source/Asynchronous-Configurations.rst:38
+msgid "**Important!** - Never call ``config.get`` before ``resolveAsyncConfigs``"
+msgstr "**Important!** - Never call ``config.get`` before ``resolveAsyncConfigs``"
+
+#: ../../source/Asynchronous-Configurations.rst:41
+msgid "It will cause the config object to freeze and will make resolving values impossible."
+msgstr "It will cause the config object to freeze and will make resolving values impossible."
+
+#: ../../source/Asynchronous-Configurations.rst:59
+msgid "**Note**: support of advance syntax will depend on your node version and/or babel configurations"
+msgstr "**Note**: support of advance syntax will depend on your node version and/or babel configurations"
+

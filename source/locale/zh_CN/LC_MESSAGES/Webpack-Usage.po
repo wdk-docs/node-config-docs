@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Webpack-Usage.rst:2
+msgid "Webpack Usage"
+msgstr "Webpack用法"
+
+#: ../../source/Webpack-Usage.rst:4
+msgid ""
+"Right now ``node-config`` doesn’t work with `webpack "
+"<https://github.com/webpack/webpack>`_ out of the box because it reads "
+"the config files at runtime, which can’t be done when the code is running"
+" on a browser."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:10
+msgid "Option 1"
+msgstr "Option 1"
+
+#: ../../source/Webpack-Usage.rst:12
+msgid ""
+"If you’re using Webpack 4, it includes excellent handling for complex "
+"config objects with ``DefinePlugin`` (as of 2018-05-07). Add the "
+"following to your ``webpack.config.js``:"
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:23
+msgid ""
+"You can access all fields, including nested fields, under the ``CONFIG`` "
+"object in your client-side scripts, without exposing your entire config "
+"object. Note that you won’t have access to ``get()``."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:27
+msgid ""
+"This approach *does* work in Webpack 3, but it inserts your *entire* "
+"config object wherever it is referenced. This is not recommended."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:31
+msgid "Option 2"
+msgstr "Option 2"
+
+#: ../../source/Webpack-Usage.rst:33
+msgid ""
+"Install the `node-config-webpack <https://github.com/arthanzel/node-"
+"config-webpack>`_ package and put the following in ``webpack.config.js``:"
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:45
+msgid ""
+"This allows you to access your configuration on the client in the global "
+"namespace ``CONFIG``."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:52
+msgid ""
+"You can also change the default namespace from ``CONFIG`` to something "
+"else."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:59
+msgid ""
+"This method performs direct text replacement of config variables in your "
+"code with their values, and it doesn’t expose any configs that aren’t "
+"used."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:64
+msgid "Option 3"
+msgstr "Option 3"
+
+#: ../../source/Webpack-Usage.rst:66
+msgid ""
+"Below is an example of how you can use ``NODE_ENV`` at build time to have"
+" a static config built into your webpack bundle."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:69
+msgid "**IMPORTANT NOTE**"
+msgstr "**IMPORTANT NOTE**"
+
+#: ../../source/Webpack-Usage.rst:72
+msgid ""
+"This will publish your entire config file into your front end "
+"application. If you have sensitive information you do not want "
+"downloaded, see the notes after the example."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:95
+msgid ""
+"Both server and client now can happily use ``import config from "
+"'config'``."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:98
+msgid ""
+"If you have things in the config that you do not want to publish to the "
+"front end, you may consider making a specific ``client`` section of the "
+"config, and only publishing that key to the static json file, e.g. \\ "
+"``import { client } from 'config';``"
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:103
+msgid ""
+"Alternatively you could use `lodash <https://github.com/lodash/lodash>`_ "
+"``pick`` or ``omit`` to control what data is written to the file."
+msgstr ""
+
+#: ../../source/Webpack-Usage.rst:108
+msgid "Option 4"
+msgstr "Option 4"
+
+#: ../../source/Webpack-Usage.rst:110
+msgid ""
+"Another solution is to take advantage of the ```NODE_CONFIG`` environment"
+" variable <https://github.com/lorenwest/node-config/wiki/Environment-"
+"Variables#node_config>`_ with ``webpack.DefinePlugin``. With this method "
+"you **CAN** still use ``get()``."
+msgstr ""
+
+#~ msgid "Webpack-Usage"
+#~ msgstr ""
+

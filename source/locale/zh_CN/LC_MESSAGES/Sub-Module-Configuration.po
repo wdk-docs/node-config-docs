@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Sub-Module-Configuration.rst:2
+msgid "Sub Module Configuration"
+msgstr "子模块配置"
+
+#: ../../source/Sub-Module-Configuration.rst:4
+msgid ""
+"Are you the author of a NodeJS `NPM module <http://npmjs.org>`_ that "
+"accepts initialization parameters?"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:7
+msgid ""
+"If so, and you’re following a pattern like this for your module "
+"configuration:"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:19
+msgid "Or this:"
+msgstr "Or this:"
+
+#: ../../source/Sub-Module-Configuration.rst:25
+msgid "Then read on."
+msgstr "Then read on."
+
+#: ../../source/Sub-Module-Configuration.rst:27
+msgid "By following a common pattern, you give developers using your module:"
+msgstr "By following a common pattern, you give developers using your module:"
+
+#: ../../source/Sub-Module-Configuration.rst:29
+msgid ""
+"A consistent interface for `defining and extending "
+"<https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ "
+"your configurations"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:32
+msgid ""
+"A way to pass configurations via `O/S environment variables "
+"<https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:34
+msgid ""
+"A way to pass configurations via `command line arguments "
+"<https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:36
+msgid ""
+"`Other features <https://github.com/lorenwest/node-config/wiki>`_ built "
+"in to node-config"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:39
+msgid ""
+"Without breaking existing usage of your module, and without requiring "
+"node-config in their own app (unless they want)."
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:42
+msgid "Here’s how it works:"
+msgstr "Here’s how it works:"
+
+#: ../../source/Sub-Module-Configuration.rst:44
+msgid ""
+"Load node-config at the top of your module like normal, and specify the "
+"``SUPPRESS_NO_CONFIG_WARNING`` `environment variable "
+"<https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ "
+"so applications don’t get *No config files* warnings if they aren’t using"
+" node-config."
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:55
+msgid ""
+"Then do something like this where your configurations are passed in by "
+"the app:"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:72
+msgid ""
+"Then use the config object as usual to access configurations within your "
+"module:"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:79
+msgid ""
+"This pattern gives apps using your module the choice of using node-config"
+" mechanisms for configuration, or using your existing methods (as shown "
+"at the top of this page)."
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:83
+msgid ""
+"For example, they can put your module configurations next to their other "
+"configurations and extend configs based on deployment type:"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:98
+msgid ""
+"This is an easy way to add new configuration functionality to your NPM "
+"module, while staying compatible with existing usage."
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:101
+msgid ""
+"It unifies your module configuration with apps choosing to use node-"
+"config, and stays out of the way for apps using other configuration "
+"systems."
+msgstr ""
+
+#~ msgid "Sub-Module-Configuration"
+#~ msgstr ""
+

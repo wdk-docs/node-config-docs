@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:2
+msgid "Special features for JavaScript configuration-files"
+msgstr "JavaScript配置文件的特殊功能"
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:4
+msgid ""
+"Files ending in ``.js`` are loaded and run as a JavaScript module. The "
+"module must export the configuration object. Some folks appreciate the "
+"ability to compute configurations, others feel it’s not the right thing "
+"to do. It’s nice to live in a world with choice."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:9
+msgid ""
+"JavaScript modules support the ability to have “deferred” and “raw” "
+"values."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:13
+msgid "Deferred values in JavaScript configuration files"
+msgstr "Deferred values in JavaScript configuration files"
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:15
+msgid ""
+"In the JavaScript modules you have the option to define a configuration "
+"value as a function whose resolution will be deferred until the final "
+"merged configuration structure is built."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:19
+msgid ""
+"For example, you set up a default value for a “full name” that is "
+"calculated from “first name” and “last name” values which will be "
+"provided a config file which overrides the defaults."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:23
+msgid "Example:"
+msgstr "Example:"
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:39
+msgid "Then in ``config/production.js``:"
+msgstr "Then in ``config/production.js``:"
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:48
+msgid ""
+"Because the resolution of ``fullName`` is deferred, it would resolve to "
+"refer to the overridden first and last name."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:51
+msgid ""
+"The use of `ECMAScript 5 getters "
+"<http://javascriptplayground.com/blog/2013/12/es5-getters-setters/>`_ in "
+"JavaScript configurations is not supported. Using deferred configuration "
+"values is the recommended alternative."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:57
+msgid ""
+"Using promises, process.stdout and other objects in JavaScript config "
+"files"
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:59
+msgid ""
+"There may be instances where you would like to place a complex object "
+"like ``process.stdout`` into your configuration file, e.g. logging "
+"configuration. But node-config achieves its useful functionality by "
+"modifying the config object prototypes then making them immutable - not "
+"ideal for ``process.stdout``! But you can still achieve the goal by using"
+" the ``raw`` functionality like so:"
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:74
+msgid ""
+"Promises or other objects can be included in JavaScript files using the "
+"same method."
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:78
+msgid "Including other files"
+msgstr "Including other files"
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:80
+msgid ""
+"If you’d like to include values from another file in JavaScript, no "
+"special syntax is required–the full features of Node.js are already "
+"available!"
+msgstr ""
+
+#: ../../source/Special-features-for-JavaScript-configuration-files.rst:84
+msgid ""
+"\\``\\` config = { // Load credit configs externally credit: "
+"JSON.parse(fs.readFileSync(‘./currentCreditPolicy.json’)) }"
+msgstr ""
+
+#~ msgid "Special-features-for-JavaScript-configuration-files"
+#~ msgstr ""
+

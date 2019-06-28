@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Reserved-Words.rst:2
+msgid "Reserved Words"
+msgstr "保留字"
+
+#: ../../source/Reserved-Words.rst:4
+msgid ""
+"To `retain compatibility <https://github.com/lorenwest/node-config/wiki"
+"/Future-Compatibility#compatibility-statement>`_ with pre-1.0, the "
+"following configuration names cannot be used in version 1.0."
+msgstr ""
+
+#: ../../source/Reserved-Words.rst:33
+msgid ""
+"Starting with `version 2.0 <https://github.com/lorenwest/node-config/wiki"
+"/Future-Compatibility#version-20---not-before-july-2015>`_, config "
+"`utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-"
+"Utilities>`_ will only be accessible under ``util``, and the following "
+"keywords will be reserved:"
+msgstr ""
+
+#~ msgid "Reserved-Words"
+#~ msgstr ""
+

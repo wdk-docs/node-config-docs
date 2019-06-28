@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Home.rst:2
+msgid "Wiki Pages"
+msgstr "维基页面"
+
+#: ../../source/Home.rst:4
+msgid ""
+"`Configuration Files <https://github.com/lorenwest/node-config/wiki"
+"/Configuration-Files>`_ - Managing configuration files for your "
+"application"
+msgstr ""
+
+#: ../../source/Home.rst:8
+msgid ""
+"`Special Features for JavaScript Config Files "
+"<https://github.com/lorenwest/node-config/wiki/Special-features-for-"
+"JavaScript-configuration-files>`_"
+msgstr ""
+
+#: ../../source/Home.rst:11
+msgid ""
+"`Common Usage <https://github.com/lorenwest/node-config/wiki/Common-"
+"Usage>`_ - Using node-config in your application code"
+msgstr ""
+
+#: ../../source/Home.rst:15
+msgid ""
+"`Environment Variables <https://github.com/lorenwest/node-config/wiki"
+"/Environment-Variables>`_ - Operating system environment variables used "
+"in node-config"
+msgstr ""
+
+#: ../../source/Home.rst:19
+msgid ""
+"`Reserved Words <https://github.com/lorenwest/node-config/wiki/Reserved-"
+"Words>`_ - Configuration variable names to stay away from"
+msgstr ""
+
+#: ../../source/Home.rst:23
+msgid ""
+"`Command Line Overrides <https://github.com/lorenwest/node-config/wiki"
+"/Command-Line-Overrides>`_ - Specifying configurations when starting your"
+" app"
+msgstr ""
+
+#: ../../source/Home.rst:27
+msgid ""
+"`Multiple Node Instances <https://github.com/lorenwest/node-config/wiki"
+"/Multiple-Node-Instances>`_ - When running multiple instances of your app"
+msgstr ""
+
+#: ../../source/Home.rst:31
+msgid ""
+"`Sub-Module Configuration <https://github.com/lorenwest/node-config/wiki"
+"/Sub-Module-Configuration>`_ - Using node-config in your NPM module"
+msgstr ""
+
+#: ../../source/Home.rst:35
+msgid ""
+"`Configuring from a DB or External Source <https://github.com/lorenwest"
+"/node-config/wiki/Configuring-from-an-External-Source>`_ - Merging "
+"external configurations at runtime"
+msgstr ""
+
+#: ../../source/Home.rst:39
+msgid ""
+"`External Configuration Management Tools <https://github.com/lorenwest"
+"/node-config/wiki/External-Configuration-Management-Tools>`_ - Using "
+"node-config with other CM tools"
+msgstr ""
+
+#: ../../source/Home.rst:43
+msgid ""
+"`Examining Configuration Sources <https://github.com/lorenwest/node-"
+"config/wiki/Examining-Configuration-Sources>`_ - Determining the origin "
+"of configuration values"
+msgstr ""
+
+#: ../../source/Home.rst:47
+msgid ""
+"`Using Config Utilities <https://github.com/lorenwest/node-config/wiki"
+"/Using-Config-Utilities>`_ - Useful utilities that come with node-config"
+msgstr ""
+
+#: ../../source/Home.rst:51
+msgid ""
+"`Community Utilities <https://github.com/lorenwest/node-config/wiki"
+"/Community-Utilities>`_ - Useful utilities written by the node-config "
+"community"
+msgstr ""
+
+#: ../../source/Home.rst:55
+msgid ""
+"`Future Compatibility <https://github.com/lorenwest/node-config/wiki"
+"/Future-Compatibility>`_ - Compatibility statement and future "
+"incompatibilities"
+msgstr ""
+
+#: ../../source/Home.rst:59
+msgid ""
+"`Upgrading from Config 0.x <https://github.com/lorenwest/node-config/wiki"
+"/Upgrading-From-Config-0.x>`_ - How to upgrade to node-config version 1.x"
+msgstr ""
+
+#: ../../source/Home.rst:63
+msgid "`Plugins <https://github.com/lorenwest/node-config/wiki/Plugins>`_"
+msgstr "`Plugins <https://github.com/lorenwest/node-config/wiki/Plugins>`_"
+
+#: ../../source/Home.rst:65
+msgid ""
+"`Runtime config for testing <https://github.com/lorenwest/node-"
+"config/wiki/Altering-configuration-values-for-testing-at-runtime>`_"
+msgstr ""
+

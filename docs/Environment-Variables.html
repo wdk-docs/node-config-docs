@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>环境变量 &mdash; node-config docs v2019.06.28 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="保留字" href="Reserved-Words.html" />
+    <link rel="prev" title="常见用法" href="Common-Usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> node-config docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">环境变量</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#node-env">NODE_ENV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">NODE_CONFIG_ENV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-config-dir">NODE_CONFIG_DIR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-config">NODE_CONFIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hostname-or-host">HOSTNAME (or HOST)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-app-instance">NODE_APP_INSTANCE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#allow-config-mutations">ALLOW_CONFIG_MUTATIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-config-strict-mode">NODE_CONFIG_STRICT_MODE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#suppress-no-config-warning">SUPPRESS_NO_CONFIG_WARNING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sub-Module-Configuration.html">子模块配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-From-Config-0.x.html">从Config 0.x升级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugins.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Altering-configuration-values-for-testing-at-runtime.html">更改配置值以便在运行时进行测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webpack-Usage.html">Webpack用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">node-config docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>环境变量</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Environment-Variables.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="environment-variables">
+<h1>环境变量<a class="headerlink" href="#environment-variables" title="永久链接至标题">¶</a></h1>
+<p>Node-config uses a handful of environment variables for its own
+configuration. It can also use <a class="reference external" href="#custom-environment-variables">custom environment
+variables</a> to override your app’s
+configuration. In both cases, these are generally exported in your shell
+before loading the app, but can also be supplied on the command line or
+in your app bootstrap.</p>
+<p>Example exporting to the O/S before loading your app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">application</span>
+<span class="n">export</span> <span class="n">NODE_ENV</span><span class="o">=</span><span class="n">stage</span>
+<span class="n">node</span> <span class="n">myapp</span><span class="o">.</span><span class="n">js</span>
+</pre></div>
+</div>
+<p>Example passing on the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">application</span>
+<span class="n">NODE_ENV</span><span class="o">=</span><span class="n">stage</span> <span class="n">node</span> <span class="n">myapp</span><span class="o">.</span><span class="n">js</span>
+</pre></div>
+</div>
+<p>Example setting in JavaScript before the first load of node-config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">NODE_ENV</span> <span class="o">=</span> <span class="s2">&quot;stage&quot;</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="node-env">
+<h2>NODE_ENV<a class="headerlink" href="#node-env" title="永久链接至标题">¶</a></h2>
+<p>This variable contains the name of your application’s deployment
+environment, representing the <code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> when determining config
+<a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order">file loading
+order</a>.
+Common values include <code class="docutils literal notranslate"><span class="pre">dev</span></code>, <code class="docutils literal notranslate"><span class="pre">stage</span></code>, <code class="docutils literal notranslate"><span class="pre">production-east</span></code>, etc. to
+fit your deployment strategy. The value for <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> can be
+overridden with the
+<a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env">NODE_CONFIG_ENV</a>
+environment variable.</p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> is available in
+<code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_ENV: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_ENV&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>NODE_CONFIG_ENV<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>In certain circumstances <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> may not be the preferred value for
+configuration identification. The <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_ENV</span></code> environment
+variable was introduced with (v1.28.0) which transparently, overrides
+the value of <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>.</p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_ENV</span></code> is available in
+<code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">NODE_CONFIG_ENV</span> <span class="o">=</span> <span class="s2">&quot;qa&quot;</span><span class="p">;</span>
+<span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">NODE_ENV</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG_ENV: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG_ENV&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">qa</span></code> configuration will be used in place of <code class="docutils literal notranslate"><span class="pre">production</span></code>.</p>
+</div>
+<div class="section" id="node-config-dir">
+<h2>NODE_CONFIG_DIR<a class="headerlink" href="#node-config-dir" title="永久链接至标题">¶</a></h2>
+<p>This contains the path to the directory containing your <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">configuration
+files</a>.
+It can be a direct path from the root, or a relative path if it begins
+with <code class="docutils literal notranslate"><span class="pre">./</span></code> or <code class="docutils literal notranslate"><span class="pre">../</span></code>. The default <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_DIR</span></code> is the
+<code class="docutils literal notranslate"><span class="pre">/config</span></code> directory under the <em>current working directory</em>, usually
+your application root - the value returned by
+<code class="docutils literal notranslate"><span class="pre">process.cwd()</span> <span class="pre">+</span> <span class="pre">'/config'</span></code>.</p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_DIR</span></code> is available in
+<code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG_DIR: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG_DIR&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="node-config">
+<h2>NODE_CONFIG<a class="headerlink" href="#node-config" title="永久链接至标题">¶</a></h2>
+<p>This allows you to override any configuration from the command line or
+shell environment. The <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> environment variable must be a
+JSON formatted string. Any configurations contained in this will
+override the configurations found and merged from the config files.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> is supplied both from the O/S environment <em>and</em> the
+command line, they’ll both be used with command line values favored over
+O/S environment values.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export NODE_CONFIG=&#39;{&quot;Customer&quot;:{&quot;dbConfig&quot;:{&quot;host&quot;:&quot;customerdb.prod&quot;}}}&#39;
+$ node myapp.js
+</pre></div>
+</div>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>, mixed from the O/S environment and
+command line is available in <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hostname-or-host">
+<h2>HOSTNAME (or HOST)<a class="headerlink" href="#hostname-or-host" title="永久链接至标题">¶</a></h2>
+<p>This variable contains the name of your host server, representing the
+<code class="docutils literal notranslate"><span class="pre">{hostname}</span></code> when determining config <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order">file loading
+order</a>.</p>
+<p>Sometimes the default hostname returned by <code class="docutils literal notranslate"><span class="pre">os.hostname()</span></code> isn’t what
+you expect, and setting this before running your app makes sure you’ve
+got the right name.</p>
+<p>For backward compatibility, if the <strong>HOST</strong> variable is set, that value
+is used instead.</p>
+<p>Regardless of the variable or default used, the current value of
+<code class="docutils literal notranslate"><span class="pre">HOSTNAME</span></code> is available in <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;HOSTNAME: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;HOSTNAME&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="node-app-instance">
+<h2>NODE_APP_INSTANCE<a class="headerlink" href="#node-app-instance" title="永久链接至标题">¶</a></h2>
+<p>As described in the <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances">multi instance
+deployment</a>
+section, if you’re running multiple instances of your app and need
+different configurations for each instance, this enables loading of
+instance specific config files.</p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> is available in
+<code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_APP_INSTANCE: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_APP_INSTANCE&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="allow-config-mutations">
+<h2>ALLOW_CONFIG_MUTATIONS<a class="headerlink" href="#allow-config-mutations" title="永久链接至标题">¶</a></h2>
+<p>If this environment variable contains anything, then mutations of the
+configuration object are allowed. This is for edge cases such as
+testing, where it is important to mutate configurations for different
+scenarios within the same execution.</p>
+<p>The safety afforded by making the configuration object immutable is lost
+when this environment variable is used.</p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">ALLOW_CONFIG_MUTATIONS</span></code> is available in
+<code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;ALLOW_CONFIG_MUTATIONS: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;ALLOW_CONFIG_MUTATIONS&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="node-config-strict-mode">
+<h2>NODE_CONFIG_STRICT_MODE<a class="headerlink" href="#node-config-strict-mode" title="永久链接至标题">¶</a></h2>
+<p>When strict mode is enabled, the following conditions must be true or an
+exception will thrown at require-time:</p>
+<ul class="simple">
+<li><p>There must be an explicit config file matching <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> if
+<code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> is set.</p></li>
+<li><p>There must be an explicit config file matching <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code>
+if <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> is set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> must not match ‘default’ or ‘local’ to avoid ambiguity.</p></li>
+</ul>
+<p>Strict mode is off by default.</p>
+</div>
+<div class="section" id="suppress-no-config-warning">
+<h2>SUPPRESS_NO_CONFIG_WARNING<a class="headerlink" href="#suppress-no-config-warning" title="永久链接至标题">¶</a></h2>
+<p>If this environment variable contains anything, then the following
+message</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">:</span> <span class="n">No</span> <span class="n">configurations</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">configuration</span> <span class="n">directory</span>
+</pre></div>
+</div>
+<p>will be suppressed if no configurations were found when loading
+node-config. This is important for NPM modules using node-config to
+allow apps using these sub-modules the option of using node-config if
+they choose, or a different configuration system without getting
+annoying warning messages.</p>
+<p>See the article on <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration">sub module
+configuration</a>
+for more information about using node-config in an NPM module.</p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">SUPPRESS_NO_CONFIG_WARNING</span></code> is available in
+<code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;SUPPRESS_NO_CONFIG_WARNING: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;SUPPRESS_NO_CONFIG_WARNING&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h1>Custom Environment Variables<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h1>
+<p>(New as of 1.1.0) Some deployment situations rely heavily on environment
+variables to configure secrets and settings best left out of a codebase.
+<a class="reference external" href="#node_config">NODE_CONFIG</a> lets you use a JSON string to deal with
+this, but sometimes simpler, flatter environment variables are better
+suited.</p>
+<p>To enable custom environment variables, create a configuration file,
+<code class="docutils literal notranslate"><span class="pre">config/custom-environment-variables.json</span></code> (or <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> or <code class="docutils literal notranslate"><span class="pre">.js</span></code> or
+<code class="docutils literal notranslate"><span class="pre">coffee</span></code>) mapping the environment variable names into your
+configuration structure. For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// config/custom-environment-variables.json</span>
+<span class="p">{</span>
+  <span class="s2">&quot;Customer&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbConfig&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;host&quot;</span><span class="o">:</span> <span class="s2">&quot;PROD_SERVER&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;credit&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;initialDays&quot;</span><span class="o">:</span> <span class="s2">&quot;CR_ID&quot;</span>
+    <span class="p">},</span>
+    <span class="c1">// Environment variables containing multiple configs</span>
+    <span class="c1">// New as of config@1.14.0</span>
+    <span class="s2">&quot;settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;adminAccounts&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;__name&quot;</span><span class="o">:</span> <span class="s2">&quot;ADMIN_ACCS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;__format&quot;</span><span class="o">:</span> <span class="s2">&quot;json&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…would cause <code class="docutils literal notranslate"><span class="pre">node-config</span></code> to check for the environment variables
+<code class="docutils literal notranslate"><span class="pre">PROD_SERVER</span></code> and <code class="docutils literal notranslate"><span class="pre">CR_ID</span></code>. If they exist, they would <em>override</em> the
+values for <code class="docutils literal notranslate"><span class="pre">Customer.dbConfig.host</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Customer.credit.initialDays</span></code> in your configuration.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">ADMIN_ACCS</span></code> it will try to parse the found environment variable
+according to the specified format in <code class="docutils literal notranslate"><span class="pre">_format</span></code> and <em>extend</em> the
+values for <code class="docutils literal notranslate"><span class="pre">Customer.settings.adminAccounts</span></code>. Empty environment
+variables are ignored, and their mappings have no effect on your config.</p>
+<p><strong>Precedence</strong>: Custom environment variables override all configuration
+files, including <code class="docutils literal notranslate"><span class="pre">local.json</span></code>. Only command line options take
+precedence over them.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Reserved-Words.html" class="btn btn-neutral float-right" title="保留字" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Common-Usage.html" class="btn btn-neutral float-left" title="常见用法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

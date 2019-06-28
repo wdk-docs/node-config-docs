@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/Community-Utilities.rst:2
+msgid "Community Utilities"
+msgstr "Community Utilities"
+
+#: ../../source/Community-Utilities.rst:5
+msgid "CEV - Custom Environment Variable Generator"
+msgstr "CEV - Custom Environment Variable Generator"
+
+#: ../../source/Community-Utilities.rst:7
+msgid "If you use `custom environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_ a lot, here’s a generator for them http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/"
+msgstr "If you use `custom environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_ a lot, here’s a generator for them http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/"
+
+#: ../../source/Community-Utilities.rst:13
+msgid "config-uncached"
+msgstr "config-uncached"
+
+#: ../../source/Community-Utilities.rst:15
+msgid "Sometimes for testing or DevOps, you need one script to load more than configuration. This is normally a challenge with ``node-config`` As a singleton, it returns the same configuration each time. To force node-config to reload the configuration, use the ```config-uncached`` <https://www.npmjs.com/package/config-uncached>`_ module."
+msgstr "Sometimes for testing or DevOps, you need one script to load more than configuration. This is normally a challenge with ``node-config`` As a singleton, it returns the same configuration each time. To force node-config to reload the configuration, use the ```config-uncached`` <https://www.npmjs.com/package/config-uncached>`_ module."
+

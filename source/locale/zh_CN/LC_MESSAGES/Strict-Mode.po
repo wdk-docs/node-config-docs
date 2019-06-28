@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Strict-Mode.rst:2
+msgid "Strict Mode"
+msgstr "严格的模式"
+
+#: ../../source/Strict-Mode.rst:4
+msgid "*Strict Mode was added in node-config 1.9.0.*"
+msgstr "*Strict Mode was added in node-config 1.9.0.*"
+
+#: ../../source/Strict-Mode.rst:6
+msgid ""
+"Several checks are made to make sure that ``NODE_ENV`` and "
+"``NODE_APP_INSTANCE`` values are sensible. If something appears to be "
+"unsafe or ambiguous, a warning will always be issued. If "
+"``NODE_CONFIG_STRICT_MODE`` is set to ‘true’ or ‘1’ in the environment, "
+"an exception will be thrown to ensure that the application doesn’t start "
+"up with a configuration that might be broken."
+msgstr ""
+
+#: ../../source/Strict-Mode.rst:14
+msgid "Diagnostic messages"
+msgstr "Diagnostic messages"
+
+#: ../../source/Strict-Mode.rst:17
+msgid ""
+"NODE_ENV value of ‘{NODE_ENV}’ did not match any deployment config file "
+"names."
+msgstr ""
+
+#: ../../source/Strict-Mode.rst:19
+msgid ""
+"If ``NODE_ENV`` is set in the environment, we check if there is any file "
+"matching that name in the ``config/`` directory containing valid syntax. "
+"You can create a file with the name matching the desired ``NODE_ENV`` "
+"value: ``{NODE_ENV}.json`` and include the contents ‘{}’, which is an "
+"empty valid JSON object."
+msgstr ""
+
+#: ../../source/Strict-Mode.rst:25 ../../source/Strict-Mode.rst:38
+msgid ""
+"This could also indicate a problem with specifying your `configuration "
+"directory or the file load order <https://github.com/lorenwest/node-"
+"config/wiki/Configuration-Files>`_."
+msgstr ""
+
+#: ../../source/Strict-Mode.rst:30
+msgid ""
+"NODE_APP_INSTANCE value of ‘{NODE_APP_INSTANCE}’ did not match any "
+"instance config file names."
+msgstr ""
+
+#: ../../source/Strict-Mode.rst:32
+msgid ""
+"If ``NODE_APP_INSTANCE`` is set in the environment, we check if there any"
+" file matching that name in the ``config/`` directory. If there’s "
+"actually no problem, create a file name matching the desired ``NODE_ENV``"
+" value: ``default-{NODE_APP_INSTANCE}.json`` and include the contents "
+"‘{}’, which is an empty valid JSON object."
+msgstr ""
+
+#: ../../source/Strict-Mode.rst:43
+msgid "NODE_ENV value of ‘default’ is ambiguous."
+msgstr "NODE_ENV value of ‘default’ is ambiguous."
+
+#: ../../source/Strict-Mode.rst:46
+msgid "NODE_ENV value of ‘local’ is ambiguous."
+msgstr "NODE_ENV value of ‘local’ is ambiguous."
+
+#: ../../source/Strict-Mode.rst:48
+msgid ""
+"Files named ``default`` and ``local`` have a special place in the config "
+"loading order. Since we also support files simply named after "
+"``NODE_ENV`` we can’t be sure whether a file named ``default`` or "
+"``local`` was meant be represent one of these special files, or after "
+"your NODE_ENV. Without Strict Mode, these files could end up being loaded"
+" *twice* in the load order which is probably not what you want."
+msgstr ""
+
+#~ msgid "Strict-Mode"
+#~ msgstr ""
+

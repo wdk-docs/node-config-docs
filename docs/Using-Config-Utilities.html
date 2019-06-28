@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>使用配置实用程序 &mdash; node-config docs v2019.06.28 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="社区公用事业" href="Community-Utilities.html" />
+    <link rel="prev" title="检查配置源" href="Examining-Configuration-Sources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> node-config docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sub-Module-Configuration.html">子模块配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">使用配置实用程序</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#extenddeep-mergeinto-mergefrom-depth">extendDeep(mergeInto, mergeFrom…, depth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clonedeep-copyfrom-depth">cloneDeep(copyFrom, depth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#equalsdeep-object1-object2-depth">equalsDeep(object1, object2, depth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diffdeep-object1-object2-depth">diffDeep(object1, object2, depth)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#makeimmutable-object-propertyname-propertyvalue">makeImmutable(object, propertyName, propertyValue)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#makehidden-object-propertyname-propertyvalue">makeHidden(object, propertyName, propertyValue)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getenv-varname">getEnv(varName)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loadfileconfigs-directory">loadFileConfigs(directory)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toobject-config">toObject(config)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-From-Config-0.x.html">从Config 0.x升级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugins.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Altering-configuration-values-for-testing-at-runtime.html">更改配置值以便在运行时进行测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webpack-Usage.html">Webpack用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">node-config docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>使用配置实用程序</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Using-Config-Utilities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-config-utilities">
+<h1>使用配置实用程序<a class="headerlink" href="#using-config-utilities" title="永久链接至标题">¶</a></h1>
+<p>Node-config comes with a handy set of utilities necessary for
+implementing node-config. These utilities are exposed in the
+<code class="docutils literal notranslate"><span class="pre">config.util</span></code> object for use in your own applications.</p>
+<p>Below is a list of these utilities, in order of general usefulness -
+your mileage may vary.</p>
+<div class="section" id="extenddeep-mergeinto-mergefrom-depth">
+<h2>extendDeep(mergeInto, mergeFrom…, depth)<a class="headerlink" href="#extenddeep-mergeinto-mergefrom-depth" title="永久链接至标题">¶</a></h2>
+<p>Extend an object (and any object it contains) with one or more objects
+(and objects contained in them).</p>
+<p>This does not replace deep objects as other extend functions do, but
+dives into them extending individual elements instead. If more than one
+of the extending objects define the same key, then: * if all the
+respective values are objects, they are merged recursively by calling
+the same function. * if none of the respective values are objects, then
+the latest one is respected. * avoid mixing objects and non-objects for
+the same key as it can lead to unexpected behaviour.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>mergeInto</p>
+</td><td><p>object</p>
+</td><td><p>The object to merge into</p>
+</td></tr><tr><td><p>mergeFrom…</p>
+</td><td><p>object</p>
+</td><td><p>Any number of objects to merge from</p>
+</td></tr><tr><td><p>depth</p>
+</td><td><p>integer</p>
+</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>object</p>
+</td><td><p>The altered mergeInto object is returned</p>
+</td></tr></table><p>The following example merges the contents of two objects into a new
+object.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">newObject</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">extendDeep</span><span class="p">({},</span> <span class="n">baseObject</span><span class="p">,</span> <span class="n">anotherObject</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="clonedeep-copyfrom-depth">
+<h2>cloneDeep(copyFrom, depth)<a class="headerlink" href="#clonedeep-copyfrom-depth" title="永久链接至标题">¶</a></h2>
+<p>Return a deep copy of the specified object.</p>
+<p>This returns a new object with all elements copied from the specified
+object. Deep copies are made of objects and arrays so you can do
+anything with the returned object without affecting the input object.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>copyFrom</p>
+</td><td><p>object</p>
+</td><td><p>The original object to copy from</p>
+</td></tr><tr><td><p>depth</p>
+</td><td><p>integer</p>
+</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>object</p>
+</td><td><p>A new object with the elements copied from the copyFrom object</p>
+</td></tr></table><p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cloneDeep</span><span class="p">(</span><span class="n">fromObject</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="equalsdeep-object1-object2-depth">
+<h2>equalsDeep(object1, object2, depth)<a class="headerlink" href="#equalsdeep-object1-object2-depth" title="永久链接至标题">¶</a></h2>
+<p>Return true if two objects have equal contents.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>object1</p>
+</td><td><p>object</p>
+</td><td><p>The object to compare from</p>
+</td></tr><tr><td><p>object2</p>
+</td><td><p>object</p>
+</td><td><p>The object to compare with</p>
+</td></tr><tr><td><p>depth</p>
+</td><td><p>integer</p>
+</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>boolean</p>
+</td><td><p>true if both objects have equivalent contents</p>
+</td></tr></table><p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">customerCopy</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cloneDeep</span><span class="p">(</span><span class="n">myCustomer</span><span class="p">);</span>
+<span class="n">var</span> <span class="n">same</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">equalsDeep</span><span class="p">(</span><span class="n">myCustomer</span><span class="p">,</span> <span class="n">customerCopy</span><span class="p">);</span> <span class="o">//</span> <span class="o">&lt;--</span> <span class="n">true</span>
+<span class="n">customerCopy</span><span class="o">.</span><span class="n">creditLimit</span> <span class="o">=</span> <span class="mi">7000</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">same</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">equalsDeep</span><span class="p">(</span><span class="n">myCustomer</span><span class="p">,</span> <span class="n">customerCopy</span><span class="p">);</span> <span class="o">//</span> <span class="o">&lt;--</span> <span class="n">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="diffdeep-object1-object2-depth">
+<h2>diffDeep(object1, object2, depth)<a class="headerlink" href="#diffdeep-object1-object2-depth" title="永久链接至标题">¶</a></h2>
+<p>Returns an object containing all elements that differ between two
+objects.</p>
+<p>It works best when object2 originated by deep copying object1, then
+changes were made to object2, and you want an object that would give you
+the changes made to object1 which resulted in object2.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>object1</p>
+</td><td><p>object</p>
+</td><td><p>The object to compare from</p>
+</td></tr><tr><td><p>object2</p>
+</td><td><p>object</p>
+</td><td><p>The object to compare with</p>
+</td></tr><tr><td><p>depth</p>
+</td><td><p>integer</p>
+</td><td><p>An optional depth to prevent recursion. Default: 20.</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>object</p>
+</td><td><p>A differential object, which if extended onto object1 would result in
+object2.</p>
+</td></tr></table></div>
+<div class="section" id="makeimmutable-object-propertyname-propertyvalue">
+<h2>makeImmutable(object, propertyName, propertyValue)<a class="headerlink" href="#makeimmutable-object-propertyname-propertyvalue" title="永久链接至标题">¶</a></h2>
+<p>Make a javascript object property immutable (assuring it cannot be
+changed from the current value).</p>
+<p>If the propertyName isn’t supplied, all properties of the object are
+made immutable.</p>
+<p>Properties which themselves are objects are called recursively, making
+sub-objects immutable.</p>
+<p>New properties can be added to this (and sub) objects, and those
+properties will not be immutable unless this method is called after
+adding the properties.</p>
+<p>This operation cannot be undone.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>object</p>
+</td><td><p>object</p>
+</td><td><p>The object containing the properties to make immutable</p>
+</td></tr><tr><td><p>propertyName</p>
+</td><td><p>string | [string]</p>
+</td><td><p>(optional) Property name (or array of names) to make immutable. If not
+specified, all properties of the object are made immutable</p>
+</td></tr><tr><td><p>propertyValue</p>
+</td><td><p>mixed</p>
+</td><td><p>(optional) Property value to set the property to before making
+immutable. Retained for backward compatibility, and for use only when
+propertyName is not an array.</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>object</p>
+</td><td><p>The original object, with the newly immutable attributes</p>
+</td></tr></table><p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">hello</span><span class="p">:</span><span class="s1">&#39;world&#39;</span><span class="p">};</span>
+<span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">makeImmutable</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="n">a</span><span class="o">.</span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;there&#39;</span><span class="p">;</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span> <span class="p">(</span><span class="s1">&#39;Sorry, hello is still &#39;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">hello</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="makehidden-object-propertyname-propertyvalue">
+<h2>makeHidden(object, propertyName, propertyValue)<a class="headerlink" href="#makehidden-object-propertyname-propertyvalue" title="永久链接至标题">¶</a></h2>
+<p>Make an object property hidden so it doesn’t appear when enumerating
+elements of the object.</p>
+<p>The property still exists and can be read from and written to, but it
+won’t show up in <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code> loops, <code class="docutils literal notranslate"><span class="pre">Object.keys()</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> type methods.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>object</p>
+</td><td><p>object</p>
+</td><td><p>The object containing the property to make hidden</p>
+</td></tr><tr><td><p>propertyName</p>
+</td><td><p>string</p>
+</td><td><p>Name of the property to make hidden</p>
+</td></tr><tr><td><p>propertyValue</p>
+</td><td><p>string</p>
+</td><td><p>(optional) Set the property to this value</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>object</p>
+</td><td><p>The original object, with the newly hidden property</p>
+</td></tr></table><p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">hello</span><span class="p">:</span><span class="s2">&quot;world&#39;};</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span> <span class="p">(</span><span class="s1">&#39;Before hiding: &#39;</span> <span class="o">+</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">makeHidden</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span> <span class="p">(</span><span class="s1">&#39;After hiding: &#39;</span> <span class="o">+</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span> <span class="p">(</span><span class="s1">&#39;Hidden, but still there: &#39;</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">hello</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getenv-varname">
+<h2>getEnv(varName)<a class="headerlink" href="#getenv-varname" title="永久链接至标题">¶</a></h2>
+<p>Get the current value of a config environment variable</p>
+<p>This method returns the value of the specified config environment
+variable, including any defaults or overrides.</p>
+<p>Environment variables that you can inspect include <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CONFIG_DIR</span></code>, <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>, <code class="docutils literal notranslate"><span class="pre">HOSTNAME</span></code>, <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code>,
+and others listed in the <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">environment
+variables</a>
+wiki page.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>varName</p>
+</td><td><p>string</p>
+</td><td><p>The environment variable name</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>string</p>
+</td><td><p>The value of the environment variable</p>
+</td></tr></table><p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Configuration directory: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;CONFIG_DIR&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loadfileconfigs-directory">
+<h2>loadFileConfigs(directory)<a class="headerlink" href="#loadfileconfigs-directory" title="永久链接至标题">¶</a></h2>
+<p>Reads the given directory using the same conventions as the main config
+directory (including environment variable reading, except for
+<code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>) and returns an object with the result.</p>
+<p>If no directory is given, reads the standard config directory and parses
+<code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>.</p>
+<p>This is useful for using with submodules, e.g.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">config</span> <span class="nx">from</span> <span class="s1">&#39;config&#39;</span>
+<span class="kr">const</span> <span class="nx">ourConfigDir</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">baseConfig</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">loadFileConfigs</span><span class="p">(</span><span class="nx">ourConfigDir</span><span class="p">)</span>
+<span class="nx">config</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">setModuleDefaults</span><span class="p">(</span><span class="s1">&#39;MyModule&#39;</span><span class="p">,</span> <span class="nx">baseConfig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="toobject-config">
+<h2>toObject(config)<a class="headerlink" href="#toobject-config" title="永久链接至标题">¶</a></h2>
+<p>Returns a new deep copy of the current config object, or any part of the
+config if provided.</p>
+<p>If config is not provided (<code class="docutils literal notranslate"><span class="pre">undefined</span></code>), the current config object is
+dumped in its entirety.</p>
+<table><tr><th><p>param</p>
+</th><th><p>type</p>
+</th><th><p>description</p>
+</th></tr><tr><td><p>config</p>
+</td><td><p>object</p>
+</td><td><p>The part of the config to copy and serialize. Omit this argument to
+return the entire config.</p>
+</td></tr><tr><td><p>(return)</p>
+</td><td><p>object</p>
+</td><td><p>The cloned config or part of the config</p>
+</td></tr></table><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">toObject</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Community-Utilities.html" class="btn btn-neutral float-right" title="社区公用事业" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Examining-Configuration-Sources.html" class="btn btn-neutral float-left" title="检查配置源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>配置文件 &mdash; node-config docs v2019.06.28 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="JavaScript配置文件的特殊功能" href="Special-features-for-JavaScript-configuration-files.html" />
+    <link rel="prev" title="维基页面" href="Home.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> node-config docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">配置文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#config-directory">Config Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-load-order">File Load Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-files"><code class="docutils literal notranslate"><span class="pre">local</span></code> files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#default-node-env">Default NODE_ENV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arrays-are-merged-by-replacement">Arrays are merged by replacement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Multi Instance Deployments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-formats">File Formats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-object-notation-json">Javascript Object Notation - .json</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-5-object-notation-json5">Javascript 5 Object Notation - .json5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#human-json-hjson">Human JSON - .hjson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#yaml-aint-markup-language-yaml">Yaml ain’t Markup Language - .yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-module-js">JavaScript module - .js</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coffeescript-module-coffee">CoffeeScript module - .coffee</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coffeescript-object-notation-cson">CoffeeScript Object Notation - .cson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties-file-format-properties">Properties file format - .properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toml-file-format-toml">TOML file format - .toml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#typescript-ts">Typescript - .ts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extensible-markup-language-xml">Extensible Markup Language - .xml</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sub-Module-Configuration.html">子模块配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-From-Config-0.x.html">从Config 0.x升级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugins.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Altering-configuration-values-for-testing-at-runtime.html">更改配置值以便在运行时进行测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webpack-Usage.html">Webpack用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">node-config docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>配置文件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Configuration-Files.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-files">
+<h1>配置文件<a class="headerlink" href="#configuration-files" title="永久链接至标题">¶</a></h1>
+<div class="section" id="config-directory">
+<h2>Config Directory<a class="headerlink" href="#config-directory" title="永久链接至标题">¶</a></h2>
+<p>Node-config reads configuration files in the <code class="docutils literal notranslate"><span class="pre">./config</span></code> directory for
+the running process, typically the application root. This can be
+overridden by setting the <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> environment variable to
+the directory containing your configuration files. It can also be set
+from node, before loading Node-config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;NODE_CONFIG_DIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__dirname</span> <span class="o">+</span> <span class="s2">&quot;/configDir/&quot;</span><span class="p">;</span>
+<span class="n">const</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> can be a full path from your root directory, or a
+relative path from the process if the value begins with <code class="docutils literal notranslate"><span class="pre">./</span></code> or
+<code class="docutils literal notranslate"><span class="pre">../</span></code>.</p>
+</div>
+<div class="section" id="file-load-order">
+<h2>File Load Order<a class="headerlink" href="#file-load-order" title="永久链接至标题">¶</a></h2>
+<p>Files in the config directory are loaded in the following order:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="o">.</span><span class="n">EXT</span>
+<span class="n">default</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">short_hostname</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">short_hostname</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">short_hostname</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">short_hostname</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">full_hostname</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">full_hostname</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">full_hostname</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">{</span><span class="n">full_hostname</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="n">local</span><span class="o">.</span><span class="n">EXT</span>
+<span class="n">local</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="n">local</span><span class="o">-</span><span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="n">local</span><span class="o">-</span><span class="p">{</span><span class="n">deployment</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
+<span class="p">(</span><span class="n">Finally</span><span class="p">,</span> <span class="n">custom</span> <span class="n">environment</span> <span class="n">variables</span> <span class="n">can</span> <span class="n">override</span> <span class="nb">all</span> <span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EXT</span></code> can be .yml, .yaml, .xml, .coffee, .cson,
+<a class="reference external" href="https://github.com/gagle/node-properties">.properties</a>,
+<a class="reference external" href="http://json.org/">.json</a>, <a class="reference external" href="http://json5.org/">.json5</a>,
+<a class="reference external" href="http://laktak.github.io/hjson/">.hjson</a>, .ts or .js depending on
+the format you prefer (see below)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{instance}</span></code> is an optional instance name string for
+<a class="reference external" href="#multi-instance-deployments">Multi-Instance Deployments</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> is your server name up to the first dot, from
+the <code class="docutils literal notranslate"><span class="pre">$HOST</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOSTNAME</span></code> environment variable or
+<code class="docutils literal notranslate"><span class="pre">os.hostname()</span></code> (in that order). For example if your hostname is
+<code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> then it would load <code class="docutils literal notranslate"><span class="pre">www.EXT</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{full_hostname}</span></code> is your whole server name, you may use this when
+<code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> collides with other machines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> is the deployment name, from the <code class="docutils literal notranslate"><span class="pre">$NODE_ENV</span></code> (or
+if specified, <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_ENV</span></code>) environment variable</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">default.EXT</span></code> file is designed to contain all configuration
+parameters from which other files may overwrite. Overwriting is done on
+a parameter by parameter basis, so subsequent files contain only the
+parameters unique for that override.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{hostname}</span></code> and <code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> files allow you to tune
+configurations for a particular server or deployment. These files are
+designed to live along with other files in your version control system.</p>
+</div>
+<div class="section" id="local-files">
+<h2><code class="docutils literal notranslate"><span class="pre">local</span></code> files<a class="headerlink" href="#local-files" title="永久链接至标题">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">local</span></code> files are intended to <em>not</em> be tracked in your version
+control system. External configuration management tools can write these
+files upon application deployment, before application loading.</p>
+<p>The best practice for using <code class="docutils literal notranslate"><span class="pre">local</span></code> files is avoid a global
+<code class="docutils literal notranslate"><span class="pre">local.EXT</span></code> file that would affect all ‘{deployment}’ and ‘{instance}’
+cases. Instead, choose the most specific variant of
+<code class="docutils literal notranslate"><span class="pre">local-{instance}.EXT</span></code>, <code class="docutils literal notranslate"><span class="pre">local-{deployment}.EXT</span></code> or
+<code class="docutils literal notranslate"><span class="pre">local-{deployment}-{instance}.EXT</span></code> that applies. With this design you
+can avoid a case where tests pass locally due to local overrides but
+don’t pass after you push. Choose a <code class="docutils literal notranslate"><span class="pre">local</span></code> file variant that is not
+used for your testing context!</p>
+</div>
+<div class="section" id="default-node-env">
+<h2>Default NODE_ENV<a class="headerlink" href="#default-node-env" title="永久链接至标题">¶</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> is not set in the environment, a default value of
+<code class="docutils literal notranslate"><span class="pre">development</span></code> is used.</p>
+</div>
+<div class="section" id="arrays-are-merged-by-replacement">
+<h2>Arrays are merged by replacement<a class="headerlink" href="#arrays-are-merged-by-replacement" title="永久链接至标题">¶</a></h2>
+<p>Note that arrays are always merged by replacement. That is, the complete
+contents of an array in an override file will replace the complete array
+from a parent file.</p>
+</div>
+<div class="section" id="id1">
+<h2>Multi Instance Deployments<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>In order to support different configurations for each application
+instance running on a machine, the <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">environment
+variable</a>
+is inspected, and used for loading instance specific files.</p>
+<p>For example, if the <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> environment variable is set,
+immediately following the load of <code class="docutils literal notranslate"><span class="pre">default.json</span></code>, a file by the name
+of <code class="docutils literal notranslate"><span class="pre">default-3.json</span></code> will be loaded if present.</p>
+<p>This works for all configuration files, so if your
+<code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> and <code class="docutils literal notranslate"><span class="pre">NODE_ENV=stage</span></code>, then immediately after
+loading <code class="docutils literal notranslate"><span class="pre">stage.yaml</span></code>, a file by the name of <code class="docutils literal notranslate"><span class="pre">stage-3.yaml</span></code> will be
+loaded if present.</p>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables">Custom environment
+variables</a>
+override all configuration files, including local.json. Only command
+line options take precedence over them.</p>
+</div>
+<div class="section" id="file-formats">
+<h2>File Formats<a class="headerlink" href="#file-formats" title="永久链接至标题">¶</a></h2>
+<p>The following file formats are supported, recognized by their file
+extension.</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">//</span></code> and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code> style comments are removed before file
+loading, allowing you to add comments to file formats such as .json that
+don’t natively support comments.</p>
+<div class="section" id="javascript-object-notation-json">
+<h3>Javascript Object Notation - .json<a class="headerlink" href="#javascript-object-notation-json" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.json</span></code> are parsed in JSON format. Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Customer&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dbConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5984</span><span class="p">,</span>
+      <span class="nt">&quot;dbName&quot;</span><span class="p">:</span> <span class="s2">&quot;customers&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;credit&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;initialLimit&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="nt">&quot;initialDays&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="javascript-5-object-notation-json5">
+<h3>Javascript 5 Object Notation - .json5<a class="headerlink" href="#javascript-5-object-notation-json5" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.json5</span></code> are parsed in <a class="reference external" href="http://json5.org/">JSON5</a>
+format. Example:</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  Customer: {
+    dbConfig: {
+      host: &quot;localhost&quot;,
+      port: 5984,
+      dbName: &quot;customers&quot;,
+    },
+    credit: {
+      initialLimit: 100,
+      initialDays: 1
+    }
+  }
+}
+</pre></div>
+</div>
+<p>The .json5 parser is dependency of node-config. This is the only custom
+file format which doesn’t require you to add it as a dependency to
+application.</p>
+</div>
+<div class="section" id="human-json-hjson">
+<h3>Human JSON - .hjson<a class="headerlink" href="#human-json-hjson" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.hjson</span></code> are parsed in
+<a class="reference external" href="http://laktak.github.io/hjson/">Hjson</a> format. Example:</p>
+<div class="highlight-hjson notranslate"><div class="highlight"><pre><span></span>{
+  Customer:
+  {
+    dbConfig:
+    {
+      host: localhost
+      port: 5984
+      dbName: customers
+    }
+    credit:
+    {
+      initialLimit: 100
+      initialDays: 1
+    }
+  }
+}
+</pre></div>
+</div>
+<p>The .hjson parser is not a dependency of node-config. The
+<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
+must contain the <code class="docutils literal notranslate"><span class="pre">hjson</span></code> module in order to read and parse .hjson
+files.</p>
+</div>
+<div class="section" id="yaml-aint-markup-language-yaml">
+<h3>Yaml ain’t Markup Language - .yaml<a class="headerlink" href="#yaml-aint-markup-language-yaml" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> or <code class="docutils literal notranslate"><span class="pre">.yml</span></code> are parsed in YAML format.
+Node-config doesn’t include a YAML library, and beware there are some
+good ones and some not-so-good ones out there. If no global <code class="docutils literal notranslate"><span class="pre">Yaml</span></code>
+variable is available, node-config will attempt to load a good one
+(<a class="reference external" href="https://github.com/nodeca/js-yaml">js-yaml</a>). Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">// Customer module configs</span>
+<span class="l l-Scalar l-Scalar-Plain">Customer</span><span class="p p-Indicator">:</span>
+  <span class="nt">dbConfig</span><span class="p">:</span>
+    <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
+    <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5984</span>
+    <span class="nt">dbName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">customers</span>
+  <span class="nt">credit</span><span class="p">:</span>
+    <span class="nt">initialLimit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+    <span class="l l-Scalar l-Scalar-Plain">// Set low for development</span>
+    <span class="nt">initialDays</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
+must contain the yaml parser, and <code class="docutils literal notranslate"><span class="pre">js-yaml</span></code> is the suggested parser.</p>
+</div>
+<div class="section" id="javascript-module-js">
+<h3>JavaScript module - .js<a class="headerlink" href="#javascript-module-js" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.js</span></code> are loaded and run as a JavaScript module. The
+module must export the configuration object. JavaScript modules support
+the ability to have “deferred” and “raw” values.</p>
+<p>See <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files">Special features for JavaScript configuration
+files</a>
+for details.</p>
+</div>
+<div class="section" id="coffeescript-module-coffee">
+<h3>CoffeeScript module - .coffee<a class="headerlink" href="#coffeescript-module-coffee" title="永久链接至标题">¶</a></h3>
+<p>You know what you like. Files ending in <code class="docutils literal notranslate"><span class="pre">.coffee</span></code> are loaded and run
+as a CoffeeScript module. Example CoffeeScript configuration file:</p>
+<div class="highlight-coffee notranslate"><div class="highlight"><pre><span></span><span class="nv">module.exports =</span>
+  <span class="c1"># Customer module configs</span>
+  <span class="nv">Customer:</span>
+    <span class="nv">dbConfig:</span>
+      <span class="nv">host: </span><span class="s">&quot;localhost&quot;</span>
+      <span class="nv">port: </span><span class="mi">5984</span>
+      <span class="nv">dbName: </span><span class="s">&quot;customers&quot;</span>
+    <span class="nv">credit:</span>
+      <span class="nv">initialLimit: </span><span class="mi">100</span>
+      <span class="o">//</span> <span class="nx">Set</span> <span class="nx">low</span> <span class="k">for</span> <span class="nx">development</span>
+      <span class="nv">initialDays: </span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>CoffeeScript is not a dependency of node-config. The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code>
+section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file must contain
+coffee-script in order to read CoffeeScript configuration files.</p>
+</div>
+<div class="section" id="coffeescript-object-notation-cson">
+<h3>CoffeeScript Object Notation - .cson<a class="headerlink" href="#coffeescript-object-notation-cson" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.cson</span></code> are loaded and parsed in CoffeeScript object
+notation, because you can never have enough file formats. Example CSON
+configuration file:</p>
+<div class="highlight-cson notranslate"><div class="highlight"><pre><span></span>{
+  #comment
+  Customers: {
+    dbName: &#39;customers&#39;
+    dbPassword: &#39;pw1&#39;
+    lang: [
+      &#39;en&#39;
+      &#39;es&#39;
+    ]
+  },
+  AnotherModule: {
+    param4: &quot;value4&quot;
+  },
+  staticArray: [
+    2
+    1
+    3
+  ]
+}
+</pre></div>
+</div>
+<p>CSON is not a dependency of node-config. The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of
+your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file must contain the <code class="docutils literal notranslate"><span class="pre">cson</span></code>
+module in order to read CoffeeScript object notation configuration
+files.</p>
+</div>
+<div class="section" id="properties-file-format-properties">
+<h3>Properties file format - .properties<a class="headerlink" href="#properties-file-format-properties" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.properties</span></code> are loaded and parsed in properties file
+notation, a dot-style name spacing style popular in many non-javascript
+utilities. Example .properties configuration file:</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># Comment</span>
+<span class="na">Customer.dbConfig.host</span> <span class="o">=</span> <span class="s">localhost</span>
+<span class="na">Customer.dbConfig.port</span> <span class="o">=</span> <span class="s">5984</span>
+</pre></div>
+</div>
+<p>Every configuration would end up being a string, but that’s not
+particularly troublesome in javascript.</p>
+<p>The .properties parser is not a dependency of node-config. The
+<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
+must contain the <code class="docutils literal notranslate"><span class="pre">properties</span></code> module in order to read and parse
+.properties files.</p>
+</div>
+<div class="section" id="toml-file-format-toml">
+<h3>TOML file format - .toml<a class="headerlink" href="#toml-file-format-toml" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.toml</span></code> are loaded and parsed in TOML (Tom’s Obvious,
+Minimal Language), a new and very simple configuration file format.
+Example .toml configuration file:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span>[database]
+host = &quot;localhost&quot;
+port = 5984
+</pre></div>
+</div>
+<p>The .toml parser is not a dependency of node-config. The
+<code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
+must contain the <code class="docutils literal notranslate"><span class="pre">toml</span></code> module in order to read and parse .toml files.</p>
+</div>
+<div class="section" id="typescript-ts">
+<h3>Typescript - .ts<a class="headerlink" href="#typescript-ts" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.ts</span></code> are loaded and run as Typescript modules.
+Example .ts configuration file:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">Customer</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">dbConfig</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">host</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+      <span class="nx">port</span>: <span class="kt">5984</span><span class="p">,</span>
+      <span class="nx">dbName</span><span class="o">:</span> <span class="s2">&quot;customers&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">credit</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">initialLimit</span>: <span class="kt">100</span><span class="p">,</span>
+      <span class="nx">initialDays</span>: <span class="kt">1</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="../tree/master/test/x-config-ts">Typescript testing files</a> for
+more examples.</p>
+<p>Typescript is not a dependency of node-config. The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code>
+section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file must contain
+typescript in order to read Typescript configuration files.</p>
+</div>
+<div class="section" id="extensible-markup-language-xml">
+<h3>Extensible Markup Language - .xml<a class="headerlink" href="#extensible-markup-language-xml" title="永久链接至标题">¶</a></h3>
+<p>Files ending in <code class="docutils literal notranslate"><span class="pre">.xml</span></code> are parsed in XML format. Example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>// Customer module configs
+<span class="nt">&lt;config&gt;</span>
+  <span class="nt">&lt;Customer&gt;</span>
+    <span class="nt">&lt;dbConfig&gt;</span>
+      <span class="nt">&lt;host&gt;</span>localhost<span class="nt">&lt;/host&gt;</span>
+      <span class="nt">&lt;port&gt;</span>5984<span class="nt">&lt;/port&gt;</span>
+      <span class="nt">&lt;dbName&gt;</span>customers<span class="nt">&lt;/dbName&gt;</span>
+    <span class="nt">&lt;/dbConfig&gt;</span>
+    <span class="nt">&lt;credit&gt;</span>
+      <span class="nt">&lt;initialLimit&gt;</span>100<span class="nt">&lt;/initialLimit&gt;</span>
+      <span class="nt">&lt;initialDays&gt;</span>1<span class="nt">&lt;/initialDays&gt;</span>
+    <span class="nt">&lt;/credit&gt;</span>
+  <span class="nt">&lt;/Customer&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> section of your application’s <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file
+must contain x2js in order to read XML configuration files.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Special-features-for-JavaScript-configuration-files.html" class="btn btn-neutral float-right" title="JavaScript配置文件的特殊功能" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Home.html" class="btn btn-neutral float-left" title="维基页面" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

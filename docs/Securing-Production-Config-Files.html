@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>保护生产配置文件 &mdash; node-config docs v2019.06.28 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="严格的模式" href="Strict-Mode.html" />
+    <link rel="prev" title="从DB配置" href="Configuring-from-a-DB.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> node-config docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">Custom Environment Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sub-Module-Configuration.html">子模块配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-From-Config-0.x.html">从Config 0.x升级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugins.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Altering-configuration-values-for-testing-at-runtime.html">更改配置值以便在运行时进行测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">保护生产配置文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-crypt-workflow">Git-crypt Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mimicking-production-mode">Mimicking production mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment-servers-build-servers-ci-servers">Deployment Servers, Build Servers, CI Servers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#git-clone-once-only">Git Clone Once Only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-clone-every-time">Git Clone Every Time</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webpack-Usage.html">Webpack用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">node-config docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>保护生产配置文件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Securing-Production-Config-Files.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="securing-production-config-files">
+<h1>保护生产配置文件<a class="headerlink" href="#securing-production-config-files" title="永久链接至标题">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>Once you have split out your production config, you may want to encrypt
+any files that contain sensitive information (API Keys, passwords etc).
+This page will get you started with <a class="reference external" href="https://github.com/AGWA/git-crypt">git-crypt</a> ,
+which works well with node-config. With git-crypt, you can keep your production config
+files under version control with git, while also keeping them secure via
+encryption.</p>
+<p>Here is the scenario we’ll be configuring:</p>
+<ul class="simple">
+<li><p>You, Paul and Ringo are all working on a project, using git. There
+are server deployments involved.</p></li>
+<li><p>Ringo is a contributor, and doesn’t need or want to see production
+passwords, API secret keys etc.</p></li>
+<li><p>You and Paul both maintain the servers and need access to the
+sensitive info.</p></li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites:<a class="headerlink" href="#prerequisites" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/AGWA/git-crypt.git">git-crypt</a> is installed.</p>
+<ul>
+<li><p>On OS X : <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git-crypt</span></code></p></li>
+<li><p>On Ubuntu / Debian (since 16.04 LTS) <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-crypt</span></code></p></li>
+<li><p>On other systems: <a class="reference external" href="https://github.com/AGWA/git-crypt/blob/master/INSTALL.md">INSTALL</a></p></li>
+</ul>
+</li>
+<li><p>Your project is using git, your working copy is clean, and you
+haven’t committed any sensitive information to it yet.</p>
+<ul>
+<li><p>If you <em>have</em> accidentally committed sensitive information to your
+repository, you’ll need to clean it using <a class="reference external" href="https://rtyley.github.io/bfg-repo-cleaner/">bfg repo
+cleaner</a>.</p></li>
+</ul>
+</li>
+<li><p>You have <a class="reference external" href="https://www.gnupg.org/">GnuPG</a> installed.</p>
+<ul>
+<li><p>On OS X, the GPG Keychain that is part of <a class="reference external" href="https://gpgtools.org/gpgsuite.html">GPG
+Suite</a> is very easy to use.</p></li>
+<li><p>On Windows, <a class="reference external" href="https://www.gpg4win.org/">GPG4Win</a> looks pretty
+good.</p></li>
+<li><p>On Unix/Linux,
+<a class="reference external" href="https://www.gnupg.org/related_software/gpa/index.html">GPA</a>
+provides a front-end.</p></li>
+</ul>
+</li>
+<li><p>You have a <code class="docutils literal notranslate"><span class="pre">config</span></code> folder where your configuration files will be
+kept.</p></li>
+</ul>
+</div>
+<div class="section" id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="永久链接至标题">¶</a></h2>
+<div class="section" id="initial-setup">
+<span id="id2"></span><h3>Initial Setup<a class="headerlink" href="#initial-setup" title="永久链接至标题">¶</a></h3>
+<p>We’re going to set up git-crypt so that the <code class="docutils literal notranslate"><span class="pre">production.json</span></code> file is
+encrypted for Ringo, but the same file is plain JSON for yourself and
+Paul.</p>
+<ol class="arabic">
+<li><p>Initialise the repository to use git-crypt</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">init</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add your own public GPG key (already on your GPG keychain) as a
+trusted user</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">add</span><span class="o">-</span><span class="n">gpg</span><span class="o">-</span><span class="n">user</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</li>
+<li><p>Import Paul’s public GPG key to your own GPG keychain (Paul probably
+emailed this to You)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gpg</span> <span class="o">--</span><span class="kn">import</span> <span class="nn">Paul_pub.gpg</span>
+</pre></div>
+</div>
+</li>
+<li><p>Mark both your own key and Paul’s key with ‘ultimate’ trust in GPG.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gpg --edit john@example.com  (or) gpg --edit-key john@example.com
+gpg&gt; trust
+
+    Please decide how far you trust this user to correctly verify other users&#39; keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don&#39;t know or won&#39;t say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+</pre></div>
+</div>
+<p>Do the same for <code class="docutils literal notranslate"><span class="pre">paul&#64;example.com</span></code></p>
+</li>
+<li><p>Add Paul’s public GPG key as a trusted git-crypt user</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">add</span><span class="o">-</span><span class="n">gpg</span><span class="o">-</span><span class="n">user</span> <span class="n">paul</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> file (or equivalent YAML etc) to
+the <code class="docutils literal notranslate"><span class="pre">.gitattributes</span> <span class="pre">file</span></code>, so git-crypt will manage the encryption
+/ decryption where necessary. Add the following line to the
+<code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> file (substituting the appropriate extension):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">/</span><span class="n">production</span><span class="o">.</span><span class="n">json</span> <span class="nb">filter</span><span class="o">=</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">diff</span><span class="o">=</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now create the file and add it to your repo (substituting the
+appropriate syntax and extension):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;{foo:&quot;secret&quot;}&#39;</span> &gt; config/production.json
+git add config/production.json
+git commit -m <span class="s2">&quot;production settings&quot;</span>
+git push origin
+</pre></div>
+</div>
+</li>
+</ol>
+<p>On the git remote (server), <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is now encrypted.</p>
+</div>
+<div class="section" id="git-crypt-workflow">
+<span id="id3"></span><h3>Git-crypt Workflow<a class="headerlink" href="#git-crypt-workflow" title="永久链接至标题">¶</a></h3>
+<p>Initially, when Paul clones or pulls the repo,
+<code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is encrypted for him too.</p>
+<p>But his public key is listed as trusted, and he has the corresponding
+private key on his keyring. So he can unlock all encrypted files with a
+single command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">unlock</span>
+</pre></div>
+</div>
+<p>Paul is prompted for his private key password.</p>
+<p>From now on, Paul’s and your own workflow is unchanged from normal.</p>
+<p>On your machine and Paul’s, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is just a normal
+JSON file.</p>
+<p>From Ringo’s point of view, <code class="docutils literal notranslate"><span class="pre">config/production.json</span></code> is a binary file.</p>
+<div class="section" id="mimicking-production-mode">
+<h4>Mimicking production mode<a class="headerlink" href="#mimicking-production-mode" title="永久链接至标题">¶</a></h4>
+<p>Ringo might have the need to run the application with
+<code class="docutils literal notranslate"><span class="pre">NODE_ENV=production</span></code> e.g. to invoke minification, or to debug some
+issue on the production server.</p>
+<p>But Ringo has a problem: when he runs the node program with
+<code class="docutils literal notranslate"><span class="pre">NODE_ENV=production</span></code>, node-config tries to read
+<code class="docutils literal notranslate"><span class="pre">config/production.json</span></code>, which on his machine is not a valid JSON
+file since it’s encrypted. The app crashes.</p>
+<p>To cater for this, Ringo can specify that any git-crypt encrypted files
+are skipped, via a <code class="docutils literal notranslate"><span class="pre">CONFIG_SKIP_GITCRYPT</span></code> environment variable, for
+example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">NODE_ENV</span><span class="o">=</span>production <span class="nv">CONFIG_SKIP_GITCRYPT</span><span class="o">=</span><span class="m">1</span> node foo.js
+</pre></div>
+</div>
+<p>This tells node-config to continue even if a git-crypt file is
+encountered.</p>
+</div>
+</div>
+</div>
+<div class="section" id="deployment-servers-build-servers-ci-servers">
+<h2>Deployment Servers, Build Servers, CI Servers<a class="headerlink" href="#deployment-servers-build-servers-ci-servers" title="永久链接至标题">¶</a></h2>
+<div class="section" id="git-clone-once-only">
+<h3>Git Clone Once Only<a class="headerlink" href="#git-clone-once-only" title="永久链接至标题">¶</a></h3>
+<p>Unless you’re cloning the git repository every time, you need only
+unlock it once.</p>
+<p>You can create a GPG key for a server (or set of servers) so a single
+<code class="docutils literal notranslate"><span class="pre">git-crypt</span> <span class="pre">unlock</span></code> command is all that is needed. Of course, the
+corresponding private key must be installed on the server’s GPG keychain
+already.</p>
+</div>
+<div class="section" id="git-clone-every-time">
+<h3>Git Clone Every Time<a class="headerlink" href="#git-clone-every-time" title="永久链接至标题">¶</a></h3>
+<p>In the case where your server <em>is</em> performing a git clone every time,
+you can instead export a symmetric (non-GPG) key from an unlocked
+git-crypt repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">export</span><span class="o">-</span><span class="n">key</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span><span class="o">-</span><span class="n">key</span>
+</pre></div>
+</div>
+<p>You can then use that symmetric key to unlock the repository from your
+server without a pass phrase.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span> <span class="n">unlock</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">crypt</span><span class="o">-</span><span class="n">key</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Strict-Mode.html" class="btn btn-neutral float-right" title="严格的模式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Configuring-from-a-DB.html" class="btn btn-neutral float-left" title="从DB配置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

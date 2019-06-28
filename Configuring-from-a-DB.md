@@ -1,1 +1,0 @@
-This page has been moved to [Configuring from an External Source](https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source)

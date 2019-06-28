@@ -1,0 +1,463 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Using-Config-Utilities.rst:2
+msgid "Using Config Utilities"
+msgstr "使用配置实用程序"
+
+#: ../../source/Using-Config-Utilities.rst:4
+msgid ""
+"Node-config comes with a handy set of utilities necessary for "
+"implementing node-config. These utilities are exposed in the "
+"``config.util`` object for use in your own applications."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:8
+msgid ""
+"Below is a list of these utilities, in order of general usefulness - your"
+" mileage may vary."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:12
+msgid "extendDeep(mergeInto, mergeFrom…, depth)"
+msgstr "extendDeep(mergeInto, mergeFrom…, depth)"
+
+#: ../../source/Using-Config-Utilities.rst:14
+msgid ""
+"Extend an object (and any object it contains) with one or more objects "
+"(and objects contained in them)."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:17
+msgid ""
+"This does not replace deep objects as other extend functions do, but "
+"dives into them extending individual elements instead. If more than one "
+"of the extending objects define the same key, then: \\* if all the "
+"respective values are objects, they are merged recursively by calling the"
+" same function. \\* if none of the respective values are objects, then "
+"the latest one is respected. \\* avoid mixing objects and non-objects for"
+" the same key as it can lead to unexpected behaviour."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:37
+#: ../../source/Using-Config-Utilities.rst:251
+#: ../../source/Using-Config-Utilities.rst:422
+#: ../../source/Using-Config-Utilities.rst:639
+#: ../../source/Using-Config-Utilities.rst:856
+#: ../../source/Using-Config-Utilities.rst:1076
+#: ../../source/Using-Config-Utilities.rst:1298
+#: ../../source/Using-Config-Utilities.rst:1454
+msgid "param"
+msgstr "param"
+
+#: ../../source/Using-Config-Utilities.rst:47
+#: ../../source/Using-Config-Utilities.rst:261
+#: ../../source/Using-Config-Utilities.rst:432
+#: ../../source/Using-Config-Utilities.rst:649
+#: ../../source/Using-Config-Utilities.rst:866
+#: ../../source/Using-Config-Utilities.rst:1086
+#: ../../source/Using-Config-Utilities.rst:1308
+#: ../../source/Using-Config-Utilities.rst:1464
+msgid "type"
+msgstr "type"
+
+#: ../../source/Using-Config-Utilities.rst:57
+#: ../../source/Using-Config-Utilities.rst:271
+#: ../../source/Using-Config-Utilities.rst:442
+#: ../../source/Using-Config-Utilities.rst:659
+#: ../../source/Using-Config-Utilities.rst:876
+#: ../../source/Using-Config-Utilities.rst:1096
+#: ../../source/Using-Config-Utilities.rst:1318
+#: ../../source/Using-Config-Utilities.rst:1474
+msgid "description"
+msgstr "description"
+
+#: ../../source/Using-Config-Utilities.rst:75
+msgid "mergeInto"
+msgstr "mergeInto"
+
+#: ../../source/Using-Config-Utilities.rst:85
+#: ../../source/Using-Config-Utilities.rst:123
+#: ../../source/Using-Config-Utilities.rst:199
+#: ../../source/Using-Config-Utilities.rst:299
+#: ../../source/Using-Config-Utilities.rst:375
+#: ../../source/Using-Config-Utilities.rst:470
+#: ../../source/Using-Config-Utilities.rst:508
+#: ../../source/Using-Config-Utilities.rst:687
+#: ../../source/Using-Config-Utilities.rst:725
+#: ../../source/Using-Config-Utilities.rst:801
+#: ../../source/Using-Config-Utilities.rst:894
+#: ../../source/Using-Config-Utilities.rst:904
+#: ../../source/Using-Config-Utilities.rst:1021
+#: ../../source/Using-Config-Utilities.rst:1114
+#: ../../source/Using-Config-Utilities.rst:1124
+#: ../../source/Using-Config-Utilities.rst:1238
+#: ../../source/Using-Config-Utilities.rst:1502
+#: ../../source/Using-Config-Utilities.rst:1541
+msgid "object"
+msgstr "object"
+
+#: ../../source/Using-Config-Utilities.rst:95
+msgid "The object to merge into"
+msgstr "The object to merge into"
+
+#: ../../source/Using-Config-Utilities.rst:113
+msgid "mergeFrom…"
+msgstr "mergeFrom…"
+
+#: ../../source/Using-Config-Utilities.rst:133
+msgid "Any number of objects to merge from"
+msgstr "Any number of objects to merge from"
+
+#: ../../source/Using-Config-Utilities.rst:151
+#: ../../source/Using-Config-Utilities.rst:327
+#: ../../source/Using-Config-Utilities.rst:536
+#: ../../source/Using-Config-Utilities.rst:753
+msgid "depth"
+msgstr "depth"
+
+#: ../../source/Using-Config-Utilities.rst:161
+#: ../../source/Using-Config-Utilities.rst:337
+#: ../../source/Using-Config-Utilities.rst:546
+#: ../../source/Using-Config-Utilities.rst:763
+msgid "integer"
+msgstr "integer"
+
+#: ../../source/Using-Config-Utilities.rst:171
+#: ../../source/Using-Config-Utilities.rst:347
+#: ../../source/Using-Config-Utilities.rst:556
+#: ../../source/Using-Config-Utilities.rst:773
+msgid "An optional depth to prevent recursion. Default: 20."
+msgstr "An optional depth to prevent recursion. Default: 20."
+
+#: ../../source/Using-Config-Utilities.rst:189
+#: ../../source/Using-Config-Utilities.rst:365
+#: ../../source/Using-Config-Utilities.rst:574
+#: ../../source/Using-Config-Utilities.rst:791
+#: ../../source/Using-Config-Utilities.rst:1011
+#: ../../source/Using-Config-Utilities.rst:1228
+#: ../../source/Using-Config-Utilities.rst:1374
+#: ../../source/Using-Config-Utilities.rst:1531
+msgid "(return)"
+msgstr "(return)"
+
+#: ../../source/Using-Config-Utilities.rst:209
+msgid "The altered mergeInto object is returned"
+msgstr "The altered mergeInto object is returned"
+
+#: ../../source/Using-Config-Utilities.rst:223
+msgid ""
+"The following example merges the contents of two objects into a new "
+"object."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:231
+msgid "cloneDeep(copyFrom, depth)"
+msgstr "cloneDeep(copyFrom, depth)"
+
+#: ../../source/Using-Config-Utilities.rst:233
+msgid "Return a deep copy of the specified object."
+msgstr "Return a deep copy of the specified object."
+
+#: ../../source/Using-Config-Utilities.rst:235
+msgid ""
+"This returns a new object with all elements copied from the specified "
+"object. Deep copies are made of objects and arrays so you can do anything"
+" with the returned object without affecting the input object."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:289
+msgid "copyFrom"
+msgstr "copyFrom"
+
+#: ../../source/Using-Config-Utilities.rst:309
+msgid "The original object to copy from"
+msgstr "The original object to copy from"
+
+#: ../../source/Using-Config-Utilities.rst:385
+msgid "A new object with the elements copied from the copyFrom object"
+msgstr "A new object with the elements copied from the copyFrom object"
+
+#: ../../source/Using-Config-Utilities.rst:399
+#: ../../source/Using-Config-Utilities.rst:608
+#: ../../source/Using-Config-Utilities.rst:1045
+#: ../../source/Using-Config-Utilities.rst:1262
+#: ../../source/Using-Config-Utilities.rst:1408
+msgid "Example:"
+msgstr "Example:"
+
+#: ../../source/Using-Config-Utilities.rst:406
+msgid "equalsDeep(object1, object2, depth)"
+msgstr "equalsDeep(object1, object2, depth)"
+
+#: ../../source/Using-Config-Utilities.rst:408
+msgid "Return true if two objects have equal contents."
+msgstr "Return true if two objects have equal contents."
+
+#: ../../source/Using-Config-Utilities.rst:460
+#: ../../source/Using-Config-Utilities.rst:677
+msgid "object1"
+msgstr "object1"
+
+#: ../../source/Using-Config-Utilities.rst:480
+#: ../../source/Using-Config-Utilities.rst:697
+msgid "The object to compare from"
+msgstr "The object to compare from"
+
+#: ../../source/Using-Config-Utilities.rst:498
+#: ../../source/Using-Config-Utilities.rst:715
+msgid "object2"
+msgstr "object2"
+
+#: ../../source/Using-Config-Utilities.rst:518
+#: ../../source/Using-Config-Utilities.rst:735
+msgid "The object to compare with"
+msgstr "The object to compare with"
+
+#: ../../source/Using-Config-Utilities.rst:584
+msgid "boolean"
+msgstr "boolean"
+
+#: ../../source/Using-Config-Utilities.rst:594
+msgid "true if both objects have equivalent contents"
+msgstr "true if both objects have equivalent contents"
+
+#: ../../source/Using-Config-Utilities.rst:618
+msgid "diffDeep(object1, object2, depth)"
+msgstr "diffDeep(object1, object2, depth)"
+
+#: ../../source/Using-Config-Utilities.rst:620
+msgid "Returns an object containing all elements that differ between two objects."
+msgstr "Returns an object containing all elements that differ between two objects."
+
+#: ../../source/Using-Config-Utilities.rst:623
+msgid ""
+"It works best when object2 originated by deep copying object1, then "
+"changes were made to object2, and you want an object that would give you "
+"the changes made to object1 which resulted in object2."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:811
+msgid ""
+"A differential object, which if extended onto object1 would result in "
+"object2."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:827
+msgid "makeImmutable(object, propertyName, propertyValue)"
+msgstr "makeImmutable(object, propertyName, propertyValue)"
+
+#: ../../source/Using-Config-Utilities.rst:829
+msgid ""
+"Make a javascript object property immutable (assuring it cannot be "
+"changed from the current value)."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:832
+msgid ""
+"If the propertyName isn’t supplied, all properties of the object are made"
+" immutable."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:835
+msgid ""
+"Properties which themselves are objects are called recursively, making "
+"sub-objects immutable."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:838
+msgid ""
+"New properties can be added to this (and sub) objects, and those "
+"properties will not be immutable unless this method is called after "
+"adding the properties."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:842
+msgid "This operation cannot be undone."
+msgstr "This operation cannot be undone."
+
+#: ../../source/Using-Config-Utilities.rst:914
+msgid "The object containing the properties to make immutable"
+msgstr "The object containing the properties to make immutable"
+
+#: ../../source/Using-Config-Utilities.rst:932
+#: ../../source/Using-Config-Utilities.rst:1152
+msgid "propertyName"
+msgstr "propertyName"
+
+#: ../../source/Using-Config-Utilities.rst:942
+msgid "string \\| [string]"
+msgstr "string \\| [string]"
+
+#: ../../source/Using-Config-Utilities.rst:952
+msgid ""
+"(optional) Property name (or array of names) to make immutable. If not "
+"specified, all properties of the object are made immutable"
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:971
+#: ../../source/Using-Config-Utilities.rst:1190
+msgid "propertyValue"
+msgstr "propertyValue"
+
+#: ../../source/Using-Config-Utilities.rst:981
+msgid "mixed"
+msgstr "mixed"
+
+#: ../../source/Using-Config-Utilities.rst:991
+msgid ""
+"(optional) Property value to set the property to before making immutable."
+" Retained for backward compatibility, and for use only when propertyName "
+"is not an array."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1031
+msgid "The original object, with the newly immutable attributes"
+msgstr "The original object, with the newly immutable attributes"
+
+#: ../../source/Using-Config-Utilities.rst:1055
+msgid "makeHidden(object, propertyName, propertyValue)"
+msgstr "makeHidden(object, propertyName, propertyValue)"
+
+#: ../../source/Using-Config-Utilities.rst:1057
+msgid ""
+"Make an object property hidden so it doesn’t appear when enumerating "
+"elements of the object."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1060
+msgid ""
+"The property still exists and can be read from and written to, but it "
+"won’t show up in ``for ... in`` loops, ``Object.keys()``, or "
+"``JSON.stringify()`` type methods."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1134
+msgid "The object containing the property to make hidden"
+msgstr "The object containing the property to make hidden"
+
+#: ../../source/Using-Config-Utilities.rst:1162
+#: ../../source/Using-Config-Utilities.rst:1200
+#: ../../source/Using-Config-Utilities.rst:1346
+#: ../../source/Using-Config-Utilities.rst:1384
+msgid "string"
+msgstr "string"
+
+#: ../../source/Using-Config-Utilities.rst:1172
+msgid "Name of the property to make hidden"
+msgstr "Name of the property to make hidden"
+
+#: ../../source/Using-Config-Utilities.rst:1210
+msgid "(optional) Set the property to this value"
+msgstr "(optional) Set the property to this value"
+
+#: ../../source/Using-Config-Utilities.rst:1248
+msgid "The original object, with the newly hidden property"
+msgstr "The original object, with the newly hidden property"
+
+#: ../../source/Using-Config-Utilities.rst:1273
+msgid "getEnv(varName)"
+msgstr "getEnv(varName)"
+
+#: ../../source/Using-Config-Utilities.rst:1275
+msgid "Get the current value of a config environment variable"
+msgstr "Get the current value of a config environment variable"
+
+#: ../../source/Using-Config-Utilities.rst:1277
+msgid ""
+"This method returns the value of the specified config environment "
+"variable, including any defaults or overrides."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1280
+msgid ""
+"Environment variables that you can inspect include ``NODE_ENV``, "
+"``CONFIG_DIR``, ``NODE_CONFIG``, ``HOSTNAME``, ``NODE_APP_INSTANCE``, and"
+" others listed in the `environment variables "
+"<https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ "
+"wiki page."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1336
+msgid "varName"
+msgstr "varName"
+
+#: ../../source/Using-Config-Utilities.rst:1356
+msgid "The environment variable name"
+msgstr "The environment variable name"
+
+#: ../../source/Using-Config-Utilities.rst:1394
+msgid "The value of the environment variable"
+msgstr "The value of the environment variable"
+
+#: ../../source/Using-Config-Utilities.rst:1415
+msgid "loadFileConfigs(directory)"
+msgstr "loadFileConfigs(directory)"
+
+#: ../../source/Using-Config-Utilities.rst:1417
+msgid ""
+"Reads the given directory using the same conventions as the main config "
+"directory (including environment variable reading, except for "
+"``NODE_CONFIG``) and returns an object with the result."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1421
+msgid ""
+"If no directory is given, reads the standard config directory and parses "
+"``NODE_CONFIG``."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1424
+msgid "This is useful for using with submodules, e.g."
+msgstr "This is useful for using with submodules, e.g."
+
+#: ../../source/Using-Config-Utilities.rst:1434
+msgid "toObject(config)"
+msgstr "toObject(config)"
+
+#: ../../source/Using-Config-Utilities.rst:1436
+msgid ""
+"Returns a new deep copy of the current config object, or any part of the "
+"config if provided."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1439
+msgid ""
+"If config is not provided (``undefined``), the current config object is "
+"dumped in its entirety."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1492
+msgid "config"
+msgstr "config"
+
+#: ../../source/Using-Config-Utilities.rst:1512
+msgid ""
+"The part of the config to copy and serialize. Omit this argument to "
+"return the entire config."
+msgstr ""
+
+#: ../../source/Using-Config-Utilities.rst:1551
+msgid "The cloned config or part of the config"
+msgstr "The cloned config or part of the config"
+
+#~ msgid "Using-Config-Utilities"
+#~ msgstr ""
+

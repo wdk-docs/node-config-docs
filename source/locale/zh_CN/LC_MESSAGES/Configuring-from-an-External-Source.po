@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Configuring-from-an-External-Source.rst:2
+msgid "Configuring from an External Source"
+msgstr "从外部源配置"
+
+#: ../../source/Configuring-from-an-External-Source.rst:4
+msgid ""
+"In a nutshell: define only external source connection settings in files, "
+"using those settings to connect to the source. Once connected, read "
+"additional configurations and add them to the config object returned from"
+" ``require('config');``."
+msgstr ""
+
+#: ../../source/Configuring-from-an-External-Source.rst:9
+msgid ""
+"Make sure any external overrides are done in the application bootstrap - "
+"before anyone calls the first ``config.get();``, because the config "
+"object is made immutable as soon as any client uses the values via "
+"``get()``."
+msgstr ""
+
+#~ msgid "Configuring-from-an-External-Source"
+#~ msgstr ""
+

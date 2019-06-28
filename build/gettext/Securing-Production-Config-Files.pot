@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/Securing-Production-Config-Files.rst:2
+msgid "Securing Production Config Files"
+msgstr "Securing Production Config Files"
+
+#: ../../source/Securing-Production-Config-Files.rst:5
+msgid "Introduction"
+msgstr "Introduction"
+
+#: ../../source/Securing-Production-Config-Files.rst:7
+msgid "Once you have split out your production config, you may want to encrypt any files that contain sensitive information (API Keys, passwords etc). This page will get you started with `git-crypt <https://github.com/AGWA/git-crypt>`_ , which works well with node-config. With git-crypt, you can keep your production config files under version control with git, while also keeping them secure via encryption."
+msgstr "Once you have split out your production config, you may want to encrypt any files that contain sensitive information (API Keys, passwords etc). This page will get you started with `git-crypt <https://github.com/AGWA/git-crypt>`_ , which works well with node-config. With git-crypt, you can keep your production config files under version control with git, while also keeping them secure via encryption."
+
+#: ../../source/Securing-Production-Config-Files.rst:14
+msgid "Here is the scenario we’ll be configuring:"
+msgstr "Here is the scenario we’ll be configuring:"
+
+#: ../../source/Securing-Production-Config-Files.rst:16
+msgid "You, Paul and Ringo are all working on a project, using git. There are server deployments involved."
+msgstr "You, Paul and Ringo are all working on a project, using git. There are server deployments involved."
+
+#: ../../source/Securing-Production-Config-Files.rst:18
+msgid "Ringo is a contributor, and doesn’t need or want to see production passwords, API secret keys etc."
+msgstr "Ringo is a contributor, and doesn’t need or want to see production passwords, API secret keys etc."
+
+#: ../../source/Securing-Production-Config-Files.rst:20
+msgid "You and Paul both maintain the servers and need access to the sensitive info."
+msgstr "You and Paul both maintain the servers and need access to the sensitive info."
+
+#: ../../source/Securing-Production-Config-Files.rst:24
+msgid "Prerequisites:"
+msgstr "Prerequisites:"
+
+#: ../../source/Securing-Production-Config-Files.rst:26
+msgid "`git-crypt <https://github.com/AGWA/git-crypt.git>`_ is installed."
+msgstr "`git-crypt <https://github.com/AGWA/git-crypt.git>`_ is installed."
+
+#: ../../source/Securing-Production-Config-Files.rst:28
+msgid "On OS X : ``brew install git-crypt``"
+msgstr "On OS X : ``brew install git-crypt``"
+
+#: ../../source/Securing-Production-Config-Files.rst:29
+msgid "On Ubuntu / Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``"
+msgstr "On Ubuntu / Debian (since 16.04 LTS) ``sudo apt-get install git-crypt``"
+
+#: ../../source/Securing-Production-Config-Files.rst:30
+msgid "On other systems: `INSTALL <https://github.com/AGWA/git-crypt/blob/master/INSTALL.md>`_"
+msgstr "On other systems: `INSTALL <https://github.com/AGWA/git-crypt/blob/master/INSTALL.md>`_"
+
+#: ../../source/Securing-Production-Config-Files.rst:32
+msgid "Your project is using git, your working copy is clean, and you haven’t committed any sensitive information to it yet."
+msgstr "Your project is using git, your working copy is clean, and you haven’t committed any sensitive information to it yet."
+
+#: ../../source/Securing-Production-Config-Files.rst:35
+msgid "If you *have* accidentally committed sensitive information to your repository, you’ll need to clean it using `bfg repo cleaner <https://rtyley.github.io/bfg-repo-cleaner/>`_."
+msgstr "If you *have* accidentally committed sensitive information to your repository, you’ll need to clean it using `bfg repo cleaner <https://rtyley.github.io/bfg-repo-cleaner/>`_."
+
+#: ../../source/Securing-Production-Config-Files.rst:39
+msgid "You have `GnuPG <https://www.gnupg.org/>`_ installed."
+msgstr "You have `GnuPG <https://www.gnupg.org/>`_ installed."
+
+#: ../../source/Securing-Production-Config-Files.rst:41
+msgid "On OS X, the GPG Keychain that is part of `GPG Suite <https://gpgtools.org/gpgsuite.html>`_ is very easy to use."
+msgstr "On OS X, the GPG Keychain that is part of `GPG Suite <https://gpgtools.org/gpgsuite.html>`_ is very easy to use."
+
+#: ../../source/Securing-Production-Config-Files.rst:43
+msgid "On Windows, `GPG4Win <https://www.gpg4win.org/>`_ looks pretty good."
+msgstr "On Windows, `GPG4Win <https://www.gpg4win.org/>`_ looks pretty good."
+
+#: ../../source/Securing-Production-Config-Files.rst:45
+msgid "On Unix/Linux, `GPA <https://www.gnupg.org/related_software/gpa/index.html>`_ provides a front-end."
+msgstr "On Unix/Linux, `GPA <https://www.gnupg.org/related_software/gpa/index.html>`_ provides a front-end."
+
+#: ../../source/Securing-Production-Config-Files.rst:49
+msgid "You have a ``config`` folder where your configuration files will be kept."
+msgstr "You have a ``config`` folder where your configuration files will be kept."
+
+#: ../../source/Securing-Production-Config-Files.rst:53
+msgid "Steps"
+msgstr "Steps"
+
+#: ../../source/Securing-Production-Config-Files.rst:58
+msgid "Initial Setup"
+msgstr "Initial Setup"
+
+#: ../../source/Securing-Production-Config-Files.rst:60
+msgid "We’re going to set up git-crypt so that the ``production.json`` file is encrypted for Ringo, but the same file is plain JSON for yourself and Paul."
+msgstr "We’re going to set up git-crypt so that the ``production.json`` file is encrypted for Ringo, but the same file is plain JSON for yourself and Paul."
+
+#: ../../source/Securing-Production-Config-Files.rst:64
+msgid "Initialise the repository to use git-crypt"
+msgstr "Initialise the repository to use git-crypt"
+
+#: ../../source/Securing-Production-Config-Files.rst:70
+msgid "Add your own public GPG key (already on your GPG keychain) as a trusted user"
+msgstr "Add your own public GPG key (already on your GPG keychain) as a trusted user"
+
+#: ../../source/Securing-Production-Config-Files.rst:77
+msgid "Import Paul’s public GPG key to your own GPG keychain (Paul probably emailed this to You)"
+msgstr "Import Paul’s public GPG key to your own GPG keychain (Paul probably emailed this to You)"
+
+#: ../../source/Securing-Production-Config-Files.rst:84
+msgid "Mark both your own key and Paul’s key with ‘ultimate’ trust in GPG."
+msgstr "Mark both your own key and Paul’s key with ‘ultimate’ trust in GPG."
+
+#: ../../source/Securing-Production-Config-Files.rst:104
+msgid "Do the same for ``paul@example.com``"
+msgstr "Do the same for ``paul@example.com``"
+
+#: ../../source/Securing-Production-Config-Files.rst:106
+msgid "Add Paul’s public GPG key as a trusted git-crypt user"
+msgstr "Add Paul’s public GPG key as a trusted git-crypt user"
+
+#: ../../source/Securing-Production-Config-Files.rst:112
+msgid "Add the ``config/production.json`` file (or equivalent YAML etc) to the ``.gitattributes file``, so git-crypt will manage the encryption / decryption where necessary. Add the following line to the ``.gitattributes`` file (substituting the appropriate extension):"
+msgstr "Add the ``config/production.json`` file (or equivalent YAML etc) to the ``.gitattributes file``, so git-crypt will manage the encryption / decryption where necessary. Add the following line to the ``.gitattributes`` file (substituting the appropriate extension):"
+
+#: ../../source/Securing-Production-Config-Files.rst:121
+msgid "Now create the file and add it to your repo (substituting the appropriate syntax and extension):"
+msgstr "Now create the file and add it to your repo (substituting the appropriate syntax and extension):"
+
+#: ../../source/Securing-Production-Config-Files.rst:131
+msgid "On the git remote (server), ``config/production.json`` is now encrypted."
+msgstr "On the git remote (server), ``config/production.json`` is now encrypted."
+
+#: ../../source/Securing-Production-Config-Files.rst:136
+msgid "Git-crypt Workflow"
+msgstr "Git-crypt Workflow"
+
+#: ../../source/Securing-Production-Config-Files.rst:138
+msgid "Initially, when Paul clones or pulls the repo, ``config/production.json`` is encrypted for him too."
+msgstr "Initially, when Paul clones or pulls the repo, ``config/production.json`` is encrypted for him too."
+
+#: ../../source/Securing-Production-Config-Files.rst:141
+msgid "But his public key is listed as trusted, and he has the corresponding private key on his keyring. So he can unlock all encrypted files with a single command:"
+msgstr "But his public key is listed as trusted, and he has the corresponding private key on his keyring. So he can unlock all encrypted files with a single command:"
+
+#: ../../source/Securing-Production-Config-Files.rst:149
+msgid "Paul is prompted for his private key password."
+msgstr "Paul is prompted for his private key password."
+
+#: ../../source/Securing-Production-Config-Files.rst:151
+msgid "From now on, Paul’s and your own workflow is unchanged from normal."
+msgstr "From now on, Paul’s and your own workflow is unchanged from normal."
+
+#: ../../source/Securing-Production-Config-Files.rst:153
+msgid "On your machine and Paul’s, ``config/production.json`` is just a normal JSON file."
+msgstr "On your machine and Paul’s, ``config/production.json`` is just a normal JSON file."
+
+#: ../../source/Securing-Production-Config-Files.rst:156
+msgid "From Ringo’s point of view, ``config/production.json`` is a binary file."
+msgstr "From Ringo’s point of view, ``config/production.json`` is a binary file."
+
+#: ../../source/Securing-Production-Config-Files.rst:159
+msgid "Mimicking production mode"
+msgstr "Mimicking production mode"
+
+#: ../../source/Securing-Production-Config-Files.rst:161
+msgid "Ringo might have the need to run the application with ``NODE_ENV=production`` e.g. to invoke minification, or to debug some issue on the production server."
+msgstr "Ringo might have the need to run the application with ``NODE_ENV=production`` e.g. to invoke minification, or to debug some issue on the production server."
+
+#: ../../source/Securing-Production-Config-Files.rst:165
+msgid "But Ringo has a problem: when he runs the node program with ``NODE_ENV=production``, node-config tries to read ``config/production.json``, which on his machine is not a valid JSON file since it’s encrypted. The app crashes."
+msgstr "But Ringo has a problem: when he runs the node program with ``NODE_ENV=production``, node-config tries to read ``config/production.json``, which on his machine is not a valid JSON file since it’s encrypted. The app crashes."
+
+#: ../../source/Securing-Production-Config-Files.rst:170
+msgid "To cater for this, Ringo can specify that any git-crypt encrypted files are skipped, via a ``CONFIG_SKIP_GITCRYPT`` environment variable, for example:"
+msgstr "To cater for this, Ringo can specify that any git-crypt encrypted files are skipped, via a ``CONFIG_SKIP_GITCRYPT`` environment variable, for example:"
+
+#: ../../source/Securing-Production-Config-Files.rst:178
+msgid "This tells node-config to continue even if a git-crypt file is encountered."
+msgstr "This tells node-config to continue even if a git-crypt file is encountered."
+
+#: ../../source/Securing-Production-Config-Files.rst:182
+msgid "Deployment Servers, Build Servers, CI Servers"
+msgstr "Deployment Servers, Build Servers, CI Servers"
+
+#: ../../source/Securing-Production-Config-Files.rst:185
+msgid "Git Clone Once Only"
+msgstr "Git Clone Once Only"
+
+#: ../../source/Securing-Production-Config-Files.rst:187
+msgid "Unless you’re cloning the git repository every time, you need only unlock it once."
+msgstr "Unless you’re cloning the git repository every time, you need only unlock it once."
+
+#: ../../source/Securing-Production-Config-Files.rst:190
+msgid "You can create a GPG key for a server (or set of servers) so a single ``git-crypt unlock`` command is all that is needed. Of course, the corresponding private key must be installed on the server’s GPG keychain already."
+msgstr "You can create a GPG key for a server (or set of servers) so a single ``git-crypt unlock`` command is all that is needed. Of course, the corresponding private key must be installed on the server’s GPG keychain already."
+
+#: ../../source/Securing-Production-Config-Files.rst:196
+msgid "Git Clone Every Time"
+msgstr "Git Clone Every Time"
+
+#: ../../source/Securing-Production-Config-Files.rst:198
+msgid "In the case where your server *is* performing a git clone every time, you can instead export a symmetric (non-GPG) key from an unlocked git-crypt repository:"
+msgstr "In the case where your server *is* performing a git clone every time, you can instead export a symmetric (non-GPG) key from an unlocked git-crypt repository:"
+
+#: ../../source/Securing-Production-Config-Files.rst:206
+msgid "You can then use that symmetric key to unlock the repository from your server without a pass phrase."
+msgstr "You can then use that symmetric key to unlock the repository from your server without a pass phrase."
+

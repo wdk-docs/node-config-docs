@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-28 16:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/index.rst:9
+msgid "Contents:"
+msgstr "内容:"
+
+#: ../../source/index.rst:7
+msgid "Welcome to node-config docs's documentation!"
+msgstr "欢迎来到node-config docs的文档！"
+
+#: ../../source/index.rst:33
+msgid "Indices and tables"
+msgstr "指数和表格"
+
+#: ../../source/index.rst:35
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+#: ../../source/index.rst:36
+msgid ":ref:`modindex`"
+msgstr ":ref:`modindex`"
+
+#: ../../source/index.rst:37
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+
