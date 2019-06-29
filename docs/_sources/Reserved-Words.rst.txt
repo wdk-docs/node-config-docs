@@ -1,10 +1,8 @@
 Reserved Words
 ========================================================================================
 
-To `retain
-compatibility <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#compatibility-statement>`_
-with pre-1.0, the following configuration names cannot be used in
-version 1.0.
+To :ref:`Future-Compatibility-compatibility-statement` with pre-1.0,
+the following configuration names cannot be used in version 1.0.
 
 ::
 
@@ -30,12 +28,9 @@ version 1.0.
    _stripComments
    _stripYamlComments
 
-Starting with `version
-2.0 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#version-20---not-before-july-2015>`_,
-config
-`utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_
-will only be accessible under ``util``, and the following keywords will
-be reserved:
+Starting with :ref:`Future-Compatibility-version-20---not-before-july-2015`,
+config :doc:`Using-Config-Utilities` will only be accessible under ``util``,
+and the following keywords will be reserved:
 
 ::
 

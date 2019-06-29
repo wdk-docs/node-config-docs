@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-29 20:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,86 +23,95 @@ msgid "Environment Variables"
 msgstr "环境变量"
 
 #: ../../source/Environment-Variables.rst:4
-msgid  ""
+msgid ""
 "Node-config uses a handful of environment variables for its own "
-"configuration. It can also use `custom environment variables <#custom-"
-"environment-variables>`_ to override your app’s configuration. In both "
+"configuration. It can also use :ref:`Environment-Variables-custom-"
+"environment-variables` to override your app’s configuration. In both "
 "cases, these are generally exported in your shell before loading the app,"
 " but can also be supplied on the command line or in your app bootstrap."
-msgstr "Node-config使用少量环境变量进行自己的配置.它还可以使用 `自定义环境变量 <#custom-environment-variables>`_ 覆盖应用程序的配置.在这两种情况下, 这些通常在加载应用程序之前在shell中导出, 但也可以在命令行或应用程序引导程序中提供."
+msgstr ""
+"Node-config使用少量环境变量进行自己的配置.它还可以使用 :ref:`Environment-Variables-custom-environment-variables` 覆盖应用程序的配置.在这两种情况下, 这些通常在加载应用程序之前在shell中导出, "
+"但也可以在命令行或应用程序引导程序中提供."
 
-#: ../../source/Environment-Variables.rst:11
+#: ../../source/Environment-Variables.rst:9
 msgid "Example exporting to the O/S before loading your app:"
 msgstr "在加载应用程序之前导出到O/S的示例:"
 
-#: ../../source/Environment-Variables.rst:19
+#: ../../source/Environment-Variables.rst:17
 msgid "Example passing on the command line:"
 msgstr "传递命令行的示例:"
 
-#: ../../source/Environment-Variables.rst:26
+#: ../../source/Environment-Variables.rst:24
 msgid "Example setting in JavaScript before the first load of node-config:"
 msgstr "第一次加载node-config之前在JavaScript中的示例设置:"
 
-#: ../../source/Environment-Variables.rst:34
+#: ../../source/Environment-Variables.rst:32
 msgid "NODE_ENV"
 msgstr "NODE_ENV"
 
-#: ../../source/Environment-Variables.rst:36
+#: ../../source/Environment-Variables.rst:34
 msgid ""
 "This variable contains the name of your application’s deployment "
 "environment, representing the ``{deployment}`` when determining config "
-"`file loading order <https://github.com/lorenwest/node-config/wiki"
-"/Configuration-Files#file-load-order>`_. Common values include ``dev``, "
-"``stage``, ``production-east``, etc. to fit your deployment strategy. The"
-" value for ``NODE_ENV`` can be overridden with the `NODE_CONFIG_ENV "
-"<https://github.com/lorenwest/node-config/wiki/Environment-"
-"Variables#node_config_env>`_ environment variable."
-msgstr "此变量包含应用程序部署环境的名称,在确定配置 `文件加载顺序时 <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_ 表示  ``{deployment}``. 常见的值包括 ``dev``, ``stage``, ``production-east`` 等,以适应您的部署策略. 可以使用 `NODE_CONFIG_ENV  <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env>`_ 环境变量覆盖 ``NODE_ENV`` 的值."
+":ref:`Configuration-Files-file-load-order`. Common values include "
+"``dev``, ``stage``, ``production-east``, etc. to fit your deployment "
+"strategy. The value for ``NODE_ENV`` can be overridden with the :ref"
+":`Environment-Variables-node_config_env` environment variable."
+msgstr ""
+"此变量包含应用程序部署环境的名称,在确定config :ref:`Configuration-Files-file-load-order` 时表示"
+" ``{deployment}``. 常见的值包括 ``dev``, ``stage``, ``production-east`` "
+"等,以适应您的部署策略. 可以使用 :ref:`Environment-Variables-node_config_env` 环境变量覆盖 "
+"``NODE_ENV`` 的值."
 
-#: ../../source/Environment-Variables.rst:46
-msgid  ""
+#: ../../source/Environment-Variables.rst:43
+msgid ""
 "The current value of ``NODE_ENV`` is available in "
 "``config.util.getEnv()``:"
 msgstr "``NODE_ENV`` 的当前值在 ``config.util.getEnv()`` 中可用:"
 
-#: ../../source/Environment-Variables.rst:55
+#: ../../source/Environment-Variables.rst:54
 msgid "NODE_CONFIG_ENV"
 msgstr "NODE_CONFIG_ENV"
 
-#: ../../source/Environment-Variables.rst:57
-msgid  ""
+#: ../../source/Environment-Variables.rst:56
+msgid ""
 "In certain circumstances ``NODE_ENV`` may not be the preferred value for "
 "configuration identification. The ``NODE_CONFIG_ENV`` environment "
 "variable was introduced with (v1.28.0) which transparently, overrides the"
 " value of ``NODE_ENV``."
-msgstr "在某些情况下, ``NODE_ENV`` 可能不是配置识别的首选值.引入了 ``NODE_CONFIG_ENV`` 环境变量(v1.28.0), 它透明地覆盖了 ``NODE_ENV`` 的值."
+msgstr ""
+"在某些情况下, ``NODE_ENV`` 可能不是配置识别的首选值.引入了 ``NODE_CONFIG_ENV`` 环境变量(v1.28.0), "
+"它透明地覆盖了 ``NODE_ENV`` 的值."
 
-#: ../../source/Environment-Variables.rst:62
-msgid  ""
+#: ../../source/Environment-Variables.rst:61
+msgid ""
 "The current value of ``NODE_CONFIG_ENV`` is available in "
 "``config.util.getEnv()``:"
 msgstr "``NODE_CONFIG_ENV`` 的当前值在 ``config.util.getEnv()`` 中可用.:"
 
-#: ../../source/Environment-Variables.rst:72
+#: ../../source/Environment-Variables.rst:71
 msgid "The ``qa`` configuration will be used in place of ``production``."
 msgstr "``qa`` 配置将用于代替 ``production``."
 
-#: ../../source/Environment-Variables.rst:75
+#: ../../source/Environment-Variables.rst:74
 msgid "NODE_CONFIG_DIR"
 msgstr "NODE_CONFIG_DIR"
 
-#: ../../source/Environment-Variables.rst:77
-msgid  ""
-"This contains the path to the directory containing your `configuration "
-"files <https://github.com/lorenwest/node-config/wiki/Configuration-"
-"Files>`_. It can be a direct path from the root, or a relative path if it"
-" begins with ``./`` or ``../``. The default ``NODE_CONFIG_DIR`` is the "
-"``/config`` directory under the *current working directory*, usually your"
-" application root - the value returned by ``process.cwd() + '/config'``."
-msgstr "这包含包含您的 `配置文件 <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ 的目录的路径.它可以是从根开始的直接路径, 也可以是相对路径, 如果它以 ``./`` 或 ``../`` 开头.默认的 ``NODE_CONFIG_DIR`` 是 *当前工作目录* 下的 ``/config`` 目录, 通常是你的应用程序root  - 由 ``process.cwd()+'/config'`` 返回的值."
+#: ../../source/Environment-Variables.rst:76
+msgid ""
+"This contains the path to the directory containing your :doc"
+":`Configuration-Files`. It can be a direct path from the root, or a "
+"relative path if it begins with ``./`` or ``../``. The default "
+"``NODE_CONFIG_DIR`` is the ``/config`` directory under the *current "
+"working directory*, usually your application root - the value returned by"
+" ``process.cwd() + '/config'``."
+msgstr ""
+"它包含包含您的 :doc:`Configuration-Files` 的目录的路径. 它可以是从根开始的直接路径,也可以是相对路径,如果它以 "
+"``./`` 或 ``../`` 开头.默认的 ``NODE_CONFIG_DIR`` 是 *当前工作目录* 下的 ``/config`` "
+"目录,通常是你的应用程序root  - 由 ``process.cwd() + '/config'`` 返回的值."
 
-#: ../../source/Environment-Variables.rst:85
-msgid  ""
+#: ../../source/Environment-Variables.rst:83
+msgid ""
 "The current value of ``NODE_CONFIG_DIR`` is available in "
 "``config.util.getEnv()``:"
 msgstr "``NODE_CONFIG_DIR`` 的当前值在 ``config.util.getEnv()`` 中可用.:"
@@ -112,15 +121,17 @@ msgid "NODE_CONFIG"
 msgstr "NODE_CONFIG"
 
 #: ../../source/Environment-Variables.rst:96
-msgid  ""
+msgid ""
 "This allows you to override any configuration from the command line or "
 "shell environment. The ``NODE_CONFIG`` environment variable must be a "
 "JSON formatted string. Any configurations contained in this will override"
 " the configurations found and merged from the config files."
-msgstr "这允许您从命令行或shell环境覆盖任何配置. ``NODE_CONFIG`` 环境变量必须是JSON格式的字符串.此中包含的任何配置都将覆盖从配置文件中找到并合并的配置."
+msgstr ""
+"这允许您从命令行或shell环境覆盖任何配置. ``NODE_CONFIG`` "
+"环境变量必须是JSON格式的字符串.此中包含的任何配置都将覆盖从配置文件中找到并合并的配置."
 
 #: ../../source/Environment-Variables.rst:101
-msgid  ""
+msgid ""
 "If ``NODE_CONFIG`` is supplied both from the O/S environment *and* the "
 "command line, they’ll both be used with command line values favored over "
 "O/S environment values."
@@ -131,7 +142,7 @@ msgid "Example:"
 msgstr "例:"
 
 #: ../../source/Environment-Variables.rst:112
-msgid  ""
+msgid ""
 "The current value of ``NODE_CONFIG``, mixed from the O/S environment and "
 "command line is available in ``config.util.getEnv()``:"
 msgstr "从“O/S环境和命令行”混合的 ``NODE_CONFIG`` 的当前值在 ``config.util.getEnv()`` 中可用:"
@@ -141,47 +152,46 @@ msgid "HOSTNAME (or HOST)"
 msgstr "HOSTNAME (or HOST)"
 
 #: ../../source/Environment-Variables.rst:123
-msgid  ""
+msgid ""
 "This variable contains the name of your host server, representing the "
-"``{hostname}`` when determining config `file loading order "
-"<https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-"
-"load-order>`_."
-msgstr "此变量包含主机服务器的名称，在确定 `配置文件加载顺序 <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_ 时表示 ``{hostname}``:"
+":ref:`Configuration-Files-file-load-order`."
+msgstr "此变量包含主机服务器的名称,表示 :ref:`Configuration-Files-file-load-order`."
 
-#: ../../source/Environment-Variables.rst:127
-msgid  ""
+#: ../../source/Environment-Variables.rst:126
+msgid ""
 "Sometimes the default hostname returned by ``os.hostname()`` isn’t what "
 "you expect, and setting this before running your app makes sure you’ve "
 "got the right name."
 msgstr "有时, ``os.hostname()`` 返回的默认主机名不是你所期望的, 在运行你的应用程序之前设置它确保你有正确的名字."
 
-#: ../../source/Environment-Variables.rst:131
-msgid  ""
+#: ../../source/Environment-Variables.rst:130
+msgid ""
 "For backward compatibility, if the **HOST** variable is set, that value "
 "is used instead."
 msgstr "为了向后兼容, 如果设置了 **HOST** 变量, 则使用该值."
 
-#: ../../source/Environment-Variables.rst:134
-msgid  ""
+#: ../../source/Environment-Variables.rst:133
+msgid ""
 "Regardless of the variable or default used, the current value of "
 "``HOSTNAME`` is available in ``config.util.getEnv()``:"
 msgstr "无论使用什么变量或默认值, ``HOSTNAME`` 的当前值都可以在 ``config.util.getEnv()`` 中找到.:"
 
-#: ../../source/Environment-Variables.rst:143
+#: ../../source/Environment-Variables.rst:142
 msgid "NODE_APP_INSTANCE"
 msgstr "NODE_APP_INSTANCE"
 
-#: ../../source/Environment-Variables.rst:145
-msgid  ""
-"As described in the `multi instance deployment "
-"<https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_"
-" section, if you’re running multiple instances of your app and need "
-"different configurations for each instance, this enables loading of "
-"instance specific config files."
-msgstr "如 `多实例部署 <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_ 部分所述, 如果您正在运行应用程序的多个实例并需要不同的配置每个实例, 这都可以加载特定于实例的配置文件."
+#: ../../source/Environment-Variables.rst:144
+msgid ""
+"As described in the :doc:`Multiple-Node-Instances` section, if you’re "
+"running multiple instances of your app and need different configurations "
+"for each instance, this enables loading of instance specific config "
+"files."
+msgstr ""
+"如 :doc:`Multiple-Node-Instances` "
+"部分所述,如果您正在运行应用程序的多个实例并且需要为每个实例配置不同的配置,则可以加载特定于实例的配置文件."
 
-#: ../../source/Environment-Variables.rst:151
-msgid  ""
+#: ../../source/Environment-Variables.rst:149
+msgid ""
 "The current value of ``NODE_APP_INSTANCE`` is available in "
 "``config.util.getEnv()``"
 msgstr "``NODE_APP_INSTANCE`` 的当前值在 ``config.util.getEnv()`` 中可用."
@@ -191,7 +201,7 @@ msgid "ALLOW_CONFIG_MUTATIONS"
 msgstr "ALLOW_CONFIG_MUTATIONS"
 
 #: ../../source/Environment-Variables.rst:162
-msgid  ""
+msgid ""
 "If this environment variable contains anything, then mutations of the "
 "configuration object are allowed. This is for edge cases such as testing,"
 " where it is important to mutate configurations for different scenarios "
@@ -199,13 +209,13 @@ msgid  ""
 msgstr "如果此环境变量包含任何内容, 则允许配置对象的突变.这适用于测试等边缘情况, 在同一执行中改变不同场景的配置非常重要."
 
 #: ../../source/Environment-Variables.rst:167
-msgid  ""
+msgid ""
 "The safety afforded by making the configuration object immutable is lost "
 "when this environment variable is used."
 msgstr "使用此环境变量时, 使配置对象不可变所提供的安全性会丢失."
 
 #: ../../source/Environment-Variables.rst:170
-msgid  ""
+msgid ""
 "The current value of ``ALLOW_CONFIG_MUTATIONS`` is available in "
 "``config.util.getEnv()``"
 msgstr "``ALLOW_CONFIG_MUTATIONS`` 的当前值在 ``config.util.getEnv()`` 中可用."
@@ -215,19 +225,19 @@ msgid "NODE_CONFIG_STRICT_MODE"
 msgstr "NODE_CONFIG_STRICT_MODE"
 
 #: ../../source/Environment-Variables.rst:181
-msgid  ""
+msgid ""
 "When strict mode is enabled, the following conditions must be true or an "
 "exception will thrown at require-time:"
 msgstr "启用严格模式时, 必须满足以下条件, 否则将在请求时抛出异常:"
 
 #: ../../source/Environment-Variables.rst:184
-msgid  ""
+msgid ""
 "There must be an explicit config file matching ``NODE_ENV`` if "
 "``NODE_ENV`` is set."
 msgstr "如果设置了 ``NODE_ENV``, 必须有一个与 ``NODE_ENV`` 匹配的显式配置文件."
 
 #: ../../source/Environment-Variables.rst:186
-msgid  ""
+msgid ""
 "There must be an explicit config file matching ``NODE_APP_INSTANCE`` if "
 "``NODE_APP_INSTANCE`` is set"
 msgstr "如果设置了 ``NODE_APP_INSTANCE``, 必须有一个与 ``NODE_APP_INSTANCE`` 匹配的显式配置文件"
@@ -249,67 +259,76 @@ msgid "If this environment variable contains anything, then the following messag
 msgstr "如果此环境变量包含任何内容, 则显示以下消息"
 
 #: ../../source/Environment-Variables.rst:202
-msgid  ""
+msgid ""
 "will be suppressed if no configurations were found when loading node-"
 "config. This is important for NPM modules using node-config to allow apps"
 " using these sub-modules the option of using node-config if they choose, "
 "or a different configuration system without getting annoying warning "
 "messages."
-msgstr "如果在加载node-config时未找到任何配置, 则将被禁止.这对于使用node-config的NPM模块来说非常重要, 它允许使用这些子模块的应用程序选择使用node-config(如果他们选择), 或使用不同的配置系统而不会收到恼人的警告消息."
+msgstr ""
+"如果在加载node-config时未找到任何配置, 则将被禁止.这对于使用node-config的NPM模块来说非常重要, "
+"它允许使用这些子模块的应用程序选择使用node-config(如果他们选择), 或使用不同的配置系统而不会收到恼人的警告消息."
 
 #: ../../source/Environment-Variables.rst:208
-msgid  ""
-"See the article on `sub module configuration "
-"<https://github.com/lorenwest/node-config/wiki/Sub-Module-"
-"Configuration>`_ for more information about using node-config in an NPM "
-"module."
-msgstr "有关在NPM模块中使用node-config的更多信息, 请参阅有关 `子模块配置 <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_ 的文章."
+msgid ""
+"See the article on :doc:`Sub-Module-Configuration` for more information "
+"about using node-config in an NPM module."
+msgstr "有关在NPM模块中使用node-config的更多信息,请参阅以下文章:doc:`Sub-Module-Configuration`."
 
-#: ../../source/Environment-Variables.rst:212
-msgid  ""
+#: ../../source/Environment-Variables.rst:211
+msgid ""
 "The current value of ``SUPPRESS_NO_CONFIG_WARNING`` is available in "
 "``config.util.getEnv()``"
 msgstr "``SUPPRESS_NO_CONFIG_WARNING`` 的当前值在 ``config.util.getEnv()`` 中可用."
 
-#: ../../source/Environment-Variables.rst:221
+#: ../../source/Environment-Variables.rst:222
 msgid "Custom Environment Variables"
 msgstr "自定义环境变量"
 
-#: ../../source/Environment-Variables.rst:223
-msgid  ""
+#: ../../source/Environment-Variables.rst:224
+msgid ""
 "(New as of 1.1.0) Some deployment situations rely heavily on environment "
 "variables to configure secrets and settings best left out of a codebase. "
 "`NODE_CONFIG <#node_config>`_ lets you use a JSON string to deal with "
 "this, but sometimes simpler, flatter environment variables are better "
 "suited."
-msgstr "(自1.1.0起新增)某些部署情况严重依赖于环境变量来配置最能从代码库中删除的秘密和设置. `NODE_CONFIG <#node_config>`_ 允许您使用JSON字符串来处理这个问题, 但有时更简单, 更平坦的环境变量更适合."
+msgstr ""
+"(自1.1.0起新增)某些部署情况严重依赖于环境变量来配置最能从代码库中删除的秘密和设置. `NODE_CONFIG "
+"<#node_config>`_ 允许您使用JSON字符串来处理这个问题, 但有时更简单, 更平坦的环境变量更适合."
 
-#: ../../source/Environment-Variables.rst:229
-msgid  ""
+#: ../../source/Environment-Variables.rst:230
+msgid ""
 "To enable custom environment variables, create a configuration file, "
 "``config/custom-environment-variables.json`` (or ``.yaml`` or ``.js`` or "
 "``coffee``) mapping the environment variable names into your "
 "configuration structure. For example:"
-msgstr "要启用自定义环境变量, 请创建一个配置文件, ``config/custom-environment-variables.json`` (或 ``.yaml`` 或 ``.js`` 或 ``coffee``)映射环境变量命名到您的配置结构中.例如:"
+msgstr ""
+"要启用自定义环境变量, 请创建一个配置文件, ``config/custom-environment-variables.json`` (或 "
+"``.yaml`` 或 ``.js`` 或 ``coffee``)映射环境变量命名到您的配置结构中.例如:"
 
-#: ../../source/Environment-Variables.rst:256
-msgid  ""
+#: ../../source/Environment-Variables.rst:257
+msgid ""
 "…would cause ``node-config`` to check for the environment variables "
 "``PROD_SERVER`` and ``CR_ID``. If they exist, they would *override* the "
 "values for ``Customer.dbConfig.host``, and "
 "``Customer.credit.initialDays`` in your configuration."
-msgstr "...会导致 ``node-config`` 检查环境变量 ``PROD_SERVER`` 和 ``CR_ID``.如果它们存在, 它们将 *覆盖* 配置中的 ``Customer.dbConfig.host`` 和 ``Customer.credit.initialDays`` 的值."
+msgstr ""
+"...会导致 ``node-config`` 检查环境变量 ``PROD_SERVER`` 和 ``CR_ID``.如果它们存在, 它们将 "
+"*覆盖* 配置中的 ``Customer.dbConfig.host`` 和 ``Customer.credit.initialDays`` "
+"的值."
 
-#: ../../source/Environment-Variables.rst:261
-msgid  ""
+#: ../../source/Environment-Variables.rst:262
+msgid ""
 "For ``ADMIN_ACCS`` it will try to parse the found environment variable "
 "according to the specified format in ``_format`` and *extend* the values "
 "for ``Customer.settings.adminAccounts``. Empty environment variables are "
 "ignored, and their mappings have no effect on your config."
-msgstr "对于 ``ADMIN_ACCS``, 它将尝试根据 ``_format`` 中指定的格式解析找到的环境变量, 并 *扩展* ``Customer.settings.adminAccounts`` 的值.空环境变量将被忽略, 其映射对您的配置没有影响."
+msgstr ""
+"对于 ``ADMIN_ACCS``, 它将尝试根据 ``_format`` 中指定的格式解析找到的环境变量, 并 *扩展* "
+"``Customer.settings.adminAccounts`` 的值.空环境变量将被忽略, 其映射对您的配置没有影响."
 
-#: ../../source/Environment-Variables.rst:266
-msgid  ""
+#: ../../source/Environment-Variables.rst:267
+msgid ""
 "**Precedence**: Custom environment variables override all configuration "
 "files, including ``local.json``. Only command line options take "
 "precedence over them."
@@ -317,4 +336,62 @@ msgstr "**Precedence**: 自定义环境变量会覆盖所有配置文件, 包括
 
 #~ msgid "Environment-Variables"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "This variable contains the name of "
+#~ "your application’s deployment environment, "
+#~ "representing the ``{deployment}`` when "
+#~ "determining config `file loading order "
+#~ "<https://github.com/lorenwest/node-config/wiki/Configuration-"
+#~ "Files#file-load-order>`_. Common values "
+#~ "include ``dev``, ``stage``, ``production-"
+#~ "east``, etc. to fit your deployment "
+#~ "strategy. The value for ``NODE_ENV`` can"
+#~ " be overridden with the `NODE_CONFIG_ENV"
+#~ " <https://github.com/lorenwest/node-config/wiki"
+#~ "/Environment-Variables#node_config_env>`_ environment "
+#~ "variable."
+#~ msgstr ""
+#~ "此变量包含应用程序部署环境的名称,在确定配置 `文件加载顺序时 "
+#~ "<https://github.com/lorenwest/node-config/wiki/Configuration-"
+#~ "Files#file-load-order>`_ 表示  ``{deployment}``."
+#~ " 常见的值包括 ``dev``, ``stage``, ``production-"
+#~ "east`` 等,以适应您的部署策略. 可以使用 `NODE_CONFIG_ENV  "
+#~ "<https://github.com/lorenwest/node-config/wiki/Environment-"
+#~ "Variables#node_config_env>`_ 环境变量覆盖 ``NODE_ENV`` 的值."
+
+#~ msgid ""
+#~ "This contains the path to the "
+#~ "directory containing your `configuration files"
+#~ " <https://github.com/lorenwest/node-config/wiki"
+#~ "/Configuration-Files>`_. It can be a "
+#~ "direct path from the root, or a"
+#~ " relative path if it begins with "
+#~ "``./`` or ``../``. The default "
+#~ "``NODE_CONFIG_DIR`` is the ``/config`` "
+#~ "directory under the *current working "
+#~ "directory*, usually your application root "
+#~ "- the value returned by ``process.cwd()"
+#~ " + '/config'``."
+#~ msgstr ""
+#~ "这包含包含您的 `配置文件 <https://github.com/lorenwest/node-"
+#~ "config/wiki/Configuration-Files>`_ 的目录的路径.它可以是从根开始的直接路径,"
+#~ " 也可以是相对路径, 如果它以 ``./`` 或 ``../`` "
+#~ "开头.默认的 ``NODE_CONFIG_DIR`` 是 *当前工作目录* 下的 "
+#~ "``/config`` 目录, 通常是你的应用程序root  - 由 "
+#~ "``process.cwd()+'/config'`` 返回的值."
+
+#~ msgid ""
+#~ "As described in the `multi instance "
+#~ "deployment <https://github.com/lorenwest/node-config/wiki"
+#~ "/Multiple-Node-Instances>`_ section, if "
+#~ "you’re running multiple instances of "
+#~ "your app and need different "
+#~ "configurations for each instance, this "
+#~ "enables loading of instance specific "
+#~ "config files."
+#~ msgstr ""
+#~ "如 `多实例部署 <https://github.com/lorenwest/node-"
+#~ "config/wiki/Multiple-Node-Instances>`_ 部分所述, "
+#~ "如果您正在运行应用程序的多个实例并需要不同的配置每个实例, 这都可以加载特定于实例的配置文件."
 

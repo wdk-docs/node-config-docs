@@ -2,8 +2,7 @@ Multiple Node Instances
 ========================================================================================
 
 In order to support different configurations for each application
-instance running on a machine, the ``NODE_APP_INSTANCE`` `environment
-variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_
+instance running on a machine, the :doc:`Environment-Variables`
 is inspected, and used for loading instance specific files.
 
 For example, if the ``NODE_APP_INSTANCE=3`` environment variable is set,

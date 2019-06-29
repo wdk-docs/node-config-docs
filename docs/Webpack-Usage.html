@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
@@ -194,7 +195,7 @@
 </div>
 <div class="section" id="option-2">
 <h2>选项2<a class="headerlink" href="#option-2" title="永久链接至标题">¶</a></h2>
-<p>安装 <a class="reference external" href="https://github.com/arthanzel/node-config-webpack">node-config-webpack</a> package并将以下内容放在 <a href="#id1"><span class="problematic" id="id2">``</span></a>webpack.config.js``中:</p>
+<p>安装 <a class="reference external" href="https://github.com/arthanzel/node-config-webpack">node-config-webpack</a> package并将以下内容放在 <code class="docutils literal notranslate"><span class="pre">webpack.config.js</span></code> 中:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">ConfigWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;config-webpack&quot;</span><span class="p">);</span>
 <span class="p">...</span>
 <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
@@ -245,7 +246,7 @@
 </div>
 <div class="section" id="option-4">
 <h2>选项4<a class="headerlink" href="#option-4" title="永久链接至标题">¶</a></h2>
-<p>另一个解决方案是利用 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config">环境变量</a> 和 <code class="docutils literal notranslate"><span class="pre">webpack.DefinePlugin</span></code>.使用这种方法你仍然 <strong>可以</strong> 使用 <code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
+<p>另一种解决方案是利用 <a class="reference internal" href="Environment-Variables.html#environment-variables-node-config"><span class="std std-ref">NODE_CONFIG</span></a> 和 <code class="docutils literal notranslate"><span class="pre">webpack.DefinePlugin</span></code>. 使用这种方法你仍然 <strong>可以</strong> 使用 <code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">webpackConfig</span> <span class="o">=</span> <span class="p">{</span>

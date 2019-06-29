@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
@@ -193,7 +194,7 @@
 <p>不再支持在运行时更新配置.这是导致最混乱, 支持, 代码复杂性和坦率的功能 - 我们在想什么?</p>
 <p>如果您依赖于在运行时更改配置的能力, 则必须使用其他实现替换它, 或者继续使用0.4.x版本分支.这是最重要的兼容性更改, 只有经过认真考虑和社区意见后才能实现.</p>
 <p>只要在第一次使用 <code class="docutils literal notranslate"><span class="pre">config.get()</span></code> 方法之前完成, 启动代码仍然可以设置和扩展配置.这允许您的应用启动从外部源加载和合并配置.如果此启动代码需要访问配置值而不调用 <code class="docutils literal notranslate"><span class="pre">config.get()</span></code>, 则可以直接从配置对象访问值.</p>
-<p>此外, 一些用例如测试需要配置变异.添加了 <code class="docutils literal notranslate"><span class="pre">ALLOW_CONFIG_MUTATIONS</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations">环境变量</a> 来解决这些边缘情况.</p>
+<p>此外, 一些用例如测试需要配置变异.添加了 <code class="docutils literal notranslate"><span class="pre">ALLOW_CONFIG_MUTATIONS</span></code> <a class="reference internal" href="Environment-Variables.html#environment-variables-allow-config-mutations"><span class="std std-ref">ALLOW_CONFIG_MUTATIONS</span></a> 来解决这些边缘情况.</p>
 <p>保证配置值的稳定性现在是node-config的核心部分.</p>
 </div>
 <div class="section" id="load-ordering">
@@ -230,8 +231,8 @@
 </div>
 <div class="section" id="config-util">
 <h3>config.util<a class="headerlink" href="#config-util" title="永久链接至标题">¶</a></h3>
-<p>配置包附带了一堆 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities">方便的实用工具</a>, 产生了大量的 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Reserved-Words">保留字</a> 无法在配置中使用.</p>
-<p>从node-config 1.0开始, 这些实用程序已被移动到附加到配置对象的单个 <code class="docutils literal notranslate"><span class="pre">util</span></code> 对象.使用 <code class="docutils literal notranslate"><span class="pre">config</span></code> 与<code class="docutils literal notranslate"><span class="pre">config.util</span></code> 中的这些实用程序将导致node-config 1.0中的弃用警告, 并且在 <a class="reference external" href="https://github.com/lorenwest中将不再支持/节点配置/维基/未来的兼容性＃即将-不兼容性">版本2.0</a>.</p>
+<p>配置包附带了一堆 <a class="reference internal" href="Using-Config-Utilities.html"><span class="doc">使用配置实用程序</span></a>, 产生了大量的 <a class="reference internal" href="Reserved-Words.html"><span class="doc">保留字</span></a> 无法在配置中使用.</p>
+<p>从node-config 1.0开始, 这些实用程序已被移动到附加到配置对象的单个 <code class="docutils literal notranslate"><span class="pre">util</span></code> 对象.使用 <code class="docutils literal notranslate"><span class="pre">config</span></code> 与<code class="docutils literal notranslate"><span class="pre">config.util</span></code> 中的这些实用程序将导致node-config 1.0中的弃用警告, 并且在 <a class="reference internal" href="Future-Compatibility.html#future-compatibility-upcoming-incompatibilities"><span class="std std-ref">即将到来的不兼容性</span></a>.</p>
 <p>这个 <code class="docutils literal notranslate"><span class="pre">util</span></code> 对象在所有级别都可用, 所以如果你做这样的事情:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">dbConfig</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Customer.dbConfig&#39;</span><span class="p">);</span>
 </pre></div>

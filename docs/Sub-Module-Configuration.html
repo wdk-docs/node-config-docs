@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
@@ -190,14 +191,14 @@
 <p>然后继续阅读.</p>
 <p>通过遵循通用模式, 您可以为开发人员使用您的模块:</p>
 <ul class="simple">
-<li><p>用于 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">定义和扩展</a> 您的配置的一致界面</p></li>
-<li><p>通过 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">O/S环境变量传递配置的方法</a></p></li>
-<li><p>通过 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides">命令行参数</a> 传递配置的方法</p></li>
+<li><p>一致的接口 <a class="reference internal" href="Configuration-Files.html"><span class="doc">配置文件</span></a> 您的配置</p></li>
+<li><p>一种通过 <a class="reference internal" href="Environment-Variables.html"><span class="doc">环境变量</span></a> 传递配置的方法</p></li>
+<li><p>一种通过 <a class="reference internal" href="Command-Line-Overrides.html"><span class="doc">命令行覆盖</span></a> 传递配置的方法</p></li>
 <li><p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki">其他功能</a> 内置于node-config</p></li>
 </ul>
 <p>不破坏模块的现有用法, 也不需要在自己的应用程序中使用node-config(除非他们想要).</p>
 <p>这是它的工作原理:</p>
-<p>像正常一样在模块顶部加载node-config, 并指定 <code class="docutils literal notranslate"><span class="pre">SUPPRESS_NO_CONFIG_WARNING</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">环境变量</a> 所以应用程序不要如果他们没有使用node-config, 则获取 <em>No config files</em> 警告.</p>
+<p>像正常一样在模块顶部加载node-config,并指定 <a class="reference internal" href="Environment-Variables.html"><span class="doc">环境变量</span></a>, 这样应用程序就不会获得 <em>没有配置文件</em> 警告,如果他们没有使用node-config。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">SUPPRESS_NO_CONFIG_WARNING</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">;</span>
 <span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 </pre></div>

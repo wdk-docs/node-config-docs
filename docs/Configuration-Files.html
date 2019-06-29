@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="JavaScript配置文件的特殊功能" href="Special-features-for-JavaScript-configuration-files.html" />
-    <link rel="prev" title="维基页面" href="Home.html" /> 
+    <link rel="prev" title="配置Node.js应用程序" href="readme.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,13 +84,14 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">配置文件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#config-directory">配置目录</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#file-load-order">文件加载顺序</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#local-files"><code class="docutils literal notranslate"><span class="pre">local</span></code> 文件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#default-node-env">默认 NODE_ENV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#arrays-are-merged-by-replacement">数组通过替换合并</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">多实例部署</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-instance-deployments">多实例部署</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#environment-variables">环境变量</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#file-formats">文件格式</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#javascript-object-notation-json">Javascript对象表示法 - .json</a></li>
@@ -111,7 +112,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html#id3">自定义环境变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
@@ -207,7 +207,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_DIR</span></code> 可以是来自根目录的完整路径, 或者值以 <code class="docutils literal notranslate"><span class="pre">./</span></code> 或 <code class="docutils literal notranslate"><span class="pre">../</span></code> 开头则是来自进程的相对路径.</p>
 </div>
 <div class="section" id="file-load-order">
-<h2>文件加载顺序<a class="headerlink" href="#file-load-order" title="永久链接至标题">¶</a></h2>
+<span id="configuration-files-file-load-order"></span><h2>文件加载顺序<a class="headerlink" href="#file-load-order" title="永久链接至标题">¶</a></h2>
 <p>config目录中的文件按以下顺序加载:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="o">.</span><span class="n">EXT</span>
 <span class="n">default</span><span class="o">-</span><span class="p">{</span><span class="n">instance</span><span class="p">}</span><span class="o">.</span><span class="n">EXT</span>
@@ -231,7 +231,7 @@
 <p>哪里</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">EXT</span></code> 可以是.yml, .yaml, .xml, .coffee, .cson, <a class="reference external" href="https://github.com/gagle/node-properties">.properties</a>, <a class="reference external" href="http://json.org/">.json</a>, <a class="reference external" href="http://json5.org/">.json5</a>, <a class="reference external" href="http://laktak.github.io/hjson/">.hjson</a>, .ts或.js取决于您喜欢的格式(见下文)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">{instance}</span></code> 是 <a class="reference external" href="#multi-instance-deployments">多实例部署</a> 的可选实例名称字符串</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{instance}</span></code> 是 <a class="reference internal" href="#configuration-files-multi-instance-deployments"><span class="std std-ref">多实例部署</span></a> 的可选实例名称字符串</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> 是你的服务器名, 直到第一个点, 来自 <code class="docutils literal notranslate"><span class="pre">$HOST</span></code> 或 <code class="docutils literal notranslate"><span class="pre">$HOSTNAME</span></code> 环境变量或 <code class="docutils literal notranslate"><span class="pre">os.hostname()</span></code> (按此顺序).例如, 如果你的主机名是 <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> 那么它将加载 <code class="docutils literal notranslate"><span class="pre">www.EXT</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{full_hostname}</span></code> 是你的整个服务器名, 当 <code class="docutils literal notranslate"><span class="pre">{short_hostname}</span></code> 与其他机器发生冲突时你可以使用它.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{deployment}</span></code> 是部署名称, 来自 <code class="docutils literal notranslate"><span class="pre">$NODE_ENV</span></code> (或者如果指定的话, <code class="docutils literal notranslate"><span class="pre">$NODE_CONFIG_ENV</span></code>)环境变量</p></li>
@@ -252,18 +252,20 @@
 <h2>数组通过替换合并<a class="headerlink" href="#arrays-are-merged-by-replacement" title="永久链接至标题">¶</a></h2>
 <p>请注意, 数组始终通过替换合并.也就是说, 覆盖文件中数组的完整内容将替换父文件中的完整数组.</p>
 </div>
-<div class="section" id="id1">
-<h2>多实例部署<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>为了支持在机器上运行的每个应用程序实例的不同配置, 检查 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">环境变量</a>, 并用于加载实例特定文件.</p>
+<div class="section" id="multi-instance-deployments">
+<span id="configuration-files-multi-instance-deployments"></span><h2>多实例部署<a class="headerlink" href="#multi-instance-deployments" title="永久链接至标题">¶</a></h2>
+<p>In order to support different configurations for each application
+instance running on a machine, the <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> <a class="reference internal" href="Environment-Variables.html"><span class="doc">环境变量</span></a>
+is inspected, and used for loading instance specific files.</p>
 <p>例如, 如果设置了 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> 环境变量, 则在加载 <code class="docutils literal notranslate"><span class="pre">default.json</span></code> 之后立即加载一个名为 <code class="docutils literal notranslate"><span class="pre">default-3.json</span></code> 的文件. .</p>
 <p>这适用于所有配置文件, 因此如果您的 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> 和 <code class="docutils literal notranslate"><span class="pre">NODE_ENV=stage</span></code>, 则在加载 <code class="docutils literal notranslate"><span class="pre">stage.yaml</span></code> 之后立即使用名为 <code class="docutils literal notranslate"><span class="pre">stage-3.yaml</span></code> 的文件如果存在, 将加载.</p>
 </div>
 <div class="section" id="environment-variables">
 <h2>环境变量<a class="headerlink" href="#environment-variables" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables">自定义环境变量</a> 覆盖所有配置文件, 包括local.json.只有命令行选项优先于它们.</p>
+<p><a class="reference internal" href="Environment-Variables.html#environment-variables-custom-environment-variables"><span class="std std-ref">自定义环境变量</span></a> 覆盖所有配置文件, 包括local.json.只有命令行选项优先于它们.</p>
 </div>
 <div class="section" id="file-formats">
-<h2>文件格式<a class="headerlink" href="#file-formats" title="永久链接至标题">¶</a></h2>
+<span id="configuration-files-file-formats"></span><h2>文件格式<a class="headerlink" href="#file-formats" title="永久链接至标题">¶</a></h2>
 <p>支持以下文件格式, 可通过文件扩展名识别.</p>
 <p>在文件加载之前删除所有 <code class="docutils literal notranslate"><span class="pre">//</span></code> 和 <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code> 样式注释, 允许您添加注释到文件格式, 例如.json本身不支持注释.</p>
 <div class="section" id="javascript-object-notation-json">
@@ -348,7 +350,8 @@
 <div class="section" id="javascript-module-js">
 <h3>JavaScript 模块 - .js<a class="headerlink" href="#javascript-module-js" title="永久链接至标题">¶</a></h3>
 <p>以 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 结尾的文件将作为JavaScript模块加载并运行.模块必须导出配置对象. JavaScript模块支持具有“延迟”和“原始”值的功能.</p>
-<p>有关详细信息, 请参阅 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files">JavaScript配置文件的特殊功能</a>.</p>
+<p>See <a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html"><span class="doc">JavaScript配置文件的特殊功能</span></a>
+for details.</p>
 </div>
 <div class="section" id="coffeescript-module-coffee">
 <h3>CoffeeScript模块 - .coffee<a class="headerlink" href="#coffeescript-module-coffee" title="永久链接至标题">¶</a></h3>
@@ -471,7 +474,7 @@ port = 5984
         <a href="Special-features-for-JavaScript-configuration-files.html" class="btn btn-neutral float-right" title="JavaScript配置文件的特殊功能" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Home.html" class="btn btn-neutral float-left" title="维基页面" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="readme.html" class="btn btn-neutral float-left" title="配置Node.js应用程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

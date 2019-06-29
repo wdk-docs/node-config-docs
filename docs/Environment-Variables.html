@@ -84,12 +84,13 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">环境变量</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#node-env">NODE_ENV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">NODE_CONFIG_ENV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-config-env">NODE_CONFIG_ENV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#node-config-dir">NODE_CONFIG_DIR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#node-config">NODE_CONFIG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hostname-or-host">HOSTNAME (or HOST)</a></li>
@@ -97,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#allow-config-mutations">ALLOW_CONFIG_MUTATIONS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#node-config-strict-mode">NODE_CONFIG_STRICT_MODE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#suppress-no-config-warning">SUPPRESS_NO_CONFIG_WARNING</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">自定义环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-environment-variables">自定义环境变量</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
@@ -185,7 +186,7 @@
             
   <div class="section" id="environment-variables">
 <h1>环境变量<a class="headerlink" href="#environment-variables" title="永久链接至标题">¶</a></h1>
-<p>Node-config使用少量环境变量进行自己的配置.它还可以使用 <a class="reference external" href="#custom-environment-variables">自定义环境变量</a> 覆盖应用程序的配置.在这两种情况下, 这些通常在加载应用程序之前在shell中导出, 但也可以在命令行或应用程序引导程序中提供.</p>
+<p>Node-config使用少量环境变量进行自己的配置.它还可以使用 <a class="reference internal" href="#environment-variables-custom-environment-variables"><span class="std std-ref">自定义环境变量</span></a> 覆盖应用程序的配置.在这两种情况下, 这些通常在加载应用程序之前在shell中导出, 但也可以在命令行或应用程序引导程序中提供.</p>
 <p>在加载应用程序之前导出到O/S的示例:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">my</span><span class="o">/</span><span class="n">application</span>
 <span class="n">export</span> <span class="n">NODE_ENV</span><span class="o">=</span><span class="n">stage</span>
@@ -204,15 +205,15 @@
 </div>
 <div class="section" id="node-env">
 <h2>NODE_ENV<a class="headerlink" href="#node-env" title="永久链接至标题">¶</a></h2>
-<p>此变量包含应用程序部署环境的名称,在确定配置 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order">文件加载顺序时</a> 表示  <code class="docutils literal notranslate"><span class="pre">{deployment}</span></code>. 常见的值包括 <code class="docutils literal notranslate"><span class="pre">dev</span></code>, <code class="docutils literal notranslate"><span class="pre">stage</span></code>, <code class="docutils literal notranslate"><span class="pre">production-east</span></code> 等,以适应您的部署策略. 可以使用 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env">NODE_CONFIG_ENV</a> 环境变量覆盖 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 的值.</p>
+<p>此变量包含应用程序部署环境的名称,在确定config <a class="reference internal" href="Configuration-Files.html#configuration-files-file-load-order"><span class="std std-ref">文件加载顺序</span></a> 时表示 <code class="docutils literal notranslate"><span class="pre">{deployment}</span></code>. 常见的值包括 <code class="docutils literal notranslate"><span class="pre">dev</span></code>, <code class="docutils literal notranslate"><span class="pre">stage</span></code>, <code class="docutils literal notranslate"><span class="pre">production-east</span></code> 等,以适应您的部署策略. 可以使用 <a class="reference internal" href="#environment-variables-node-config-env"><span class="std std-ref">NODE_CONFIG_ENV</span></a> 环境变量覆盖 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 的值.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 的当前值在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中可用:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_ENV: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_ENV&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>NODE_CONFIG_ENV<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="node-config-env">
+<span id="environment-variables-node-config-env"></span><h2>NODE_CONFIG_ENV<a class="headerlink" href="#node-config-env" title="永久链接至标题">¶</a></h2>
 <p>在某些情况下, <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 可能不是配置识别的首选值.引入了 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_ENV</span></code> 环境变量(v1.28.0), 它透明地覆盖了 <code class="docutils literal notranslate"><span class="pre">NODE_ENV</span></code> 的值.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_ENV</span></code> 的当前值在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中可用.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">NODE_CONFIG_ENV</span> <span class="o">=</span> <span class="s2">&quot;qa&quot;</span><span class="p">;</span>
@@ -225,7 +226,7 @@
 </div>
 <div class="section" id="node-config-dir">
 <h2>NODE_CONFIG_DIR<a class="headerlink" href="#node-config-dir" title="永久链接至标题">¶</a></h2>
-<p>这包含包含您的 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files">配置文件</a> 的目录的路径.它可以是从根开始的直接路径, 也可以是相对路径, 如果它以 <code class="docutils literal notranslate"><span class="pre">./</span></code> 或 <code class="docutils literal notranslate"><span class="pre">../</span></code> 开头.默认的 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_DIR</span></code> 是 <em>当前工作目录</em> 下的 <code class="docutils literal notranslate"><span class="pre">/config</span></code> 目录, 通常是你的应用程序root  - 由 <code class="docutils literal notranslate"><span class="pre">process.cwd()+'/config'</span></code> 返回的值.</p>
+<p>它包含包含您的 <a class="reference internal" href="Configuration-Files.html"><span class="doc">配置文件</span></a> 的目录的路径. 它可以是从根开始的直接路径,也可以是相对路径,如果它以 <code class="docutils literal notranslate"><span class="pre">./</span></code> 或 <code class="docutils literal notranslate"><span class="pre">../</span></code> 开头.默认的 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_DIR</span></code> 是 <em>当前工作目录</em> 下的 <code class="docutils literal notranslate"><span class="pre">/config</span></code> 目录,通常是你的应用程序root  - 由 <code class="docutils literal notranslate"><span class="pre">process.cwd()</span> <span class="pre">+</span> <span class="pre">'/config'</span></code> 返回的值.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NODE_CONFIG_DIR</span></code> 的当前值在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中可用.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG_DIR: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_CONFIG_DIR&#39;</span><span class="p">));</span>
@@ -233,7 +234,7 @@
 </div>
 </div>
 <div class="section" id="node-config">
-<h2>NODE_CONFIG<a class="headerlink" href="#node-config" title="永久链接至标题">¶</a></h2>
+<span id="environment-variables-node-config"></span><h2>NODE_CONFIG<a class="headerlink" href="#node-config" title="永久链接至标题">¶</a></h2>
 <p>这允许您从命令行或shell环境覆盖任何配置. <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code> 环境变量必须是JSON格式的字符串.此中包含的任何配置都将覆盖从配置文件中找到并合并的配置.</p>
 <p>如果从O/S环境 <em>和</em> 命令行都提供了 <code class="docutils literal notranslate"><span class="pre">NODE_CONFIG</span></code>, 它们都将用于优于O/S环境值的命令行值.</p>
 <p>例:</p>
@@ -249,7 +250,7 @@ $ node myapp.js
 </div>
 <div class="section" id="hostname-or-host">
 <h2>HOSTNAME (or HOST)<a class="headerlink" href="#hostname-or-host" title="永久链接至标题">¶</a></h2>
-<p>此变量包含主机服务器的名称，在确定 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order">配置文件加载顺序</a> 时表示 <code class="docutils literal notranslate"><span class="pre">{hostname}</span></code>:</p>
+<p>此变量包含主机服务器的名称,表示 <a class="reference internal" href="Configuration-Files.html#configuration-files-file-load-order"><span class="std std-ref">文件加载顺序</span></a>.</p>
 <p>有时, <code class="docutils literal notranslate"><span class="pre">os.hostname()</span></code> 返回的默认主机名不是你所期望的, 在运行你的应用程序之前设置它确保你有正确的名字.</p>
 <p>为了向后兼容, 如果设置了 <strong>HOST</strong> 变量, 则使用该值.</p>
 <p>无论使用什么变量或默认值, <code class="docutils literal notranslate"><span class="pre">HOSTNAME</span></code> 的当前值都可以在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中找到.:</p>
@@ -260,7 +261,7 @@ $ node myapp.js
 </div>
 <div class="section" id="node-app-instance">
 <h2>NODE_APP_INSTANCE<a class="headerlink" href="#node-app-instance" title="永久链接至标题">¶</a></h2>
-<p>如 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances">多实例部署</a> 部分所述, 如果您正在运行应用程序的多个实例并需要不同的配置每个实例, 这都可以加载特定于实例的配置文件.</p>
+<p>如 <a class="reference internal" href="Multiple-Node-Instances.html"><span class="doc">多节点实例</span></a> 部分所述,如果您正在运行应用程序的多个实例并且需要为每个实例配置不同的配置,则可以加载特定于实例的配置文件.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> 的当前值在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中可用.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;NODE_APP_INSTANCE: &#39;</span> <span class="o">+</span> <span class="n">config</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">getEnv</span><span class="p">(</span><span class="s1">&#39;NODE_APP_INSTANCE&#39;</span><span class="p">));</span>
@@ -268,7 +269,7 @@ $ node myapp.js
 </div>
 </div>
 <div class="section" id="allow-config-mutations">
-<h2>ALLOW_CONFIG_MUTATIONS<a class="headerlink" href="#allow-config-mutations" title="永久链接至标题">¶</a></h2>
+<span id="environment-variables-allow-config-mutations"></span><h2>ALLOW_CONFIG_MUTATIONS<a class="headerlink" href="#allow-config-mutations" title="永久链接至标题">¶</a></h2>
 <p>如果此环境变量包含任何内容, 则允许配置对象的突变.这适用于测试等边缘情况, 在同一执行中改变不同场景的配置非常重要.</p>
 <p>使用此环境变量时, 使配置对象不可变所提供的安全性会丢失.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ALLOW_CONFIG_MUTATIONS</span></code> 的当前值在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中可用.</p>
@@ -294,15 +295,15 @@ $ node myapp.js
 </pre></div>
 </div>
 <p>如果在加载node-config时未找到任何配置, 则将被禁止.这对于使用node-config的NPM模块来说非常重要, 它允许使用这些子模块的应用程序选择使用node-config(如果他们选择), 或使用不同的配置系统而不会收到恼人的警告消息.</p>
-<p>有关在NPM模块中使用node-config的更多信息, 请参阅有关 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration">子模块配置</a> 的文章.</p>
+<p>有关在NPM模块中使用node-config的更多信息,请参阅以下文章:doc:<cite>Sub-Module-Configuration</cite>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">SUPPRESS_NO_CONFIG_WARNING</span></code> 的当前值在 <code class="docutils literal notranslate"><span class="pre">config.util.getEnv()</span></code> 中可用.</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;SUPPRESS_NO_CONFIG_WARNING: &#39;</span> <span class="o">+</span> <span class="nx">config</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">getEnv</span><span class="p">(</span><span class="s1">&#39;SUPPRESS_NO_CONFIG_WARNING&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>自定义环境变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="custom-environment-variables">
+<span id="environment-variables-custom-environment-variables"></span><h2>自定义环境变量<a class="headerlink" href="#custom-environment-variables" title="永久链接至标题">¶</a></h2>
 <p>(自1.1.0起新增)某些部署情况严重依赖于环境变量来配置最能从代码库中删除的秘密和设置. <a class="reference external" href="#node_config">NODE_CONFIG</a> 允许您使用JSON字符串来处理这个问题, 但有时更简单, 更平坦的环境变量更适合.</p>
 <p>要启用自定义环境变量, 请创建一个配置文件, <code class="docutils literal notranslate"><span class="pre">config/custom-environment-variables.json</span></code> (或 <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 或 <code class="docutils literal notranslate"><span class="pre">coffee</span></code>)映射环境变量命名到您的配置结构中.例如:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// config/custom-environment-variables.json</span>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-28 23:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,54 +41,54 @@ msgid "By following a common pattern, you give developers using your module:"
 msgstr ""
 
 #: ../../source/Sub-Module-Configuration.rst:29
-msgid "A consistent interface for `defining and extending <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ your configurations"
+msgid "A consistent interface for :doc:`Configuration-Files` your configurations"
+msgstr ""
+
+#: ../../source/Sub-Module-Configuration.rst:31
+msgid "A way to pass configurations via :doc:`Environment-Variables`"
 msgstr ""
 
 #: ../../source/Sub-Module-Configuration.rst:32
-msgid "A way to pass configurations via `O/S environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_"
+msgid "A way to pass configurations via :doc:`Command-Line-Overrides`"
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:34
-msgid "A way to pass configurations via `command line arguments <https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_"
-msgstr ""
-
-#: ../../source/Sub-Module-Configuration.rst:36
+#: ../../source/Sub-Module-Configuration.rst:33
 msgid "`Other features <https://github.com/lorenwest/node-config/wiki>`_ built in to node-config"
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:39
+#: ../../source/Sub-Module-Configuration.rst:36
 msgid "Without breaking existing usage of your module, and without requiring node-config in their own app (unless they want)."
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:42
+#: ../../source/Sub-Module-Configuration.rst:39
 msgid "Here’s how it works:"
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:44
-msgid "Load node-config at the top of your module like normal, and specify the ``SUPPRESS_NO_CONFIG_WARNING`` `environment variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ so applications don’t get *No config files* warnings if they aren’t using node-config."
+#: ../../source/Sub-Module-Configuration.rst:41
+msgid "Load node-config at the top of your module like normal, and specify the :doc:`Environment-Variables` so applications don’t get *No config files* warnings if they aren’t using node-config."
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:55
+#: ../../source/Sub-Module-Configuration.rst:51
 msgid "Then do something like this where your configurations are passed in by the app:"
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:72
+#: ../../source/Sub-Module-Configuration.rst:68
 msgid "Then use the config object as usual to access configurations within your module:"
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:79
+#: ../../source/Sub-Module-Configuration.rst:75
 msgid "This pattern gives apps using your module the choice of using node-config mechanisms for configuration, or using your existing methods (as shown at the top of this page)."
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:83
+#: ../../source/Sub-Module-Configuration.rst:79
 msgid "For example, they can put your module configurations next to their other configurations and extend configs based on deployment type:"
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:98
+#: ../../source/Sub-Module-Configuration.rst:94
 msgid "This is an easy way to add new configuration functionality to your NPM module, while staying compatible with existing usage."
 msgstr ""
 
-#: ../../source/Sub-Module-Configuration.rst:101
+#: ../../source/Sub-Module-Configuration.rst:97
 msgid "It unifies your module configuration with apps choosing to use node-config, and stays out of the way for apps using other configuration systems."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-28 23:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,8 +46,8 @@ msgstr ""
 #: ../../source/Using-Config-Utilities.rst:639
 #: ../../source/Using-Config-Utilities.rst:856
 #: ../../source/Using-Config-Utilities.rst:1076
-#: ../../source/Using-Config-Utilities.rst:1298
-#: ../../source/Using-Config-Utilities.rst:1454
+#: ../../source/Using-Config-Utilities.rst:1297
+#: ../../source/Using-Config-Utilities.rst:1453
 msgid "param"
 msgstr ""
 
@@ -57,8 +57,8 @@ msgstr ""
 #: ../../source/Using-Config-Utilities.rst:649
 #: ../../source/Using-Config-Utilities.rst:866
 #: ../../source/Using-Config-Utilities.rst:1086
-#: ../../source/Using-Config-Utilities.rst:1308
-#: ../../source/Using-Config-Utilities.rst:1464
+#: ../../source/Using-Config-Utilities.rst:1307
+#: ../../source/Using-Config-Utilities.rst:1463
 msgid "type"
 msgstr ""
 
@@ -68,8 +68,8 @@ msgstr ""
 #: ../../source/Using-Config-Utilities.rst:659
 #: ../../source/Using-Config-Utilities.rst:876
 #: ../../source/Using-Config-Utilities.rst:1096
-#: ../../source/Using-Config-Utilities.rst:1318
-#: ../../source/Using-Config-Utilities.rst:1474
+#: ../../source/Using-Config-Utilities.rst:1317
+#: ../../source/Using-Config-Utilities.rst:1473
 msgid "description"
 msgstr ""
 
@@ -93,8 +93,8 @@ msgstr ""
 #: ../../source/Using-Config-Utilities.rst:1114
 #: ../../source/Using-Config-Utilities.rst:1124
 #: ../../source/Using-Config-Utilities.rst:1238
-#: ../../source/Using-Config-Utilities.rst:1502
-#: ../../source/Using-Config-Utilities.rst:1541
+#: ../../source/Using-Config-Utilities.rst:1501
+#: ../../source/Using-Config-Utilities.rst:1540
 msgid "object"
 msgstr ""
 
@@ -137,8 +137,8 @@ msgstr ""
 #: ../../source/Using-Config-Utilities.rst:791
 #: ../../source/Using-Config-Utilities.rst:1011
 #: ../../source/Using-Config-Utilities.rst:1228
-#: ../../source/Using-Config-Utilities.rst:1374
-#: ../../source/Using-Config-Utilities.rst:1531
+#: ../../source/Using-Config-Utilities.rst:1373
+#: ../../source/Using-Config-Utilities.rst:1530
 msgid "(return)"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgstr ""
 #: ../../source/Using-Config-Utilities.rst:608
 #: ../../source/Using-Config-Utilities.rst:1045
 #: ../../source/Using-Config-Utilities.rst:1262
-#: ../../source/Using-Config-Utilities.rst:1408
+#: ../../source/Using-Config-Utilities.rst:1407
 msgid "Example:"
 msgstr ""
 
@@ -310,8 +310,8 @@ msgstr ""
 
 #: ../../source/Using-Config-Utilities.rst:1162
 #: ../../source/Using-Config-Utilities.rst:1200
-#: ../../source/Using-Config-Utilities.rst:1346
-#: ../../source/Using-Config-Utilities.rst:1384
+#: ../../source/Using-Config-Utilities.rst:1345
+#: ../../source/Using-Config-Utilities.rst:1383
 msgid "string"
 msgstr ""
 
@@ -340,58 +340,58 @@ msgid "This method returns the value of the specified config environment variabl
 msgstr ""
 
 #: ../../source/Using-Config-Utilities.rst:1280
-msgid "Environment variables that you can inspect include ``NODE_ENV``, ``CONFIG_DIR``, ``NODE_CONFIG``, ``HOSTNAME``, ``NODE_APP_INSTANCE``, and others listed in the `environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ wiki page."
+msgid "Environment variables that you can inspect include ``NODE_ENV``, ``CONFIG_DIR``, ``NODE_CONFIG``, ``HOSTNAME``, ``NODE_APP_INSTANCE``, and others listed in the :doc:`Environment-Variables` wiki page."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1336
+#: ../../source/Using-Config-Utilities.rst:1335
 msgid "varName"
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1356
+#: ../../source/Using-Config-Utilities.rst:1355
 msgid "The environment variable name"
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1394
+#: ../../source/Using-Config-Utilities.rst:1393
 msgid "The value of the environment variable"
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1415
+#: ../../source/Using-Config-Utilities.rst:1414
 msgid "loadFileConfigs(directory)"
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1417
+#: ../../source/Using-Config-Utilities.rst:1416
 msgid "Reads the given directory using the same conventions as the main config directory (including environment variable reading, except for ``NODE_CONFIG``) and returns an object with the result."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1421
+#: ../../source/Using-Config-Utilities.rst:1420
 msgid "If no directory is given, reads the standard config directory and parses ``NODE_CONFIG``."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1424
+#: ../../source/Using-Config-Utilities.rst:1423
 msgid "This is useful for using with submodules, e.g."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1434
+#: ../../source/Using-Config-Utilities.rst:1433
 msgid "toObject(config)"
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1436
+#: ../../source/Using-Config-Utilities.rst:1435
 msgid "Returns a new deep copy of the current config object, or any part of the config if provided."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1439
+#: ../../source/Using-Config-Utilities.rst:1438
 msgid "If config is not provided (``undefined``), the current config object is dumped in its entirety."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1492
+#: ../../source/Using-Config-Utilities.rst:1491
 msgid "config"
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1512
+#: ../../source/Using-Config-Utilities.rst:1511
 msgid "The part of the config to copy and serialize. Omit this argument to return the entire config."
 msgstr ""
 
-#: ../../source/Using-Config-Utilities.rst:1551
+#: ../../source/Using-Config-Utilities.rst:1550
 msgid "The cloned config or part of the config"
 msgstr ""
 

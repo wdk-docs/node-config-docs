@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,74 +45,74 @@ msgid "Startup code may still set and extend configurations as long as it’s do
 msgstr ""
 
 #: ../../source/Upgrading-From-Config-0.x.rst:30
-msgid "In addition, some use cases such as tests require config mutations. An ``ALLOW_CONFIG_MUTATIONS`` `environment variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations>`_ has been added to address these edge cases."
+msgid "In addition, some use cases such as tests require config mutations. An :ref:`Environment-Variables-allow_config_mutations` has been added to address these edge cases."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:35
+#: ../../source/Upgrading-From-Config-0.x.rst:33
 msgid "Guaranteeing the stability of configuration values is now a core part of node-config."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:39
+#: ../../source/Upgrading-From-Config-0.x.rst:36
 msgid "Load Ordering"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:41
+#: ../../source/Upgrading-From-Config-0.x.rst:38
 msgid "Load ordering has been changed from ``hostname.EXT --> deployment.EXT`` to ``deployment.EXT --> hostname.EXT`` because deployments can be on multiple machines, and are a *higher level* than host configurations, which by definition are only applicable to a single host."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:46
+#: ../../source/Upgrading-From-Config-0.x.rst:43
 msgid "This is unlikely to affect anyone, because it didn’t make sense to have deployment level configs overwriting host level configs, but it’s something to be aware of."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:51
+#: ../../source/Upgrading-From-Config-0.x.rst:48
 msgid "New Features"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:54
+#: ../../source/Upgrading-From-Config-0.x.rst:51
 msgid "config.get() and config.has()"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:56
+#: ../../source/Upgrading-From-Config-0.x.rst:53
 msgid "The top level config object and all sub-objects have a ``get()`` function exposed as the preferred method of accessing configuration values. This gives you the option of doing this:"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:65
+#: ../../source/Upgrading-From-Config-0.x.rst:62
 msgid "which is like prior versions that perform no validation, or this:"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:71
+#: ../../source/Upgrading-From-Config-0.x.rst:68
 msgid "which throws an exception on typos but is kind of wordy, or this:"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:77
+#: ../../source/Upgrading-From-Config-0.x.rst:74
 msgid "win."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:79
+#: ../../source/Upgrading-From-Config-0.x.rst:76
 msgid "Using ``get()`` is the preferred method because it fails fast if you misspell(sp?) a parameter or if the configs weren’t loaded for some reason."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:83
+#: ../../source/Upgrading-From-Config-0.x.rst:80
 msgid "If you want to test if a configuration without wrapping in a try/catch, ``has()`` is available at all config levels:"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:93
+#: ../../source/Upgrading-From-Config-0.x.rst:90
 msgid "config.util"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:95
-msgid "The config package comes with a bunch of `handy utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_, resulting in a large list of `reserved words <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ that couldn’t be used in configurations."
+#: ../../source/Upgrading-From-Config-0.x.rst:92
+msgid "The config package comes with a bunch of :doc:`Using-Config-Utilities`, resulting in a large list of :doc:`Reserved-Words` that couldn’t be used in configurations."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:101
-msgid "Starting with node-config 1.0, these utilities have been moved to a single ``util`` object attached to configuration objects. Using these utilities from ``config`` vs. \\ ``config.util`` will cause a deprecation warning in node-config 1.0, and will not be supported in `version 2.0 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities>`_."
+#: ../../source/Upgrading-From-Config-0.x.rst:96
+msgid "Starting with node-config 1.0, these utilities have been moved to a single ``util`` object attached to configuration objects. Using these utilities from ``config`` vs. \\ ``config.util`` will cause a deprecation warning in node-config 1.0, and will not be supported in :ref:`Future-Compatibility-upcoming-incompatibilities`."
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:107
+#: ../../source/Upgrading-From-Config-0.x.rst:102
 msgid "This ``util`` object is available at all levels, so if you do something like this:"
 msgstr ""
 
-#: ../../source/Upgrading-From-Config-0.x.rst:114
+#: ../../source/Upgrading-From-Config-0.x.rst:109
 msgid "you’ll still be able to access config utilities using ``dbConfig.util``. For example, if you wanted a deep clone of a JavaScript object, you could do this:"
 msgstr ""
 

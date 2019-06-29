@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JavaScript配置文件的特殊功能</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deferred-values-in-javascript-configuration-files">JavaScript配置文件中的延迟值</a></li>
@@ -181,7 +182,7 @@
 <p>以 <code class="docutils literal notranslate"><span class="pre">.js</span></code> 结尾的文件将作为JavaScript模块加载并运行.模块必须导出配置对象.有些人欣赏计算配置的能力,有些人则认为这不是正确的做法.住在一个有选择的世界里真好.</p>
 <p>JavaScript模块支持具有“延迟”和“原始”值的功能.</p>
 <div class="section" id="deferred-values-in-javascript-configuration-files">
-<h2>JavaScript配置文件中的延迟值<a class="headerlink" href="#deferred-values-in-javascript-configuration-files" title="永久链接至标题">¶</a></h2>
+<span id="special-features-for-javascript-configuration-files-deferred-values-in-javascript-configuration-files"></span><h2>JavaScript配置文件中的延迟值<a class="headerlink" href="#deferred-values-in-javascript-configuration-files" title="永久链接至标题">¶</a></h2>
 <p>在JavaScript模块中,您可以选择将配置值定义为一种函数,其分辨率将延迟到构建最终的合并配置结构.</p>
 <p>例如,您为 “full name” 设置默认值,该值根据 “first name” 和 “last name” 值计算,将提供一个覆盖默认值的配置文件.</p>
 <p>例:</p>

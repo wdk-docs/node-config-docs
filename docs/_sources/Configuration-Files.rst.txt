@@ -19,6 +19,8 @@ from node, before loading Node-config:
 relative path from the process if the value begins with ``./`` or
 ``../``.
 
+.. _Configuration-Files-file-load-order:
+
 File Load Order
 ---------------
 
@@ -48,11 +50,12 @@ Where
 
 -  ``EXT`` can be .yml, .yaml, .xml, .coffee, .cson,
    `.properties <https://github.com/gagle/node-properties>`_,
-   `.json <http://json.org/>`_, `.json5 <http://json5.org/>`_,
-   `.hjson <http://laktak.github.io/hjson/>`_, .ts or .js depending on
-   the format you prefer (see below)
+   `.json <http://json.org/>`_,
+   `.json5 <http://json5.org/>`_,
+   `.hjson <http://laktak.github.io/hjson/>`_,
+   .ts or .js depending on the format you prefer (see below)
 -  ``{instance}`` is an optional instance name string for
-   `Multi-Instance Deployments <#multi-instance-deployments>`_
+   :ref:`Configuration-Files-multi-instance-deployments`
 -  ``{short_hostname}`` is your server name up to the first dot, from
    the ``$HOST`` or ``$HOSTNAME`` environment variable or
    ``os.hostname()`` (in that order). For example if your hostname is
@@ -100,12 +103,13 @@ Note that arrays are always merged by replacement. That is, the complete
 contents of an array in an override file will replace the complete array
 from a parent file.
 
+.. _Configuration-Files-multi-instance-deployments:
+
 Multi Instance Deployments
 --------------------------
 
 In order to support different configurations for each application
-instance running on a machine, the ``NODE_APP_INSTANCE`` `environment
-variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_
+instance running on a machine, the ``NODE_APP_INSTANCE`` :doc:`Environment-Variables`
 is inspected, and used for loading instance specific files.
 
 For example, if the ``NODE_APP_INSTANCE=3`` environment variable is set,
@@ -120,10 +124,11 @@ loaded if present.
 Environment variables
 ---------------------
 
-`Custom environment
-variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_
+:ref:`Environment-Variables-custom-environment-variables`
 override all configuration files, including local.json. Only command
 line options take precedence over them.
+
+.. _Configuration-Files-file-formats:
 
 File Formats
 ------------
@@ -244,8 +249,7 @@ Files ending in ``.js`` are loaded and run as a JavaScript module. The
 module must export the configuration object. JavaScript modules support
 the ability to have “deferred” and “raw” values.
 
-See `Special features for JavaScript configuration
-files <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_
+See :doc:`Special-features-for-JavaScript-configuration-files`
 for details.
 
 CoffeeScript module - .coffee

@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
@@ -98,9 +99,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">未来兼容性</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Semver版本控制</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">充足的警告</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">即将到来的不兼容性</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#semver-versioning">Semver版本控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ample-warning">充足的警告</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upcoming-incompatibilities">即将到来的不兼容性</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#version-2-0-not-before-july-2015">版本2.0 - (不是在2015年7月之前)</a></li>
 </ul>
 </li>
@@ -180,17 +181,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="future-compatibility">
-<h1>未来兼容性<a class="headerlink" href="#future-compatibility" title="永久链接至标题">¶</a></h1>
+<span id="future-compatibility-compatibility-statement"></span><h1>未来兼容性<a class="headerlink" href="#future-compatibility" title="永久链接至标题">¶</a></h1>
 <p>为了确认更改相关软件所需的工作, node-config将会:</p>
 <ul class="simple">
-<li><p>使用 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Future-Compatibility#semver-versioning">semver versioning</a> 来促进稳定的部署,</p></li>
+<li><p>使用 <a class="reference internal" href="#future-compatibility-semver-versioning"><span class="std std-ref">Semver版本控制</span></a> 来促进稳定的部署,</p></li>
 <li><p>限制后向不兼容性以支持替代解决方案,</p></li>
-<li><p>为即将发布的不兼容版本提供 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Future-Compatibility#ample-warning">充足的警告</a></p></li>
+<li><p>为即将发布的不兼容版本提供 <a class="reference internal" href="#future-compatibility-semver-versioning"><span class="std std-ref">Semver版本控制</span></a></p></li>
 <li><p>尝试在不兼容的使用情况下检测并输出错误, 以及</p></li>
-<li><p>发布所有 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities">即将发生的不兼容性</a> 在此页面上</p></li>
+<li><p>发布所有 <a class="reference internal" href="#future-compatibility-upcoming-incompatibilities"><span class="std std-ref">即将到来的不兼容性</span></a> 在此页面上</p></li>
 </ul>
-<div class="section" id="id1">
-<h2>Semver版本控制<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="semver-versioning">
+<span id="future-compatibility-semver-versioning"></span><h2>Semver版本控制<a class="headerlink" href="#semver-versioning" title="永久链接至标题">¶</a></h2>
 <p>为了促进稳定部署, node-config在表达部署版本时使用 <a class="reference external" href="http://semver.org/">semver versioning</a>.</p>
 <p>这使得适合运行特定 <code class="docutils literal notranslate"><span class="pre">MAJOR.MINOR</span></code> 版本的测试, 并对指定通配符 <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> 版本充满信心.例如, 如果您测试过的当前版本是 <code class="docutils literal notranslate"><span class="pre">1.3.4</span></code>, 那么 package.json 中的 node-config 依赖关系可能是:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -200,18 +201,18 @@
 </div>
 <p>没有引入重大风险.您还可以指定 <code class="docutils literal notranslate"><span class="pre">&quot;config&quot;:</span> <span class="pre">&quot;1.3.4&quot;,</span></code> 如果您更喜欢版本稳定性来修复错误.</p>
 </div>
-<div class="section" id="id3">
-<h2>充足的警告<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="ample-warning">
+<span id="future-compatibility-ample-warning"></span><h2>充足的警告<a class="headerlink" href="#ample-warning" title="永久链接至标题">¶</a></h2>
 <p>在不兼容性公告(下方)和包含不兼容性的版本的发布之间至少应给出一年的时间.</p>
 <p>如果可以使用将来的不兼容性来检测您的应用程序, 则每个应用程序运行的一次性警告将被置于 <code class="docutils literal notranslate"><span class="pre">console.error</span></code> 中, 用于每种类型的不兼容性.</p>
 <p>一旦引入了不兼容性, 如果检测到不兼容的用法, 则会在 <code class="docutils literal notranslate"><span class="pre">console.error</span></code> 中输入错误.</p>
 </div>
-<div class="section" id="id4">
-<h2>即将到来的不兼容性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="upcoming-incompatibilities">
+<span id="future-compatibility-upcoming-incompatibilities"></span><h2>即将到来的不兼容性<a class="headerlink" href="#upcoming-incompatibilities" title="永久链接至标题">¶</a></h2>
 <div class="section" id="version-2-0-not-before-july-2015">
-<h3>版本2.0 - (不是在2015年7月之前)<a class="headerlink" href="#version-2-0-not-before-july-2015" title="永久链接至标题">¶</a></h3>
+<span id="future-compatibility-version-20-not-before-july-2015"></span><h3>版本2.0 - (不是在2015年7月之前)<a class="headerlink" href="#version-2-0-not-before-july-2015" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
-<li><p>较少杂乱的顶级命名空间（2014年6月公布）<a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities">实用程序函数</a> 在 <code class="docutils literal notranslate"><span class="pre">config.util</span></code> 下可用`命名空间，因为版本1.0将不再在顶级 <code class="docutils literal notranslate"><span class="pre">config</span></code> 命名空间中可用。从版本2开始，它们只能在 <code class="docutils literal notranslate"><span class="pre">config.util</span></code> 下使用，并且 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Reserved-Words">保留字</a> 中的唯一单词list将是 <code class="docutils literal notranslate"><span class="pre">get</span></code>，<code class="docutils literal notranslate"><span class="pre">has</span></code> 和 <code class="docutils literal notranslate"><span class="pre">util</span></code>。</p></li>
+<li><p>较少杂乱的顶级命名空间（2014年6月发布）<span class="xref std std-doc">使用-config-Utilities</span> 在 <code class="docutils literal notranslate"><span class="pre">config.util</span></code> 命名空间下可用,因为1.0版将无法在顶级 <code class="docutils literal notranslate"><span class="pre">config</span></code>  中使用命名空间.从版本2开始,它们只能在以下文件中使用 <a class="reference internal" href="Reserved-Words.html"><span class="doc">保留字</span></a> 列表将是 <code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">has``和</span> <span class="pre">``util</span></code>.</p></li>
 <li><p>不推荐使用Watch实用程序(2014年7月发布) <code class="docutils literal notranslate"><span class="pre">watch</span></code> 方法是作为已更改配置值的通知而构建的.从node-config 1.0开始, 不再建议配置更改, 并且监视功能保留在但不建议使用警告.手表功能在2.0版中不可用.</p></li>
 </ul>
 </div>

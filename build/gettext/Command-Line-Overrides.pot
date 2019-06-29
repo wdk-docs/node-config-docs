@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,6 @@ msgid "The single quotes around the JSON value preserve the double quotes, and y
 msgstr ""
 
 #: ../../source/Command-Line-Overrides.rst:17
-msgid "The ``NODE_CONFIG`` parameter may also be supplied `as a shell environment variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config>`_"
+msgid "The ``NODE_CONFIG`` parameter may also be supplied :ref:`Environment-Variables-node_config`"
 msgstr ""
 

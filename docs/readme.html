@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>配置Node.js应用程序 &mdash; node-config docs v2019.06.28 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="配置文件" href="Configuration-Files.html" />
+    <link rel="prev" title="维基页面" href="Home.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> node-config docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">配置Node.js应用程序</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-guidelines">项目指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">快速开始</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#articles">文章</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#further-information">更多的信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributors">贡献者</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environment-Variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reserved-Words.html">保留字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Command-Line-Overrides.html">命令行覆盖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Multiple-Node-Instances.html">多节点实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sub-Module-Configuration.html">子模块配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-an-External-Source.html">从外部源配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External-Configuration-Management-Tools.html">外部配置管理工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examining-Configuration-Sources.html">检查配置源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-Config-Utilities.html">使用配置实用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Community-Utilities.html">社区公用事业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Future-Compatibility.html">未来兼容性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upgrading-From-Config-0.x.html">从Config 0.x升级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugins.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Altering-configuration-values-for-testing-at-runtime.html">更改配置值以便在运行时进行测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Asynchronous-Configurations.html">异步配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuring-from-a-DB.html">从DB配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Securing-Production-Config-Files.html">保护生产配置文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Strict-Mode.html">严格的模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Webpack-Usage.html">Webpack用法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Footer.html">页脚</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">node-config docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>配置Node.js应用程序</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/readme.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configure-your-node-js-applications">
+<h1>配置Node.js应用程序<a class="headerlink" href="#configure-your-node-js-applications" title="永久链接至标题">¶</a></h1>
+<p><a class="reference external" href="https://nodei.co/npm/config/"><img alt="NPM" src="https://nodei.co/npm/config.svg?downloads=true&amp;downloadRank=true" /></a>   <a class="reference external" href="https://travis-ci.org/lorenwest/node-config"><img alt="Build Status" src="https://secure.travis-ci.org/lorenwest/node-config.svg?branch=master" /></a>   <a class="reference external" href="https://github.com/lorenwest/node-config/blob/master/History.md">发行说明</a></p>
+<div class="section" id="introduction">
+<h2>介绍<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>Node-config为您的应用程序部署组织层次结构配置.</p>
+<p>它允许您定义一组默认参数, 并为不同的部署环境(开发, qa, 登台, 生产等)扩展它们.</p>
+<p>配置存储在应用程序中的 <a class="reference internal" href="Configuration-Files.html"><span class="doc">配置文件</span></a> 中, 可以通过以下方式覆盖和扩展 <a class="reference internal" href="Environment-Variables.html"><span class="doc">环境变量</span></a>, <a class="reference internal" href="Command-Line-Overrides.html"><span class="doc">命令行覆盖</span></a>, 或者 <a class="reference internal" href="Configuring-from-an-External-Source.html"><span class="doc">从外部源配置</span></a>.</p>
+<p>这为您的应用程序提供了一个一致的配置界面, 该界面在 <a class="reference external" href="https://www.npmjs.org/browse/depended/config">不断增长的npm模块列表中共享</a> 也使用node-config.</p>
+</div>
+<div class="section" id="project-guidelines">
+<h2>项目指南<a class="headerlink" href="#project-guidelines" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><em>简单</em> - 快速入门</p></li>
+<li><p><em>强大</em> - 用于多节点企业部署</p></li>
+<li><p><em>灵活</em> - 支持多种配置文件格式</p></li>
+<li><p><em>轻量级</em> - 小文件和内存占用</p></li>
+<li><p><em>可预测的</em> - 模块和应用程序开发人员的基础测试</p></li>
+</ul>
+</div>
+<div class="section" id="quick-start">
+<h2>快速开始<a class="headerlink" href="#quick-start" title="永久链接至标题">¶</a></h2>
+<p>以下示例采用JSON格式，但配置可以在其他示例中 <span class="xref std std-ref">Configuration-Files-file-formats&gt;</span>.</p>
+<p><strong>安装在您的app目录中, 然后编辑默认配置文件.</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ npm install config
+$ mkdir config
+$ vi config/default.json
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="c1">// Customer module configs</span>
+  <span class="s2">&quot;Customer&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dbConfig&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;host&quot;</span><span class="o">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;port&quot;</span><span class="o">:</span> <span class="mi">5984</span><span class="p">,</span>
+      <span class="s2">&quot;dbName&quot;</span><span class="o">:</span> <span class="s2">&quot;customers&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;credit&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;initialLimit&quot;</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="c1">// Set low for development</span>
+      <span class="s2">&quot;initialDays&quot;</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>编辑生产部署的配置覆盖:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ vi config/production.json
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Customer&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;dbConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;prod-db-server&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;credit&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;initialDays&quot;</span><span class="p">:</span> <span class="mi">30</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>在代码中使用配置:</strong></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">);</span>
+<span class="c1">//...</span>
+<span class="kr">const</span> <span class="nx">dbConfig</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;Customer.dbConfig&#39;</span><span class="p">);</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">dbConfig</span><span class="p">,</span> <span class="p">...);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">&#39;optionalFeature.detail&#39;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">detail</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;optionalFeature.detail&#39;</span><span class="p">);</span>
+  <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">config.get()</span></code> 将为未定义的键抛出异常, 以帮助捕获拼写错误和缺失值.使用 <code class="docutils literal notranslate"><span class="pre">config.has()</span></code> 来测试是否定义了配置值.</p>
+<p><strong>启动您的应用服务器:</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">NODE_ENV</span><span class="o">=</span>production
+$ node my-app.js
+</pre></div>
+</div>
+<p>运行在这个配置中, <code class="docutils literal notranslate"><span class="pre">dbConfig</span></code> 的 <code class="docutils literal notranslate"><span class="pre">port</span></code> 和 <code class="docutils literal notranslate"><span class="pre">dbName</span></code> 元素将来自 <code class="docutils literal notranslate"><span class="pre">default.json</span></code> 文件, <code class="docutils literal notranslate"><span class="pre">host</span></code> 元素将来自 <code class="docutils literal notranslate"><span class="pre">production.json</span></code> 覆盖文件.</p>
+</div>
+<div class="section" id="articles">
+<h2>文章<a class="headerlink" href="#articles" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="Configuration-Files.html"><span class="doc">配置文件</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html"><span class="doc">JavaScript配置文件的特殊功能</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="Common-Usage.html"><span class="doc">常见用法</span></a></p></li>
+<li><p><a class="reference internal" href="Environment-Variables.html"><span class="doc">环境变量</span></a></p></li>
+<li><p><a class="reference internal" href="Reserved-Words.html"><span class="doc">保留字</span></a></p></li>
+<li><p><a class="reference internal" href="Command-Line-Overrides.html"><span class="doc">命令行覆盖</span></a></p></li>
+<li><p><a class="reference internal" href="Multiple-Node-Instances.html"><span class="doc">多节点实例</span></a></p></li>
+<li><p><a class="reference internal" href="Sub-Module-Configuration.html"><span class="doc">子模块配置</span></a></p></li>
+<li><p><a class="reference internal" href="Configuring-from-an-External-Source.html"><span class="doc">从外部源配置</span></a></p></li>
+<li><p><a class="reference internal" href="Securing-Production-Config-Files.html"><span class="doc">保护生产配置文件</span></a></p></li>
+<li><p><a class="reference internal" href="External-Configuration-Management-Tools.html"><span class="doc">外部配置管理工具</span></a></p></li>
+<li><p><a class="reference internal" href="Examining-Configuration-Sources.html"><span class="doc">检查配置源</span></a></p></li>
+<li><p><a class="reference internal" href="Using-Config-Utilities.html"><span class="doc">使用配置实用程序</span></a></p></li>
+<li><p><a class="reference internal" href="Upgrading-From-Config-0.x.html"><span class="doc">从Config 0.x升级</span></a></p></li>
+<li><p><a class="reference internal" href="Webpack-Usage.html"><span class="doc">Webpack用法</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="further-information">
+<h2>更多的信息<a class="headerlink" href="#further-information" title="永久链接至标题">¶</a></h2>
+<p>如果您仍然没有看到您要查找的内容, 请查看更多资源:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/lorenwest/node-config/wiki">wiki可能有更多的页面</a>, 这些页面没有直接链接.</p></li>
+<li><p>在 <a class="reference external" href="https://stackexchange.com/filters/207096/node-config">StackExchange上查看标记为node-config</a> 的问题.这些由 <code class="docutils literal notranslate"><span class="pre">node-config</span></code> 贡献者监视.</p></li>
+<li><p><a class="reference external" href="https://github.com/lorenwest/node-config/issues">搜索问题跟踪器</a>.已有数百个问题在那里得到讨论和解决.</p></li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h2>贡献者<a class="headerlink" href="#contributors" title="永久链接至标题">¶</a></h2>
+<table id="contributors"><tr><td><p>lorenwest</p>
+</td><td><p>markstos</p>
+</td><td><p>elliotttf</p>
+</td><td><p>jfelege</p>
+</td><td><p>leachiM2k</p>
+</td><td><p>josx</p>
+</td></tr><tr><td><p>enyo</p>
+</td><td><p>arthanzel</p>
+</td><td><p>eheikes</p>
+</td><td><p>th507</p>
+</td><td><p>Osterjour</p>
+</td><td><p>nsabovic</p>
+</td></tr><tr><td><p>ScionOfBytes</p>
+</td><td><p>simon-scherzinger</p>
+</td><td><p>axelhzf</p>
+</td><td><p>benkroeger</p>
+</td><td><p>fgheorghe</p>
+</td><td><p>IvanVergiliev</p>
+</td></tr><tr><td><p>jpwilliams</p>
+</td><td><p>jaylynch</p>
+</td><td><p>jberrisch</p>
+</td><td><p>kgoerlitz</p>
+</td><td><p>bertho-zero</p>
+</td><td><p>leonardovillela</p>
+</td></tr><tr><td><p>nitzan-shaked</p>
+</td><td><p>robertrossmann</p>
+</td><td><p>roncli</p>
+</td><td><p>superoven</p>
+</td><td><p>wmertens</p>
+</td><td><p>XadillaX</p>
+</td></tr></table></div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="永久链接至标题">¶</a></h2>
+<p>可以在 <a class="reference external" href="https://raw.githubusercontent.com/lorenwest/node-config/master/LICENSE">MIT许可证</a></p>
+<p>版权所有(c)2010-2018 Loren West <a class="reference external" href="https://github.com/lorenwest/node-config/graphs/contributors">和其他贡献者</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Configuration-Files.html" class="btn btn-neutral float-right" title="配置文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Home.html" class="btn btn-neutral float-left" title="维基页面" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, BandCap
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

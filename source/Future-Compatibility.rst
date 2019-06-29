@@ -1,26 +1,22 @@
+.. _Future-Compatibility-compatibility-statement:
+
 Future Compatibility
 ==============================
 
-In acknowledgement of the effort required to change dependent software,
-node-config will:
+In acknowledgement of the effort required to change dependent software, node-config will:
 
--  Use `semver
-   versioning <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#semver-versioning>`_
-   to promote stable deployments,
--  Limit backward incompatibilities in favor of alternate solutions,
--  Provide `ample
-   warning <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#ample-warning>`_
-   for upcoming incompatible releases,
--  Attempt to detect and output errors on incompatible usage, and
--  Post all `upcoming
-   incompatibilities <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities>`_
-   on this page
+- Use :ref:`Future-Compatibility-semver-versioning` to promote stable deployments,
+- Limit backward incompatibilities in favor of alternate solutions,
+- Provide :ref:`Future-Compatibility-ample-warning` for upcoming incompatible releases,
+- Attempt to detect and output errors on incompatible usage, and
+- Post all :ref:`Future-Compatibility-upcoming-incompatibilities` on this page
+
+.. _Future-Compatibility-semver-versioning:
 
 Semver Versioning
 ----------------------------
 
-To promote stable deployments, node-config uses `semver
-versioning <http://semver.org/>`_ when expressing deployment versions.
+To promote stable deployments, node-config uses `semver versioning <http://semver.org/>`_ when expressing deployment versions.
 
 This makes it appropriate to run tests for a particular ``MAJOR.MINOR``
 version, and be confident about specifying a wildcard ``PATCH`` version.
@@ -36,6 +32,8 @@ your node-config dependency in package.json could be:
 without introducing significant risk. You can also specify
 ``"config": "1.3.4",`` if you prefer version stability to bug fixes.
 
+.. _Future-Compatibility-ample-warning:
+
 Ample Warning
 ---------------------
 
@@ -50,20 +48,21 @@ onto ``console.error`` for each type of incompatibility.
 Once the incompatibility is introduced, an error will be placed into
 ``console.error`` if an incompatible usage is detected.
 
+.. _Future-Compatibility-upcoming-incompatibilities:
+
 Upcoming Incompatibilities
 --------------------------------------
+
+.. _Future-Compatibility-version-20---not-before-july-2015:
 
 Version 2.0 - (not before July, 2015)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Less Cluttered Top Level Namespace (announced June, 2014)\ `Utility
-   functions <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_
+-  Less Cluttered Top Level Namespace (announced June, 2014)\ :doc:`Using-Config-Utilities`
    available under the ``config.util`` namespace since version 1.0 will
    no longer be available at the top level ``config`` namespace.
    Starting at Version 2 they will only be available under
-   ``config.util``, and the only words in the `Reserved
-   Words <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_
-   list will be ``get``, ``has``, and ``util``.
+   :doc:`Reserved-Words` list will be ``get``, ``has``, and ``util``.
 
 -  Watch utility deprecated (announced July, 2014) The ``watch`` method
    was built as a notification of changed configuration values. Since

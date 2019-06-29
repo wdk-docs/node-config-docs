@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 23:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,14 +25,14 @@ msgid "CEV - Custom Environment Variable Generator"
 msgstr ""
 
 #: ../../source/Community-Utilities.rst:7
-msgid "If you use `custom environment variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables>`_ a lot, here’s a generator for them http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/"
+msgid "If you use :ref:`Environment-Variables-custom-environment-variables` a lot, here’s a generator for them http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/"
 msgstr ""
 
-#: ../../source/Community-Utilities.rst:13
+#: ../../source/Community-Utilities.rst:12
 msgid "config-uncached"
 msgstr ""
 
-#: ../../source/Community-Utilities.rst:15
+#: ../../source/Community-Utilities.rst:14
 msgid "Sometimes for testing or DevOps, you need one script to load more than configuration. This is normally a challenge with ``node-config`` As a singleton, it returns the same configuration each time. To force node-config to reload the configuration, use the `config-uncached <https://www.npmjs.com/package/config-uncached>`_ module."
 msgstr ""
 

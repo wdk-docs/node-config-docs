@@ -26,13 +26,10 @@ Then read on.
 
 By following a common pattern, you give developers using your module:
 
--  A consistent interface for `defining and
-   extending <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_
+-  A consistent interface for :doc:`Configuration-Files`
    your configurations
--  A way to pass configurations via `O/S environment
-   variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_
--  A way to pass configurations via `command line
-   arguments <https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_
+-  A way to pass configurations via :doc:`Environment-Variables`
+-  A way to pass configurations via :doc:`Command-Line-Overrides`
 -  `Other features <https://github.com/lorenwest/node-config/wiki>`_
    built in to node-config
 
@@ -42,8 +39,7 @@ node-config in their own app (unless they want).
 Here’s how it works:
 
 Load node-config at the top of your module like normal, and specify the
-``SUPPRESS_NO_CONFIG_WARNING`` `environment
-variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_
+:doc:`Environment-Variables`
 so applications don’t get *No config files* warnings if they aren’t
 using node-config.
 

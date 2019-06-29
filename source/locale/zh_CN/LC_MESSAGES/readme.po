@@ -1,0 +1,531 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, BandCap
+# This file is distributed under the same license as the node-config docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: node-config docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-29 20:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/readme.rst:2
+msgid "Configure your Node.js Applications"
+msgstr "配置Node.js应用程序"
+
+#: ../../source/readme.rst:4
+msgid ""
+"|NPM|   |Build Status|   `release notes <https://github.com/lorenwest"
+"/node-config/blob/master/History.md>`_"
+msgstr ""
+"|NPM|   |Build Status|   `发行说明 <https://github.com/lorenwest/node-"
+"config/blob/master/History.md>`_"
+
+#: ../../source/readme.rst:8
+msgid "Introduction"
+msgstr "介绍"
+
+#: ../../source/readme.rst:10
+msgid ""
+"Node-config organizes hierarchical configurations for your app "
+"deployments."
+msgstr "Node-config为您的应用程序部署组织层次结构配置."
+
+#: ../../source/readme.rst:13
+msgid ""
+"It lets you define a set of default parameters, and extend them for "
+"different deployment environments (development, qa, staging, production, "
+"etc.)."
+msgstr "它允许您定义一组默认参数, 并为不同的部署环境(开发, qa, 登台, 生产等)扩展它们."
+
+#: ../../source/readme.rst:17
+msgid ""
+"Configurations are stored in :doc:`Configuration-Files` within your "
+"application, and can be overridden and extended by :doc:`Environment-"
+"Variables`, :doc:`Command-Line-Overrides`, or :doc:`Configuring-from-an-"
+"External-Source`."
+msgstr ""
+"配置存储在应用程序中的 :doc:`Configuration-Files` 中, 可以通过以下方式覆盖和扩展 :doc"
+":`Environment-Variables`, :doc:`Command-Line-Overrides`, 或者 :doc"
+":`Configuring-from-an-External-Source`."
+
+#: ../../source/readme.rst:22
+msgid ""
+"This gives your application a consistent configuration interface shared "
+"among a `growing list of npm modules "
+"<https://www.npmjs.org/browse/depended/config>`_ also using node-config."
+msgstr ""
+"这为您的应用程序提供了一个一致的配置界面, 该界面在 `不断增长的npm模块列表中共享 "
+"<https://www.npmjs.org/browse/depended/config>`_ 也使用node-config."
+
+#: ../../source/readme.rst:27
+msgid "Project Guidelines"
+msgstr "项目指南"
+
+#: ../../source/readme.rst:29
+msgid "*Simple* - Get started fast"
+msgstr "*简单* - 快速入门"
+
+#: ../../source/readme.rst:30
+msgid "*Powerful* - For multi-node enterprise deployment"
+msgstr "*强大* - 用于多节点企业部署"
+
+#: ../../source/readme.rst:31
+msgid "*Flexible* - Supporting multiple config file formats"
+msgstr "*灵活* - 支持多种配置文件格式"
+
+#: ../../source/readme.rst:32
+msgid "*Lightweight* - Small file and memory footprint"
+msgstr "*轻量级* - 小文件和内存占用"
+
+#: ../../source/readme.rst:33
+msgid "*Predictable* - Well tested foundation for module and app developers"
+msgstr "*可预测的* - 模块和应用程序开发人员的基础测试"
+
+#: ../../source/readme.rst:36
+msgid "Quick Start"
+msgstr "快速开始"
+
+#: ../../source/readme.rst:38
+msgid ""
+"The following examples are in JSON format, but configurations can be in "
+"other :ref:`Configuration-Files-file-formats`."
+msgstr "以下示例采用JSON格式，但配置可以在其他示例中 :ref:`Configuration-Files-file-formats>`."
+
+#: ../../source/readme.rst:41
+msgid "**Install in your app directory, and edit the default config file.**"
+msgstr "**安装在您的app目录中, 然后编辑默认配置文件.**"
+
+#: ../../source/readme.rst:67
+msgid "**Edit config overrides for production deployment:**"
+msgstr "**编辑生产部署的配置覆盖:**"
+
+#: ../../source/readme.rst:86
+msgid "**Use configs in your code:**"
+msgstr "**在代码中使用配置:**"
+
+#: ../../source/readme.rst:100
+msgid ""
+"``config.get()`` will throw an exception for undefined keys to help catch"
+" typos and missing values. Use ``config.has()`` to test if a "
+"configuration value is defined."
+msgstr ""
+"``config.get()`` 将为未定义的键抛出异常, 以帮助捕获拼写错误和缺失值.使用 ``config.has()`` "
+"来测试是否定义了配置值."
+
+#: ../../source/readme.rst:104
+msgid "**Start your app server:**"
+msgstr "**启动您的应用服务器:**"
+
+#: ../../source/readme.rst:111
+msgid ""
+"Running in this configuration, the ``port`` and ``dbName`` elements of "
+"``dbConfig`` will come from the ``default.json`` file, and the ``host`` "
+"element will come from the ``production.json`` override file."
+msgstr ""
+"运行在这个配置中, ``dbConfig`` 的 ``port`` 和 ``dbName`` 元素将来自 ``default.json`` 文件,"
+" ``host`` 元素将来自 ``production.json`` 覆盖文件."
+
+#: ../../source/readme.rst:116
+msgid "Articles"
+msgstr "文章"
+
+#: ../../source/readme.rst:118
+msgid ":doc:`Configuration-Files`"
+msgstr ""
+
+#: ../../source/readme.rst:120
+msgid ":doc:`Special-features-for-JavaScript-configuration-files`"
+msgstr ""
+
+#: ../../source/readme.rst:122
+msgid ":doc:`Common-Usage`"
+msgstr ""
+
+#: ../../source/readme.rst:123
+msgid ":doc:`Environment-Variables`"
+msgstr ""
+
+#: ../../source/readme.rst:124
+msgid ":doc:`Reserved-Words`"
+msgstr ""
+
+#: ../../source/readme.rst:125
+msgid ":doc:`Command-Line-Overrides`"
+msgstr ""
+
+#: ../../source/readme.rst:126
+msgid ":doc:`Multiple-Node-Instances`"
+msgstr ""
+
+#: ../../source/readme.rst:127
+msgid ":doc:`Sub-Module-Configuration`"
+msgstr ""
+
+#: ../../source/readme.rst:128
+msgid ":doc:`Configuring-from-an-External-Source`"
+msgstr ""
+
+#: ../../source/readme.rst:129
+msgid ":doc:`Securing-Production-Config-Files`"
+msgstr ""
+
+#: ../../source/readme.rst:130
+msgid ":doc:`External-Configuration-Management-Tools`"
+msgstr ""
+
+#: ../../source/readme.rst:131
+msgid ":doc:`Examining-Configuration-Sources`"
+msgstr ""
+
+#: ../../source/readme.rst:132
+msgid ":doc:`Using-Config-Utilities`"
+msgstr ""
+
+#: ../../source/readme.rst:133
+msgid ":doc:`Upgrading-From-Config-0.x`"
+msgstr ""
+
+#: ../../source/readme.rst:134
+msgid ":doc:`Webpack-Usage`"
+msgstr ""
+
+#: ../../source/readme.rst:137
+msgid "Further Information"
+msgstr "更多的信息"
+
+#: ../../source/readme.rst:139
+msgid ""
+"If you still don’t see what you are looking for, here more resources to "
+"check:"
+msgstr "如果您仍然没有看到您要查找的内容, 请查看更多资源:"
+
+#: ../../source/readme.rst:141
+msgid ""
+"The `wiki may have more pages <https://github.com/lorenwest/node-"
+"config/wiki>`_ which are not directly linked from here."
+msgstr ""
+"`wiki可能有更多的页面 <https://github.com/lorenwest/node-config/wiki>`_, "
+"这些页面没有直接链接."
+
+#: ../../source/readme.rst:142
+msgid ""
+"Review `questions tagged with node-config "
+"<https://stackexchange.com/filters/207096/node-config>`_ on "
+"StackExchange. These are monitored by ``node-config`` contributors."
+msgstr ""
+"在 `StackExchange上查看标记为node-config "
+"<https://stackexchange.com/filters/207096/node-config>`_ 的问题.这些由 ``node-"
+"config`` 贡献者监视."
+
+#: ../../source/readme.rst:144
+msgid ""
+"`Search the issue tracker <https://github.com/lorenwest/node-"
+"config/issues>`_. Hundreds of issues have already been discussed and "
+"resolved there."
+msgstr ""
+"`搜索问题跟踪器 <https://github.com/lorenwest/node-"
+"config/issues>`_.已有数百个问题在那里得到讨论和解决."
+
+#: ../../source/readme.rst:148
+msgid "Contributors"
+msgstr "贡献者"
+
+#: ../../source/readme.rst:162
+msgid "lorenwest"
+msgstr ""
+
+#: ../../source/readme.rst:172
+msgid "markstos"
+msgstr ""
+
+#: ../../source/readme.rst:182
+msgid "elliotttf"
+msgstr ""
+
+#: ../../source/readme.rst:192
+msgid "jfelege"
+msgstr ""
+
+#: ../../source/readme.rst:202
+msgid "leachiM2k"
+msgstr ""
+
+#: ../../source/readme.rst:212
+msgid "josx"
+msgstr ""
+
+#: ../../source/readme.rst:230
+msgid "enyo"
+msgstr ""
+
+#: ../../source/readme.rst:240
+msgid "arthanzel"
+msgstr ""
+
+#: ../../source/readme.rst:250
+msgid "eheikes"
+msgstr ""
+
+#: ../../source/readme.rst:260
+msgid "th507"
+msgstr ""
+
+#: ../../source/readme.rst:270
+msgid "Osterjour"
+msgstr ""
+
+#: ../../source/readme.rst:280
+msgid "nsabovic"
+msgstr ""
+
+#: ../../source/readme.rst:298
+msgid "ScionOfBytes"
+msgstr ""
+
+#: ../../source/readme.rst:308
+msgid "simon-scherzinger"
+msgstr ""
+
+#: ../../source/readme.rst:318
+msgid "axelhzf"
+msgstr ""
+
+#: ../../source/readme.rst:328
+msgid "benkroeger"
+msgstr ""
+
+#: ../../source/readme.rst:338
+msgid "fgheorghe"
+msgstr ""
+
+#: ../../source/readme.rst:348
+msgid "IvanVergiliev"
+msgstr ""
+
+#: ../../source/readme.rst:366
+msgid "jpwilliams"
+msgstr ""
+
+#: ../../source/readme.rst:376
+msgid "jaylynch"
+msgstr ""
+
+#: ../../source/readme.rst:386
+msgid "jberrisch"
+msgstr ""
+
+#: ../../source/readme.rst:396
+msgid "kgoerlitz"
+msgstr ""
+
+#: ../../source/readme.rst:406
+msgid "bertho-zero"
+msgstr ""
+
+#: ../../source/readme.rst:416
+msgid "leonardovillela"
+msgstr ""
+
+#: ../../source/readme.rst:434
+msgid "nitzan-shaked"
+msgstr ""
+
+#: ../../source/readme.rst:444
+msgid "robertrossmann"
+msgstr ""
+
+#: ../../source/readme.rst:454
+msgid "roncli"
+msgstr ""
+
+#: ../../source/readme.rst:464
+msgid "superoven"
+msgstr ""
+
+#: ../../source/readme.rst:474
+msgid "wmertens"
+msgstr ""
+
+#: ../../source/readme.rst:484
+msgid "XadillaX"
+msgstr ""
+
+#: ../../source/readme.rst:499
+msgid "License"
+msgstr ""
+
+#: ../../source/readme.rst:501
+msgid ""
+"May be freely distributed under the `MIT license "
+"<https://raw.githubusercontent.com/lorenwest/node-"
+"config/master/LICENSE>`_."
+msgstr ""
+"可以在 `MIT许可证 <https://raw.githubusercontent.com/lorenwest/node-"
+"config/master/LICENSE>`_"
+
+#: ../../source/readme.rst:504
+msgid ""
+"Copyright (c) 2010-2018 Loren West `and other contributors "
+"<https://github.com/lorenwest/node-config/graphs/contributors>`_"
+msgstr ""
+"版权所有(c)2010-2018 Loren West `和其他贡献者 <https://github.com/lorenwest/node-"
+"config/graphs/contributors>`_"
+
+#~ msgid ""
+#~ "|NPM|   |Build Status|   `release notes "
+#~ "<https://github.com/lorenwest/node-"
+#~ "config/blob/master/History.md>`_"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "|NPM|   |Build Status|   `release notes "
+#~ "<https://github.com/lorenwest/node-"
+#~ "config/blob/master/History.md>`__"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Configurations are stored in `configuration"
+#~ " files <https://github.com/lorenwest/node-config/wiki"
+#~ "/Configuration-Files>`_ within your application,"
+#~ " and can be overridden and extended"
+#~ " by `environment variables "
+#~ "<https://github.com/lorenwest/node-config/wiki/Environment-"
+#~ "Variables>`_, `command line parameters "
+#~ "<https://github.com/lorenwest/node-config/wiki/Command-"
+#~ "Line-Overrides>`_, or `external sources "
+#~ "<https://github.com/lorenwest/node-config/wiki/Configuring-"
+#~ "from-an-External-Source>`_."
+#~ msgstr ""
+#~ "配置存储在应用程序中的 `配置文件 <https://github.com/lorenwest/node-"
+#~ "config/wiki/Configuration-Files>`_ 中, 可以通过 "
+#~ "`环境变量 <https://github覆盖和扩展.com/lorenwest /node-"
+#~ "config/wiki/Environment-Variables>`_, `命令行参数 "
+#~ "<https://github.com/lorenwest/node-config/wiki/Command-"
+#~ "Line-Overrides>`_, 或 `外部来源 "
+#~ "<https://github.com/lorenwest/node-config/wiki/Configuring-"
+#~ "from-an-External-Source>`_."
+
+#~ msgid ""
+#~ "`Configuration Files <https://github.com/lorenwest"
+#~ "/node-config/wiki/Configuration-Files>`_"
+#~ msgstr ""
+#~ "`配置文件 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Configuration-Files>`_"
+
+#~ msgid ""
+#~ "`Special features for JavaScript configuration"
+#~ " files <https://github.com/lorenwest/node-config/wiki"
+#~ "/Special-features-for-JavaScript-"
+#~ "configuration-files>`_"
+#~ msgstr ""
+#~ "`JavaScript配置文件的特殊功能 <https://github.com/lorenwest/node-"
+#~ "config/wiki/Special-features-for-JavaScript-"
+#~ "configuration-files>`_"
+
+#~ msgid ""
+#~ "`Common Usage <https://github.com/lorenwest/node-"
+#~ "config/wiki/Common-Usage>`_"
+#~ msgstr "`常见用法 <https://github.com/lorenwest/node-config/wiki/Common-Usage>`_"
+
+#~ msgid ""
+#~ "`Environment Variables <https://github.com/lorenwest"
+#~ "/node-config/wiki/Environment-Variables>`_"
+#~ msgstr ""
+#~ "`环境变量 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Environment-Variables>`_"
+
+#~ msgid ""
+#~ "`Reserved Words <https://github.com/lorenwest/node-"
+#~ "config/wiki/Reserved-Words>`_"
+#~ msgstr "`保留字 <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_"
+
+#~ msgid ""
+#~ "`Command Line Overrides "
+#~ "<https://github.com/lorenwest/node-config/wiki/Command-"
+#~ "Line-Overrides>`_"
+#~ msgstr ""
+#~ "`命令行覆盖 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Command-Line-Overrides>`_"
+
+#~ msgid ""
+#~ "`Multiple Node Instances "
+#~ "<https://github.com/lorenwest/node-config/wiki/Multiple-"
+#~ "Node-Instances>`_"
+#~ msgstr ""
+#~ "`多节点实例 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Multiple-Node-Instances>`_"
+
+#~ msgid ""
+#~ "`Sub-Module Configuration "
+#~ "<https://github.com/lorenwest/node-config/wiki/Sub-"
+#~ "Module-Configuration>`_"
+#~ msgstr ""
+#~ "`子模块配置 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Sub-Module-Configuration>`_"
+
+#~ msgid ""
+#~ "`Configuring from a DB / External "
+#~ "Source <https://github.com/lorenwest/node-config/wiki"
+#~ "/Configuring-from-an-External-Source>`_"
+#~ msgstr ""
+#~ "`从 DB / 外部源配置 <https://github.com/lorenwest"
+#~ "/node-config/wiki/onfiguring-from-an-External-"
+#~ "Source>`_"
+
+#~ msgid ""
+#~ "`Securing Production Config Files "
+#~ "<https://github.com/lorenwest/node-config/wiki/Securing-"
+#~ "Production-Config-Files>`_"
+#~ msgstr ""
+#~ "`保护生产配置文件 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Securing-Production-Config-Files>`_"
+
+#~ msgid ""
+#~ "`External Configuration Management Tools "
+#~ "<https://github.com/lorenwest/node-config/wiki/External-"
+#~ "Configuration-Management-Tools>`_"
+#~ msgstr ""
+#~ "`外部配置管理工具 <https://github.com/lorenwest/node-config/wiki"
+#~ "/External-Configuration-Management-Tools>`_"
+
+#~ msgid ""
+#~ "`Examining Configuration Sources "
+#~ "<https://github.com/lorenwest/node-config/wiki/Examining-"
+#~ "Configuration-Sources>`_"
+#~ msgstr ""
+#~ "`检查配置源 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Examining-Configuration-Sources>`_"
+
+#~ msgid ""
+#~ "`Using Config Utilities "
+#~ "<https://github.com/lorenwest/node-config/wiki/Using-"
+#~ "Config-Utilities>`_"
+#~ msgstr ""
+#~ "`使用配置实用程序 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Using-Config-Utilities>`_"
+
+#~ msgid ""
+#~ "`Upgrading from Config 0.x "
+#~ "<https://github.com/lorenwest/node-config/wiki/Upgrading-"
+#~ "From-Config-0.x>`_"
+#~ msgstr ""
+#~ "`从Config 0.x升级 <https://github.com/lorenwest/node-"
+#~ "config/wiki/Upgrading-From-Config-0.x>`_"
+
+#~ msgid ""
+#~ "`Webpack usage <https://github.com/lorenwest/node-"
+#~ "config/wiki/Webpack-Usage>`_"
+#~ msgstr ""
+#~ "`Webpack用法 <https://github.com/lorenwest/node-config/wiki"
+#~ "/Webpack-Usage>`_"
+

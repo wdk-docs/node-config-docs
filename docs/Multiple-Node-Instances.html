@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
@@ -173,7 +174,7 @@
             
   <div class="section" id="multiple-node-instances">
 <h1>多节点实例<a class="headerlink" href="#multiple-node-instances" title="永久链接至标题">¶</a></h1>
-<p>为了支持在机器上运行的每个应用程序实例的不同配置, 检查 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE</span></code> <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Environment-Variables">环境变量</a>, 并用于加载实例特定文件.</p>
+<p>为了支持在机器上运行的每个应用程序实例的不同配置, 检查 <a class="reference internal" href="Environment-Variables.html"><span class="doc">环境变量</span></a>, 并用于加载特定于实例的文件。</p>
 <p>例如, 如果设置了 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> 环境变量, 则在加载 <code class="docutils literal notranslate"><span class="pre">default.json</span></code> 之后立即加载一个名为 <code class="docutils literal notranslate"><span class="pre">default-3.json</span></code> 的文件.</p>
 <p>这适用于所有配置文件, 因此如果您的 <code class="docutils literal notranslate"><span class="pre">NODE_APP_INSTANCE=3</span></code> 和 <code class="docutils literal notranslate"><span class="pre">NODE_ENV=stage</span></code>, 则在加载 <code class="docutils literal notranslate"><span class="pre">stage.yaml</span></code> 之后立即使用名为 <code class="docutils literal notranslate"><span class="pre">stage-3.yaml</span></code> 的文件.如果存在, 将加载.</p>
 </div>

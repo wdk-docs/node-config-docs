@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:27+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,30 +23,44 @@ msgid "Command Line Overrides"
 msgstr "命令行覆盖"
 
 #: ../../source/Command-Line-Overrides.rst:4
-msgid  ""
+msgid ""
 "Configurations can be overridden by specifying ``--NODE_CONFIG='{...}'`` "
 "command line parameter when starting your application."
 msgstr "在启动应用程序时, 可以通过指定 `--NODE_CONFIG ='{...}'` 命令行参数来覆盖配置."
 
 #: ../../source/Command-Line-Overrides.rst:7
-msgid  ""
+msgid ""
 "The parameter value must be supplied as a valid JSON string. The "
 "following example overrides the Customer.dbConfig.host configuration:"
 msgstr "必须将参数值作为有效的JSON字符串提供.以下示例将覆盖Customer.dbConfig.host配置:"
 
 #: ../../source/Command-Line-Overrides.rst:14
-msgid  ""
+msgid ""
 "The single quotes around the JSON value preserve the double quotes, and "
 "you may have to escape special characters, based on your O/S shell."
 msgstr "JSON值周围的单引号保留双引号, 您可能必须根据O/S shell转义特殊字符."
 
 #: ../../source/Command-Line-Overrides.rst:17
-msgid  ""
-"The ``NODE_CONFIG`` parameter may also be supplied `as a shell "
-"environment variable <https://github.com/lorenwest/node-config/wiki"
-"/Environment-Variables#node_config>`_"
-msgstr "``NODE_CONFIG`` 参数也可以 `作为shell环境变量提供 <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config>`_"
+msgid ""
+"The ``NODE_CONFIG`` parameter may also be supplied :ref:`Environment-"
+"Variables-node_config`"
+msgstr ""
 
 #~ msgid "Command-Line-Overrides"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``NODE_CONFIG`` parameter may also "
+#~ "be supplied `as a shell environment "
+#~ "variable <https://github.com/lorenwest/node-config/wiki"
+#~ "/Environment-Variables#node_config>`_"
+#~ msgstr ""
+#~ "``NODE_CONFIG`` 参数也可以 `作为shell环境变量提供 "
+#~ "<https://github.com/lorenwest/node-config/wiki/Environment-"
+#~ "Variables#node_config>`_"
+
+#~ msgid ""
+#~ "The ``NODE_CONFIG`` parameter may also "
+#~ "be supplied :doc:`Environment-Variables#node_config`"
 #~ msgstr ""
 

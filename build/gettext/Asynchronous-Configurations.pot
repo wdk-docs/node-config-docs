@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid "Using the ``asyncConfig`` utility method you can wrap both promises and a
 msgstr ""
 
 #: ../../source/Asynchronous-Configurations.rst:14
-msgid "the final merged configuration structure is built (that’s when async functions are executed; see `deferConfig <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files#deferred-values-in-javascript-configuration-files>`_)"
+msgid "the final merged configuration structure is built (that’s when async functions are executed; see :ref:`Special-features-for-JavaScript-configuration-files-deferred-values-in-javascript-configuration-files`)"
 msgstr ""
 
 #: ../../source/Asynchronous-Configurations.rst:17

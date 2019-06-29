@@ -27,13 +27,10 @@ your app startup to load and merge configurations from external sources.
 If this startup code needs access to config values without calling
 ``config.get()`` you can access values directly from the config object.
 
-In addition, some use cases such as tests require config mutations. An
-``ALLOW_CONFIG_MUTATIONS`` `environment
-variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables#allow_config_mutations>`_
-has been added to address these edge cases.
+In addition, some use cases such as tests require config mutations.
+An :ref:`Environment-Variables-allow_config_mutations` has been added to address these edge cases.
 
-Guaranteeing the stability of configuration values is now a core part of
-node-config.
+Guaranteeing the stability of configuration values is now a core part of node-config.
 
 Load Ordering
 ~~~~~~~~~~~~~
@@ -92,17 +89,15 @@ If you want to test if a configuration without wrapping in a try/catch,
 config.util
 ~~~~~~~~~~~
 
-The config package comes with a bunch of `handy
-utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_,
-resulting in a large list of `reserved
-words <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_
+The config package comes with a bunch of :doc:`Using-Config-Utilities`,
+resulting in a large list of :doc:`Reserved-Words`
 that couldn’t be used in configurations.
 
 Starting with node-config 1.0, these utilities have been moved to a
 single ``util`` object attached to configuration objects. Using these
 utilities from ``config`` vs. \ ``config.util`` will cause a deprecation
-warning in node-config 1.0, and will not be supported in `version
-2.0 <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities>`_.
+warning in node-config 1.0,
+and will not be supported in :ref:`Future-Compatibility-upcoming-incompatibilities`.
 
 This ``util`` object is available at all levels, so if you do something
 like this:

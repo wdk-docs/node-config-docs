@@ -63,7 +63,7 @@ msgstr "您和Paul都维护服务器并需要访问敏感信息."
 
 #: ../../source/Securing-Production-Config-Files.rst:24
 msgid "先决条件:"
-msgstr ""
+msgstr "先决条件:"
 
 #: ../../source/Securing-Production-Config-Files.rst:26
 msgid "`git-crypt <https://github.com/AGWA/git-crypt.git>`_ is installed."

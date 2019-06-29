@@ -1,12 +1,10 @@
 Environment Variables
 ========================================================================================
 
-Node-config uses a handful of environment variables for its own
-configuration. It can also use `custom environment
-variables <#custom-environment-variables>`_ to override your app’s
-configuration. In both cases, these are generally exported in your shell
-before loading the app, but can also be supplied on the command line or
-in your app bootstrap.
+Node-config uses a handful of environment variables for its own configuration.
+It can also use :ref:`Environment-Variables-custom-environment-variables` to override your app’s configuration.
+In both cases, these are generally exported in your shell before loading the app,
+but can also be supplied on the command line or in your app bootstrap.
 
 Example exporting to the O/S before loading your app:
 
@@ -35,12 +33,11 @@ NODE_ENV
 
 This variable contains the name of your application’s deployment
 environment, representing the ``{deployment}`` when determining config
-`file loading
-order <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_.
+:ref:`Configuration-Files-file-load-order`.
 Common values include ``dev``, ``stage``, ``production-east``, etc. to
 fit your deployment strategy. The value for ``NODE_ENV`` can be
 overridden with the
-`NODE_CONFIG_ENV <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config_env>`_
+:ref:`Environment-Variables-node_config_env`
 environment variable.
 
 The current value of ``NODE_ENV`` is available in
@@ -50,6 +47,8 @@ The current value of ``NODE_ENV`` is available in
 
    var config = require('config');
    console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
+
+.. _Environment-Variables-node_config_env:
 
 NODE_CONFIG_ENV
 ---------------
@@ -74,8 +73,7 @@ The ``qa`` configuration will be used in place of ``production``.
 NODE_CONFIG_DIR
 ---------------
 
-This contains the path to the directory containing your `configuration
-files <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_.
+This contains the path to the directory containing your :doc:`Configuration-Files`.
 It can be a direct path from the root, or a relative path if it begins
 with ``./`` or ``../``. The default ``NODE_CONFIG_DIR`` is the
 ``/config`` directory under the *current working directory*, usually
@@ -89,6 +87,8 @@ The current value of ``NODE_CONFIG_DIR`` is available in
 
    var config = require('config');
    console.log('NODE_CONFIG_DIR: ' + config.util.getEnv('NODE_CONFIG_DIR'));
+
+.. _Environment-Variables-node_config:
 
 NODE_CONFIG
 -----------
@@ -121,8 +121,7 @@ HOSTNAME (or HOST)
 ------------------
 
 This variable contains the name of your host server, representing the
-``{hostname}`` when determining config `file loading
-order <https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order>`_.
+:ref:`Configuration-Files-file-load-order`.
 
 Sometimes the default hostname returned by ``os.hostname()`` isn’t what
 you expect, and setting this before running your app makes sure you’ve
@@ -142,8 +141,7 @@ Regardless of the variable or default used, the current value of
 NODE_APP_INSTANCE
 -----------------
 
-As described in the `multi instance
-deployment <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_
+As described in the :doc:`Multiple-Node-Instances`
 section, if you’re running multiple instances of your app and need
 different configurations for each instance, this enables loading of
 instance specific config files.
@@ -155,6 +153,8 @@ The current value of ``NODE_APP_INSTANCE`` is available in
 
    var config = require('config');
    console.log('NODE_APP_INSTANCE: ' + config.util.getEnv('NODE_APP_INSTANCE'));
+
+.. _Environment-Variables-allow_config_mutations:
 
 ALLOW_CONFIG_MUTATIONS
 ----------------------
@@ -205,8 +205,7 @@ allow apps using these sub-modules the option of using node-config if
 they choose, or a different configuration system without getting
 annoying warning messages.
 
-See the article on `sub module
-configuration <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_
+See the article on :doc:`Sub-Module-Configuration`
 for more information about using node-config in an NPM module.
 
 The current value of ``SUPPRESS_NO_CONFIG_WARNING`` is available in
@@ -216,6 +215,8 @@ The current value of ``SUPPRESS_NO_CONFIG_WARNING`` is available in
 
    var config = require('config');
    console.log('SUPPRESS_NO_CONFIG_WARNING: ' + config.util.getEnv('SUPPRESS_NO_CONFIG_WARNING'));
+
+.. _Environment-Variables-custom-environment-variables:
 
 Custom Environment Variables
 ------------------------------------

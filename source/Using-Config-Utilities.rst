@@ -1279,8 +1279,7 @@ variable, including any defaults or overrides.
 
 Environment variables that you can inspect include ``NODE_ENV``,
 ``CONFIG_DIR``, ``NODE_CONFIG``, ``HOSTNAME``, ``NODE_APP_INSTANCE``,
-and others listed in the `environment
-variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_
+and others listed in the :doc:`Environment-Variables`
 wiki page.
 
 .. raw:: html

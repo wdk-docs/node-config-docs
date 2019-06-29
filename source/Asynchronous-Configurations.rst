@@ -13,7 +13,7 @@ will be deferred until:
 
 -  the final merged configuration structure is built (that’s when async
    functions are executed; see
-   `deferConfig <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files#deferred-values-in-javascript-configuration-files>`_)
+   :ref:`Special-features-for-JavaScript-configuration-files-deferred-values-in-javascript-configuration-files`)
 -  the ``resolveAsyncConfigs`` utility method has been called and
    resolved (all asynchronous configurations been resolved)
 

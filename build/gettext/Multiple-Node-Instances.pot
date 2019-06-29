@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-28 23:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,14 +21,14 @@ msgid "Multiple Node Instances"
 msgstr ""
 
 #: ../../source/Multiple-Node-Instances.rst:4
-msgid "In order to support different configurations for each application instance running on a machine, the ``NODE_APP_INSTANCE`` `environment variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ is inspected, and used for loading instance specific files."
+msgid "In order to support different configurations for each application instance running on a machine, the :doc:`Environment-Variables` is inspected, and used for loading instance specific files."
 msgstr ""
 
-#: ../../source/Multiple-Node-Instances.rst:9
+#: ../../source/Multiple-Node-Instances.rst:8
 msgid "For example, if the ``NODE_APP_INSTANCE=3`` environment variable is set, immediately following the load of ``default.json``, a file by the name of ``default-3.json`` will be loaded if present."
 msgstr ""
 
-#: ../../source/Multiple-Node-Instances.rst:13
+#: ../../source/Multiple-Node-Instances.rst:12
 msgid "This works for all configuration files, so if your ``NODE_APP_INSTANCE=3`` and ``NODE_ENV=stage``, then immediately after loading ``stage.yaml``, a file by the name of ``stage-3.yaml`` will be loaded if present."
 msgstr ""
 

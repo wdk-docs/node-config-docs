@@ -9,6 +9,8 @@ to do. It’s nice to live in a world with choice.
 JavaScript modules support the ability to have “deferred” and “raw”
 values.
 
+.. _Special-features-for-JavaScript-configuration-files-deferred-values-in-javascript-configuration-files:
+
 Deferred values in JavaScript configuration files
 -------------------------------------------------
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,33 +23,39 @@ msgid "Webpack Usage"
 msgstr "Webpack用法"
 
 #: ../../source/Webpack-Usage.rst:4
-msgid  ""
+msgid ""
 "Right now ``node-config`` doesn’t work with `webpack "
 "<https://github.com/webpack/webpack>`_ out of the box because it reads "
 "the config files at runtime, which can’t be done when the code is running"
 " on a browser."
-msgstr "现在 ``node-config`` 不能与 `webpack <https://github.com/webpack/webpack>`_ 开箱即用, 因为它在运行时读取配置文件, 这是无法完成的当代码在浏览器上运行时."
+msgstr ""
+"现在 ``node-config`` 不能与 `webpack <https://github.com/webpack/webpack>`_ "
+"开箱即用, 因为它在运行时读取配置文件, 这是无法完成的当代码在浏览器上运行时."
 
 #: ../../source/Webpack-Usage.rst:10
 msgid "Option 1"
 msgstr "选项1"
 
 #: ../../source/Webpack-Usage.rst:12
-msgid  ""
+msgid ""
 "If you’re using Webpack 4, it includes excellent handling for complex "
 "config objects with ``DefinePlugin`` (as of 2018-05-07). Add the "
 "following to your ``webpack.config.js``:"
-msgstr "如果你正在使用Webpack 4, 那么它包含了对 ``DefinePlugin`` (截至2018-05-07)的复杂配置对象的出色处理.将以下内容添加到 ``webpack.config.js`` 中:"
+msgstr ""
+"如果你正在使用Webpack 4, 那么它包含了对 ``DefinePlugin`` "
+"(截至2018-05-07)的复杂配置对象的出色处理.将以下内容添加到 ``webpack.config.js`` 中:"
 
 #: ../../source/Webpack-Usage.rst:23
-msgid  ""
+msgid ""
 "You can access all fields, including nested fields, under the ``CONFIG`` "
 "object in your client-side scripts, without exposing your entire config "
 "object. Note that you won’t have access to ``get()``."
-msgstr "您可以在客户端脚本的 ``CONFIG`` 对象下访问所有字段, 包括嵌套字段, 而不会暴露整个配置对象.请注意, 您将无法访问 ``get()``."
+msgstr ""
+"您可以在客户端脚本的 ``CONFIG`` 对象下访问所有字段, 包括嵌套字段, 而不会暴露整个配置对象.请注意, 您将无法访问 "
+"``get()``."
 
 #: ../../source/Webpack-Usage.rst:27
-msgid  ""
+msgid ""
 "This approach *does* work in Webpack 3, but it inserts your *entire* "
 "config object wherever it is referenced. This is not recommended."
 msgstr "这种方法*可以在Webpack 3中运行, 但它会在您引用的任何地方插入 *whole* config 对象.不建议这样做."
@@ -59,25 +65,27 @@ msgid "Option 2"
 msgstr "选项2"
 
 #: ../../source/Webpack-Usage.rst:33
-msgid  ""
+msgid ""
 "Install the `node-config-webpack <https://github.com/arthanzel/node-"
 "config-webpack>`_ package and put the following in ``webpack.config.js``:"
-msgstr "安装 `node-config-webpack <https://github.com/arthanzel/node-config-webpack>`_ package并将以下内容放在 ``webpack.config.js``中:"
+msgstr ""
+"安装 `node-config-webpack <https://github.com/arthanzel/node-config-"
+"webpack>`_ package并将以下内容放在 ``webpack.config.js`` 中:"
 
 #: ../../source/Webpack-Usage.rst:45
-msgid  ""
+msgid ""
 "This allows you to access your configuration on the client in the global "
 "namespace ``CONFIG``."
 msgstr "这允许您在全局命名空间“CONFIG”中访问客户端上的配置."
 
 #: ../../source/Webpack-Usage.rst:52
-msgid  ""
+msgid ""
 "You can also change the default namespace from ``CONFIG`` to something "
 "else."
 msgstr "您还可以将默认命名空间从 ``CONFIG`` 更改为其他名称."
 
 #: ../../source/Webpack-Usage.rst:59
-msgid  ""
+msgid ""
 "This method performs direct text replacement of config variables in your "
 "code with their values, and it doesn’t expose any configs that aren’t "
 "used."
@@ -88,53 +96,49 @@ msgid "Option 3"
 msgstr "选项3"
 
 #: ../../source/Webpack-Usage.rst:66
-msgid  ""
+msgid ""
 "Below is an example of how you can use ``NODE_ENV`` at build time to have"
 " a static config built into your webpack bundle."
 msgstr "下面是一个如何在构建时使用 ``NODE_ENV`` 来在webpack包中内置静态配置的示例."
 
 #: ../../source/Webpack-Usage.rst:70
-msgid  ""
+msgid ""
 "This will publish your entire config file into your front end "
 "application. If you have sensitive information you do not want "
 "downloaded, see the notes after the example."
 msgstr "这会将整个配置文件发布到您的前端应用程序中.如果您有不想下载的敏感信息, 请参阅示例后的注释."
 
 #: ../../source/Webpack-Usage.rst:95
-msgid  ""
+msgid ""
 "Both server and client now can happily use ``import config from "
 "'config'``."
 msgstr "服务器和客户端现在都可以愉快地使用 ``import config from 'config'``."
 
 #: ../../source/Webpack-Usage.rst:98
-msgid  ""
+msgid ""
 "If you have things in the config that you do not want to publish to the "
 "front end, you may consider making a specific ``client`` section of the "
 "config, and only publishing that key to the static json file, e.g. \\ "
 "``import { client } from 'config';``"
-msgstr "如果您在配置中有不想发布到前端的东西, 您可以考虑在配置中创建一个特定的 ``client`` 部分, 并且只将该密钥发布到静态json文件, 例如 \\ ``import { client } from 'config';``"
+msgstr ""
+"如果您在配置中有不想发布到前端的东西, 您可以考虑在配置中创建一个特定的 ``client`` 部分, 并且只将该密钥发布到静态json文件, "
+"例如 \\ ``import { client } from 'config';``"
 
 #: ../../source/Webpack-Usage.rst:103
-msgid  ""
+msgid ""
 "Alternatively you could use `lodash <https://github.com/lodash/lodash>`_ "
 "``pick`` or ``omit`` to control what data is written to the file."
-msgstr "或者你可以使用 `lodash <https://github.com/lodash/lodash>`_ ``pick`` 或 ``omit`` 来控制写入文件的数据."
+msgstr ""
+"或者你可以使用 `lodash <https://github.com/lodash/lodash>`_ ``pick`` 或 ``omit`` "
+"来控制写入文件的数据."
 
 #: ../../source/Webpack-Usage.rst:108
 msgid "Option 4"
 msgstr "选项4"
 
 #: ../../source/Webpack-Usage.rst:110
-msgid  ""
-"Another solution is to take advantage of the ```NODE_CONFIG`` environment"
-" variable <https://github.com/lorenwest/node-config/wiki/Environment-"
-"Variables#node_config>`_ with ``webpack.DefinePlugin``. With this method "
-"you **CAN** still use ``get()``."
-msgstr "另一个解决方案是利用 ``NODE_CONFIG`` `环境变量 <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config>`_ 和 ``webpack.DefinePlugin``.使用这种方法你仍然 **可以** 使用 ``get()``."
-
-#~ msgid "Webpack-Usage"
-#~ msgstr ""
-
-#~ msgid "**IMPORTANT NOTE**"
-#~ msgstr "**IMPORTANT NOTE**"
-
+msgid ""
+"Another solution is to take advantage of the :ref:`Environment-Variables-"
+"node_config` with ``webpack.DefinePlugin``. With this method you **CAN** "
+"still use ``get()``."
+msgstr "另一种解决方案是利用 :ref:`Environment-Variables-node_config` 和 ``webpack.DefinePlugin``. 使用这种方法你仍然 **可以** 使用 ``get()``. "

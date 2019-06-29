@@ -11,6 +11,7 @@ Welcome to node-config docs's documentation!
    :caption: Contents:
 
    Home
+   readme
    Configuration-Files
    Special-features-for-JavaScript-configuration-files
    Common-Usage

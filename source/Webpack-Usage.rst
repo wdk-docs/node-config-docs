@@ -107,11 +107,8 @@ control what data is written to the file.
 Option 4
 -----------------------
 
-Another solution is to take advantage of the ```NODE_CONFIG``
-environment
-variable <https://github.com/lorenwest/node-config/wiki/Environment-Variables#node_config>`_
-with ``webpack.DefinePlugin``. With this method you **CAN** still use
-``get()``.
+Another solution is to take advantage of the :ref:`Environment-Variables-node_config`
+with ``webpack.DefinePlugin``. With this method you **CAN** still use ``get()``.
 
 .. code:: js
 

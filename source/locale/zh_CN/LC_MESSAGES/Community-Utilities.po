@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 23:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,20 +28,19 @@ msgstr "CEV - 定制环境变量生成器"
 
 #: ../../source/Community-Utilities.rst:7
 msgid ""
-"If you use `custom environment variables <https://github.com/lorenwest"
-"/node-config/wiki/Environment-Variables#custom-environment-variables>`_ a"
-" lot, here’s a generator for them http://www.scispike.com/blog/get-rid-"
-"of-node-js-config-grunt-work/"
+"If you use :ref:`Environment-Variables-custom-environment-variables` a "
+"lot, here’s a generator for them http://www.scispike.com/blog/get-rid-of-"
+"node-js-config-grunt-work/"
 msgstr ""
-"如果您使用 `自定义环境变量 <https://github.com/lorenwest/node-config/wiki"
-"/Environment-Variables#custom-environment-variables>`_ 很多, 这里有一个生成器 "
-"http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-work/"
+"如果您使用 :ref:`Environment-Variables-custom-environment-variables`, "
+"这里有一个生成器 http://www.scispike.com/blog/get-rid-of-node-js-config-grunt-"
+"work/"
 
-#: ../../source/Community-Utilities.rst:13
+#: ../../source/Community-Utilities.rst:12
 msgid "config-uncached"
 msgstr "配置 - 未缓存"
 
-#: ../../source/Community-Utilities.rst:15
+#: ../../source/Community-Utilities.rst:14
 msgid ""
 "Sometimes for testing or DevOps, you need one script to load more than "
 "configuration. This is normally a challenge with ``node-config`` As a "

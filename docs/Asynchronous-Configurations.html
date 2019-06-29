@@ -84,6 +84,7 @@
               <p class="caption"><span class="caption-text">内容:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Home.html">维基页面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">配置Node.js应用程序</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration-Files.html">配置文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html">JavaScript配置文件的特殊功能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Common-Usage.html">常见用法</a></li>
@@ -184,7 +185,7 @@
 <h2>异步配置<a class="headerlink" href="#async-configuration" title="永久链接至标题">¶</a></h2>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">asyncConfig</span></code> 实用程序方法, 你可以包含promises和async函数(一个返回一个promise的函数), 其解析将推迟到:</p>
 <ul class="simple">
-<li><p>构建最终的合并配置结构(即异步函数执行时;请参阅 <a class="reference external" href="https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files#deferred-values-in-javascript-configuration-files">deferConfig</a>)</p></li>
+<li><p>构建最终的合并配置结构(即异步函数执行时;参见 <a class="reference internal" href="Special-features-for-JavaScript-configuration-files.html#special-features-for-javascript-configuration-files-deferred-values-in-javascript-configuration-files"><span class="std std-ref">JavaScript配置文件中的延迟值</span></a>)</p></li>
 <li><p>已经调用并解析了 <code class="docutils literal notranslate"><span class="pre">resolveAsyncConfigs</span></code> 实用程序方法(已解决所有异步配置)</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">asyncConfig</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;config/async&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">asyncConfig</span><span class="p">;</span>

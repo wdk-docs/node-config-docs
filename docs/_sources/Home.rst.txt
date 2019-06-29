@@ -1,66 +1,64 @@
 Wiki Pages
 ==================
 
--  `Configuration
-   Files <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_
+-  :doc:`Configuration-Files`
+
    - Managing configuration files for your application
 
-   -  `Special Features for JavaScript Config
-      Files <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_
+   -  :doc:`Special-features-for-JavaScript-configuration-files`
 
--  `Common
-   Usage <https://github.com/lorenwest/node-config/wiki/Common-Usage>`_
+-  :doc:`Common-Usage`
+
    - Using node-config in your application code
 
--  `Environment
-   Variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_
+-  :doc:`Environment-Variables`
+
    - Operating system environment variables used in node-config
 
--  `Reserved
-   Words <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_
+-  :doc:`Reserved-Words`
+
    - Configuration variable names to stay away from
 
--  `Command Line
-   Overrides <https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_
+-  :doc:`Command-Line-Overrides`
+
    - Specifying configurations when starting your app
 
--  `Multiple Node
-   Instances <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_
+-  :doc:`Multiple-Node-Instances`
+
    - When running multiple instances of your app
 
--  `Sub-Module
-   Configuration <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_
+-  :doc:`Sub-Module-Configuration`
+
    - Using node-config in your NPM module
 
--  `Configuring from a DB or External
-   Source <https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source>`_
+-  :doc:`Configuring-from-an-External-Source`
+
    - Merging external configurations at runtime
 
--  `External Configuration Management
-   Tools <https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools>`_
+-  :doc:`External-Configuration-Management-Tools`
+
    - Using node-config with other CM tools
 
--  `Examining Configuration
-   Sources <https://github.com/lorenwest/node-config/wiki/Examining-Configuration-Sources>`_
+-  :doc:`Examining-Configuration-Sources`
+
    - Determining the origin of configuration values
 
--  `Using Config
-   Utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_
+-  :doc:`Using-Config-Utilities`
+
    - Useful utilities that come with node-config
 
--  `Community
-   Utilities <https://github.com/lorenwest/node-config/wiki/Community-Utilities>`_
+-  :doc:`Community-Utilities`
+
    - Useful utilities written by the node-config community
 
--  `Future
-   Compatibility <https://github.com/lorenwest/node-config/wiki/Future-Compatibility>`_
+-  :doc:`Future-Compatibility`
+
    - Compatibility statement and future incompatibilities
 
--  `Upgrading from Config
-   0.x <https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x>`_
+-  :doc:`Upgrading-From-Config-0.x`
+
    - How to upgrade to node-config version 1.x
 
--  `Plugins <https://github.com/lorenwest/node-config/wiki/Plugins>`_
+-  :doc:`Plugins`
 
--  `Runtime config for
-   testing <https://github.com/lorenwest/node-config/wiki/Altering-configuration-values-for-testing-at-runtime>`_
+-  :doc:`Altering-configuration-values-for-testing-at-runtime`

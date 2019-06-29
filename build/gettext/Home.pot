@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-28 23:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,70 +21,126 @@ msgid "Wiki Pages"
 msgstr ""
 
 #: ../../source/Home.rst:4
-msgid "`Configuration Files <https://github.com/lorenwest/node-config/wiki/Configuration-Files>`_ - Managing configuration files for your application"
+msgid ":doc:`Configuration-Files`"
+msgstr ""
+
+#: ../../source/Home.rst:6
+msgid "Managing configuration files for your application"
 msgstr ""
 
 #: ../../source/Home.rst:8
-msgid "`Special Features for JavaScript Config Files <https://github.com/lorenwest/node-config/wiki/Special-features-for-JavaScript-configuration-files>`_"
+msgid ":doc:`Special-features-for-JavaScript-configuration-files`"
 msgstr ""
 
-#: ../../source/Home.rst:11
-msgid "`Common Usage <https://github.com/lorenwest/node-config/wiki/Common-Usage>`_ - Using node-config in your application code"
+#: ../../source/Home.rst:10
+msgid ":doc:`Common-Usage`"
 msgstr ""
 
-#: ../../source/Home.rst:15
-msgid "`Environment Variables <https://github.com/lorenwest/node-config/wiki/Environment-Variables>`_ - Operating system environment variables used in node-config"
+#: ../../source/Home.rst:12
+msgid "Using node-config in your application code"
 msgstr ""
 
-#: ../../source/Home.rst:19
-msgid "`Reserved Words <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ - Configuration variable names to stay away from"
+#: ../../source/Home.rst:14
+msgid ":doc:`Environment-Variables`"
 msgstr ""
 
-#: ../../source/Home.rst:23
-msgid "`Command Line Overrides <https://github.com/lorenwest/node-config/wiki/Command-Line-Overrides>`_ - Specifying configurations when starting your app"
+#: ../../source/Home.rst:16
+msgid "Operating system environment variables used in node-config"
 msgstr ""
 
-#: ../../source/Home.rst:27
-msgid "`Multiple Node Instances <https://github.com/lorenwest/node-config/wiki/Multiple-Node-Instances>`_ - When running multiple instances of your app"
+#: ../../source/Home.rst:18
+msgid ":doc:`Reserved-Words`"
 msgstr ""
 
-#: ../../source/Home.rst:31
-msgid "`Sub-Module Configuration <https://github.com/lorenwest/node-config/wiki/Sub-Module-Configuration>`_ - Using node-config in your NPM module"
+#: ../../source/Home.rst:20
+msgid "Configuration variable names to stay away from"
 msgstr ""
 
-#: ../../source/Home.rst:35
-msgid "`Configuring from a DB or External Source <https://github.com/lorenwest/node-config/wiki/Configuring-from-an-External-Source>`_ - Merging external configurations at runtime"
+#: ../../source/Home.rst:22
+msgid ":doc:`Command-Line-Overrides`"
 msgstr ""
 
-#: ../../source/Home.rst:39
-msgid "`External Configuration Management Tools <https://github.com/lorenwest/node-config/wiki/External-Configuration-Management-Tools>`_ - Using node-config with other CM tools"
+#: ../../source/Home.rst:24
+msgid "Specifying configurations when starting your app"
 msgstr ""
 
-#: ../../source/Home.rst:43
-msgid "`Examining Configuration Sources <https://github.com/lorenwest/node-config/wiki/Examining-Configuration-Sources>`_ - Determining the origin of configuration values"
+#: ../../source/Home.rst:26
+msgid ":doc:`Multiple-Node-Instances`"
 msgstr ""
 
-#: ../../source/Home.rst:47
-msgid "`Using Config Utilities <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_ - Useful utilities that come with node-config"
+#: ../../source/Home.rst:28
+msgid "When running multiple instances of your app"
 msgstr ""
 
-#: ../../source/Home.rst:51
-msgid "`Community Utilities <https://github.com/lorenwest/node-config/wiki/Community-Utilities>`_ - Useful utilities written by the node-config community"
+#: ../../source/Home.rst:30
+msgid ":doc:`Sub-Module-Configuration`"
 msgstr ""
 
-#: ../../source/Home.rst:55
-msgid "`Future Compatibility <https://github.com/lorenwest/node-config/wiki/Future-Compatibility>`_ - Compatibility statement and future incompatibilities"
+#: ../../source/Home.rst:32
+msgid "Using node-config in your NPM module"
 msgstr ""
 
-#: ../../source/Home.rst:59
-msgid "`Upgrading from Config 0.x <https://github.com/lorenwest/node-config/wiki/Upgrading-From-Config-0.x>`_ - How to upgrade to node-config version 1.x"
+#: ../../source/Home.rst:34
+msgid ":doc:`Configuring-from-an-External-Source`"
 msgstr ""
 
-#: ../../source/Home.rst:63
-msgid "`Plugins <https://github.com/lorenwest/node-config/wiki/Plugins>`_"
+#: ../../source/Home.rst:36
+msgid "Merging external configurations at runtime"
 msgstr ""
 
-#: ../../source/Home.rst:65
-msgid "`Runtime config for testing <https://github.com/lorenwest/node-config/wiki/Altering-configuration-values-for-testing-at-runtime>`_"
+#: ../../source/Home.rst:38
+msgid ":doc:`External-Configuration-Management-Tools`"
+msgstr ""
+
+#: ../../source/Home.rst:40
+msgid "Using node-config with other CM tools"
+msgstr ""
+
+#: ../../source/Home.rst:42
+msgid ":doc:`Examining-Configuration-Sources`"
+msgstr ""
+
+#: ../../source/Home.rst:44
+msgid "Determining the origin of configuration values"
+msgstr ""
+
+#: ../../source/Home.rst:46
+msgid ":doc:`Using-Config-Utilities`"
+msgstr ""
+
+#: ../../source/Home.rst:48
+msgid "Useful utilities that come with node-config"
+msgstr ""
+
+#: ../../source/Home.rst:50
+msgid ":doc:`Community-Utilities`"
+msgstr ""
+
+#: ../../source/Home.rst:52
+msgid "Useful utilities written by the node-config community"
+msgstr ""
+
+#: ../../source/Home.rst:54
+msgid ":doc:`Future-Compatibility`"
+msgstr ""
+
+#: ../../source/Home.rst:56
+msgid "Compatibility statement and future incompatibilities"
+msgstr ""
+
+#: ../../source/Home.rst:58
+msgid ":doc:`Upgrading-From-Config-0.x`"
+msgstr ""
+
+#: ../../source/Home.rst:60
+msgid "How to upgrade to node-config version 1.x"
+msgstr ""
+
+#: ../../source/Home.rst:62
+msgid ":doc:`Plugins`"
+msgstr ""
+
+#: ../../source/Home.rst:64
+msgid ":doc:`Altering-configuration-values-for-testing-at-runtime`"
 msgstr ""
 

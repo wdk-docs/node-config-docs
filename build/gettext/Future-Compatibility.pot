@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: node-config docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 17:19+0800\n"
+"POT-Creation-Date: 2019-06-29 20:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,63 +16,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/Future-Compatibility.rst:2
+#: ../../source/Future-Compatibility.rst:4
 msgid "Future Compatibility"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:4
+#: ../../source/Future-Compatibility.rst:6
 msgid "In acknowledgement of the effort required to change dependent software, node-config will:"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:7
-msgid "Use `semver versioning <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#semver-versioning>`_ to promote stable deployments,"
+#: ../../source/Future-Compatibility.rst:8
+msgid "Use :ref:`Future-Compatibility-semver-versioning` to promote stable deployments,"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:10
+#: ../../source/Future-Compatibility.rst:9
 msgid "Limit backward incompatibilities in favor of alternate solutions,"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:11
-msgid "Provide `ample warning <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#ample-warning>`_ for upcoming incompatible releases,"
+#: ../../source/Future-Compatibility.rst:10
+msgid "Provide :ref:`Future-Compatibility-ample-warning` for upcoming incompatible releases,"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:14
+#: ../../source/Future-Compatibility.rst:11
 msgid "Attempt to detect and output errors on incompatible usage, and"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:15
-msgid "Post all `upcoming incompatibilities <https://github.com/lorenwest/node-config/wiki/Future-Compatibility#upcoming-incompatibilities>`_ on this page"
+#: ../../source/Future-Compatibility.rst:12
+msgid "Post all :ref:`Future-Compatibility-upcoming-incompatibilities` on this page"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:20
+#: ../../source/Future-Compatibility.rst:17
 msgid "Semver Versioning"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:22
+#: ../../source/Future-Compatibility.rst:19
 msgid "To promote stable deployments, node-config uses `semver versioning <http://semver.org/>`_ when expressing deployment versions."
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:25
+#: ../../source/Future-Compatibility.rst:21
 msgid "This makes it appropriate to run tests for a particular ``MAJOR.MINOR`` version, and be confident about specifying a wildcard ``PATCH`` version. For example, if the current version you’ve tested with is ``1.3.4``, your node-config dependency in package.json could be:"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:36
+#: ../../source/Future-Compatibility.rst:32
 msgid "without introducing significant risk. You can also specify ``\"config\": \"1.3.4\",`` if you prefer version stability to bug fixes."
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:40
+#: ../../source/Future-Compatibility.rst:38
 msgid "Ample Warning"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:42
+#: ../../source/Future-Compatibility.rst:40
 msgid "A minimum of one year will be given between the time of an incompatibility announcement (below) and the release of the version containing the incompatibility."
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:46
+#: ../../source/Future-Compatibility.rst:44
 msgid "If it’s possible to detect your application using a future incompatibility, a one-time warning per application run will be placed onto ``console.error`` for each type of incompatibility."
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:50
+#: ../../source/Future-Compatibility.rst:48
 msgid "Once the incompatibility is introduced, an error will be placed into ``console.error`` if an incompatible usage is detected."
 msgstr ""
 
@@ -80,15 +80,15 @@ msgstr ""
 msgid "Upcoming Incompatibilities"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:57
+#: ../../source/Future-Compatibility.rst:59
 msgid "Version 2.0 - (not before July, 2015)"
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:59
-msgid "Less Cluttered Top Level Namespace (announced June, 2014)\\ `Utility functions <https://github.com/lorenwest/node-config/wiki/Using-Config-Utilities>`_ available under the ``config.util`` namespace since version 1.0 will no longer be available at the top level ``config`` namespace. Starting at Version 2 they will only be available under ``config.util``, and the only words in the `Reserved Words <https://github.com/lorenwest/node-config/wiki/Reserved-Words>`_ list will be ``get``, ``has``, and ``util``."
+#: ../../source/Future-Compatibility.rst:61
+msgid "Less Cluttered Top Level Namespace (announced June, 2014)\\ :doc:`Using-Config-Utilities` available under the ``config.util`` namespace since version 1.0 will no longer be available at the top level ``config`` namespace. Starting at Version 2 they will only be available under :doc:`Reserved-Words` list will be ``get``, ``has``, and ``util``."
 msgstr ""
 
-#: ../../source/Future-Compatibility.rst:68
+#: ../../source/Future-Compatibility.rst:67
 msgid "Watch utility deprecated (announced July, 2014) The ``watch`` method was built as a notification of changed configuration values. Since node-config 1.0, configuration changes are no longer advised, and the watch function was kept in but deprecated with a warning. The watch function will not be available in Version 2.0."
 msgstr ""
 
