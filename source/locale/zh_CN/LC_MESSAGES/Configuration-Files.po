@@ -177,7 +177,7 @@ msgid ""
 "instance running on a machine, the ``NODE_APP_INSTANCE`` :doc"
 ":`Environment-Variables` is inspected, and used for loading instance "
 "specific files."
-msgstr ""
+msgstr "为了支持在机器上运行的每个应用程序实例的不同配置,检查 ``NODE_APP_INSTANCE`` :doc:`Environment-Variables`,并用于加载特定于实例的文件。"
 
 #: ../../source/Configuration-Files.rst:115
 msgid ""
